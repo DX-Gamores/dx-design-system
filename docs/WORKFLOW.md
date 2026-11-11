@@ -38,3 +38,14 @@ This repo replaces the "Can't" column. Token names, code snippets and component 
 - **Tokens:** pull the new version. Nothing to do unless a token was renamed, which is a major version with a migration note.
 - **Components:** the copies in your project are yours. Compare against `src/components/ui` when the changelog mentions a component you use.
 - **Questions:** comment on the Figma frame, or open a GitHub issue on this repo with the label `design-system`.
+
+## Updating the live preview (GitHub Pages)
+
+The preview at https://dx-gamores.github.io/dx-design-system/ is served from the `gh-pages` branch.
+
+```bash
+npm run build:pages          # static export to out/ (base path /dx-design-system)
+```
+
+Then commit the contents of `out/` to the `gh-pages` branch. Claude does this as part of "re-export the code kit".
+

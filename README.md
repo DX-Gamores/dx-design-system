@@ -11,6 +11,8 @@ The code side of the **DX Design System** Figma file. Developers don't need a Fi
 | Feed tokens to another tool | [`tokens/tokens.json`](tokens/tokens.json) — W3C Design Tokens format, all modes |
 | Draw charts | [`dist/tokens.ts`](dist/tokens.ts) → `dataviz.series`, colour-blind-checked |
 
+**Live preview:** [dx-gamores.github.io/dx-design-system](https://dx-gamores.github.io/dx-design-system/) — the starter app and `/kit` component gallery, with the brand / theme / density switches.
+
 **Docs site (no Figma needed):** [DX Design System on Claude](https://claude.ai/artifact/Qrht2ZAQ4WQJXYr4bHC332) — tokens per theme, live component previews, specs and icons (ask the design lead for access).
 
 **Figma (view-only is enough):** [DX Design System](https://www.figma.com/design/myYAMZWk4yKLQMWGBdJVJd/DX-Design-System) · every page has visual docs you can read without a seat.
