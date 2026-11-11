@@ -1,0 +1,100 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+4:I[4446,["619","static/chunks/619-ba102abea3e3d0e4.js","409","static/chunks/409-5c3510d050179dda.js","175","static/chunks/175-45f54b363ad6d536.js","882","static/chunks/app/(docs)/layout-edb9b4e15c04d070.js"],"DocsShell"]
+a:I[7150,[],""]
+:HL["/dx-design-system/_next/static/css/3febcd183f8b485f.css","style"]
+:HL["/dx-design-system/_next/static/css/23319ba2ad7051db.css","style"]
+0:{"P":null,"b":"H224ANGRHXueHF3EhqpcE","p":"/dx-design-system","c":["","feedback","empty-state",""],"i":false,"f":[[["",{"children":["(docs)",{"children":[["group","feedback","d"],{"children":[["page","empty-state","d"],{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/dx-design-system/_next/static/css/3febcd183f8b485f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/dx-design-system/_next/static/css/23319ba2ad7051db.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","data-brand":"default","data-theme":"light","data-density":"comfortable","suppressHydrationWarning":true,"children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["(docs)",["$","$1","c",{"children":[null,["$","$L4",null,{"nav":[{"title":"Start here","slug":"start","items":[{"title":"Overview","href":"/","figmaName":"Getting Started"},{"title":"Getting started","href":"/start/getting-started/"},{"title":"Governance","href":"/start/governance/","figmaName":"Governance"},{"title":"Changelog & roadmap","href":"/start/changelog/"},{"title":"Working with one seat","href":"/start/workflow/"},{"title":"Adding a brand","href":"/start/new-brand/"},{"title":"Component gallery","href":"/start/gallery/"}]},{"title":"Foundations","slug":"foundations","items":[{"title":"Color, type & space","href":"/foundations/overview/","figmaName":"Foundations"},{"title":"Themes & Brands","href":"/foundations/themes-and-brands/","figmaName":"Themes & Brands"},{"title":"Data Visualization","href":"/foundations/data-visualization/","figmaName":"Data Visualization"},{"title":"Content Guidelines","href":"/foundations/content-guidelines/","figmaName":"Content Guidelines"},{"title":"Localization & RTL","href":"/foundations/localization-and-rtl/","figmaName":"Localization & RTL"},{"title":"Icons","href":"/foundations/icons/","figmaName":"Icons"}]},{"title":"Actions","slug":"actions","items":[{"title":"Button","href":"/actions/button/","figmaName":"Button"},{"title":"Link","href":"/actions/link/","figmaName":"Link"}]},{"title":"Inputs","slug":"inputs","items":[{"title":"Text Field","href":"/inputs/text-field/","figmaName":"Text Field"},{"title":"Select","href":"/inputs/select/","figmaName":"Select"},{"title":"Combobox","href":"/inputs/combobox/","figmaName":"Combobox"},{"title":"Date Picker","href":"/inputs/date-picker/","figmaName":"Date Picker"},{"title":"Textarea","href":"/inputs/textarea/","figmaName":"Textarea"},{"title":"Search Field","href":"/inputs/search-field/","figmaName":"Search Field"},{"title":"Checkbox","href":"/inputs/checkbox/","figmaName":"Checkbox"},{"title":"Radio","href":"/inputs/radio/","figmaName":"Radio"},{"title":"Toggle","href":"/inputs/toggle/","figmaName":"Toggle"},{"title":"Slider","href":"/inputs/slider/","figmaName":"Slider"},{"title":"Chip","href":"/inputs/chip/","figmaName":"Chip"},{"title":"File Upload","href":"/inputs/file-upload/","figmaName":"File Upload"}]},{"title":"Feedback","slug":"feedback","items":[{"title":"Alert","href":"/feedback/alert/","figmaName":"Alert"},{"title":"Toast","href":"/feedback/toast/","figmaName":"Toast"},{"title":"Progress","href":"/feedback/progress/","figmaName":"Progress"},{"title":"Loading","href":"/feedback/loading/","figmaName":"Loading"},{"title":"Empty State","href":"/feedback/empty-state/","figmaName":"Empty State"},{"title":"Tooltip","href":"/feedback/tooltip/","figmaName":"Tooltip"},{"title":"Badge","href":"/feedback/badge/","figmaName":"Badge"}]},{"title":"Overlays","slug":"overlays","items":[{"title":"Dialog","href":"/overlays/dialog/","figmaName":"Dialog"},{"title":"Popover & Drawer","href":"/overlays/popover-and-drawer/","figmaName":"Popover & Drawer"},{"title":"Menu","href":"/overlays/menu/","figmaName":"Menu"}]},{"title":"Navigation","slug":"navigation","items":[{"title":"Navigation","href":"/navigation/navigation/","figmaName":"Navigation"},{"title":"Tabs","href":"/navigation/tabs/","figmaName":"Tabs"},{"title":"Segmented Control","href":"/navigation/segmented-control/","figmaName":"Segmented Control"},{"title":"Stepper","href":"/navigation/stepper/","figmaName":"Stepper"},{"title":"Accordion","href":"/navigation/accordion/","figmaName":"Accordion"}]},{"title":"Data display","slug":"data-display","items":[{"title":"Avatar","href":"/data-display/avatar/","figmaName":"Avatar"},{"title":"Card","href":"/data-display/card/","figmaName":"Card"},{"title":"Divider","href":"/data-display/divider/","figmaName":"Divider"},{"title":"Lists & Tables","href":"/data-display/lists-and-tables/","figmaName":"Lists & Tables"}]},{"title":"Patterns","slug":"patterns","items":[{"title":"Form Patterns","href":"/patterns/form-patterns/","figmaName":"Form Patterns"},{"title":"AI Patterns","href":"/patterns/ai-patterns/","figmaName":"AI Patterns"}]},{"title":"Product kit","slug":"product-kit","items":[{"title":"Stat Card","href":"/product-kit/stat-card/","figmaName":"Kit · Stat Card"},{"title":"Templates","href":"/product-kit/templates/","figmaName":"Templates"},{"title":"Starter & Empty States","href":"/product-kit/starter-and-empty-states/","figmaName":"Starter & Empty States"},{"title":"Examples","href":"/product-kit/examples/","figmaName":"Examples"}]}],"version":"3.2.0","repo":"https://github.com/DX-Gamores/dx-design-system","figma":"https://www.figma.com/design/myYAMZWk4yKLQMWGBdJVJd/DX-Design-System","children":"$L5"}]]}],{"children":[["group","feedback","d"],"$L6",{"children":[["page","empty-state","d"],"$L7",{"children":["__PAGE__","$L8",{},null,false]},null,false]},null,false]},null,false]},null,false],"$L9",false]],"m":"$undefined","G":["$a",[]],"s":false,"S":true}
+c:I[4431,[],"OutletBoundary"]
+e:I[5278,[],"AsyncMetadataOutlet"]
+10:I[4431,[],"ViewportBoundary"]
+12:I[4431,[],"MetadataBoundary"]
+13:"$Sreact.suspense"
+5:["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]
+6:["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+7:["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+8:["$","$1","c",{"children":["$Lb",null,["$","$Lc",null,{"children":["$Ld",["$","$Le",null,{"promise":"$@f"}]]}]]}]
+9:["$","$1","h",{"children":[null,[["$","$L10",null,{"children":"$L11"}],null],["$","$L12",null,{"children":["$","div",null,{"hidden":true,"children":["$","$13",null,{"fallback":null,"children":"$L14"}]}]}]]}]
+15:I[6802,["619","static/chunks/619-ba102abea3e3d0e4.js","409","static/chunks/409-5c3510d050179dda.js","175","static/chunks/175-45f54b363ad6d536.js","95","static/chunks/app/(docs)/%5Bgroup%5D/%5Bpage%5D/page-7ba7c744de18688d.js"],"Demo"]
+b:[["$","header",null,{"className":"flex flex-col gap-3 border-b border-line-default pb-8","children":[["$","p",null,{"className":"text-label-small tracking-wide text-fg-brand uppercase","children":"Feedback · Component"}],["$","h1",null,{"className":"text-heading-h1","children":"Empty State"}],["$","p",null,{"className":"max-w-[68ch] text-body-large text-fg-secondary","children":"Explains why a space is empty — and what to do next."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":[["$","a",null,{"href":"https://www.figma.com/design/myYAMZWk4yKLQMWGBdJVJd/DX-Design-System?node-id=41-2","className":"inline-flex h-control-sm items-center gap-2 rounded-control border border-line-strong bg-surface px-3 text-label-small hover:bg-neutral-hover focus-visible:focus-ring","children":["Open in Figma"," ",["$","svg",null,{"width":16,"height":16,"viewBox":"0 0 24 24","fill":"none","role":"$undefined","aria-label":"$undefined","aria-hidden":true,"className":"shrink-0","children":["$","path",null,{"d":"M20 10V4H14M20 4L11 13M18 14V19C18 19.6 17.6 20 17 20H5C4.4 20 4 19.6 4 19V7C4 6.4 4.4 6 5 6H10","stroke":"currentColor","strokeWidth":"2","strokeLinecap":"round","strokeLinejoin":"round"}]}]]}],["$","span",null,{"className":"inline-flex w-fit items-center rounded-full px-2 py-0.5 text-label-small bg-success-subtle text-fg-success","children":"Coded in React"}]]}]]}],["$","section",null,{"id":"$undefined","className":"flex scroll-mt-24 flex-col gap-4","children":[["$","div",null,{"className":"flex flex-col gap-1","children":[["$","h2",null,{"className":"text-heading-h2","children":"Live example"}],["$","p",null,{"className":"max-w-[68ch] text-body-medium text-fg-secondary","children":"Real components from the code kit. Use the brand, theme and density switches in the header to re-skin them."}]]}],["$","div",null,{"className":"rounded-container border border-line-default bg-surface p-[var(--ds-padding-card)] ","children":["$","$L15",null,{"name":"Empty State"}]}]]}],"$undefined",["$","div",null,{"className":"rounded-container border border-line-default bg-surface p-[var(--ds-padding-card)] flex flex-col gap-3","children":[["$","div",null,{"className":"flex flex-wrap items-baseline justify-between gap-2","children":[["$","h2",null,{"className":"text-label-large","children":"In the Figma page"}],["$","a",null,{"href":"https://www.figma.com/design/myYAMZWk4yKLQMWGBdJVJd/DX-Design-System?node-id=41-2","className":"text-label-small text-fg-brand underline underline-offset-2 focus-visible:focus-ring","children":"View the visual docs (view-only, no seat needed)"}]]}],["$","ol",null,{"className":"flex flex-wrap gap-2","children":[["$","li","Anatomy",{"className":"rounded-full border border-line-default px-3 py-1 text-label-small text-fg-secondary","children":[["$","span",null,{"className":"text-fg-brand tabular-nums","children":"01"}]," · ","Anatomy"]}],["$","li","When to use",{"className":"rounded-full border border-line-default px-3 py-1 text-label-small text-fg-secondary","children":[["$","span",null,{"className":"text-fg-brand tabular-nums","children":"02"}]," · ","When to use"]}],["$","li","Three kinds",{"className":"rounded-full border border-line-default px-3 py-1 text-label-small text-fg-secondary","children":[["$","span",null,{"className":"text-fg-brand tabular-nums","children":"03"}]," · ","Three kinds"]}],["$","li","Do & don't",{"className":"rounded-full border border-line-default px-3 py-1 text-label-small text-fg-secondary","children":[["$","span",null,{"className":"text-fg-brand tabular-nums","children":"04"}]," · ","Do & don't"]}],["$","li","Tokens",{"className":"rounded-full border border-line-default px-3 py-1 text-label-small text-fg-secondary","children":[["$","span",null,{"className":"text-fg-brand tabular-nums","children":"05"}]," · ","Tokens"]}],["$","li","Accessibility",{"className":"rounded-full border border-line-default px-3 py-1 text-label-small text-fg-secondary","children":[["$","span",null,{"className":"text-fg-brand tabular-nums","children":"06"}]," · ","Accessibility"]}],"$L16","$L17"]}]]}],"$L18",false,"$L19","$L1a"]
+1c:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","409","static/chunks/409-5c3510d050179dda.js","175","static/chunks/175-45f54b363ad6d536.js","95","static/chunks/app/(docs)/%5Bgroup%5D/%5Bpage%5D/page-7ba7c744de18688d.js"],""]
+16:["$","li","Themes",{"className":"rounded-full border border-line-default px-3 py-1 text-label-small text-fg-secondary","children":[["$","span",null,{"className":"text-fg-brand tabular-nums","children":"07"}]," · ","Themes"]}]
+17:["$","li","Code",{"className":"rounded-full border border-line-default px-3 py-1 text-label-small text-fg-secondary","children":[["$","span",null,{"className":"text-fg-brand tabular-nums","children":"08"}]," · ","Code"]}]
+1b:T825,<h3>Properties</h3>
+<div class="ds-table"><table>
+<thead>
+<tr>
+<th>Figma property</th>
+<th>Type</th>
+<th>Options / default</th>
+<th>Suggested React prop</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Icon</td>
+<td>Instance swap</td>
+<td>—</td>
+<td><code>icon</code></td>
+</tr>
+<tr>
+<td>Title</td>
+<td>Text</td>
+<td>No members yet</td>
+<td><code>title</code></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>Text</td>
+<td>Invite people to collaborate on projects in this workspace.</td>
+<td><code>description</code></td>
+</tr>
+<tr>
+<td>Show actions</td>
+<td>Boolean</td>
+<td>true</td>
+<td><code>showActions</code></td>
+</tr>
+<tr>
+<td>Show secondary action</td>
+<td>Boolean</td>
+<td>false</td>
+<td><code>showSecondaryAction</code></td>
+</tr>
+<tr>
+<td>Media</td>
+<td>Slot</td>
+<td>—</td>
+<td><code>media</code></td>
+</tr>
+<tr>
+<td>Show icon</td>
+<td>Boolean</td>
+<td>true</td>
+<td><code>showIcon</code></td>
+</tr>
+<tr>
+<td>Show media</td>
+<td>Boolean</td>
+<td>false</td>
+<td><code>showMedia</code></td>
+</tr>
+</tbody></table></div>
+<h3>When</h3>
+<p>First use (nothing created yet), no search/filter results, or cleared lists. Errors that prevent loading → Alert. While loading → Skeleton/Spinner (never show an empty state before data arrives).</p>
+<h3>Property notes</h3>
+<p>Icon (swap) · Title · Description · Show actions · Show secondary action. Actions are exposed Button instances. · Media (slot: custom illustration or image) · Show icon (turn off when using Media)</p>
+<h3>Writing</h3>
+<p>Title says what&#39;s missing (&quot;No members yet&quot; / &quot;No results for “wade”&quot;); description says how to fill it; the primary action does exactly that. For no-results, offer &quot;Clear filters&quot; instead of a create action.</p>
+<h3>Tokens</h3>
+<p>Bg/surface-subtle circle (size/control-lg), icon/primary, Heading/H4, Body/Small, gap/stack, spacing/10 vertical padding.</p>
+<h3>Code</h3>
+<pre><code class="language-tsx">&lt;EmptyState icon=&quot;user&quot; title=&quot;…&quot; description=&quot;…&quot; actions={&lt;Button …/&gt;} headingLevel={2} /&gt;
+</code></pre>
+18:["$","div",null,{"className":"flex flex-col gap-8","children":[false,["$","h2",null,{"className":"text-heading-h2","children":"Spec"}],[["$","section","empty-state",{"id":"empty-state","className":"flex scroll-mt-24 flex-col gap-3","children":[false,false,["$","div",null,{"className":"ds-prose","dangerouslySetInnerHTML":{"__html":"$1b"}}]]}]]]}]
+19:["$","p",null,{"className":"text-caption-default text-fg-secondary","children":["Generated from the Figma file. Specs come from component descriptions — to change one, edit it in Figma and re-export (see"," ",["$","$L1c",null,{"className":"text-fg-brand underline","href":"/start/workflow/","children":"Working with one seat"}],")."]}]
+1a:["$","nav",null,{"aria-label":"Previous and next page","className":"flex flex-col gap-3 border-t border-line-default pt-8 sm:flex-row","children":[["$","$L1c",null,{"href":"/feedback/loading/","className":"flex flex-1 flex-col gap-1 rounded-container border border-line-default bg-surface p-4 hover:border-line-hover focus-visible:focus-ring","children":[["$","span",null,{"className":"text-caption-default text-fg-secondary","children":["← Previous · ","Feedback"]}],["$","span",null,{"className":"text-label-large","children":"Loading"}]]}],["$","$L1c",null,{"href":"/feedback/tooltip/","className":"flex flex-1 flex-col gap-1 rounded-container border border-line-default bg-surface p-4 hover:border-line-hover focus-visible:focus-ring sm:items-end sm:text-right","children":[["$","span",null,{"className":"text-caption-default text-fg-secondary","children":["Next · ","Feedback"," →"]}],["$","span",null,{"className":"text-label-large","children":"Tooltip"}]]}]]}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+d:null
+f:{"metadata":[["$","title","0",{"children":"Empty State · DX Design System"}],["$","meta","1",{"name":"description","content":"Explains why a space is empty — and what to do next."}]],"error":null,"digest":"$undefined"}
+14:"$f:metadata"

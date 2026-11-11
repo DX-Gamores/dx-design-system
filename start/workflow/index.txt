@@ -1,0 +1,109 @@
+1:"$Sreact.fragment"
+2:I[9766,[],""]
+3:I[8924,[],""]
+4:I[4446,["619","static/chunks/619-ba102abea3e3d0e4.js","409","static/chunks/409-5c3510d050179dda.js","175","static/chunks/175-45f54b363ad6d536.js","882","static/chunks/app/(docs)/layout-edb9b4e15c04d070.js"],"DocsShell"]
+a:I[7150,[],""]
+:HL["/dx-design-system/_next/static/css/3febcd183f8b485f.css","style"]
+:HL["/dx-design-system/_next/static/css/23319ba2ad7051db.css","style"]
+0:{"P":null,"b":"H224ANGRHXueHF3EhqpcE","p":"/dx-design-system","c":["","start","workflow",""],"i":false,"f":[[["",{"children":["(docs)",{"children":["start",{"children":["workflow",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/dx-design-system/_next/static/css/3febcd183f8b485f.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/dx-design-system/_next/static/css/23319ba2ad7051db.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","data-brand":"default","data-theme":"light","data-density":"comfortable","suppressHydrationWarning":true,"children":["$","body",null,{"children":["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]]}],{"children":["(docs)",["$","$1","c",{"children":[null,["$","$L4",null,{"nav":[{"title":"Start here","slug":"start","items":[{"title":"Overview","href":"/","figmaName":"Getting Started"},{"title":"Getting started","href":"/start/getting-started/"},{"title":"Governance","href":"/start/governance/","figmaName":"Governance"},{"title":"Changelog & roadmap","href":"/start/changelog/"},{"title":"Working with one seat","href":"/start/workflow/"},{"title":"Adding a brand","href":"/start/new-brand/"},{"title":"Component gallery","href":"/start/gallery/"}]},{"title":"Foundations","slug":"foundations","items":[{"title":"Color, type & space","href":"/foundations/overview/","figmaName":"Foundations"},{"title":"Themes & Brands","href":"/foundations/themes-and-brands/","figmaName":"Themes & Brands"},{"title":"Data Visualization","href":"/foundations/data-visualization/","figmaName":"Data Visualization"},{"title":"Content Guidelines","href":"/foundations/content-guidelines/","figmaName":"Content Guidelines"},{"title":"Localization & RTL","href":"/foundations/localization-and-rtl/","figmaName":"Localization & RTL"},{"title":"Icons","href":"/foundations/icons/","figmaName":"Icons"}]},{"title":"Actions","slug":"actions","items":[{"title":"Button","href":"/actions/button/","figmaName":"Button"},{"title":"Link","href":"/actions/link/","figmaName":"Link"}]},{"title":"Inputs","slug":"inputs","items":[{"title":"Text Field","href":"/inputs/text-field/","figmaName":"Text Field"},{"title":"Select","href":"/inputs/select/","figmaName":"Select"},{"title":"Combobox","href":"/inputs/combobox/","figmaName":"Combobox"},{"title":"Date Picker","href":"/inputs/date-picker/","figmaName":"Date Picker"},{"title":"Textarea","href":"/inputs/textarea/","figmaName":"Textarea"},{"title":"Search Field","href":"/inputs/search-field/","figmaName":"Search Field"},{"title":"Checkbox","href":"/inputs/checkbox/","figmaName":"Checkbox"},{"title":"Radio","href":"/inputs/radio/","figmaName":"Radio"},{"title":"Toggle","href":"/inputs/toggle/","figmaName":"Toggle"},{"title":"Slider","href":"/inputs/slider/","figmaName":"Slider"},{"title":"Chip","href":"/inputs/chip/","figmaName":"Chip"},{"title":"File Upload","href":"/inputs/file-upload/","figmaName":"File Upload"}]},{"title":"Feedback","slug":"feedback","items":[{"title":"Alert","href":"/feedback/alert/","figmaName":"Alert"},{"title":"Toast","href":"/feedback/toast/","figmaName":"Toast"},{"title":"Progress","href":"/feedback/progress/","figmaName":"Progress"},{"title":"Loading","href":"/feedback/loading/","figmaName":"Loading"},{"title":"Empty State","href":"/feedback/empty-state/","figmaName":"Empty State"},{"title":"Tooltip","href":"/feedback/tooltip/","figmaName":"Tooltip"},{"title":"Badge","href":"/feedback/badge/","figmaName":"Badge"}]},{"title":"Overlays","slug":"overlays","items":[{"title":"Dialog","href":"/overlays/dialog/","figmaName":"Dialog"},{"title":"Popover & Drawer","href":"/overlays/popover-and-drawer/","figmaName":"Popover & Drawer"},{"title":"Menu","href":"/overlays/menu/","figmaName":"Menu"}]},{"title":"Navigation","slug":"navigation","items":[{"title":"Navigation","href":"/navigation/navigation/","figmaName":"Navigation"},{"title":"Tabs","href":"/navigation/tabs/","figmaName":"Tabs"},{"title":"Segmented Control","href":"/navigation/segmented-control/","figmaName":"Segmented Control"},{"title":"Stepper","href":"/navigation/stepper/","figmaName":"Stepper"},{"title":"Accordion","href":"/navigation/accordion/","figmaName":"Accordion"}]},{"title":"Data display","slug":"data-display","items":[{"title":"Avatar","href":"/data-display/avatar/","figmaName":"Avatar"},{"title":"Card","href":"/data-display/card/","figmaName":"Card"},{"title":"Divider","href":"/data-display/divider/","figmaName":"Divider"},{"title":"Lists & Tables","href":"/data-display/lists-and-tables/","figmaName":"Lists & Tables"}]},{"title":"Patterns","slug":"patterns","items":[{"title":"Form Patterns","href":"/patterns/form-patterns/","figmaName":"Form Patterns"},{"title":"AI Patterns","href":"/patterns/ai-patterns/","figmaName":"AI Patterns"}]},{"title":"Product kit","slug":"product-kit","items":[{"title":"Stat Card","href":"/product-kit/stat-card/","figmaName":"Kit · Stat Card"},{"title":"Templates","href":"/product-kit/templates/","figmaName":"Templates"},{"title":"Starter & Empty States","href":"/product-kit/starter-and-empty-states/","figmaName":"Starter & Empty States"},{"title":"Examples","href":"/product-kit/examples/","figmaName":"Examples"}]}],"version":"3.2.0","repo":"https://github.com/DX-Gamores/dx-design-system","figma":"https://www.figma.com/design/myYAMZWk4yKLQMWGBdJVJd/DX-Design-System","children":"$L5"}]]}],{"children":["start","$L6",{"children":["workflow","$L7",{"children":["__PAGE__","$L8",{},null,false]},null,false]},null,false]},null,false]},null,false],"$L9",false]],"m":"$undefined","G":["$a",[]],"s":false,"S":true}
+e:I[4431,[],"ViewportBoundary"]
+10:I[4431,[],"MetadataBoundary"]
+11:"$Sreact.suspense"
+5:["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:style","children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:1:props:style","children":404}],["$","div",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:style","children":["$","h2",null,{"style":"$0:f:0:1:1:props:children:1:props:children:props:children:props:notFound:0:1:props:children:props:children:2:props:children:props:style","children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]
+6:["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+7:["$","$1","c",{"children":[null,["$","$L2",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L3",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}]
+b:T10d5,<p>The design lead holds the only paid Figma seat. Everyone else works from this repo and <strong>view-only</strong> Figma links. That&#39;s enough, because nothing a developer needs is locked inside Dev Mode.</p>
+<pre><code> Design (1 seat)                    Repo (everyone)                   Apps
+ ───────────────                    ───────────────                   ────
+ Edit Figma ──► Release audit ──►   figma/*.raw.json refreshed  ──►   npm update / pull
+ (components,    (10 checks,        npm run build:all                 tokens.css, specs,
+  tokens, docs)   all green)        PR: &quot;Design system vX.Y.Z&quot;        components follow
+        ▲                                     │
+        └──── Figma comments / GitHub issues ◄┘  (devs ask questions where the work is)
+</code></pre>
+<h2>What view-only developers can and can&#39;t do in Figma</h2>
+<div class="ds-table"><table>
+<thead>
+<tr>
+<th>Can</th>
+<th>Can&#39;t (needs a paid seat)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Open every page and read the visual docs</td>
+<td>Dev Mode: code snippets, token names in Inspect</td>
+</tr>
+<tr>
+<td>Leave comments on any frame</td>
+<td>Code Connect</td>
+</tr>
+<tr>
+<td>See every state, size and theme side by side</td>
+<td>Edit or publish the library</td>
+</tr>
+</tbody></table></div>
+<p>This repo replaces the &quot;Can&#39;t&quot; column. Token names, code snippets and component APIs all live here.</p>
+<h2>Release steps (design lead)</h2>
+<ol>
+<li>Make the change in Figma. Update the component description: it becomes the spec.</li>
+<li>Ask Claude to run the release audit (Governance page → Release health). Fix anything red.</li>
+<li>Publish the library in Figma.</li>
+<li>Ask Claude to <strong>re-export the code kit</strong>. That refreshes <code>figma/variables.raw.json</code>, <code>figma/styles-components.raw.json</code> and <code>figma/icons.json</code>, runs <code>npm run build:all</code>, and opens a PR titled with the new version.</li>
+<li>Note the change in the Figma changelog and in the PR. Bump the version in <code>package.json</code>, following the versioning rules on the Governance page:<ul>
+<li><strong>Patch:</strong> fixes.</li>
+<li><strong>Minor:</strong> new components or tokens.</li>
+<li><strong>Major:</strong> renames or removals.</li>
+</ul>
+</li>
+</ol>
+<h2>Developers</h2>
+<ul>
+<li><strong>Tokens:</strong> pull the new version. Nothing to do unless a token was renamed, which is a major version with a migration note.</li>
+<li><strong>Components:</strong> the copies in your project are yours. Compare against <code>src/components/ui</code> when the changelog mentions a component you use.</li>
+<li><strong>Questions:</strong> comment on the Figma frame, or open a GitHub issue on this repo with the label <code>design-system</code>.</li>
+</ul>
+<h2>The docs site (GitHub Pages)</h2>
+<p>The site at <a href="https://dx-gamores.github.io/dx-design-system/">https://dx-gamores.github.io/dx-design-system/</a> mirrors the Figma file page for page. It is generated, not hand-written:</p>
+<div class="ds-table"><table>
+<thead>
+<tr>
+<th>On the site</th>
+<th>Comes from</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sidebar groups and order</td>
+<td>The Figma page list (<code>src/site/content.ts</code> → <code>nav</code>)</td>
+</tr>
+<tr>
+<td>Page eyebrow, summary, &quot;In the Figma page&quot; outline</td>
+<td><code>figma/pages.content.json</code> (exported from each page&#39;s header and section headers)</td>
+</tr>
+<tr>
+<td>Specs</td>
+<td><code>docs/components/*.md</code> (<code>npm run specs</code>, from component descriptions)</td>
+</tr>
+<tr>
+<td>Live examples</td>
+<td><code>src/site/demos.tsx</code> — real components from <code>src/components/ui</code></td>
+</tr>
+<tr>
+<td>&quot;Coded&quot; badges</td>
+<td><code>coded</code> in <code>src/site/content.ts</code> — add a spec slug when its component ships</td>
+</tr>
+</tbody></table></div>
+<p>To publish an update:</p>
+<pre><code class="language-bash">npm run build:pages          # static export to out/ (base path /dx-design-system)
+</code></pre>
+<p>Then commit the contents of <code>out/</code> to the <code>gh-pages</code> branch. Claude does this as part of &quot;re-export the code kit&quot;.</p>
+8:["$","$1","c",{"children":[[["$","header",null,{"className":"flex flex-col gap-3 border-b border-line-default pb-8","children":[["$","p",null,{"className":"text-label-small tracking-wide text-fg-brand uppercase","children":"Start here"}],["$","h1",null,{"className":"text-heading-h1","children":"Working with one seat"}],["$","p",null,{"className":"max-w-[68ch] text-body-large text-fg-secondary","children":"Only the design lead edits Figma. Everyone else builds from this site, the repo and view-only Figma links."}],["$","div",null,{"className":"flex flex-wrap items-center gap-2 pt-1","children":["$undefined",["$","a",null,{"href":"https://github.com/DX-Gamores/dx-design-system/blob/main/docs/WORKFLOW.md","className":"text-label-small text-fg-brand underline underline-offset-2 focus-visible:focus-ring","children":["View ","docs/WORKFLOW.md"," on GitHub"]}]]}]]}],["$","div",null,{"className":"ds-prose","dangerouslySetInnerHTML":{"__html":"$b"}}],"$Lc"],null,"$Ld"]}]
+9:["$","$1","h",{"children":[null,[["$","$Le",null,{"children":"$Lf"}],null],["$","$L10",null,{"children":["$","div",null,{"hidden":true,"children":["$","$11",null,{"fallback":null,"children":"$L12"}]}]}]]}]
+13:I[2619,["619","static/chunks/619-ba102abea3e3d0e4.js","409","static/chunks/409-5c3510d050179dda.js","102","static/chunks/app/(docs)/start/workflow/page-4bbdbedd58130799.js"],""]
+14:I[4431,[],"OutletBoundary"]
+16:I[5278,[],"AsyncMetadataOutlet"]
+c:["$","nav",null,{"aria-label":"Previous and next page","className":"flex flex-col gap-3 border-t border-line-default pt-8 sm:flex-row","children":[["$","$L13",null,{"href":"/start/changelog/","className":"flex flex-1 flex-col gap-1 rounded-container border border-line-default bg-surface p-4 hover:border-line-hover focus-visible:focus-ring","children":[["$","span",null,{"className":"text-caption-default text-fg-secondary","children":["← Previous · ","Start here"]}],["$","span",null,{"className":"text-label-large","children":"Changelog & roadmap"}]]}],["$","$L13",null,{"href":"/start/new-brand/","className":"flex flex-1 flex-col gap-1 rounded-container border border-line-default bg-surface p-4 hover:border-line-hover focus-visible:focus-ring sm:items-end sm:text-right","children":[["$","span",null,{"className":"text-caption-default text-fg-secondary","children":["Next · ","Start here"," →"]}],["$","span",null,{"className":"text-label-large","children":"Adding a brand"}]]}]]}]
+d:["$","$L14",null,{"children":["$L15",["$","$L16",null,{"promise":"$@17"}]]}]
+f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+15:null
+17:{"metadata":[["$","title","0",{"children":"Working with one seat · DX Design System"}],["$","meta","1",{"name":"description","content":"DXFORM's design system: tokens, components and guidelines, mirrored from the Figma library."}]],"error":null,"digest":"$undefined"}
+12:"$17:metadata"
