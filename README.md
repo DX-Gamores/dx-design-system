@@ -27,7 +27,7 @@ Use the brand / theme / density switches in the header. They flip the same varia
 ## Use it in another project
 
 ```bash
-npm i github:<org>/dx-design-system      # or copy the dist/ folder
+npm i github:DX-Gamores/dx-design-system      # or copy the dist/ folder
 ```
 
 ```css
