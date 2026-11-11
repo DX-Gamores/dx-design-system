@@ -1,0 +1,2637 @@
+{
+ "textStyles": [
+  {
+   "n": "Display/Large",
+   "f": "Inter",
+   "w": "Bold",
+   "s": 48,
+   "lh": 56,
+   "ls": -0.9599999785423279,
+   "lsu": "PIXELS",
+   "bv": {
+    "letterSpacing": "letter-spacing/5xl",
+    "fontSize": "font-size/5xl",
+    "fontStyle": "font-style/heading-bold",
+    "fontFamily": "font-family/heading",
+    "lineHeight": "line-height/5xl"
+   }
+  },
+  {
+   "n": "Heading/H1",
+   "f": "Inter",
+   "w": "Bold",
+   "s": 36,
+   "lh": 44,
+   "ls": -0.7200000286102295,
+   "lsu": "PIXELS",
+   "bv": {
+    "letterSpacing": "letter-spacing/4xl",
+    "fontSize": "font-size/4xl",
+    "fontStyle": "font-style/heading-bold",
+    "fontFamily": "font-family/heading",
+    "lineHeight": "line-height/4xl"
+   }
+  },
+  {
+   "n": "Heading/H2",
+   "f": "Inter",
+   "w": "Semi Bold",
+   "s": 30,
+   "lh": 36,
+   "ls": -0.44999998807907104,
+   "lsu": "PIXELS",
+   "bv": {
+    "letterSpacing": "letter-spacing/3xl",
+    "fontSize": "font-size/3xl",
+    "fontStyle": "font-style/heading-semibold",
+    "fontFamily": "font-family/heading",
+    "lineHeight": "line-height/3xl"
+   }
+  },
+  {
+   "n": "Heading/H3",
+   "f": "Inter",
+   "w": "Semi Bold",
+   "s": 24,
+   "lh": 32,
+   "ls": -0.23999999463558197,
+   "lsu": "PIXELS",
+   "bv": {
+    "letterSpacing": "letter-spacing/2xl",
+    "fontSize": "font-size/2xl",
+    "fontStyle": "font-style/heading-semibold",
+    "fontFamily": "font-family/heading",
+    "lineHeight": "line-height/2xl"
+   }
+  },
+  {
+   "n": "Heading/H4",
+   "f": "Inter",
+   "w": "Semi Bold",
+   "s": 20,
+   "lh": 28,
+   "ls": 0,
+   "lsu": "PIXELS",
+   "bv": {
+    "fontSize": "font-size/xl",
+    "fontStyle": "font-style/heading-semibold",
+    "fontFamily": "font-family/heading",
+    "lineHeight": "line-height/xl"
+   }
+  },
+  {
+   "n": "Body/Large",
+   "f": "Inter",
+   "w": "Regular",
+   "s": 18,
+   "lh": 28,
+   "ls": 0,
+   "lsu": "PIXELS",
+   "bv": {
+    "fontSize": "font-size/lg",
+    "fontStyle": "font-style/body-regular",
+    "fontFamily": "font-family/body",
+    "lineHeight": "line-height/lg"
+   }
+  },
+  {
+   "n": "Body/Medium",
+   "f": "Inter",
+   "w": "Regular",
+   "s": 16,
+   "lh": 24,
+   "ls": 0,
+   "lsu": "PIXELS",
+   "bv": {
+    "fontSize": "font-size/md",
+    "fontStyle": "font-style/body-regular",
+    "fontFamily": "font-family/body",
+    "lineHeight": "line-height/md"
+   }
+  },
+  {
+   "n": "Body/Small",
+   "f": "Inter",
+   "w": "Regular",
+   "s": 14,
+   "lh": 20,
+   "ls": 0,
+   "lsu": "PIXELS",
+   "bv": {
+    "fontSize": "font-size/sm",
+    "fontStyle": "font-style/body-regular",
+    "fontFamily": "font-family/body",
+    "lineHeight": "line-height/sm"
+   }
+  },
+  {
+   "n": "Label/Large",
+   "f": "Inter",
+   "w": "Medium",
+   "s": 16,
+   "lh": 24,
+   "ls": 0,
+   "lsu": "PIXELS",
+   "bv": {
+    "fontSize": "font-size/md",
+    "fontStyle": "font-style/body-medium",
+    "fontFamily": "font-family/body",
+    "lineHeight": "line-height/md"
+   }
+  },
+  {
+   "n": "Label/Medium",
+   "f": "Inter",
+   "w": "Medium",
+   "s": 14,
+   "lh": 20,
+   "ls": 0,
+   "lsu": "PIXELS",
+   "bv": {
+    "fontSize": "font-size/sm",
+    "fontStyle": "font-style/body-medium",
+    "fontFamily": "font-family/body",
+    "lineHeight": "line-height/sm"
+   }
+  },
+  {
+   "n": "Label/Small",
+   "f": "Inter",
+   "w": "Medium",
+   "s": 12,
+   "lh": 16,
+   "ls": 0,
+   "lsu": "PIXELS",
+   "bv": {
+    "fontSize": "font-size/xs",
+    "fontStyle": "font-style/body-medium",
+    "fontFamily": "font-family/body",
+    "lineHeight": "line-height/xs"
+   }
+  },
+  {
+   "n": "Caption/Default",
+   "f": "Inter",
+   "w": "Regular",
+   "s": 12,
+   "lh": 16,
+   "ls": 0,
+   "lsu": "PIXELS",
+   "bv": {
+    "fontSize": "font-size/xs",
+    "fontStyle": "font-style/body-regular",
+    "fontFamily": "font-family/body",
+    "lineHeight": "line-height/xs"
+   }
+  },
+  {
+   "n": "Code/Medium",
+   "f": "Roboto Mono",
+   "w": "Regular",
+   "s": 14,
+   "lh": 20,
+   "ls": 0,
+   "lsu": "PERCENT",
+   "bv": {
+    "fontSize": "font-size/sm",
+    "fontStyle": "font-style/mono-regular",
+    "fontFamily": "font-family/mono",
+    "lineHeight": "line-height/sm"
+   }
+  },
+  {
+   "n": "Code/Small",
+   "f": "Roboto Mono",
+   "w": "Regular",
+   "s": 12,
+   "lh": 16,
+   "ls": 0,
+   "lsu": "PERCENT",
+   "bv": {
+    "fontSize": "font-size/xs",
+    "fontStyle": "font-style/mono-regular",
+    "fontFamily": "font-family/mono",
+    "lineHeight": "line-height/xs"
+   }
+  },
+  {
+   "n": "Display/XLarge",
+   "f": "Inter",
+   "w": "Bold",
+   "s": 60,
+   "lh": 68,
+   "ls": -1.5,
+   "lsu": "PIXELS",
+   "bv": {
+    "letterSpacing": "letter-spacing/6xl",
+    "fontSize": "font-size/6xl",
+    "fontStyle": "font-style/heading-bold",
+    "fontFamily": "font-family/heading",
+    "lineHeight": "line-height/6xl"
+   }
+  },
+  {
+   "n": "Display/2XLarge",
+   "f": "Inter",
+   "w": "Bold",
+   "s": 72,
+   "lh": 80,
+   "ls": -1.7999999523162842,
+   "lsu": "PIXELS",
+   "bv": {
+    "letterSpacing": "letter-spacing/7xl",
+    "fontSize": "font-size/7xl",
+    "fontStyle": "font-style/heading-bold",
+    "fontFamily": "font-family/heading",
+    "lineHeight": "line-height/7xl"
+   }
+  }
+ ],
+ "effectStyles": [
+  {
+   "n": "Elevation/1",
+   "e": [
+    {
+     "t": "DROP_SHADOW",
+     "x": 0,
+     "y": 1,
+     "r": 2,
+     "sp": 0,
+     "c": "color/shadow/ambient"
+    },
+    {
+     "t": "DROP_SHADOW",
+     "x": 0,
+     "y": 1,
+     "r": 3,
+     "sp": 0,
+     "c": "color/shadow/key"
+    }
+   ]
+  },
+  {
+   "n": "Elevation/2",
+   "e": [
+    {
+     "t": "DROP_SHADOW",
+     "x": 0,
+     "y": 2,
+     "r": 4,
+     "sp": -1,
+     "c": "color/shadow/ambient"
+    },
+    {
+     "t": "DROP_SHADOW",
+     "x": 0,
+     "y": 4,
+     "r": 8,
+     "sp": -2,
+     "c": "color/shadow/key"
+    }
+   ]
+  },
+  {
+   "n": "Elevation/3",
+   "e": [
+    {
+     "t": "DROP_SHADOW",
+     "x": 0,
+     "y": 4,
+     "r": 6,
+     "sp": -2,
+     "c": "color/shadow/ambient"
+    },
+    {
+     "t": "DROP_SHADOW",
+     "x": 0,
+     "y": 12,
+     "r": 24,
+     "sp": -4,
+     "c": "color/shadow/key-strong"
+    }
+   ]
+  },
+  {
+   "n": "Focus/Ring",
+   "e": [
+    {
+     "t": "DROP_SHADOW",
+     "x": 0,
+     "y": 0,
+     "r": 0,
+     "sp": 4,
+     "c": "color/border/focus"
+    },
+    {
+     "t": "DROP_SHADOW",
+     "x": 0,
+     "y": 0,
+     "r": 0,
+     "sp": 2,
+     "c": "color/bg/surface"
+    }
+   ]
+  }
+ ],
+ "icons": [
+  "Check",
+  "Close",
+  "Plus",
+  "Minus",
+  "Chevron Down",
+  "Chevron Up",
+  "Chevron Left",
+  "Chevron Right",
+  "Arrow Left",
+  "Arrow Right",
+  "Search",
+  "Menu",
+  "More",
+  "Info",
+  "Alert Circle",
+  "Alert Triangle",
+  "Check Circle",
+  "Eye",
+  "Eye Off",
+  "User",
+  "Bell",
+  "Mail",
+  "Calendar",
+  "Trash",
+  "Edit",
+  "External Link",
+  "Lock",
+  "Home",
+  "Settings",
+  "Dashboard",
+  "Folder",
+  "Chart",
+  "Filter",
+  "Sort",
+  "Sign Out",
+  "X Circle",
+  "Help Circle",
+  "Upload",
+  "Download",
+  "Copy",
+  "Link",
+  "Refresh",
+  "Clock",
+  "Star",
+  "Share",
+  "File",
+  "Image",
+  "Attachment",
+  "Send",
+  "Globe",
+  "Phone",
+  "Map Pin",
+  "Grid View",
+  "List View",
+  "Drag Handle",
+  "Arrow Up",
+  "Arrow Down",
+  "Sun",
+  "Moon",
+  "Plus Circle",
+  "Bookmark",
+  "Heart",
+  "Cart",
+  "Credit Card",
+  "Print",
+  "Save",
+  "Undo",
+  "Redo",
+  "Sign In"
+ ],
+ "components": [
+  {
+   "n": "Button",
+   "page": "Button",
+   "d": "Button \u2014 triggers an action.\nWHEN: Primary = the single main action in a view. Secondary = supporting actions (Cancel, Back). Ghost = low-emphasis, toolbar or inline actions. Tone=Danger = destructive or irreversible actions (Delete, Remove, Revoke), ideally confirmed in a dialog; never the default focused action.\nPROPERTIES: Variant (Primary | Secondary | Ghost) \u00b7 Tone (Default | Danger) \u00b7 State (Default | Hover | Pressed | Focus | Disabled) \u00b7 Size (Large 48 | Medium 40 | Small 32) \u00b7 Label \u00b7 Show/Leading icon \u00b7 Show/Trailing icon.\nTOKENS: button/* component tokens (primary, secondary, ghost, danger); button/radius \u2192 shape/radius-control.\nCODE (@core-ds/react): <Button variant=\"primary|secondary|ghost\" tone=\"default|danger\" size=\"lg|md|sm\" />. v3.0 replaces the deprecated Button Danger.",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Button"
+    ],
+    [
+     "Show leading icon",
+     "B",
+     false
+    ],
+    [
+     "Leading icon",
+     "I",
+     ""
+    ],
+    [
+     "Show trailing icon",
+     "B",
+     false
+    ],
+    [
+     "Trailing icon",
+     "I",
+     ""
+    ],
+    [
+     "Variant",
+     "V",
+     [
+      "Primary",
+      "Secondary",
+      "Ghost"
+     ]
+    ],
+    [
+     "Tone",
+     "V",
+     [
+      "Default",
+      "Danger"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus",
+      "Disabled",
+      "Pressed"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small",
+      "Large"
+     ]
+    ]
+   ],
+   "vc": 90
+  },
+  {
+   "n": "Icon Button",
+   "page": "Button",
+   "d": "Icon Button \u2014 a square button with only an icon (row actions, toolbars, close, overflow menus).\nWHEN: The icon is universally understood (More, Close, Edit, Trash) and space is tight, e.g. per-row actions in lists. If the action needs words to be clear \u2192 Button with a label.\nPROPERTIES: Variant (Primary | Secondary | Ghost) \u00b7 Tone (Default | Danger) \u00b7 State (Default | Hover | Pressed | Focus | Disabled) \u00b7 Size (Large 48 | Medium 40 | Small 32) \u00b7 Icon \u00b7 Accessible label.\nA11Y: Always set Accessible label to the action (\"More actions for Jane Cooper\"). Pair with a tooltip (v0.5). Target \u226524px in Compact.\nTOKENS: same as Button; square size/control-*; icon size/icon-md (Medium) / size/icon-sm (Small).\nCODE (@core-ds/react): <IconButton icon=\"more\" label=\"More actions for Jane Cooper\" variant=\"ghost|secondary|primary\" size=\"md|sm\" />",
+   "props": [
+    [
+     "Icon",
+     "I",
+     ""
+    ],
+    [
+     "Accessible label",
+     "T",
+     "More actions"
+    ],
+    [
+     "Variant",
+     "V",
+     [
+      "Primary",
+      "Secondary",
+      "Ghost"
+     ]
+    ],
+    [
+     "Tone",
+     "V",
+     [
+      "Default",
+      "Danger"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus",
+      "Disabled",
+      "Pressed"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small",
+      "Large"
+     ]
+    ]
+   ],
+   "vc": 90
+  },
+  {
+   "n": "Link",
+   "page": "Link",
+   "d": "Link \u2014 navigates to another page or resource. Always underlined so it is identifiable without color.\nWHEN: Navigation, inline references, \"Learn more\". Actions that change data \u2192 Button (Ghost if low emphasis).\nPROPERTIES: State (Default | Hover | Focus) \u00b7 Size (Medium = Body/Medium, Small = Body/Small) \u00b7 Label \u00b7 Show trailing icon \u00b7 Trailing icon (default External Link for links that leave the product).\nA11Y: Link text must make sense out of context (not \"click here\"). External links: show the icon and announce \"opens in new tab\" if applicable. Focus: 2px border/focus outline.\nTOKENS: text/brand, text/brand-hover, border/focus, size/icon-sm, spacing/1.\nCODE (@core-ds/react): <Link href=\"\u2026\" size=\"md|sm\" external>View billing history</Link>",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Link text"
+    ],
+    [
+     "Show trailing icon",
+     "B",
+     false
+    ],
+    [
+     "Trailing icon",
+     "I",
+     ""
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 6
+  },
+  {
+   "n": "Text Field",
+   "page": "Text Field",
+   "d": "Text Field \u2014 single-line text input with label and helper text.\nWHEN: Short free-text entry (name, email, search query). For long text use a Textarea (v0.4); for choosing from options use Select (v0.4).\nPROPERTIES: State (Default | Hover | Focus | Error | Disabled | Read-only) \u00b7 Filled (False | True) \u00b7 Label, Value, Helper text (text) \u00b7 Show label, Show helper (boolean).\nRULES: Always show a visible label \u2014 placeholder is never the label. In Error, replace helper text with how to fix it. Default width 320; stretch (fill) inside forms.\nA11Y: In Disabled, the helper stays text/secondary so the reason it is disabled stays readable (v0.8 code audit). Border/strong meets 3:1. Error is communicated by text, not only color. Label is programmatically linked to the input.\nTOKENS: bg/surface, border/strong|focus|danger|disabled, text/placeholder, radius/md, size/control-md, spacing/2-3.\nCODE (@core-ds/react): <TextField label=\"Email\" placeholder=\"\u2026\" helperText=\"\u2026\" error=\"\u2026\" leadingIcon=\"search\" hideLabel disabled /> Size (Medium 40 | Small 32).\nDates \u2192 Date Field + Calendar (Date Picker); keep plain Text Fields for far-away dates people type, like birthdays.",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Label"
+    ],
+    [
+     "Value",
+     "T",
+     "Placeholder"
+    ],
+    [
+     "Helper text",
+     "T",
+     "Helper text"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Show helper",
+     "B",
+     true
+    ],
+    [
+     "Show leading icon",
+     "B",
+     false
+    ],
+    [
+     "Leading icon",
+     "I",
+     ""
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Focus",
+      "Error",
+      "Disabled",
+      "Hover",
+      "Read-only"
+     ]
+    ],
+    [
+     "Filled",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 24
+  },
+  {
+   "n": "Select",
+   "page": "Select",
+   "d": "Select \u2014 choose one option from a list (select-only combobox; no typing to filter).\nWHEN: 5\u201315 mutually exclusive options. Fewer than 5 \u2192 Radio. Needs search/filter \u2192 Combobox. Multiple choices \u2192 Checkbox list.\nPROPERTIES: State (Default | Hover | Focus | Error | Disabled | Read-only) \u00b7 Filled (False | True) \u00b7 Label, Value, Helper text \u00b7 Show label, Show helper, Show leading icon \u00b7 Leading icon (swap). Open state = field in Focus + \"Select Menu\" below it.\nA11Y: In Disabled, the helper stays text/secondary so the reason it is disabled stays readable (v0.8 code audit). role=combobox + listbox. Enter/Space/\u2193 opens; \u2191\u2193 move; Enter selects; Esc closes; typing jumps to matching option. Label always visible.\nTOKENS: same as Text Field + chevron in color/icon/primary.\nCODE (@core-ds/react): <Select label=\"Time zone\" placeholder=\"\u2026\" options={[{ value, label }]} error=\"\u2026\" /> (native <select>) Size (Medium 40 | Small 32).",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Label"
+    ],
+    [
+     "Value",
+     "T",
+     "Select an option"
+    ],
+    [
+     "Helper text",
+     "T",
+     "Helper text"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Show helper",
+     "B",
+     true
+    ],
+    [
+     "Show leading icon",
+     "B",
+     false
+    ],
+    [
+     "Leading icon",
+     "I",
+     ""
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Focus",
+      "Error",
+      "Disabled",
+      "Hover",
+      "Read-only"
+     ]
+    ],
+    [
+     "Filled",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 24
+  },
+  {
+   "n": "Select Option",
+   "page": "Select",
+   "d": "Select Option \u2014 one row inside a Select Menu (listbox option). States: Default, Hover, Selected (brand-subtle + check), Disabled. Reused later by Menu (v0.5).",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Option"
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Selected",
+      "Disabled",
+      "Focus"
+     ]
+    ]
+   ],
+   "vc": 5
+  },
+  {
+   "n": "Select Menu",
+   "page": "Select",
+   "d": "Select Menu \u2014 the open listbox shown under a focused Select (4px gap). Elevation/2, radius/md. Override option labels and states on the nested Select Option instances; add or remove rows as needed.",
+   "props": [],
+   "vc": 1
+  },
+  {
+   "n": "Combobox",
+   "page": "Combobox",
+   "d": "Combobox \u2014 a text field you can type into to filter a list, then pick one option (ARIA 1.2 combobox, list autocomplete).\nWHEN: long or searchable lists (people, places, projects, 15+ options). 5\u201315 fixed options \u2192 Select. Fewer than 5 \u2192 Radio. Free text with no list \u2192 Text Field. Global search \u2192 Search Field.\nPROPERTIES: State (Default | Focus | Error | Disabled | Hover | Read-only) \u00b7 Filled (False | True) \u00b7 Size (Medium 40 | Small 32) \u00b7 Label, Value, Helper text \u00b7 Show label, Show helper, Show leading icon \u00b7 Leading icon (swap). Focus shows the caret; Filled shows the clear (\u00d7) button. Open state = field in Focus + \"Combobox Menu\" 4px below.\nA11Y: role=combobox, aria-expanded, aria-controls \u2192 listbox, aria-activedescendant for the highlighted option, aria-autocomplete=list. Typing filters; \u2193/\u2191 move; Enter selects; Esc closes then clears; Tab selects nothing and leaves. Announce result count via a polite live region.\nTOKENS: same as Select + caret in bg/brand, clear in icon/secondary.\nCODE (@core-ds/react): <Combobox label=\"Assignee\" options={people} onInputChange={search} loading={isLoading} onCreate={addPerson} />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Assignee"
+    ],
+    [
+     "Value",
+     "T",
+     "Search people\u2026"
+    ],
+    [
+     "Helper text",
+     "T",
+     "Type a name or email"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Show helper",
+     "B",
+     true
+    ],
+    [
+     "Show leading icon",
+     "B",
+     true
+    ],
+    [
+     "Leading icon",
+     "I",
+     ""
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Focus",
+      "Error",
+      "Disabled",
+      "Hover",
+      "Read-only"
+     ]
+    ],
+    [
+     "Filled",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 24
+  },
+  {
+   "n": "Combobox Option",
+   "page": "Combobox",
+   "d": "Combobox Option \u2014 one row in the Combobox Menu. Same states as Select Option; Active = the option highlighted with the arrow keys (aria-activedescendant) \u2014 DOM focus stays in the input, so it gets a background + 2px brand bar, not a focus ring, Selected = the committed value (check).\nOptional leading icon (swap) and a second line (Description) for people, places and records. Bold the characters that match the query using the Label text style.",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Option"
+    ],
+    [
+     "Show leading icon",
+     "B",
+     false
+    ],
+    [
+     "Leading icon",
+     "I",
+     ""
+    ],
+    [
+     "Show description",
+     "B",
+     false
+    ],
+    [
+     "Description",
+     "T",
+     "Secondary detail"
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Selected",
+      "Disabled",
+      "Active"
+     ]
+    ]
+   ],
+   "vc": 5
+  },
+  {
+   "n": "Combobox Menu",
+   "page": "Combobox",
+   "d": "Combobox Menu \u2014 the listbox that opens 4px under a focused Combobox. Content: Results (matches bolded; Focus = highlighted with arrow keys) \u00b7 Recent (empty query) \u00b7 Loading (async search, show after 300ms) \u00b7 No results (say what was typed + what to try) \u00b7 Create (offer to add the typed value). Show keyboard hint for first-run or power-user surfaces. Max height 320 then scroll; width = field width.",
+   "props": [
+    [
+     "Show keyboard hint",
+     "B",
+     false
+    ],
+    [
+     "Content",
+     "V",
+     [
+      "Results",
+      "Recent",
+      "Loading",
+      "No results",
+      "Create"
+     ]
+    ]
+   ],
+   "vc": 5
+  },
+  {
+   "n": "Date Field",
+   "page": "Date Picker",
+   "d": "Date Field \u2014 type a date or open the Calendar from the calendar button. Pair with Calendar (popover, 4px below) to make a Date Picker.\nWHEN: a specific day near today, where weekday context helps (due dates, bookings, report ranges). Birthdays and other far-away known dates \u2192 let people type (Date Field without the calendar, or three Text Fields). Relative periods (Last 7 days) \u2192 Segmented Control or Select presets.\nPROPERTIES: State (Default | Focus | Error | Disabled | Hover | Read-only) \u00b7 Filled (False | True) \u00b7 Size (Medium 40 | Small 32) \u00b7 Label, Value, Helper text \u00b7 Show label, Show helper, Show leading icon \u00b7 Leading icon (swap). Range: same field, Value \"Nov 16 \u2013 Nov 21, 2026\", placeholder \"Start \u2013 end date\".\nFORMAT: always show the format in the helper (mm/dd/yyyy) and accept typing; parse loosely (11/18, Nov 18), display unambiguously (Nov 18, 2026).\nA11Y: input stays typeable; the calendar button is a separate button with aria-label \"Choose date, selected Nov 18, 2026\" and opens a dialog. Errors explain the rule (\"Pick a date after today\").\nTOKENS: same as Select; calendar icon in icon/secondary.\nCODE (@core-ds/react): <DatePicker label=\"Due date\" value={date} onChange={setDate} min={today} />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Due date"
+    ],
+    [
+     "Value",
+     "T",
+     "mm/dd/yyyy"
+    ],
+    [
+     "Helper text",
+     "T",
+     "mm/dd/yyyy"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Show helper",
+     "B",
+     true
+    ],
+    [
+     "Show leading icon",
+     "B",
+     false
+    ],
+    [
+     "Leading icon",
+     "I",
+     ""
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Focus",
+      "Error",
+      "Disabled",
+      "Hover",
+      "Read-only"
+     ]
+    ],
+    [
+     "Filled",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 24
+  },
+  {
+   "n": "Calendar Day",
+   "page": "Date Picker",
+   "d": "Calendar Day \u2014 one cell of the Calendar grid (40\u00d740 hit area, 32px circle).\nSTATES: Default \u00b7 Hover \u00b7 Focus (keyboard, Focus/Ring) \u00b7 Today (brand ring + brand text, aria-current=\"date\") \u00b7 Selected (bg/brand) \u00b7 Range start / In range / Range end (bg/brand-subtle band) \u00b7 Outside month (text/secondary, still selectable) \u00b7 Disabled (text/disabled + a drawn strike line \u2014 not colour alone; aria-disabled).\nDay = the number. Use inside Calendar; don't place on its own.",
+   "props": [
+    [
+     "Day",
+     "T",
+     "18"
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus",
+      "Today",
+      "Selected",
+      "Range start",
+      "In range",
+      "Range end",
+      "Outside month",
+      "Disabled"
+     ]
+    ]
+   ],
+   "vc": 10
+  },
+  {
+   "n": "Calendar",
+   "page": "Date Picker",
+   "d": "Calendar \u2014 month grid that opens in a popover under Date Field (Date Picker), or sits inline on booking pages.\nMode: Single (Clear \u00b7 Today footer) | Range (summary \u00b7 Cancel \u00b7 Apply footer). Month = header text. Show footer off for inline calendars that apply on click.\nGRID: 7 columns \u00d7 6 rows always (height never jumps). Week starts Sunday (en-PH, en-US); start Monday for locales that do. Outside-month days stay selectable. Override a day with the Day property on any cell.\nA11Y (WAI-ARIA APG Date Picker Dialog): role=\"dialog\" aria-modal + aria-label \"Choose date\"; grid role=\"grid\"; selected aria-selected; today aria-current=\"date\". \u2190\u2192 day \u00b7 \u2191\u2193 week \u00b7 Home/End start/end of week \u00b7 PageUp/PageDown month \u00b7 Shift+PageUp/PageDown year \u00b7 Enter/Space select \u00b7 Esc closes and returns focus to the calendar button.\nTOKENS: bg/surface-raised \u00b7 border/default \u00b7 Elevation/2 \u00b7 radius/lg \u00b7 bg/brand (selected) \u00b7 bg/brand-subtle (range) \u00b7 text/brand (today) \u00b7 text/disabled + strikethrough.",
+   "props": [
+    [
+     "Month",
+     "T",
+     "November 2026"
+    ],
+    [
+     "Show footer",
+     "B",
+     true
+    ],
+    [
+     "Mode",
+     "V",
+     [
+      "Single",
+      "Range"
+     ]
+    ]
+   ],
+   "vc": 2
+  },
+  {
+   "n": "Textarea",
+   "page": "Textarea",
+   "d": "Textarea \u2014 multi-line free text (comments, descriptions, feedback).\nWHEN: Answers longer than one line. Single-line values \u2192 Text Field.\nPROPERTIES: State (Default | Hover | Focus | Error | Disabled | Read-only) \u00b7 Filled (False | True) \u00b7 Label, Value, Helper text, Counter \u00b7 Show label, Show helper, Show counter. The field grows with content from a minimum height (size/textarea-min).\nA11Y: In Disabled, the helper stays text/secondary so the reason it is disabled stays readable (v0.8 code audit). Visible label; helper/error and counter linked via aria-describedby; announce the limit, not every keystroke.\nTOKENS: same as Text Field + size/textarea-min, spacing/2 vertical padding.\nCODE (@core-ds/react): <Textarea label=\"Bio\" showCounter maxLength={160} helperText=\"\u2026\" error=\"\u2026\" />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Label"
+    ],
+    [
+     "Value",
+     "T",
+     "Describe the issue\u2026"
+    ],
+    [
+     "Helper text",
+     "T",
+     "Helper text"
+    ],
+    [
+     "Counter",
+     "T",
+     "0 / 500"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Show helper",
+     "B",
+     true
+    ],
+    [
+     "Show counter",
+     "B",
+     true
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Focus",
+      "Error",
+      "Disabled",
+      "Hover",
+      "Read-only"
+     ]
+    ],
+    [
+     "Filled",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ]
+   ],
+   "vc": 12
+  },
+  {
+   "n": "Search Field",
+   "page": "Search Field",
+   "d": "Search Field \u2014 single-line search with a search icon and clear button.\nWHEN: header search, table toolbars, list filters. For picking one value from a long list use Combobox.\nPROPERTIES: State (Default | Hover | Focus | Disabled) \u00b7 Filled (False | True \u2014 shows the clear button) \u00b7 Size (Medium 40 | Small 32) \u00b7 Value.\nTOKENS: field/bg, field/border, field/radius \u2192 shape/radius-control, border/hover, border/focus, icon/secondary.\nA11Y: role=\"searchbox\", label \"Search <thing>\", clear button label \"Clear search\".\nCODE (@core-ds/react): <SearchField size=\"md|sm\" onClear={\u2026} />",
+   "props": [
+    [
+     "Value",
+     "T",
+     "Search"
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus",
+      "Disabled"
+     ]
+    ],
+    [
+     "Filled",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 16
+  },
+  {
+   "n": "Checkbox",
+   "page": "Checkbox",
+   "d": "Checkbox \u2014 select zero, one or many independent options.\nWHEN: Multiple selection or a single opt-in applied on submit. Use Radio (v0.4) for mutually exclusive choices and Toggle (v0.4) for instant on/off settings.\nPROPERTIES: Checked (False | True | Indeterminate) \u00b7 State (Default | Hover | Focus | Error | Disabled) \u00b7 Label (text) \u00b7 Show label (boolean).\nRULES: Indeterminate only for a parent whose children are partially selected. Whole row is the click target.\nA11Y: Unchecked border \u22653:1. State shown by icon, not color alone. Space toggles.\nTOKENS: bg/surface, bg/brand, border/strong, icon/on-color, radius/sm, size/icon-md.\nCODE (@core-ds/react): <Checkbox label=\"Email\" defaultChecked | indeterminate | disabled />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Checkbox label"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Checked",
+     "V",
+     [
+      "False",
+      "True",
+      "Indeterminate"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Focus",
+      "Disabled",
+      "Hover",
+      "Error"
+     ]
+    ]
+   ],
+   "vc": 15
+  },
+  {
+   "n": "Radio",
+   "page": "Radio",
+   "d": "Radio \u2014 pick exactly one option from a small, visible set (2\u20135). Always used in a group with a visible group label.\nWHEN: Mutually exclusive choices that benefit from being seen at once. More than ~5 options \u2192 Select. Independent choices \u2192 Checkbox. Instant on/off \u2192 Toggle.\nPROPERTIES: Checked (False | True) \u00b7 State (Default | Hover | Focus | Error | Disabled) \u00b7 Label \u00b7 Show label.\nA11Y: radiogroup with an accessible name. Tab enters the group on the selected radio; arrow keys move focus and select; Space selects. State shown by the dot, not color alone.\nTOKENS: bg/surface, bg/brand, border/strong, icon/on-color, radius/full, size/icon-md, gap/inline.\nCODE (@core-ds/react): <RadioGroup label=\"Billing cycle\" name=\"cycle\" options={[\u2026]} defaultValue=\"m\" />  \u00b7  single: <Radio label=\"\u2026\" />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Radio label"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Checked",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Focus",
+      "Disabled",
+      "Hover",
+      "Error"
+     ]
+    ]
+   ],
+   "vc": 10
+  },
+  {
+   "n": "Toggle",
+   "page": "Toggle",
+   "d": "Toggle \u2014 switch a single setting on or off with immediate effect (role=switch).\nWHEN: Settings that apply instantly (e.g. \"Email notifications\"). If the change only applies on Save/Submit \u2192 Checkbox. Choosing between options \u2192 Radio.\nPROPERTIES: Checked (False | True) \u00b7 State (Default | Focus | Disabled) \u00b7 Label \u00b7 Show label.\nA11Y: role=switch with aria-checked; Space toggles (Enter optional). The label describes the setting, not the state (\"Wi-Fi\", not \"Turn Wi-Fi on\"). Off track uses color/bg/control-off (\u22653:1 against surface).\nTOKENS: bg/control-off, bg/brand, icon/on-color, size/toggle-width/height (density-aware), radius/full.\nCODE (@core-ds/react): <Toggle label=\"Email notifications\" defaultChecked onChange={(on) => \u2026} />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Toggle label"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Checked",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Focus",
+      "Disabled"
+     ]
+    ]
+   ],
+   "vc": 6
+  },
+  {
+   "n": "Slider",
+   "page": "Slider",
+   "d": "Slider \u2014 pick a value (Single) or a range (Range) on a continuous scale where the exact number matters less than the position: volume, price filters, zoom.\nWHEN: approximate values within known bounds. Exact numbers \u2192 Text Field (number) \u2014 or turn on Show input. Few discrete choices \u2192 Segmented Control / Radio.\nPROPERTIES: Type (Single | Range) \u00b7 State (Default | Disabled) \u00b7 Label \u00b7 Value (formatted, e.g. \"\u20b12,000 \u2013 \u20b18,000\") \u00b7 Show header \u00b7 Show min/max \u00b7 Show input (numeric fields synced with the thumbs). Thumbs are exposed: set Hover/Focus/Pressed from the parent. Move a thumb by nudging its x; the fill is a separate layer.\nA11Y: each thumb role=\"slider\" with aria-valuemin/max/now + aria-valuetext (\"\u20b12,000\"); Range thumbs get aria-label \"Minimum price\" / \"Maximum price\". \u2190\u2193 \u22121 step, \u2192\u2191 +1, PgUp/PgDn \u00b110%, Home/End min/max. WCAG 2.5.7: dragging is never required \u2014 click the track or type in the input. Thumb hit area 40px.\nTOKENS: rail bg/control-off \u00b7 fill bg/brand \u00b7 thumb bg/surface + 2px bg/brand \u00b7 disabled bg/disabled + icon/disabled.\nCODE (@core-ds/react): <Slider label=\"Volume\" value={v} onChange={setV} min={0} max={100} /> \u00b7 <RangeSlider label=\"Price\" value={[2000, 8000]} min={0} max={10000} step={500} format={peso} showInputs />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Label"
+    ],
+    [
+     "Value",
+     "T",
+     "Value"
+    ],
+    [
+     "Show header",
+     "B",
+     true
+    ],
+    [
+     "Show min/max",
+     "B",
+     true
+    ],
+    [
+     "Show input",
+     "B",
+     false
+    ],
+    [
+     "Type",
+     "V",
+     [
+      "Single",
+      "Range"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Disabled"
+     ]
+    ]
+   ],
+   "vc": 4
+  },
+  {
+   "n": "Slider Thumb",
+   "page": "Slider",
+   "d": "Slider Thumb \u2014 the handle. 20px visual, 40px hit area in code.\nSTATES: Default \u00b7 Hover (Elevation/1) \u00b7 Focus (Focus/Ring) \u00b7 Pressed (6px bg/brand-subtle halo while dragging) \u00b7 Disabled. Use inside Slider.",
+   "props": [
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus",
+      "Pressed",
+      "Disabled"
+     ]
+    ]
+   ],
+   "vc": 5
+  },
+  {
+   "n": "Chip",
+   "page": "Chip",
+   "d": "Chip \u2014 compact selectable token for filters and tags.\nWHEN: filter bars, multi-select choices, removable tags. Not for actions (use Button) or status (use Badge).\nPROPERTIES: Selected (False | True) \u00b7 State (Default | Hover | Focus | Disabled) \u00b7 Label \u00b7 Removable.\nTOKENS: bg/surface, bg/selected, border/strong, border/selected, text/brand; radius/full; size/control-sm.\nCODE (@core-ds/react): <Chip selected onRemove={\u2026}>Label</Chip>",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Chip label"
+    ],
+    [
+     "Removable",
+     "B",
+     false
+    ],
+    [
+     "Selected",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus",
+      "Disabled"
+     ]
+    ]
+   ],
+   "vc": 8
+  },
+  {
+   "n": "File Upload",
+   "page": "File Upload",
+   "d": "File Upload \u2014 drop zone for attaching files.\nWHEN: forms that need documents or images. State the accepted types and size limit in Helper text. List uploads below with Progress Bar + a remove Icon Button.\nPROPERTIES: State (Default | Hover | Dragging | Error | Disabled) \u00b7 Helper text.\nTOKENS: border/strong (dashed), border/focus while dragging, bg/selected, bg/danger-subtle + text/danger for errors, shape/radius-container.\nA11Y: the whole zone is a labelled button that opens the file picker; announce upload progress and errors.\nCODE (@core-ds/react): <FileUpload accept=\".pdf,.png,.jpg\" maxSize=\"10MB\" onFiles={\u2026} />",
+   "props": [
+    [
+     "Helper text",
+     "T",
+     "PDF, PNG or JPG, up to 10 MB"
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Dragging",
+      "Error",
+      "Disabled"
+     ]
+    ]
+   ],
+   "vc": 5
+  },
+  {
+   "n": "Alert",
+   "page": "Alert",
+   "d": "Alert \u2014 an inline, persistent message about the page or a section (also called banner or callout).\nWHEN: Information the user must notice and may need to act on: errors that block progress, warnings, important status. Stays until resolved or dismissed. Brief confirmation of an action \u2192 Toast. Field-level errors \u2192 the field's Error state.\nPROPERTIES: Tone (Info | Success | Warning | Danger) \u00b7 Title, Description \u00b7 Show title, Show action (nested Link, exposed), Show close (Icon Button \"Close\").\nA11Y: Static alerts are plain content. If inserted dynamically: Danger uses role=alert (assertive); others role=status (polite). The icon is decorative \u2014 the title carries the meaning. Never rely on tone color alone.\nTOKENS: bg/{brand,success,warning,danger}-subtle, matching text/* for the icon, text/primary + text/secondary, padding/row, radius/md.\nCODE (@core-ds/react): <Alert tone=\"info|success|warning|danger\" title=\"\u2026\" action={<Link \u2026/>} onDismiss={\u2026} live>Description</Alert>",
+   "props": [
+    [
+     "Title",
+     "T",
+     "Title"
+    ],
+    [
+     "Description",
+     "T",
+     "Short explanation of what happened and what to do next."
+    ],
+    [
+     "Show title",
+     "B",
+     true
+    ],
+    [
+     "Show action",
+     "B",
+     false
+    ],
+    [
+     "Show close",
+     "B",
+     false
+    ],
+    [
+     "Tone",
+     "V",
+     [
+      "Info",
+      "Success",
+      "Warning",
+      "Danger"
+     ]
+    ]
+   ],
+   "vc": 4
+  },
+  {
+   "n": "Toast",
+   "page": "Toast",
+   "d": "Toast \u2014 a brief, non-blocking confirmation that appears in a corner (bottom-right or bottom-center) and goes away.\nWHEN: Confirming an action the user just took (\"Invitation sent\", \"Link copied\"), optionally with Undo. Anything the user must notice or act on \u2192 Alert or Dialog.\nPROPERTIES: Tone (Neutral | Success | Danger | Warning | Info) \u00b7 Message \u00b7 Show action (nested Ghost Button, exposed, e.g. \"Undo\") \u00b7 Show close.\nBEHAVIOUR: Auto-dismiss after \u22655 s; hover or focus pauses the timer (WCAG 2.2.1). Danger toasts and toasts with an action do NOT auto-dismiss. Stack max 3, newest on top. Enter: duration/moderate + easing/enter; exit: duration/fast + easing/exit; Reduced = no slide.\nA11Y: Render inside one persistent live region: role=status (polite) for Neutral/Success, role=alert for Danger. Don't move focus to the toast. Never the only evidence that something happened.\nTOKENS: bg/surface, border/default, Elevation/3, radius/md, padding/row, icon colors text/success|danger, icon/primary.\nCODE (@core-ds/react): const toast = useToast(); toast.show({ message: \"\u2026\", tone: \"neutral|success|danger\", action: { label: \"Undo\", onClick } })  \u2014 wrap the app in <ToastProvider>",
+   "props": [
+    [
+     "Message",
+     "T",
+     "Message"
+    ],
+    [
+     "Show action",
+     "B",
+     false
+    ],
+    [
+     "Show close",
+     "B",
+     true
+    ],
+    [
+     "Tone",
+     "V",
+     [
+      "Neutral",
+      "Success",
+      "Danger",
+      "Warning",
+      "Info"
+     ]
+    ]
+   ],
+   "vc": 5
+  },
+  {
+   "n": "Progress Bar",
+   "page": "Progress",
+   "d": "Progress Bar \u2014 determinate progress.\nWHEN: uploads, multi-step setup, storage or quota use. Unknown duration \u2192 Spinner / Skeleton.\nPROPERTIES: Tone (Brand | Success | Warning | Danger) \u00b7 Size (Medium 8px | Small 4px) \u00b7 Label \u00b7 Value \u00b7 Show label. Resize \"indicator\" to the percentage.\nTOKENS: bg/neutral-pressed track; bg/brand, bg/success, bg/warning, bg/danger indicator; radius/full.\nA11Y: role=\"progressbar\" with aria-valuenow/min/max and a visible or aria label.\nCODE (@core-ds/react): <Progress value={60} tone=\"brand\" size=\"md\" label=\"Uploading files\" />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Uploading files"
+    ],
+    [
+     "Value",
+     "T",
+     "60%"
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Tone",
+     "V",
+     [
+      "Brand",
+      "Success",
+      "Warning",
+      "Danger"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 8
+  },
+  {
+   "n": "Skeleton",
+   "page": "Loading",
+   "d": "Skeleton \u2014 a placeholder that mirrors the shape of content while it loads.\nWHEN: Loading content whose layout is known (lists, cards, profiles) and takes longer than ~300ms. Unknown layout or short actions \u2192 Spinner.\nPROPERTIES: Shape (Text \u2014 resize width to the expected line length; Circle \u2014 avatar; Block \u2014 images/cards). Compose skeleton rows that match the real layout exactly.\nMOTION: Optional shimmer/pulse with duration/slow + easing/standard, looping; Reduced = static.\nA11Y: Mark the loading region aria-busy=true and announce completion via a polite status message; skeletons are hidden from assistive tech.\nTOKENS: bg/surface-subtle, radius/sm | full | md, size/avatar-lg.\nCODE (@core-ds/react): <Skeleton shape=\"text|circle|block\" width={\u2026} />",
+   "props": [
+    [
+     "Shape",
+     "V",
+     [
+      "Text",
+      "Circle",
+      "Block"
+     ]
+    ]
+   ],
+   "vc": 3
+  },
+  {
+   "n": "Spinner",
+   "page": "Loading",
+   "d": "Spinner \u2014 indicates that something is in progress when its duration and shape are unknown.\nWHEN: Short waits (< ~2 s) for an action or a small region; inside buttons for \"Saving\u2026\". Known layout \u2192 Skeleton. Long tasks \u2192 progress with text (planned).\nPROPERTIES: Size (Small 16 \u2014 inline/buttons \u00b7 Medium 20 \u2014 inputs, small regions \u00b7 Large 32 \u2014 panels).\nMOTION: Rotate 360\u00b0 with a 1s linear loop; Reduced = slow (\u22652s) rotation or a static indicator plus text.\nA11Y: Provide text (\"Loading members\u2026\") via aria-label or visible label; set aria-busy on the region; don't announce repeatedly.\nTOKENS: border/default track, bg/brand indicator, size/icon-sm | icon-md | control-sm.\nCODE (@core-ds/react): <Spinner size=\"sm|md|lg\" label=\"Loading members\" />",
+   "props": [
+    [
+     "Size",
+     "V",
+     [
+      "Small",
+      "Medium",
+      "Large"
+     ]
+    ]
+   ],
+   "vc": 3
+  },
+  {
+   "n": "Empty State",
+   "page": "Empty State",
+   "d": "Empty State \u2014 explains why a space is empty and what to do next.\nWHEN: First use (nothing created yet), no search/filter results, or cleared lists. Errors that prevent loading \u2192 Alert. While loading \u2192 Skeleton/Spinner (never show an empty state before data arrives).\nPROPERTIES: Icon (swap) \u00b7 Title \u00b7 Description \u00b7 Show actions \u00b7 Show secondary action. Actions are exposed Button instances. \u00b7 Media (slot: custom illustration or image) \u00b7 Show icon (turn off when using Media)\nWRITING: Title says what's missing (\"No members yet\" / \"No results for \u201cwade\u201d\"); description says how to fill it; the primary action does exactly that. For no-results, offer \"Clear filters\" instead of a create action.\nTOKENS: bg/surface-subtle circle (size/control-lg), icon/primary, Heading/H4, Body/Small, gap/stack, spacing/10 vertical padding.\nCODE (@core-ds/react): <EmptyState icon=\"user\" title=\"\u2026\" description=\"\u2026\" actions={<Button \u2026/>} headingLevel={2} />",
+   "props": [
+    [
+     "Icon",
+     "I",
+     ""
+    ],
+    [
+     "Title",
+     "T",
+     "No members yet"
+    ],
+    [
+     "Description",
+     "T",
+     "Invite people to collaborate on projects in this workspace."
+    ],
+    [
+     "Show actions",
+     "B",
+     true
+    ],
+    [
+     "Show secondary action",
+     "B",
+     false
+    ],
+    [
+     "Media",
+     "S",
+     null
+    ],
+    [
+     "Show icon",
+     "B",
+     true
+    ],
+    [
+     "Show media",
+     "B",
+     false
+    ]
+   ],
+   "vc": 1
+  },
+  {
+   "n": "Tooltip",
+   "page": "Tooltip",
+   "d": "Tooltip \u2014 a short text label that appears on hover or keyboard focus of a control.\nWHEN: Naming Icon Buttons (\"Edit\", \"More actions\") and clarifying truncated text. Not for essential information, rich content or actions \u2014 use inline text, Alert or a popover.\nPROPERTIES: Placement (Top | Bottom | Left | Right \u2014 side of the target the tooltip sits on) \u00b7 Text (\u2264 1 short line; wraps at 240px).\nBEHAVIOUR: Show on hover after ~duration/moderate delay and immediately on focus; hide on blur, pointer leave or Esc. Must stay visible while the pointer is over it (WCAG 1.4.13). Enter with duration/fast + easing/enter.\nA11Y: role=tooltip, referenced by aria-describedby (or provides the name of an icon-only button). Never put interactive elements inside.\nTOKENS: bg/inverse, text/inverse, Body/Small, radius/md, spacing/2 \u00d7 spacing/3.\nCODE (@core-ds/react): <Tooltip content=\"Edit member\" placement=\"top|bottom|left|right\"><IconButton \u2026 /></Tooltip>",
+   "props": [
+    [
+     "Text",
+     "T",
+     "Tooltip text"
+    ],
+    [
+     "Placement",
+     "V",
+     [
+      "Top",
+      "Bottom",
+      "Left",
+      "Right"
+     ]
+    ]
+   ],
+   "vc": 4
+  },
+  {
+   "n": "Badge",
+   "page": "Badge",
+   "d": "Badge \u2014 short, non-interactive status or category label (1\u20132 words).\nWHEN: Show status (Active, Pending), category or \"New\". Not clickable \u2014 use Button for actions.\nPROPERTIES: Tone (Neutral | Brand | Success | Warning | Danger | Info) \u00b7 Label (text).\nRULES: Same status = same tone everywhere. Danger only for critical states.\nA11Y: Meaning carried by the label text, not color alone.\nTOKENS: bg/*-subtle with matching text/*, radius/full, spacing/0-5 and spacing/2.\nCODE (@core-ds/react): <Badge tone=\"neutral|brand|success|warning|danger\">Active</Badge>",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Badge"
+    ],
+    [
+     "Tone",
+     "V",
+     [
+      "Neutral",
+      "Brand",
+      "Success",
+      "Warning",
+      "Danger",
+      "Info"
+     ]
+    ]
+   ],
+   "vc": 6
+  },
+  {
+   "n": "Dialog",
+   "page": "Dialog",
+   "d": "Dialog \u2014 a modal window that interrupts the page for a decision or a short focused task.\nWHEN: Confirming destructive/irreversible actions (Tone=Danger), or short tasks that must finish before continuing (invite, rename). Long or multi-step work \u2192 a page. Non-blocking messages \u2192 Alert/Toast.\nPROPERTIES: Size (Small 400 | Medium 560) \u00b7 Tone (Default | Danger \u2014 Danger uses Button Danger) \u00b7 Title \u00b7 Description \u00b7 Show close \u00b7 Show secondary action. Footer buttons are exposed instances (edit labels from the dialog). Put form fields in the \"Content\" slot (v1.1).\nBEHAVIOUR: Open over color/bg/overlay scrim. Enter: duration/slow + easing/enter (fade + 8px rise); exit: duration/moderate + easing/exit; Reduced = fade only.\nA11Y (APG Dialog): role=dialog + aria-modal=true, labelled by the title, described by the description. On open, focus moves inside (first field, or Cancel for Danger); Tab/Shift+Tab stay inside; Esc closes; on close focus returns to the trigger. The page behind is inert.\nTOKENS: bg/surface, bg/overlay, Elevation/3, radius/xl, padding/card, gap/stack, gap/inline, Heading/H3, Body/Medium.\nCODE (@core-ds/react): <Dialog open onClose={\u2026} title=\"\u2026\" description=\"\u2026\" size=\"sm|md\" tone=\"default|danger\" footer={<>\u2026</>} /> (native <dialog>)",
+   "props": [
+    [
+     "Title",
+     "T",
+     "Invite a member"
+    ],
+    [
+     "Description",
+     "T",
+     "Description"
+    ],
+    [
+     "Show close",
+     "B",
+     true
+    ],
+    [
+     "Show secondary action",
+     "B",
+     true
+    ],
+    [
+     "Content",
+     "S",
+     null
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Small",
+      "Medium"
+     ]
+    ],
+    [
+     "Tone",
+     "V",
+     [
+      "Default",
+      "Danger"
+     ]
+    ]
+   ],
+   "vc": 4
+  },
+  {
+   "n": "Popover",
+   "page": "Popover & Drawer",
+   "d": "Popover \u2014 small floating panel anchored to a trigger.\nWHEN: extra detail, a short form or a few options next to the trigger. Not for menus of actions (use Menu) or blocking decisions (use Dialog).\nPROPERTIES: Title \u00b7 Show title \u00b7 Description \u00b7 Content (slot) \u00b7 Show content.\nTOKENS: bg/surface-raised, border/default, shape/radius-container, Elevation/2, spacing/4; layer z/dropdown.\nA11Y: aria-haspopup=\"dialog\" on the trigger; focus moves into the popover; Escape closes and returns focus.\nCODE (@core-ds/react): <Popover trigger={\u2026} title=\"\u2026\">\u2026</Popover>",
+   "props": [
+    [
+     "Content",
+     "S",
+     null
+    ],
+    [
+     "Title",
+     "T",
+     "Billing contact"
+    ],
+    [
+     "Description",
+     "T",
+     "Invoices and payment reminders go to this address."
+    ],
+    [
+     "Show title",
+     "B",
+     true
+    ],
+    [
+     "Show content",
+     "B",
+     false
+    ]
+   ],
+   "vc": 1
+  },
+  {
+   "n": "Drawer",
+   "page": "Popover & Drawer",
+   "d": "Drawer \u2014 full-height side panel over the page.\nWHEN: record details, filters, multi-field edits that keep the page in context. Short confirmations \u2192 Dialog; small details \u2192 Popover.\nPROPERTIES: Title \u00b7 Content (slot) \u00b7 Show footer (primary + secondary actions). Width 400 (Desktop/Tablet), full width on Mobile.\nTOKENS: bg/surface-raised, Elevation/3, border/default dividers, spacing/6 padding; scrim color/bg/overlay; layer z/modal.\nA11Y: role=\"dialog\", aria-modal, focus trapped, Escape and the close button dismiss.\nCODE (@core-ds/react): <Drawer open title=\"Filters\" footer={\u2026}>\u2026</Drawer>",
+   "props": [
+    [
+     "Content",
+     "S",
+     null
+    ],
+    [
+     "Title",
+     "T",
+     "Filters"
+    ],
+    [
+     "Show footer",
+     "B",
+     true
+    ]
+   ],
+   "vc": 1
+  },
+  {
+   "n": "Menu Item",
+   "page": "Menu",
+   "d": "Menu Item \u2014 one action inside a Menu.\nPROPERTIES: Tone (Default | Danger) \u00b7 State (Default | Hover | Disabled | Focus) \u00b7 Label \u00b7 Show icon + Icon (swap) \u00b7 Show shortcut + Shortcut. Hover also represents keyboard focus (menus use a moving highlight, not a focus ring).\nRULES: Labels stay on one line (truncate with \u2026; keep them short so they never need to). Labels are verbs (\"Edit role\", \"Remove from workspace\"). Danger items go last, after a Divider. Use icons on all items in a menu or none.\nCODE (@core-ds/react): Menu item: { label: \"Edit role\", icon: \"edit\", tone: \"default|danger\", disabled }",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Edit"
+    ],
+    [
+     "Show icon",
+     "B",
+     true
+    ],
+    [
+     "Icon",
+     "I",
+     ""
+    ],
+    [
+     "Show shortcut",
+     "B",
+     false
+    ],
+    [
+     "Shortcut",
+     "T",
+     "\u2318E"
+    ],
+    [
+     "Tone",
+     "V",
+     [
+      "Default",
+      "Danger"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Disabled",
+      "Focus"
+     ]
+    ]
+   ],
+   "vc": 8
+  },
+  {
+   "n": "Menu",
+   "page": "Menu",
+   "d": "Menu \u2014 a list of actions that opens from a trigger (usually an Icon Button \"More\" or a Button with a Chevron Down).\nWHEN: Secondary actions on an object or page. Choosing a value \u2192 Select. Navigation \u2192 Link list / navigation (v0.6).\nSIZE: 280 default (min 200, max 320); items never wrap.\nSTRUCTURE: Menu Item instances, Divider between groups, Danger items last. Override labels/icons on nested items; add or remove rows.\nBEHAVIOUR: Opens below the trigger (flip if no room) with duration/moderate + easing/enter. Closes on selection, Esc or outside click.\nA11Y (APG Menu Button): trigger has aria-haspopup=menu + aria-expanded; Enter/Space/\u2193 open with focus on the first item; \u2191\u2193 move, Home/End jump, typing a letter jumps; Enter activates; Esc closes and returns focus to the trigger. role=menu / menuitem; Divider = role=separator.\nTOKENS: bg/surface-raised, border/default, Elevation/2, radius/md, spacing/1.\nCODE (@core-ds/react): <Menu label=\"More actions for Esther Howard\" items={[{ label, icon, tone: \"danger\", separatorBefore }]} />",
+   "props": [],
+   "vc": 1
+  },
+  {
+   "n": "Nav Item",
+   "page": "Navigation",
+   "d": "Nav Item \u2014 one destination in the Sidebar.\nPROPERTIES: State (Default | Hover | Selected | Focus) \u00b7 Collapsed (False = icon + label | True = 40px icon only, for the tablet rail) \u00b7 Label \u00b7 Icon (swap) \u00b7 Show count (nested Badge, expanded only).\nA11Y: It is a link. The current page has aria-current=\"page\" (= Selected). Collapsed items keep the label as accessible name and show it in a Tooltip on hover/focus. Focus uses the standard Focus/Ring.\nCODE (@core-ds/react): Nav item: { label, href, icon, count, current } inside <Sidebar items={\u2026} />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Dashboard"
+    ],
+    [
+     "Icon",
+     "I",
+     ""
+    ],
+    [
+     "Show count",
+     "B",
+     false
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Selected",
+      "Focus"
+     ]
+    ],
+    [
+     "Collapsed",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ]
+   ],
+   "vc": 8
+  },
+  {
+   "n": "Sidebar",
+   "page": "Navigation",
+   "d": "Sidebar \u2014 primary app navigation, used together with the App Header.\nVARIANTS: Expanded (Desktop, 256px, icon + label) \u00b7 Rail (Tablet, 72px, icons only \u2014 labels in Tooltips) \u00b7 Drawer (Mobile, 288px, opens from the header Menu button over color/bg/overlay, with Close). Width comes from layout/sidebar-width; each variant pins its Layout mode.\nSTRUCTURE: nav (Nav Item instances; override labels, icons, Selected) \u2192 Divider \u2192 account row (Avatar + name).\nA11Y: <nav aria-label=\"Main\">. Drawer behaves like a modal dialog (focus trapped, Esc closes, focus returns to the Menu button). Desktop users can collapse Expanded \u2192 Rail with the header Menu button (aria-expanded).\nCODE (@core-ds/react): <Sidebar items={[{ label, href, icon, count, current }]} variant=\"expanded|rail\" />",
+   "props": [
+    [
+     "Header",
+     "S",
+     null
+    ],
+    [
+     "Footer",
+     "S",
+     null
+    ],
+    [
+     "Show header",
+     "B",
+     false
+    ],
+    [
+     "Show footer",
+     "B",
+     false
+    ],
+    [
+     "Variant",
+     "V",
+     [
+      "Expanded",
+      "Rail",
+      "Drawer"
+     ]
+    ]
+   ],
+   "vc": 3
+  },
+  {
+   "n": "Skip Link",
+   "page": "Navigation",
+   "d": "Skip Link \u2014 first focusable element on every page (WCAG 2.4.1). Hidden until it receives keyboard focus, then appears top-left above the App Header; Enter moves focus to <main>. Shown here in its focused state.\nCODE (@core-ds/react): <SkipLink href=\"#main\" />",
+   "props": [],
+   "vc": 1
+  },
+  {
+   "n": "App Header",
+   "page": "Navigation",
+   "d": "App Header \u2014 the top bar of every app screen. Height = layout/header-height (64 Desktop / 56 Tablet+Mobile).\nLAYOUTS: Desktop (Menu button collapses the Sidebar to a rail \u00b7 brand \u00b7 search \u00b7 notifications \u00b7 account) \u00b7 Desktop with nav (header-only pattern: brand + top nav links, no sidebar) \u00b7 Mobile (Menu opens the Sidebar Drawer \u00b7 brand \u00b7 search icon \u00b7 account).\nPROPERTIES: Layout \u00b7 Product name. Replace the logo-mark with your logo; nested instances are editable. \u00b7 Actions (slot: extra header actions such as a help menu, language or theme switch)\nA11Y: <header role=\"banner\">. Skip Link comes before it. Top nav links use Tab visuals but link semantics (aria-current=\"page\"), not role=tab. Menu button has aria-expanded + aria-controls.\nCODE (@core-ds/react): <AppHeader productName=\"Acme\" userName=\"Jane Cooper\" onMenuClick={\u2026} onSearch={\u2026} />",
+   "props": [
+    [
+     "Product name",
+     "T",
+     "Acme"
+    ],
+    [
+     "Actions",
+     "S",
+     null
+    ],
+    [
+     "Show actions slot",
+     "B",
+     false
+    ],
+    [
+     "Layout",
+     "V",
+     [
+      "Desktop",
+      "Desktop with nav",
+      "Mobile"
+     ]
+    ]
+   ],
+   "vc": 3
+  },
+  {
+   "n": "Breadcrumbs",
+   "page": "Navigation",
+   "d": "Breadcrumbs \u2014 shows where the page sits in the hierarchy. Up to 2 ancestor Links (exposed) + the current page (plain text, aria-current=\"page\"). <nav aria-label=\"Breadcrumb\">. Hide on Mobile when the back path is obvious; never more than 4 levels.\nCODE (@core-ds/react): <Breadcrumbs items={[{ label: \"Settings\", href }, { label: \"Members\" }]} />",
+   "props": [
+    [
+     "Current page",
+     "T",
+     "Team members"
+    ],
+    [
+     "Show level 1",
+     "B",
+     true
+    ]
+   ],
+   "vc": 1
+  },
+  {
+   "n": "Page Header",
+   "page": "Navigation",
+   "d": "Page Header \u2014 the top block of a page's content area: optional Breadcrumbs, title (the page's only H1 in code), description and page-level actions.\nLAYOUTS: Horizontal (Desktop/Tablet: text left, actions right) \u00b7 Stacked (Mobile: actions below, full width; title uses Heading/H3).\nPROPERTIES: Title, Description, Show breadcrumbs/description/secondary/primary action. Actions are exposed Buttons. \u00b7 Extra actions (slot: filters, view toggles, export menu)\nRULES: Max one Primary action. Put filters and tabs below the Page Header, not inside it.\nCODE (@core-ds/react): <PageHeader title=\"\u2026\" description=\"\u2026\" breadcrumbs={<Breadcrumbs \u2026/>} actions={<>\u2026</>} />",
+   "props": [
+    [
+     "Title",
+     "T",
+     "Team members"
+    ],
+    [
+     "Description",
+     "T",
+     "Manage who can access the Acme workspace and what they can do."
+    ],
+    [
+     "Show breadcrumbs",
+     "B",
+     false
+    ],
+    [
+     "Show description",
+     "B",
+     true
+    ],
+    [
+     "Show secondary action",
+     "B",
+     true
+    ],
+    [
+     "Show primary action",
+     "B",
+     true
+    ],
+    [
+     "Extra actions",
+     "S",
+     null
+    ],
+    [
+     "Show extra actions",
+     "B",
+     false
+    ],
+    [
+     "Layout",
+     "V",
+     [
+      "Horizontal",
+      "Stacked"
+     ]
+    ]
+   ],
+   "vc": 2
+  },
+  {
+   "n": "Tab",
+   "page": "Tabs",
+   "d": "Tab \u2014 one item in a Tabs bar. Selected tabs use color/text/brand with a 2px brand indicator; unselected use text/secondary.\nPROPERTIES: Selected (False | True) \u00b7 State (Default | Hover | Focus | Disabled) \u00b7 Label \u00b7 Show count (nested Badge, exposed).\nCODE (@core-ds/react): Tab: { id, label, count, disabled, panel } inside <Tabs tabs={\u2026} /> Show icon + Icon: optional leading icon that takes the label color.\nSwitching how the same content is shown (no separate panels) \u2192 Segmented Control.",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Tab"
+    ],
+    [
+     "Show count",
+     "B",
+     false
+    ],
+    [
+     "Show icon",
+     "B",
+     false
+    ],
+    [
+     "Icon",
+     "I",
+     ""
+    ],
+    [
+     "Selected",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus",
+      "Disabled"
+     ]
+    ]
+   ],
+   "vc": 8
+  },
+  {
+   "n": "Tabs",
+   "page": "Tabs",
+   "d": "Tabs \u2014 switch between related views of the same content without leaving the page.\nWHEN: 2\u20136 peer views (Members / Invites / Roles). Sequential steps \u2192 a stepper (planned). Navigation between pages \u2192 navigation (v0.6). Filtering a list \u2192 Select or chips.\nSTRUCTURE: Tab instances in a tablist over a Divider baseline. Override labels/selection on nested tabs; add or remove tabs.\nA11Y (APG Tabs): role=tablist / tab / tabpanel; only the selected tab is in the Tab order; \u2190/\u2192 move between tabs (Home/End jump). Automatic activation (panel switches on arrow) when panels are instant; manual activation (Enter/Space) when panels load slowly.\nMOTION: indicator slides with duration/moderate + easing/standard; Reduced = no slide.\nCODE (@core-ds/react): <Tabs label=\"Member views\" tabs={[{ id, label, count, panel }]} />\nSwitching how the same content is shown (no separate panels) \u2192 Segmented Control.",
+   "props": [],
+   "vc": 1
+  },
+  {
+   "n": "Segmented Control",
+   "page": "Segmented Control",
+   "d": "Segmented Control \u2014 pick one of 2\u20135 related options that change how the same content is shown (view, period, filter). Selection applies immediately.\nWHEN: 2\u20135 short, mutually exclusive options; switch views (List | Board), periods (Day | Week | Month) or filters (All | Open | Closed). More than 5 or long labels \u2192 Select. Separate content panels \u2192 Tabs. Choice submitted with a form \u2192 Radio. On/off \u2192 Toggle. Actions \u2192 Buttons.\nPROPERTIES: Items (2\u20135) \u00b7 Size (Medium 40 | Small 32). Each segment is exposed: set Selected, Label, Show icon, Icon, Show label from the parent. Segments are equal width \u2014 resize the control or set it to Fill for full width.\nA11Y: role=radiogroup + aria-label; segments role=radio + aria-checked. Tab enters on the selected segment; \u2190/\u2192 move and select; Home/End jump. If it swaps panels, use the Tabs pattern (tablist/tab) instead. Icon-only segments need aria-label + Tooltip. Small segments are 24px tall (WCAG 2.5.8 minimum).\nTOKENS: track bg/surface-subtle + border/default \u00b7 selected bg/surface-raised + border/default + Elevation/1 \u00b7 text/secondary \u2192 text/primary \u00b7 radius 8 outer / 4 inner \u00b7 size/control-md|sm.\nCODE (@core-ds/react): <SegmentedControl aria-label=\"View\" value={view} onChange={setView} options={[{ value: 'list', label: 'List' }, \u2026]} size=\"md\" />",
+   "props": [
+    [
+     "Items",
+     "V",
+     [
+      "2",
+      "3",
+      "4",
+      "5"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 8
+  },
+  {
+   "n": "Segmented Control Item",
+   "page": "Segmented Control",
+   "d": "Segmented Control Item \u2014 one segment. Use inside Segmented Control; don't place on its own.\nPROPERTIES: Selected (False | True) \u00b7 State (Default | Hover | Focus | Disabled) \u00b7 Size (Medium 32 | Small 24) \u00b7 Label \u00b7 Show label \u00b7 Show icon \u00b7 Icon (swap). Icon-only = Show label off + accessible name in code + Tooltip.\nSELECTED = bg/surface-raised + border/default + Elevation/1 (not colour alone). Focus = Focus/Ring.",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Label"
+    ],
+    [
+     "Show icon",
+     "B",
+     false
+    ],
+    [
+     "Icon",
+     "I",
+     ""
+    ],
+    [
+     "Show label",
+     "B",
+     true
+    ],
+    [
+     "Selected",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus",
+      "Disabled"
+     ]
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Medium",
+      "Small"
+     ]
+    ]
+   ],
+   "vc": 16
+  },
+  {
+   "n": "Stepper",
+   "page": "Stepper",
+   "d": "Stepper \u2014 shows where someone is in a linear, multi-step flow (onboarding, checkout, setup) and lets them go back to finished steps.\nWHEN: 3\u20137 steps that must happen in order. 2 steps \u2192 Back/Next buttons. Independent sections \u2192 Tabs. System progress \u2192 Progress. One long form \u2192 Form Section.\nPROPERTIES: Steps (3 | 4 | 5) \u00b7 Orientation (Horizontal for desktop page tops | Vertical for side panels and mobile). Each step is exposed: set State, Label, Description, Number.\nA11Y: <nav aria-label=\"Progress\"><ol>; current step aria-current=\"step\"; completed steps are links (\"Step 1, Account, completed\"); errors in text. Mobile: collapse to \"Step 2 of 5 \u00b7 Company\".\nTOKENS: bg/brand + icon/on-color (complete) \u00b7 border/focus-brand ring (current) \u00b7 border/strong (upcoming) \u00b7 bg/danger-subtle + text/danger (error) \u00b7 connector border/default \u2192 bg/brand.\nCODE (@core-ds/react): <Stepper current={1} steps={[{ label: 'Account', description: '\u2026', status: 'complete' }, \u2026]} onStepClick={goTo} />",
+   "props": [
+    [
+     "Steps",
+     "V",
+     [
+      "3",
+      "4",
+      "5"
+     ]
+    ],
+    [
+     "Orientation",
+     "V",
+     [
+      "Horizontal",
+      "Vertical"
+     ]
+    ]
+   ],
+   "vc": 6
+  },
+  {
+   "n": "Step",
+   "page": "Stepper",
+   "d": "Step \u2014 one step of a Stepper. Use inside Stepper.\nSTATES: Complete (bg/brand + check) \u00b7 Current (brand ring + number, aria-current=\"step\") \u00b7 Upcoming (border/strong + number) \u00b7 Error (danger ring + alert icon, description says what to fix). Status is shown by icon + text, never colour alone.\nPROPERTIES: State \u00b7 Orientation (Horizontal | Vertical) \u00b7 Label \u00b7 Description \u00b7 Show description \u00b7 Number \u00b7 Show connector (turn off on the last step).",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Company"
+    ],
+    [
+     "Description",
+     "T",
+     "Name and size"
+    ],
+    [
+     "Show description",
+     "B",
+     true
+    ],
+    [
+     "Number",
+     "T",
+     "2"
+    ],
+    [
+     "Show connector",
+     "B",
+     true
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Complete",
+      "Current",
+      "Upcoming",
+      "Error"
+     ]
+    ],
+    [
+     "Orientation",
+     "V",
+     [
+      "Horizontal",
+      "Vertical"
+     ]
+    ]
+   ],
+   "vc": 8
+  },
+  {
+   "n": "Accordion Item",
+   "page": "Accordion",
+   "d": "Accordion Item \u2014 one collapsible section.\nWHEN: FAQs, grouped settings, long forms where users need only some sections. Not for navigation (use Tabs) or primary content that everyone needs.\nPROPERTIES: Expanded (False | True) \u00b7 State (Default | Hover | Focus) \u00b7 Title \u00b7 Description \u00b7 Content (slot, expanded only).\nTOKENS: border/default divider, bg/neutral-hover, text/primary, text/secondary, icon/secondary; spacing/4 padding.\nA11Y: header is a button with aria-expanded and aria-controls.\nCODE (@core-ds/react): <Accordion><Accordion.Item title=\"\u2026\">\u2026</Accordion.Item></Accordion>",
+   "props": [
+    [
+     "Title",
+     "T",
+     "What is included in the plan?"
+    ],
+    [
+     "Description",
+     "T",
+     "Every plan includes unlimited projects, 10 GB of storage per member and email support."
+    ],
+    [
+     "Content",
+     "S",
+     null
+    ],
+    [
+     "Show content",
+     "B",
+     false
+    ],
+    [
+     "Expanded",
+     "V",
+     [
+      "False",
+      "True"
+     ]
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus"
+     ]
+    ]
+   ],
+   "vc": 6
+  },
+  {
+   "n": "Avatar",
+   "page": "Avatar",
+   "d": "Avatar \u2014 represents a person or workspace.\nWHEN: Next to names in lists, comments, headers and account menus. Use Type=Initials when a name is known, Type=Icon as the fallback. For photos, add an image fill to the avatar frame on the instance (initials stay as fallback).\nPROPERTIES: Size (Small 24 | Medium 32 | Large 40) \u00b7 Type (Initials | Icon | Image \u2014 replace the \"image\" layer fill with a photo) \u00b7 Initials (text, 1\u20132 characters).\nA11Y: Decorative when the name is shown beside it (alt=\"\"); otherwise the accessible name is the person's name, not the initials.\nTOKENS: size/avatar-sm|md|lg, radius/full, bg/brand-subtle, text/brand.\nCODE (@core-ds/react): <Avatar name=\"Jane Cooper\" size=\"sm|md|lg\" decorative /> Show status: presence dot (success color; recolor the \"status\" layer for away/busy).",
+   "props": [
+    [
+     "Initials",
+     "T",
+     "JC"
+    ],
+    [
+     "Show status",
+     "B",
+     false
+    ],
+    [
+     "Size",
+     "V",
+     [
+      "Small",
+      "Medium",
+      "Large"
+     ]
+    ],
+    [
+     "Type",
+     "V",
+     [
+      "Initials",
+      "Icon",
+      "Image"
+     ]
+    ]
+   ],
+   "vc": 9
+  },
+  {
+   "n": "Card",
+   "page": "Card",
+   "d": "Card \u2014 container grouping content and up to two actions about one subject.\nWHEN: Flat (border only) inside other surfaces, lists and dense grids. Raised (Elevation/2) when the card sits directly on the canvas or needs emphasis.\nPROPERTIES: Elevation (Flat | Raised) \u00b7 Title, Body (text) \u00b7 Show actions (boolean). Contains nested Button instances (Primary + Secondary) that can be overridden. \u00b7 Media (slot: image, chart, illustration) \u00b7 Content (slot: lists, key\u2013value rows, fields)\nRULES: One topic per card. Don't nest cards. Don't mix Flat and Raised in one list. Default width 360; stretch in grids.\nTOKENS: bg/surface, border/default, radius/lg, spacing/6 padding, spacing/4 gap, Heading/H4 + Body/Small.\nCODE (@core-ds/react): <Card title=\"\u2026\" elevation=\"flat|raised\" actions={<>\u2026</>}>Body</Card>",
+   "props": [
+    [
+     "Title",
+     "T",
+     "Card title"
+    ],
+    [
+     "Body",
+     "T",
+     "Supporting text that explains the content of this card in one or two short sentences."
+    ],
+    [
+     "Show actions",
+     "B",
+     true
+    ],
+    [
+     "Media",
+     "S",
+     null
+    ],
+    [
+     "Content",
+     "S",
+     null
+    ],
+    [
+     "Show media",
+     "B",
+     false
+    ],
+    [
+     "Show content",
+     "B",
+     false
+    ],
+    [
+     "Elevation",
+     "V",
+     [
+      "Flat",
+      "Raised"
+     ]
+    ]
+   ],
+   "vc": 2
+  },
+  {
+   "n": "Divider",
+   "page": "Divider",
+   "d": "Divider \u2014 a 1px rule that separates groups of content.\nWHEN: Between sections of a list, card or menu when spacing alone is not enough. Prefer whitespace (gap/stack, spacing/*) first.\nPROPERTIES: Orientation (Horizontal | Vertical). In auto layout set Horizontal to Fill width, Vertical to Fill height.\nA11Y: Decorative by default (no role). Use role=separator only when it separates meaningful groups (e.g. in menus).\nTOKENS: border/default fill, border-width/default thickness.\nCODE (@core-ds/react): <Divider orientation=\"horizontal|vertical\" />",
+   "props": [
+    [
+     "Orientation",
+     "V",
+     [
+      "Horizontal",
+      "Vertical"
+     ]
+    ]
+   ],
+   "vc": 2
+  },
+  {
+   "n": "List Item",
+   "page": "Lists & Tables",
+   "d": "List Item \u2014 one row in a simple list (members, files, notifications). Replaces hand-built rows from the v0.4.1 agent test.\nPROPERTIES: State (Default | Hover | Selected | Focus) \u00b7 Title, Description \u00b7 Show leading (Avatar, exposed \u2014 swap for an icon if needed) \u00b7 Show meta (Badge, exposed) \u00b7 Show action (Icon Button, exposed; set Accessible label per row). \u00b7 Trailing (slot: badge, toggle, price, custom controls)\nTEXT: title and description wrap (never clip); keep descriptions to one sentence.\nLAYOUT: Stack items with a Divider between them inside a bg/surface + border/default + radius/lg container. Padding padding/card \u00d7 padding/row (density-aware). Need columns, sorting or comparison \u2192 Table.\nCODE (@core-ds/react): <List label=\"\u2026\"><ListItem title=\"\u2026\" description=\"\u2026\" leading={<Avatar \u2026/>} meta={<Badge \u2026/>} action={<Menu \u2026/>} /></List>",
+   "props": [
+    [
+     "Title",
+     "T",
+     "Jane Cooper"
+    ],
+    [
+     "Description",
+     "T",
+     "jane@acme.com"
+    ],
+    [
+     "Show leading",
+     "B",
+     true
+    ],
+    [
+     "Show description",
+     "B",
+     true
+    ],
+    [
+     "Show meta",
+     "B",
+     true
+    ],
+    [
+     "Show action",
+     "B",
+     true
+    ],
+    [
+     "Trailing",
+     "S",
+     null
+    ],
+    [
+     "Show trailing",
+     "B",
+     false
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Selected",
+      "Focus"
+     ]
+    ]
+   ],
+   "vc": 4
+  },
+  {
+   "n": "Table Header Cell",
+   "page": "Lists & Tables",
+   "d": "Table Header Cell \u2014 column header. Sort: None (sortable, unsorted) \u00b7 Ascending \u00b7 Descending \u00b7 Not sortable.\nA11Y: <th scope=\"col\"> with aria-sort on the sorted column only; the label is a button that toggles sort. Resize width to the column; use the same width for every cell in that column.\nCODE (@core-ds/react): <Table columns={[{ key, header, sortable, render }]} sort={{ key, direction }} \u2026 />  (header cell)",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Name"
+    ],
+    [
+     "Sort",
+     "V",
+     [
+      "None",
+      "Ascending",
+      "Descending",
+      "Not sortable"
+     ]
+    ]
+   ],
+   "vc": 4
+  },
+  {
+   "n": "Table Cell",
+   "page": "Lists & Tables",
+   "d": "Table Cell \u2014 one cell in a data table row. Types: Text \u00b7 Two-line \u00b7 Avatar (person) \u00b7 Badge (status) \u00b7 Numeric (right-aligned, tabular) \u00b7 Checkbox (row selection, 48px) \u00b7 Actions (Icon Button \"More\", 64px).\nCOMPOSE A TABLE: a header row of Table Header Cells, then rows = horizontal auto-layout frames of Table Cells with matching widths (fill the flexible column) and EVERY body cell set to Fill height, so bottom borders line up (header cells keep their fixed size/control-md height). Row hover = color/bg/neutral-hover; selected row = color/bg/brand-subtle. Wrap in bg/surface + border/default + radius/lg, clip content.\nA11Y: real <table> with a caption/accessible name; checkbox cells label \"Select <row name>\"; action Icon Buttons include the row name (\"More actions for Jane Cooper\"). On Mobile, switch a table to List Items unless columns are essential.\nCODE (@core-ds/react): <Table caption=\"\u2026\" columns={[\u2026]} rows={\u2026} rowKey={\u2026} />  (cells via column render)",
+   "props": [
+    [
+     "Value",
+     "T",
+     "Editor"
+    ],
+    [
+     "Secondary",
+     "T",
+     "jane@acme.com"
+    ],
+    [
+     "Cell content",
+     "S",
+     null
+    ],
+    [
+     "Type",
+     "V",
+     [
+      "Text",
+      "Two-line",
+      "Avatar",
+      "Badge",
+      "Numeric",
+      "Checkbox",
+      "Actions",
+      "Custom"
+     ]
+    ]
+   ],
+   "vc": 8
+  },
+  {
+   "n": "Pagination",
+   "page": "Lists & Tables",
+   "d": "Pagination \u2014 moves through pages of a table or list. Summary text (what is shown) + previous/next Icon Buttons (Secondary, Small; Disabled at the ends) + current page. <nav aria-label=\"Table pagination\">; announce the new range in a polite status message after paging.\nCODE (@core-ds/react): <Pagination page={1} pageCount={5} summary=\"Showing 1\u201310 of 48\" onPageChange={\u2026} />",
+   "props": [
+    [
+     "Summary",
+     "T",
+     "Showing 1\u201310 of 48"
+    ],
+    [
+     "Page",
+     "T",
+     "Page 1 of 5"
+    ]
+   ],
+   "vc": 1
+  },
+  {
+   "n": "Form Section",
+   "page": "Form Patterns",
+   "d": "Form Section \u2014 groups related fields under a title and description inside long forms and settings pages.\nLAYOUTS: Side by side (Desktop/Tablet: intro column 340px + fields filling the rest, gap = layout/gutter) \u00b7 Stacked (Mobile).\nCONTENT: the \"fields\" frame holds placeholder fields \u2014 replace with any inputs (Text Field, Select, Textarea, Radio group, Toggle\u2026), keep gap/stack between them. Sections are separated by a top border and layout/section-gap padding.\nA11Y: each section is a <fieldset> (or region) with the title as its <legend>/heading.\nCODE (@core-ds/react): <FormSection title=\"\u2026\" description=\"\u2026\">{fields}</FormSection>",
+   "props": [
+    [
+     "Title",
+     "T",
+     "Profile"
+    ],
+    [
+     "Description",
+     "T",
+     "This information is visible to everyone in the workspace."
+    ],
+    [
+     "Fields",
+     "S",
+     null
+    ],
+    [
+     "Layout",
+     "V",
+     [
+      "Side by side",
+      "Stacked"
+     ]
+    ]
+   ],
+   "vc": 2
+  },
+  {
+   "n": "Error Summary",
+   "page": "Form Patterns",
+   "d": "Error Summary \u2014 shown at the top of a form after a failed submit when there is more than one error.\nCONTENT: title states how many problems; each error is a Link (exposed) with the same text as the field's error message, pointing to that field (href=\"#field-id\"). Add/remove links as needed.\nBEHAVIOUR: On submit with errors, render it, move focus to it (tabindex=-1), and also show each field's Error state. Remove when all errors are fixed. Single error on a short form \u2192 just focus the field.\nA11Y: role=alert or focus on render; links move focus to the field. Never rely on red alone \u2014 the icon + title carry the meaning.\nTOKENS: bg/danger-subtle, border/danger (strong), text/danger icon, Label/Large, Link Small.\nCODE (@core-ds/react): <ErrorSummary errors={[{ fieldId: \"email\", message: \"\u2026\" }]} />",
+   "props": [
+    [
+     "Title",
+     "T",
+     "There are 2 problems with your form"
+    ]
+   ],
+   "vc": 1
+  },
+  {
+   "n": "Form Actions",
+   "page": "Form Patterns",
+   "d": "Form Actions \u2014 the buttons that submit or cancel a form.\nVARIANTS: Inline (end of a short form, after the last section) \u00b7 Sticky (long settings pages: pinned to the bottom of the viewport, appears when there are unsaved changes; surface-raised + Elevation/2).\nRULES: Primary (save/submit) on the right, Cancel to its left. On Mobile, buttons fill the width (Primary on top). Disable nothing \u2014 validate on submit and show the Error Summary.\nCODE (@core-ds/react): <FormActions variant=\"inline|sticky\" status=\"You have unsaved changes\" onCancel={\u2026} />",
+   "props": [
+    [
+     "Status",
+     "T",
+     "You have unsaved changes"
+    ],
+    [
+     "Show status",
+     "B",
+     false
+    ],
+    [
+     "Variant",
+     "V",
+     [
+      "Inline",
+      "Sticky"
+     ]
+    ]
+   ],
+   "vc": 2
+  },
+  {
+   "n": "AI Response",
+   "page": "AI Patterns",
+   "d": "AI Response \u2014 an answer written by AI, with its disclosure, sources and controls.\nSTATES: Streaming (cursor + Stop) \u00b7 Complete (sources, confidence, Copy \u00b7 Regenerate \u00b7 Edit, feedback) \u00b7 Stopped (partial answer kept, labelled) \u00b7 Error (Alert explains what happened; Try again).\nRULES: always show the AI Label; cite sources under the claim; let people stop, edit and undo; show confidence only when it's real.\nA11Y: container aria-live=\"polite\" aria-busy while streaming; announce by sentence, not by token; Stop is the first focusable control; icon buttons have names.\nCODE (@core-ds/react): <AIResponse status=\"complete\" sources={[\u2026]} confidence=\"high\" onRegenerate={\u2026} onFeedback={\u2026}>{text}</AIResponse>",
+   "props": [
+    [
+     "State",
+     "V",
+     [
+      "Streaming",
+      "Complete",
+      "Stopped",
+      "Error"
+     ]
+    ]
+   ],
+   "vc": 4
+  },
+  {
+   "n": "AI Label",
+   "page": "AI Patterns",
+   "d": "AI Label \u2014 discloses that content was made or changed by AI. Generated (accent) | Edited (neutral, after a person edits it). Always visible on AI output; never hidden in a tooltip. Code: <AILabel type=\"generated\" />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "AI-generated"
+    ],
+    [
+     "Type",
+     "V",
+     [
+      "Generated",
+      "Edited"
+     ]
+    ]
+   ],
+   "vc": 2
+  },
+  {
+   "n": "Citation",
+   "page": "AI Patterns",
+   "d": "Citation \u2014 a numbered source behind an AI answer. A link: opens the source, with an accessible name like \"Source 1: Leave policy 2026\". Put them right under the claim they support.",
+   "props": [
+    [
+     "Number",
+     "T",
+     "1"
+    ],
+    [
+     "Source",
+     "T",
+     "Leave policy 2026"
+    ],
+    [
+     "State",
+     "V",
+     [
+      "Default",
+      "Hover",
+      "Focus"
+     ]
+    ]
+   ],
+   "vc": 3
+  },
+  {
+   "n": "AI Confidence",
+   "page": "AI Patterns",
+   "d": "AI Confidence \u2014 how sure the system is, in words + icon (never colour alone). High (sources agree) \u00b7 Medium (partial support) \u00b7 Low (check before using). Only show when the model gives a real signal.",
+   "props": [
+    [
+     "Level",
+     "V",
+     [
+      "High",
+      "Medium",
+      "Low"
+     ]
+    ]
+   ],
+   "vc": 3
+  },
+  {
+   "n": "Stat Card",
+   "page": "Kit \u00b7 Stat Card",
+   "d": "PRODUCT KIT (SaaS admin) \u2014 not Core. Stat Card \u2014 one key number on a dashboard.\nPROPERTIES: Trend (Positive | Negative | Neutral \u2014 sets the Badge tone) \u00b7 Label \u00b7 Value \u00b7 Context \u00b7 Show trend.\nRULES: Label says what is counted; value uses Heading/H2 with tabular figures; the trend Badge always shows a sign (+/\u2212) so meaning doesn't rely on color; context says the comparison period. Lay out 4 per row on Desktop (3 columns each), 2 on Tablet, 1\u20132 on Mobile.\nCODE (@core-ds/react): <StatCard label=\"Active members\" value=\"1,284\" trend={{ direction: \"positive\", value: \"+12%\" }} context=\"vs. last 30 days\" />",
+   "props": [
+    [
+     "Label",
+     "T",
+     "Active members"
+    ],
+    [
+     "Value",
+     "T",
+     "1,284"
+    ],
+    [
+     "Context",
+     "T",
+     "vs. last 30 days"
+    ],
+    [
+     "Show trend",
+     "B",
+     true
+    ],
+    [
+     "Trend",
+     "V",
+     [
+      "Positive",
+      "Negative",
+      "Neutral"
+     ]
+    ]
+   ],
+   "vc": 3
+  }
+ ]
+}

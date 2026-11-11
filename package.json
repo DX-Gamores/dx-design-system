@@ -1,0 +1,41 @@
+{
+  "name": "@dxform/design-system",
+  "version": "3.2.0",
+  "private": true,
+  "description": "DX Design System — tokens, Tailwind theme, React components and a Next.js starter. Source of truth: the DX Design System Figma file.",
+  "exports": {
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.css": "./dist/tailwind.css",
+    "./tokens": "./dist/tokens.ts",
+    "./tokens.json": "./tokens/tokens.json"
+  },
+  "scripts": {
+    "tokens": "node scripts/build-tokens.mjs",
+    "specs": "node scripts/build-specs.mjs",
+    "icons": "node scripts/build-icons.mjs",
+    "build:all": "npm run tokens && npm run icons && npm run specs",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
+    "@fontsource/poppins": "^5.3.0",
+    "@fontsource/roboto-mono": "^5.3.0",
+    "next": "^15.5.29",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.5",
+    "@tailwindcss/postcss": "^4.3.5",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "tailwindcss": "^4.3.5",
+    "typescript": "5.8"
+  }
+}

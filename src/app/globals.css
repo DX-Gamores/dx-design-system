@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "../../dist/tokens.css";
+@import "../../dist/tailwind.css";
+
+@layer base {
+  html {
+    background: var(--ds-color-bg-canvas);
+    color: var(--ds-color-text-primary);
+    font-family: var(--ds-font-family-body);
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply text-body-small;
+  }
+  ::selection {
+    background: var(--ds-color-bg-brand-subtle);
+  }
+}

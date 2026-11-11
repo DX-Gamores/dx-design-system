@@ -1,0 +1,7 @@
+@import "tailwindcss" source(none);
+@source "../../src/components/ui";
+@import "../../dist/tokens.css";
+@import "../../dist/tailwind.css";
+@layer base {
+  html { background: var(--ds-color-bg-canvas); color: var(--ds-color-text-primary); font-family: var(--ds-font-family-body); }
+}
