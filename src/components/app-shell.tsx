@@ -10,11 +10,11 @@ import { brands, themes, densities, type Brand, type Theme, type Density } from 
 
 /* Figma: Skip Link + App Header + Sidebar (Expanded / Rail / Drawer) + Page Header. */
 const nav: { label: string; href: string; icon: IconName }[] = [
-  { label: "Dashboard", href: "/", icon: "dashboard" },
-  { label: "Components", href: "/kit", icon: "grid-view" },
-  { label: "Projects", href: "/projects", icon: "folder" },
-  { label: "Reports", href: "/reports", icon: "chart" },
-  { label: "Settings", href: "/settings", icon: "settings" },
+  { label: "Dashboard", href: "/starter", icon: "dashboard" },
+  { label: "Projects", href: "/starter/projects", icon: "folder" },
+  { label: "Reports", href: "/starter/reports", icon: "chart" },
+  { label: "Settings", href: "/starter/settings", icon: "settings" },
+  { label: "Design system", href: "/", icon: "grid-view" },
 ];
 
 export function AppShell({ productName = "DXFORM", children }: { productName?: string; children: ReactNode }) {
@@ -53,7 +53,8 @@ export function AppShell({ productName = "DXFORM", children }: { productName?: s
           </div>
           <ul className="flex flex-col gap-1">
             {nav.map((n) => {
-              const current = n.href === "/" ? path === "/" : path.startsWith(n.href);
+              const p = path.replace(/\/$/, "") || "/";
+              const current = n.href === "/starter" ? p === "/starter" : n.href === "/" ? false : p.startsWith(n.href);
               return (
                 <li key={n.href}>
                   <Link

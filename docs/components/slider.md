@@ -18,7 +18,7 @@
 
 ## When
 
-approximate values within known bounds. Exact numbers → Text Field (number) — or turn on Show input. Few discrete choices → Segmented Control / Radio.
+Approximate values within known bounds. Exact numbers → Text Field (number) — or turn on Show input. Few discrete choices → Segmented Control / Radio.
 
 ## Property notes
 
@@ -26,15 +26,17 @@ Type (Single | Range) · State (Default | Disabled) · Label · Value (formatted
 
 ## Accessibility
 
-each thumb role="slider" with aria-valuemin/max/now + aria-valuetext ("₱2,000"); Range thumbs get aria-label "Minimum price" / "Maximum price". ←↓ −1 step, →↑ +1, PgUp/PgDn ±10%, Home/End min/max. WCAG 2.5.7: dragging is never required — click the track or type in the input. Thumb hit area 40px.
+Each thumb role="slider" with aria-valuemin/max/now + aria-valuetext ("₱2,000"); Range thumbs get aria-label "Minimum price" / "Maximum price". ←↓ −1 step, →↑ +1, PgUp/PgDn ±10%, Home/End min/max. WCAG 2.5.7: dragging is never required — click the track or type in the input. Thumb hit area 40px.
 
 ## Tokens
 
-rail bg/control-off · fill bg/brand · thumb bg/surface + 2px bg/brand · disabled bg/disabled + icon/disabled.
+Rail bg/control-off · fill bg/brand · thumb bg/surface + 2px bg/brand · disabled bg/disabled + icon/disabled.
 
 ## Code
 
+```tsx
 <Slider label="Volume" value={v} onChange={setV} min={0} max={100} /> · <RangeSlider label="Price" value={[2000, 8000]} min={0} max={10000} step={500} format={peso} showInputs />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

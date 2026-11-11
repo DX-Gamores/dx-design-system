@@ -31,11 +31,13 @@ Title says what's missing ("No members yet" / "No results for “wade”"); desc
 
 ## Tokens
 
-bg/surface-subtle circle (size/control-lg), icon/primary, Heading/H4, Body/Small, gap/stack, spacing/10 vertical padding.
+Bg/surface-subtle circle (size/control-lg), icon/primary, Heading/H4, Body/Small, gap/stack, spacing/10 vertical padding.
 
 ## Code
 
+```tsx
 <EmptyState icon="user" title="…" description="…" actions={<Button …/>} headingLevel={2} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

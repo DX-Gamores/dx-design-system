@@ -15,7 +15,7 @@
 
 ## When
 
-header search, table toolbars, list filters. For picking one value from a long list use Combobox.
+Header search, table toolbars, list filters. For picking one value from a long list use Combobox.
 
 ## Property notes
 
@@ -23,15 +23,17 @@ State (Default | Hover | Focus | Disabled) · Filled (False | True — shows the
 
 ## Tokens
 
-field/bg, field/border, field/radius → shape/radius-control, border/hover, border/focus, icon/secondary.
+Field/bg, field/border, field/radius → shape/radius-control, border/hover, border/focus, icon/secondary.
 
 ## Accessibility
 
-role="searchbox", label "Search <thing>", clear button label "Clear search".
+Role="searchbox", label "Search `<thing>`", clear button label "Clear search".
 
 ## Code
 
+```tsx
 <SearchField size="md|sm" onClear={…} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

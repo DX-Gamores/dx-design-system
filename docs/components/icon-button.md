@@ -29,11 +29,13 @@ Always set Accessible label to the action ("More actions for Jane Cooper"). Pair
 
 ## Tokens
 
-same as Button; square size/control-*; icon size/icon-md (Medium) / size/icon-sm (Small).
+Same as Button; square size/control-*; icon size/icon-md (Medium) / size/icon-sm (Small).
 
 ## Code
 
+```tsx
 <IconButton icon="more" label="More actions for Jane Cooper" variant="ghost|secondary|primary" size="md|sm" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

@@ -23,11 +23,13 @@ Layout · Product name. Replace the logo-mark with your logo; nested instances a
 
 ## Accessibility
 
-<header role="banner">. Skip Link comes before it. Top nav links use Tab visuals but link semantics (aria-current="page"), not role=tab. Menu button has aria-expanded + aria-controls.
+`<header role="banner">`. Skip Link comes before it. Top nav links use Tab visuals but link semantics (aria-current="page"), not role=tab. Menu button has aria-expanded + aria-controls.
 
 ## Code
 
+```tsx
 <AppHeader productName="Acme" userName="Jane Cooper" onMenuClick={…} onSearch={…} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

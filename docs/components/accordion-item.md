@@ -25,15 +25,17 @@ Expanded (False | True) · State (Default | Hover | Focus) · Title · Descripti
 
 ## Tokens
 
-border/default divider, bg/neutral-hover, text/primary, text/secondary, icon/secondary; spacing/4 padding.
+Border/default divider, bg/neutral-hover, text/primary, text/secondary, icon/secondary; spacing/4 padding.
 
 ## Accessibility
 
-header is a button with aria-expanded and aria-controls.
+Header is a button with aria-expanded and aria-controls.
 
 ## Code
 
+```tsx
 <Accordion><Accordion.Item title="…">…</Accordion.Item></Accordion>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

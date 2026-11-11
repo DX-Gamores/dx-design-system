@@ -29,11 +29,13 @@ Meaning carried by the label text, not color alone.
 
 ## Tokens
 
-bg/*-subtle with matching text/*, radius/full, spacing/0-5 and spacing/2.
+Bg/*-subtle with matching text/*, radius/full, spacing/0-5 and spacing/2.
 
 ## Code
 
+```tsx
 <Badge tone="neutral|brand|success|warning|danger">Active</Badge>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

@@ -28,11 +28,13 @@ Provide text ("Loading members…") via aria-label or visible label; set aria-bu
 
 ## Tokens
 
-border/default track, bg/brand indicator, size/icon-sm | icon-md | control-sm.
+Border/default track, bg/brand indicator, size/icon-sm | icon-md | control-sm.
 
 ## Code
 
+```tsx
 <Spinner size="sm|md|lg" label="Loading members" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

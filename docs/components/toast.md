@@ -31,11 +31,13 @@ Render inside one persistent live region: role=status (polite) for Neutral/Succe
 
 ## Tokens
 
-bg/surface, border/default, Elevation/3, radius/md, padding/row, icon colors text/success|danger, icon/primary.
+Bg/surface, border/default, Elevation/3, radius/md, padding/row, icon colors text/success|danger, icon/primary.
 
 ## Code
 
+```tsx
 const toast = useToast(); toast.show({ message: "…", tone: "neutral|success|danger", action: { label: "Undo", onClick } })  — wrap the app in <ToastProvider>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

@@ -13,6 +13,14 @@ const typeName = { V: "Variant", T: "Text", B: "Boolean", I: "Instance swap", S:
 const codeProp = (n) => n.replace(/^Show /, "show ").replace(/[^a-zA-Z0-9 ]/g, "").replace(/ (\w)/g, (_, c) => c.toUpperCase()).replace(/^\w/, (c) => c.toLowerCase());
 const SECTION = /^(WHEN|PROPERTIES|RULES|A11Y[^:]*|TOKENS|CODE[^:]*|BEHAVIOUR|MOTION|STATES|LAYOUTS|VARIANTS|STRUCTURE|CONTENT|WRITING|FORMAT|GRID|SIZE|TEXT|LAYOUT|SELECTED|PRODUCT KIT[^:]*):\s*/;
 
+
+// JSX in descriptions (<Button … />) would be swallowed as HTML by Markdown renderers (GitHub, the docs site).
+// Code sections become fenced blocks; JSX elsewhere becomes inline code.
+const cap = (t) => t.replace(/^[a-z]/, (c) => c.toUpperCase());
+const fence = (body) => "```tsx\n" + body.trim() + "\n```";
+const codeTags = (body) =>
+  body.split(/(`[^`]*`)/).map((part, i) => (i % 2 ? part : part.replace(/<\/?[A-Za-z][^<>]*>/g, (m) => "`" + m + "`"))).join("");
+
 const outDir = path.join(root, "docs/components");
 fs.mkdirSync(outDir, { recursive: true });
 const groups = {};
@@ -41,7 +49,7 @@ for (const c of components) {
   }
   for (const [h, body] of sections) {
     const nice = h === "Notes" ? "Notes" : h === "PROPERTIES" ? "Property notes" : h[0] + h.slice(1).toLowerCase();
-    md += `## ${nice}\n\n${body.replace(/ · /g, " · ")}\n\n`;
+    md += `## ${nice}\n\n${h === "Code" ? fence(body) : codeTags(cap(body))}\n\n`;
   }
   md += `---\n_Generated from the Figma component description by \`npm run specs\`. Edit the description in Figma, re-export, regenerate._\n`;
   fs.writeFileSync(path.join(outDir, `${slug(c.n)}.md`), md);

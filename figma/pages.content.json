@@ -1,0 +1,755 @@
+{
+ "exportedFrom": "DX Design System Figma · page headers and section outline",
+ "exportedAt": "2026-11-11",
+ "pages": {
+  "Getting Started": {
+   "id": "4:169",
+   "eyebrow": "Start here · System",
+   "summary": "Tokens first, components second. One system — any brand, light or dark.",
+   "sections": [
+    "At a glance",
+    "How it's built",
+    "Principles",
+    "Pick your path",
+    "Theming",
+    "Roadmap",
+    "What's next",
+    "File map",
+    "Naming",
+    "Changelog"
+   ]
+  },
+  "Governance": {
+   "id": "68:2",
+   "eyebrow": "Start here · System",
+   "summary": "Who owns what, how a request becomes a release, and how we know the system is healthy.",
+   "sections": [
+    "At a glance",
+    "Ownership",
+    "Definition of done",
+    "Versioning",
+    "Lifecycle",
+    "Deprecation",
+    "Release health"
+   ]
+  },
+  "Foundations": {
+   "id": "4:170",
+   "eyebrow": "Foundations",
+   "summary": "Every visual decision is a variable. Components only ever touch the semantic layer.",
+   "sections": [
+    "Color roles",
+    "Status colors",
+    "Palette",
+    "Typography",
+    "Spacing & density",
+    "Shape & depth",
+    "Motion",
+    "Layout"
+   ]
+  },
+  "Themes & Brands": {
+   "id": "18:2",
+   "eyebrow": "Foundations · Theming",
+   "summary": "Three independent switches — Brand, Color and Density — and every combination passes contrast.",
+   "sections": [
+    "At a glance",
+    "Theme matrix",
+    "Contrast audit",
+    "Add a brand"
+   ]
+  },
+  "Data Visualization": {
+   "id": "195:56",
+   "eyebrow": "Foundations · Color",
+   "summary": "Chart colours that pass contrast in every theme and stay apart for colour-blind readers.",
+   "sections": [
+    "At a glance",
+    "Categorical",
+    "Colour-blind check",
+    "Sequential & diverging",
+    "Pick the palette",
+    "Chart anatomy",
+    "Do & don't",
+    "Tokens",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Content Guidelines": {
+   "id": "59:3116",
+   "eyebrow": "Foundations · Content",
+   "summary": "Words are interface. Clear first, then concise, then human.",
+   "sections": [
+    "At a glance",
+    "Voice",
+    "Glossary",
+    "Do & don't"
+   ]
+  },
+  "Localization & RTL": {
+   "id": "200:56",
+   "eyebrow": "Foundations · Content",
+   "summary": "Every screen survives 40% longer text and flips cleanly for right-to-left languages.",
+   "sections": [
+    "At a glance",
+    "Text expansion",
+    "Right-to-left",
+    "Icons",
+    "Formats",
+    "Do & don't",
+    "Checklist"
+   ]
+  },
+  "Icons": {
+   "id": "21:2",
+   "eyebrow": "Foundations · Iconography",
+   "summary": "69 icons on a 24×24 grid with a 2px round stroke — same grammar as Lucide and Tabler.",
+   "sections": [
+    "At a glance",
+    "Library",
+    "Size & color",
+    "Do & don't",
+    "Accessibility"
+   ]
+  },
+  "Button": {
+   "id": "4:172",
+   "eyebrow": "Actions · Component",
+   "summary": "Triggers an action. Three emphasis levels — one job each.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "Which one?",
+    "States",
+    "Sizes & spacing",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Link": {
+   "id": "27:2",
+   "eyebrow": "Actions · Component",
+   "summary": "Takes people somewhere else. Always underlined, so it never relies on color.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Text Field": {
+   "id": "4:173",
+   "eyebrow": "Inputs · Component",
+   "summary": "One line of typed text — with a label people can always see.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Select": {
+   "id": "23:2",
+   "eyebrow": "Inputs · Component",
+   "summary": "Pick one option from a list of 5–15. No typing.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Combobox": {
+   "id": "174:56",
+   "eyebrow": "Inputs · Component",
+   "summary": "Type to narrow a long list, then pick one. A Select you can search.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Date Picker": {
+   "id": "185:56",
+   "eyebrow": "Inputs · Component",
+   "summary": "Type a date, or pick one — or a range — from a month you can see.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Day states",
+    "Behaviour · single",
+    "Behaviour · range",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Textarea": {
+   "id": "26:2",
+   "eyebrow": "Inputs · Component",
+   "summary": "Room to write more than one line — comments, bios, feedback.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Search Field": {
+   "id": "106:1255",
+   "eyebrow": "Inputs · Component",
+   "summary": "Find or filter what's on screen — with a one-tap clear.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Sizes",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Checkbox": {
+   "id": "4:174",
+   "eyebrow": "Inputs · Component",
+   "summary": "Choose any number of independent options — or one opt-in.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Radio": {
+   "id": "24:2",
+   "eyebrow": "Inputs · Component",
+   "summary": "Pick exactly one from a small set people can see at once.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Toggle": {
+   "id": "25:2",
+   "eyebrow": "Inputs · Component",
+   "summary": "Flip one setting on or off — it takes effect right away.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Slider": {
+   "id": "191:56",
+   "eyebrow": "Inputs · Component",
+   "summary": "Pick a value — or a range — by position, with a number box when it has to be exact.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Chip": {
+   "id": "106:2",
+   "eyebrow": "Inputs · Component",
+   "summary": "Compact, selectable tokens for filters and tags.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "File Upload": {
+   "id": "107:37",
+   "eyebrow": "Inputs · Component",
+   "summary": "A drop zone for attaching files — with the rules shown up front.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Alert": {
+   "id": "36:2",
+   "eyebrow": "Feedback · Component",
+   "summary": "A persistent message about the page or a section — stays until it's resolved.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Placement",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Toast": {
+   "id": "37:2",
+   "eyebrow": "Feedback · Component",
+   "summary": "A brief, non-blocking confirmation that appears in a corner and goes away.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Progress": {
+   "id": "106:1356",
+   "eyebrow": "Feedback · Component",
+   "summary": "Show how far along a task is — when you know the finish line.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Tones & sizes",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Loading": {
+   "id": "42:2",
+   "eyebrow": "Feedback · Skeleton · Spinner",
+   "summary": "Skeletons when you know the layout, spinners when you don't.",
+   "sections": [
+    "At a glance",
+    "When to use",
+    "Spinner",
+    "Skeleton",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Empty State": {
+   "id": "41:2",
+   "eyebrow": "Feedback · Component",
+   "summary": "Explains why a space is empty — and what to do next.",
+   "sections": [
+    "Anatomy",
+    "When to use",
+    "Three kinds",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Tooltip": {
+   "id": "35:2",
+   "eyebrow": "Feedback · Component",
+   "summary": "A short label on hover or focus — mostly to name icon-only buttons.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Placement",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Badge": {
+   "id": "4:175",
+   "eyebrow": "Feedback · Component",
+   "summary": "A one- or two-word status or category. Never clickable.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Tones",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Dialog": {
+   "id": "38:2",
+   "eyebrow": "Overlays · Component",
+   "summary": "Stops the page for a decision or a short, focused task.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Variants",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Popover & Drawer": {
+   "id": "107:2",
+   "eyebrow": "Overlays · Components",
+   "summary": "A small panel by its trigger, or a full-height panel at the side — both keep the page in view.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Overlay ladder",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Menu": {
+   "id": "39:2",
+   "eyebrow": "Overlays · Component",
+   "summary": "A short list of actions that opens from a trigger.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Item states",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Navigation": {
+   "id": "49:2",
+   "eyebrow": "Navigation · App shell",
+   "summary": "App Header, Sidebar and Page Header — the frame every screen sits in.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Sidebar",
+    "Nav item",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Tabs": {
+   "id": "40:2",
+   "eyebrow": "Navigation · Component",
+   "summary": "Switch between peer views of the same thing — without leaving the page.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Segmented Control": {
+   "id": "182:56",
+   "eyebrow": "Navigation · Component",
+   "summary": "Switch how the same content is shown — view, period or filter — in one tap.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Sizes & counts",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Stepper": {
+   "id": "189:56",
+   "eyebrow": "Navigation · Component",
+   "summary": "Show where people are in a multi-step flow — and let them go back.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Layouts",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Accordion": {
+   "id": "106:1409",
+   "eyebrow": "Navigation · Component",
+   "summary": "Collapsible sections — people open only what they need.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Avatar": {
+   "id": "27:623",
+   "eyebrow": "Data display · Component",
+   "summary": "A person or workspace at a glance — initials first, icon as fallback.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Types & sizes",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Card": {
+   "id": "4:176",
+   "eyebrow": "Data display · Component",
+   "summary": "A container for one subject — with up to two actions about it.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Elevation",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Divider": {
+   "id": "27:692",
+   "eyebrow": "Data display · Component",
+   "summary": "A 1px line between groups — only when space alone isn't enough.",
+   "sections": [
+    "At a glance",
+    "When to use",
+    "Orientation",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Lists & Tables": {
+   "id": "51:2",
+   "eyebrow": "Data display · Components",
+   "summary": "Rows of people, files and records — a list to scan, a table to compare.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "List item",
+    "Table cells",
+    "Sorting",
+    "Compose a table",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Form Patterns": {
+   "id": "52:2",
+   "eyebrow": "Patterns · Pattern",
+   "summary": "Sections, actions and error handling that make long forms feel short.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Layouts",
+    "Actions",
+    "Validation",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "AI Patterns": {
+   "id": "197:56",
+   "eyebrow": "Patterns · AI",
+   "summary": "Say it's AI, show where it came from, and keep people in control.",
+   "sections": [
+    "At a glance",
+    "Principles",
+    "Anatomy",
+    "States",
+    "Behaviour",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Kit · Stat Card": {
+   "id": "107:78",
+   "eyebrow": "Product kit · Component",
+   "summary": "One key number on a dashboard — always with its comparison.",
+   "sections": [
+    "At a glance",
+    "Anatomy",
+    "When to use",
+    "Trends",
+    "Do & don't",
+    "Tokens",
+    "Accessibility",
+    "Themes",
+    "Code"
+   ]
+  },
+  "Templates": {
+   "id": "54:2",
+   "eyebrow": "Product kit · SaaS admin",
+   "summary": "Five ready screens at three breakpoints — start here, keep the instances.",
+   "sections": [
+    "At a glance",
+    "Gallery",
+    "States",
+    "How to use"
+   ]
+  },
+  "Starter & Empty States": {
+   "id": "156:56",
+   "eyebrow": "Product kit · Starter",
+   "summary": "A blank shell for every new screen — and the right thing to show when there's nothing to show.",
+   "sections": [
+    "At a glance",
+    "Starter shells",
+    "Pick the right empty",
+    "Web",
+    "Tablet",
+    "Mobile",
+    "Inside components",
+    "Writing formula",
+    "How to use"
+   ]
+  },
+  "Examples": {
+   "id": "13:2",
+   "eyebrow": "Product kit · Examples",
+   "summary": "Full screens built only from library components: sign in, notifications and more.",
+   "sections": [
+    "Examples"
+   ]
+  }
+ }
+}

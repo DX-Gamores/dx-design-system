@@ -22,15 +22,17 @@ Opens below the trigger (flip if no room) with duration/moderate + easing/enter.
 
 ## Accessibility
 
-trigger has aria-haspopup=menu + aria-expanded; Enter/Space/↓ open with focus on the first item; ↑↓ move, Home/End jump, typing a letter jumps; Enter activates; Esc closes and returns focus to the trigger. role=menu / menuitem; Divider = role=separator.
+Trigger has aria-haspopup=menu + aria-expanded; Enter/Space/↓ open with focus on the first item; ↑↓ move, Home/End jump, typing a letter jumps; Enter activates; Esc closes and returns focus to the trigger. role=menu / menuitem; Divider = role=separator.
 
 ## Tokens
 
-bg/surface-raised, border/default, Elevation/2, radius/md, spacing/1.
+Bg/surface-raised, border/default, Elevation/2, radius/md, spacing/1.
 
 ## Code
 
+```tsx
 <Menu label="More actions for Esther Howard" items={[{ label, icon, tone: "danger", separatorBefore }]} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

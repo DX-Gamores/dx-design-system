@@ -26,7 +26,9 @@ Labels stay on one line (truncate with …; keep them short so they never need t
 
 ## Code
 
+```tsx
 Menu item: { label: "Edit role", icon: "edit", tone: "default|danger", disabled }
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

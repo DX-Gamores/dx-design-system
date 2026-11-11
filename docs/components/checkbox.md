@@ -31,11 +31,13 @@ Unchecked border ≥3:1. State shown by icon, not color alone. Space toggles.
 
 ## Tokens
 
-bg/surface, bg/brand, border/strong, icon/on-color, radius/sm, size/icon-md.
+Bg/surface, bg/brand, border/strong, icon/on-color, radius/sm, size/icon-md.
 
 ## Code
 
+```tsx
 <Checkbox label="Email" defaultChecked | indeterminate | disabled />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

@@ -15,7 +15,7 @@
 
 ## When
 
-filter bars, multi-select choices, removable tags. Not for actions (use Button) or status (use Badge).
+Filter bars, multi-select choices, removable tags. Not for actions (use Button) or status (use Badge).
 
 ## Property notes
 
@@ -23,11 +23,13 @@ Selected (False | True) · State (Default | Hover | Focus | Disabled) · Label �
 
 ## Tokens
 
-bg/surface, bg/selected, border/strong, border/selected, text/brand; radius/full; size/control-sm.
+Bg/surface, bg/selected, border/strong, border/selected, text/brand; radius/full; size/control-sm.
 
 ## Code
 
+```tsx
 <Chip selected onRemove={…}>Label</Chip>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

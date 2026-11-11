@@ -31,11 +31,13 @@ One topic per card. Don't nest cards. Don't mix Flat and Raised in one list. Def
 
 ## Tokens
 
-bg/surface, border/default, radius/lg, spacing/6 padding, spacing/4 gap, Heading/H4 + Body/Small.
+Bg/surface, border/default, radius/lg, spacing/6 padding, spacing/4 gap, Heading/H4 + Body/Small.
 
 ## Code
 
+```tsx
 <Card title="…" elevation="flat|raised" actions={<>…</>}>Body</Card>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

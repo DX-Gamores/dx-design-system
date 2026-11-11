@@ -14,17 +14,19 @@ Tab instances in a tablist over a Divider baseline. Override labels/selection on
 
 ## Accessibility
 
-role=tablist / tab / tabpanel; only the selected tab is in the Tab order; ←/→ move between tabs (Home/End jump). Automatic activation (panel switches on arrow) when panels are instant; manual activation (Enter/Space) when panels load slowly.
+Role=tablist / tab / tabpanel; only the selected tab is in the Tab order; ←/→ move between tabs (Home/End jump). Automatic activation (panel switches on arrow) when panels are instant; manual activation (Enter/Space) when panels load slowly.
 
 ## Motion
 
-indicator slides with duration/moderate + easing/standard; Reduced = no slide.
+Indicator slides with duration/moderate + easing/standard; Reduced = no slide.
 
 ## Code
 
+```tsx
 <Tabs label="Member views" tabs={[{ id, label, count, panel }]} />
 
 Switching how the same content is shown (no separate panels) → Segmented Control.
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

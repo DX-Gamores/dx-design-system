@@ -37,13 +37,15 @@ In Disabled, the helper stays text/secondary so the reason it is disabled stays 
 
 ## Tokens
 
-bg/surface, border/strong|focus|danger|disabled, text/placeholder, radius/md, size/control-md, spacing/2-3.
+Bg/surface, border/strong|focus|danger|disabled, text/placeholder, radius/md, size/control-md, spacing/2-3.
 
 ## Code
 
+```tsx
 <TextField label="Email" placeholder="…" helperText="…" error="…" leadingIcon="search" hideLabel disabled /> Size (Medium 40 | Small 32).
 
 Dates → Date Field + Calendar (Date Picker); keep plain Text Fields for far-away dates people type, like birthdays.
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

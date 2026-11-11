@@ -21,7 +21,7 @@
 
 ## When
 
-long or searchable lists (people, places, projects, 15+ options). 5–15 fixed options → Select. Fewer than 5 → Radio. Free text with no list → Text Field. Global search → Search Field.
+Long or searchable lists (people, places, projects, 15+ options). 5–15 fixed options → Select. Fewer than 5 → Radio. Free text with no list → Text Field. Global search → Search Field.
 
 ## Property notes
 
@@ -29,15 +29,17 @@ State (Default | Focus | Error | Disabled | Hover | Read-only) · Filled (False 
 
 ## Accessibility
 
-role=combobox, aria-expanded, aria-controls → listbox, aria-activedescendant for the highlighted option, aria-autocomplete=list. Typing filters; ↓/↑ move; Enter selects; Esc closes then clears; Tab selects nothing and leaves. Announce result count via a polite live region.
+Role=combobox, aria-expanded, aria-controls → listbox, aria-activedescendant for the highlighted option, aria-autocomplete=list. Typing filters; ↓/↑ move; Enter selects; Esc closes then clears; Tab selects nothing and leaves. Announce result count via a polite live region.
 
 ## Tokens
 
-same as Select + caret in bg/brand, clear in icon/secondary.
+Same as Select + caret in bg/brand, clear in icon/secondary.
 
 ## Code
 
+```tsx
 <Combobox label="Assignee" options={people} onInputChange={search} loading={isLoading} onCreate={addPerson} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

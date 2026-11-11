@@ -33,11 +33,13 @@ In Disabled, the helper stays text/secondary so the reason it is disabled stays 
 
 ## Tokens
 
-same as Text Field + chevron in color/icon/primary.
+Same as Text Field + chevron in color/icon/primary.
 
 ## Code
 
+```tsx
 <Select label="Time zone" placeholder="…" options={[{ value, label }]} error="…" /> (native <select>) Size (Medium 40 | Small 32).
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

@@ -22,11 +22,11 @@ Mode: Single (Clear · Today footer) | Range (summary · Cancel · Apply footer)
 
 ## Accessibility
 
-role="dialog" aria-modal + aria-label "Choose date"; grid role="grid"; selected aria-selected; today aria-current="date". ←→ day · ↑↓ week · Home/End start/end of week · PageUp/PageDown month · Shift+PageUp/PageDown year · Enter/Space select · Esc closes and returns focus to the calendar button.
+Role="dialog" aria-modal + aria-label "Choose date"; grid role="grid"; selected aria-selected; today aria-current="date". ←→ day · ↑↓ week · Home/End start/end of week · PageUp/PageDown month · Shift+PageUp/PageDown year · Enter/Space select · Esc closes and returns focus to the calendar button.
 
 ## Tokens
 
-bg/surface-raised · border/default · Elevation/2 · radius/lg · bg/brand (selected) · bg/brand-subtle (range) · text/brand (today) · text/disabled + strikethrough.
+Bg/surface-raised · border/default · Elevation/2 · radius/lg · bg/brand (selected) · bg/brand-subtle (range) · text/brand (today) · text/disabled + strikethrough.
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

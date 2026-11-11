@@ -32,11 +32,13 @@ In Disabled, the helper stays text/secondary so the reason it is disabled stays 
 
 ## Tokens
 
-same as Text Field + size/textarea-min, spacing/2 vertical padding.
+Same as Text Field + size/textarea-min, spacing/2 vertical padding.
 
 ## Code
 
+```tsx
 <Textarea label="Bio" showCounter maxLength={160} helperText="…" error="…" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

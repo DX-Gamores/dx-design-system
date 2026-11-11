@@ -16,15 +16,17 @@ Streaming (cursor + Stop) · Complete (sources, confidence, Copy · Regenerate �
 
 ## Rules
 
-always show the AI Label; cite sources under the claim; let people stop, edit and undo; show confidence only when it's real.
+Always show the AI Label; cite sources under the claim; let people stop, edit and undo; show confidence only when it's real.
 
 ## Accessibility
 
-container aria-live="polite" aria-busy while streaming; announce by sentence, not by token; Stop is the first focusable control; icon buttons have names.
+Container aria-live="polite" aria-busy while streaming; announce by sentence, not by token; Stop is the first focusable control; icon buttons have names.
 
 ## Code
 
+```tsx
 <AIResponse status="complete" sources={[…]} confidence="high" onRegenerate={…} onFeedback={…}>{text}</AIResponse>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

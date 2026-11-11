@@ -20,15 +20,17 @@ Expanded (Desktop, 256px, icon + label) · Rail (Tablet, 72px, icons only — la
 
 ## Structure
 
-nav (Nav Item instances; override labels, icons, Selected) → Divider → account row (Avatar + name).
+Nav (Nav Item instances; override labels, icons, Selected) → Divider → account row (Avatar + name).
 
 ## Accessibility
 
-<nav aria-label="Main">. Drawer behaves like a modal dialog (focus trapped, Esc closes, focus returns to the Menu button). Desktop users can collapse Expanded → Rail with the header Menu button (aria-expanded).
+`<nav aria-label="Main">`. Drawer behaves like a modal dialog (focus trapped, Esc closes, focus returns to the Menu button). Desktop users can collapse Expanded → Rail with the header Menu button (aria-expanded).
 
 ## Code
 
+```tsx
 <Sidebar items={[{ label, href, icon, count, current }]} variant="expanded|rail" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

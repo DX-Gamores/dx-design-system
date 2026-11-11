@@ -16,3 +16,44 @@
     background: var(--ds-color-bg-brand-subtle);
   }
 }
+
+/* Long-form docs text (specs and guides rendered from Markdown). Tokens only. */
+@layer components {
+  .ds-prose {
+    @apply flex flex-col gap-4 text-body-medium;
+    max-width: 100%;
+  }
+  .ds-prose > * { margin: 0; }
+  .ds-prose h1 { @apply text-heading-h1; }
+  .ds-prose h2 { @apply mt-6 text-heading-h2; }
+  .ds-prose h3 { @apply mt-4 text-heading-h4; }
+  .ds-prose h4 { @apply mt-2 text-label-large; }
+  .ds-prose p,
+  .ds-prose li { max-width: 72ch; }
+  .ds-prose ul { @apply list-disc pl-6; }
+  .ds-prose ol { @apply list-decimal pl-6; }
+  .ds-prose li + li { @apply mt-1; }
+  .ds-prose a { color: var(--ds-color-text-brand); @apply underline underline-offset-2; }
+  .ds-prose a:focus-visible { @apply rounded-sm focus-ring; }
+  .ds-prose strong { @apply font-semibold; }
+  .ds-prose blockquote { @apply border-l-4 border-line-default pl-4 text-fg-secondary; }
+  .ds-prose :not(pre) > code {
+    @apply rounded-sm bg-surface-subtle px-1 py-0.5 text-code-small;
+    overflow-wrap: anywhere;
+  }
+  .ds-prose pre {
+    @apply overflow-x-auto rounded-container border border-line-default bg-surface-subtle p-4 text-code-small;
+    white-space: pre-wrap;
+  }
+  .ds-prose .ds-table { @apply overflow-x-auto rounded-container border border-line-default; }
+  .ds-prose table {
+    @apply w-full text-body-small;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .ds-prose th { @apply bg-surface-subtle text-left text-label-small; }
+  .ds-prose th,
+  .ds-prose td { @apply border-b border-line-default px-3 py-2 align-top; }
+  .ds-prose tr:last-child td { @apply border-b-0; }
+  .ds-prose hr { @apply border-line-default; }
+}

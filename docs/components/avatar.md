@@ -27,11 +27,13 @@ Decorative when the name is shown beside it (alt=""); otherwise the accessible n
 
 ## Tokens
 
-size/avatar-sm|md|lg, radius/full, bg/brand-subtle, text/brand.
+Size/avatar-sm|md|lg, radius/full, bg/brand-subtle, text/brand.
 
 ## Code
 
+```tsx
 <Avatar name="Jane Cooper" size="sm|md|lg" decorative /> Show status: presence dot (success color; recolor the "status" layer for away/busy).
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

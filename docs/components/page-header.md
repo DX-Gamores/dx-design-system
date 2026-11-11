@@ -32,7 +32,9 @@ Max one Primary action. Put filters and tabs below the Page Header, not inside i
 
 ## Code
 
+```tsx
 <PageHeader title="…" description="…" breadcrumbs={<Breadcrumbs …/>} actions={<>…</>} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

@@ -21,9 +21,11 @@ Selected (False | True) · State (Default | Hover | Focus | Disabled) · Label �
 
 ## Code
 
+```tsx
 Tab: { id, label, count, disabled, panel } inside <Tabs tabs={…} /> Show icon + Icon: optional leading icon that takes the label color.
 
 Switching how the same content is shown (no separate panels) → Segmented Control.
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

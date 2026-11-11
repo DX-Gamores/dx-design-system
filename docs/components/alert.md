@@ -29,11 +29,13 @@ Static alerts are plain content. If inserted dynamically: Danger uses role=alert
 
 ## Tokens
 
-bg/{brand,success,warning,danger}-subtle, matching text/* for the icon, text/primary + text/secondary, padding/row, radius/md.
+Bg/{brand,success,warning,danger}-subtle, matching text/* for the icon, text/primary + text/secondary, padding/row, radius/md.
 
 ## Code
 
+```tsx
 <Alert tone="info|success|warning|danger" title="…" action={<Link …/>} onDismiss={…} live>Description</Alert>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

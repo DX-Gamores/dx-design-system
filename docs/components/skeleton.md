@@ -28,11 +28,13 @@ Mark the loading region aria-busy=true and announce completion via a polite stat
 
 ## Tokens
 
-bg/surface-subtle, radius/sm | full | md, size/avatar-lg.
+Bg/surface-subtle, radius/sm | full | md, size/avatar-lg.
 
 ## Code
 
+```tsx
 <Skeleton shape="text|circle|block" width={…} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

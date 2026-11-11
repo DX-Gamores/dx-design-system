@@ -24,7 +24,7 @@ State (Default | Hover | Selected | Focus) · Title, Description · Show leading
 
 ## Text
 
-title and description wrap (never clip); keep descriptions to one sentence.
+Title and description wrap (never clip); keep descriptions to one sentence.
 
 ## Layout
 
@@ -32,7 +32,9 @@ Stack items with a Divider between them inside a bg/surface + border/default + r
 
 ## Code
 
+```tsx
 <List label="…"><ListItem title="…" description="…" leading={<Avatar …/>} meta={<Badge …/>} action={<Menu …/>} /></List>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

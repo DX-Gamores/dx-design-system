@@ -7,13 +7,13 @@ The code side of the **DX Design System** Figma file. Developers don't need a Fi
 | Get the brand right in any web project | [`dist/tokens.css`](dist/tokens.css) — CSS variables for 3 brands × 4 colour modes × 2 densities |
 | Style with Tailwind (v4) | [`dist/tailwind.css`](dist/tailwind.css) — `bg-surface`, `text-fg-primary`, `border-line-default`, `text-heading-h1`, `shadow-elevation-2` … |
 | Build a component correctly | [`docs/components/`](docs/components/README.md) — 63 specs: props, states, tokens, keyboard and accessibility |
-| Start a new app | This repo is a working **Next.js 15 + Tailwind 4** starter (`npm run dev`) |
+| Start a new app | [`src/app/starter`](src/app/starter) — a working **Next.js 15 + Tailwind 4** app shell (`npm run dev` → `/starter`) |
 | Feed tokens to another tool | [`tokens/tokens.json`](tokens/tokens.json) — W3C Design Tokens format, all modes |
 | Draw charts | [`dist/tokens.ts`](dist/tokens.ts) → `dataviz.series`, colour-blind-checked |
 
-**Live preview:** [dx-gamores.github.io/dx-design-system](https://dx-gamores.github.io/dx-design-system/) — the starter app and `/kit` component gallery, with the brand / theme / density switches.
+**Docs site:** [dx-gamores.github.io/dx-design-system](https://dx-gamores.github.io/dx-design-system/) — every Figma page mirrored: specs, live components, governance and changelog, with brand / theme / density switches. No Figma seat needed.
 
-**Docs site (no Figma needed):** [DX Design System on Claude](https://claude.ai/artifact/Qrht2ZAQ4WQJXYr4bHC332) — tokens per theme, live component previews, specs and icons (ask the design lead for access).
+**Also on Claude:** [DX Design System on Claude](https://claude.ai/artifact/Qrht2ZAQ4WQJXYr4bHC332) — tokens per theme, live component previews, specs and icons (ask the design lead for access).
 
 **Figma (view-only is enough):** [DX Design System](https://www.figma.com/design/myYAMZWk4yKLQMWGBdJVJd/DX-Design-System) · every page has visual docs you can read without a seat.
 
@@ -21,7 +21,7 @@ The code side of the **DX Design System** Figma file. Developers don't need a Fi
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000 — dashboard + /kit component gallery
+npm run dev          # http://localhost:3000 — docs site · /starter = starter app
 ```
 
 Use the brand / theme / density switches in the header. They flip the same variable modes as Figma.
@@ -43,14 +43,14 @@ npm i github:DX-Gamores/dx-design-system      # or copy the dist/ folder
 <html data-brand="default" data-theme="light" data-density="comfortable">
 ```
 
-Components live in [`src/components/ui`](src/components/ui). Copy the ones you need into your project and own them (the shadcn/ui approach). They only depend on the tokens, so they re-skin for any brand.
+Components live in [`src/components/ui`](src/components/ui). Copy the ones you need into your project and own them (the shadcn/ui approach). They only depend on the tokens, so they re-skin for any brand. To start a new app from the shell, copy [`src/app/starter`](src/app/starter) too.
 
 More detail is in **[docs/GETTING-STARTED.md](docs/GETTING-STARTED.md)**, **[docs/NEW-BRAND.md](docs/NEW-BRAND.md)** and **[docs/WORKFLOW.md](docs/WORKFLOW.md)**.
 
 ## What's inside
 
 ```
-figma/                 Raw exports from the Figma file (source snapshots — don't edit)
+figma/                 Exports from the Figma file: variables, components, icons, page outlines (don't edit)
 scripts/               build-tokens · build-icons · build-specs  (npm run build:all)
 tokens/tokens.json     W3C DTCG tokens, every mode
 dist/                  tokens.css · tailwind.css · tokens.ts  (generated, committed)
@@ -58,7 +58,9 @@ docs/components/       63 component specs (generated from Figma descriptions)
 src/components/ui/     React components: Button, IconButton, TextField, Textarea, Select, Checkbox,
                        Toggle, SegmentedControl, Tabs, Stepper, Badge, Alert, Spinner, Skeleton,
                        Progress, EmptyState, Card, Avatar, StatCard, AILabel, Citation, Icon (69 icons)
-src/app/               Next.js starter: dashboard, /kit gallery, placeholder sections
+src/app/(docs)/        Docs site: one page per Figma page (generated from figma/ + docs/)
+src/app/starter/       Starter app: app shell, dashboard, placeholder sections
+src/site/              Docs-site building blocks: navigation, live demos, page layouts
 ```
 
 ## Rules that keep the brand consistent

@@ -24,7 +24,9 @@ Label says what is counted; value uses Heading/H2 with tabular figures; the tren
 
 ## Code
 
+```tsx
 <StatCard label="Active members" value="1,284" trend={{ direction: "positive", value: "+12%" }} context="vs. last 30 days" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

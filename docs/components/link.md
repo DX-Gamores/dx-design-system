@@ -28,11 +28,13 @@ Link text must make sense out of context (not "click here"). External links: sho
 
 ## Tokens
 
-text/brand, text/brand-hover, border/focus, size/icon-sm, spacing/1.
+Text/brand, text/brand-hover, border/focus, size/icon-sm, spacing/1.
 
 ## Code
 
+```tsx
 <Link href="…" size="md|sm" external>View billing history</Link>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

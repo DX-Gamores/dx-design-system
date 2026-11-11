@@ -24,7 +24,9 @@ It is a link. The current page has aria-current="page" (= Selected). Collapsed i
 
 ## Code
 
+```tsx
 Nav item: { label, href, icon, count, current } inside <Sidebar items={…} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

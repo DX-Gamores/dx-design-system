@@ -25,15 +25,17 @@ Show on hover after ~duration/moderate delay and immediately on focus; hide on b
 
 ## Accessibility
 
-role=tooltip, referenced by aria-describedby (or provides the name of an icon-only button). Never put interactive elements inside.
+Role=tooltip, referenced by aria-describedby (or provides the name of an icon-only button). Never put interactive elements inside.
 
 ## Tokens
 
-bg/inverse, text/inverse, Body/Small, radius/md, spacing/2 × spacing/3.
+Bg/inverse, text/inverse, Body/Small, radius/md, spacing/2 × spacing/3.
 
 ## Code
 
+```tsx
 <Tooltip content="Edit member" placement="top|bottom|left|right"><IconButton … /></Tooltip>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

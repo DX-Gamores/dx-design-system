@@ -12,7 +12,7 @@
 
 ## Content
 
-title states how many problems; each error is a Link (exposed) with the same text as the field's error message, pointing to that field (href="#field-id"). Add/remove links as needed.
+Title states how many problems; each error is a Link (exposed) with the same text as the field's error message, pointing to that field (href="#field-id"). Add/remove links as needed.
 
 ## Behaviour
 
@@ -20,15 +20,17 @@ On submit with errors, render it, move focus to it (tabindex=-1), and also show 
 
 ## Accessibility
 
-role=alert or focus on render; links move focus to the field. Never rely on red alone — the icon + title carry the meaning.
+Role=alert or focus on render; links move focus to the field. Never rely on red alone — the icon + title carry the meaning.
 
 ## Tokens
 
-bg/danger-subtle, border/danger (strong), text/danger icon, Label/Large, Link Small.
+Bg/danger-subtle, border/danger (strong), text/danger icon, Label/Large, Link Small.
 
 ## Code
 
+```tsx
 <ErrorSummary errors={[{ fieldId: "email", message: "…" }]} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

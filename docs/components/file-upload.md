@@ -13,7 +13,7 @@
 
 ## When
 
-forms that need documents or images. State the accepted types and size limit in Helper text. List uploads below with Progress Bar + a remove Icon Button.
+Forms that need documents or images. State the accepted types and size limit in Helper text. List uploads below with Progress Bar + a remove Icon Button.
 
 ## Property notes
 
@@ -21,15 +21,17 @@ State (Default | Hover | Dragging | Error | Disabled) · Helper text.
 
 ## Tokens
 
-border/strong (dashed), border/focus while dragging, bg/selected, bg/danger-subtle + text/danger for errors, shape/radius-container.
+Border/strong (dashed), border/focus while dragging, bg/selected, bg/danger-subtle + text/danger for errors, shape/radius-container.
 
 ## Accessibility
 
-the whole zone is a labelled button that opens the file picker; announce upload progress and errors.
+The whole zone is a labelled button that opens the file picker; announce upload progress and errors.
 
 ## Code
 
+```tsx
 <FileUpload accept=".pdf,.png,.jpg" maxSize="10MB" onFiles={…} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

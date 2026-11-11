@@ -21,15 +21,17 @@ Steps (3 | 4 | 5) · Orientation (Horizontal for desktop page tops | Vertical fo
 
 ## Accessibility
 
-<nav aria-label="Progress"><ol>; current step aria-current="step"; completed steps are links ("Step 1, Account, completed"); errors in text. Mobile: collapse to "Step 2 of 5 · Company".
+`<nav aria-label="Progress">``<ol>`; current step aria-current="step"; completed steps are links ("Step 1, Account, completed"); errors in text. Mobile: collapse to "Step 2 of 5 · Company".
 
 ## Tokens
 
-bg/brand + icon/on-color (complete) · border/focus-brand ring (current) · border/strong (upcoming) · bg/danger-subtle + text/danger (error) · connector border/default → bg/brand.
+Bg/brand + icon/on-color (complete) · border/focus-brand ring (current) · border/strong (upcoming) · bg/danger-subtle + text/danger (error) · connector border/default → bg/brand.
 
 ## Code
 
+```tsx
 <Stepper current={1} steps={[{ label: 'Account', description: '…', status: 'complete' }, …]} onStepClick={goTo} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

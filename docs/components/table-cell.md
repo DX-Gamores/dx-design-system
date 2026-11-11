@@ -19,11 +19,13 @@ COMPOSE A TABLE: a header row of Table Header Cells, then rows = horizontal auto
 
 ## Accessibility
 
-real <table> with a caption/accessible name; checkbox cells label "Select <row name>"; action Icon Buttons include the row name ("More actions for Jane Cooper"). On Mobile, switch a table to List Items unless columns are essential.
+Real `<table>` with a caption/accessible name; checkbox cells label "Select `<row name>`"; action Icon Buttons include the row name ("More actions for Jane Cooper"). On Mobile, switch a table to List Items unless columns are essential.
 
 ## Code
 
+```tsx
 <Table caption="…" columns={[…]} rows={…} rowKey={…} />  (cells via column render)
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

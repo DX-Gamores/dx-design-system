@@ -13,7 +13,9 @@
 
 ## Code
 
+```tsx
 <Breadcrumbs items={[{ label: "Settings", href }, { label: "Members" }]} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

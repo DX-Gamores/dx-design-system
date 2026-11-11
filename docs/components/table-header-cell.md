@@ -13,11 +13,13 @@
 
 ## Accessibility
 
-<th scope="col"> with aria-sort on the sorted column only; the label is a button that toggles sort. Resize width to the column; use the same width for every cell in that column.
+`<th scope="col">` with aria-sort on the sorted column only; the label is a button that toggles sort. Resize width to the column; use the same width for every cell in that column.
 
 ## Code
 
+```tsx
 <Table columns={[{ key, header, sortable, render }]} sort={{ key, direction }} … />  (header cell)
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

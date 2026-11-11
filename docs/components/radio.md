@@ -23,15 +23,17 @@ Checked (False | True) · State (Default | Hover | Focus | Error | Disabled) · 
 
 ## Accessibility
 
-radiogroup with an accessible name. Tab enters the group on the selected radio; arrow keys move focus and select; Space selects. State shown by the dot, not color alone.
+Radiogroup with an accessible name. Tab enters the group on the selected radio; arrow keys move focus and select; Space selects. State shown by the dot, not color alone.
 
 ## Tokens
 
-bg/surface, bg/brand, border/strong, icon/on-color, radius/full, size/icon-md, gap/inline.
+Bg/surface, bg/brand, border/strong, icon/on-color, radius/full, size/icon-md, gap/inline.
 
 ## Code
 
+```tsx
 <RadioGroup label="Billing cycle" name="cycle" options={[…]} defaultValue="m" />  ·  single: <Radio label="…" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

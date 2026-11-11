@@ -85,3 +85,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(functio
     </button>
   );
 });
+
+/** Button styling for links that look like buttons (navigation, not actions): <a className={buttonClass({ variant: "secondary" })}>. */
+export const buttonClass = ({ variant = "primary", tone = "default", size = "md" }: { variant?: Variant; tone?: Tone; size?: Size } = {}) =>
+  cn(base, sizes[size], looks[tone][variant]);

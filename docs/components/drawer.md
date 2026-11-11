@@ -14,7 +14,7 @@
 
 ## When
 
-record details, filters, multi-field edits that keep the page in context. Short confirmations → Dialog; small details → Popover.
+Record details, filters, multi-field edits that keep the page in context. Short confirmations → Dialog; small details → Popover.
 
 ## Property notes
 
@@ -22,15 +22,17 @@ Title · Content (slot) · Show footer (primary + secondary actions). Width 400 
 
 ## Tokens
 
-bg/surface-raised, Elevation/3, border/default dividers, spacing/6 padding; scrim color/bg/overlay; layer z/modal.
+Bg/surface-raised, Elevation/3, border/default dividers, spacing/6 padding; scrim color/bg/overlay; layer z/modal.
 
 ## Accessibility
 
-role="dialog", aria-modal, focus trapped, Escape and the close button dismiss.
+Role="dialog", aria-modal, focus trapped, Escape and the close button dismiss.
 
 ## Code
 
+```tsx
 <Drawer open title="Filters" footer={…}>…</Drawer>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

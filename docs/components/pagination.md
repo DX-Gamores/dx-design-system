@@ -13,7 +13,9 @@
 
 ## Code
 
+```tsx
 <Pagination page={1} pageCount={5} summary="Showing 1–10 of 48" onPageChange={…} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

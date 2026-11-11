@@ -21,7 +21,7 @@
 
 ## When
 
-a specific day near today, where weekday context helps (due dates, bookings, report ranges). Birthdays and other far-away known dates → let people type (Date Field without the calendar, or three Text Fields). Relative periods (Last 7 days) → Segmented Control or Select presets.
+A specific day near today, where weekday context helps (due dates, bookings, report ranges). Birthdays and other far-away known dates → let people type (Date Field without the calendar, or three Text Fields). Relative periods (Last 7 days) → Segmented Control or Select presets.
 
 ## Property notes
 
@@ -29,19 +29,21 @@ State (Default | Focus | Error | Disabled | Hover | Read-only) · Filled (False 
 
 ## Format
 
-always show the format in the helper (mm/dd/yyyy) and accept typing; parse loosely (11/18, Nov 18), display unambiguously (Nov 18, 2026).
+Always show the format in the helper (mm/dd/yyyy) and accept typing; parse loosely (11/18, Nov 18), display unambiguously (Nov 18, 2026).
 
 ## Accessibility
 
-input stays typeable; the calendar button is a separate button with aria-label "Choose date, selected Nov 18, 2026" and opens a dialog. Errors explain the rule ("Pick a date after today").
+Input stays typeable; the calendar button is a separate button with aria-label "Choose date, selected Nov 18, 2026" and opens a dialog. Errors explain the rule ("Pick a date after today").
 
 ## Tokens
 
-same as Select; calendar icon in icon/secondary.
+Same as Select; calendar icon in icon/secondary.
 
 ## Code
 
+```tsx
 <DatePicker label="Due date" value={date} onChange={setDate} min={today} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

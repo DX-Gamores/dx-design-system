@@ -39,13 +39,22 @@ This repo replaces the "Can't" column. Token names, code snippets and component 
 - **Components:** the copies in your project are yours. Compare against `src/components/ui` when the changelog mentions a component you use.
 - **Questions:** comment on the Figma frame, or open a GitHub issue on this repo with the label `design-system`.
 
-## Updating the live preview (GitHub Pages)
+## The docs site (GitHub Pages)
 
-The preview at https://dx-gamores.github.io/dx-design-system/ is served from the `gh-pages` branch.
+The site at https://dx-gamores.github.io/dx-design-system/ mirrors the Figma file page for page. It is generated, not hand-written:
+
+| On the site | Comes from |
+|---|---|
+| Sidebar groups and order | The Figma page list (`src/site/content.ts` → `nav`) |
+| Page eyebrow, summary, "In the Figma page" outline | `figma/pages.content.json` (exported from each page's header and section headers) |
+| Specs | `docs/components/*.md` (`npm run specs`, from component descriptions) |
+| Live examples | `src/site/demos.tsx` — real components from `src/components/ui` |
+| "Coded" badges | `coded` in `src/site/content.ts` — add a spec slug when its component ships |
+
+To publish an update:
 
 ```bash
 npm run build:pages          # static export to out/ (base path /dx-design-system)
 ```
 
 Then commit the contents of `out/` to the `gh-pages` branch. Claude does this as part of "re-export the code kit".
-

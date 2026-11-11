@@ -22,7 +22,9 @@ Primary (save/submit) on the right, Cancel to its left. On Mobile, buttons fill 
 
 ## Code
 
+```tsx
 <FormActions variant="inline|sticky" status="You have unsaved changes" onCancel={…} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

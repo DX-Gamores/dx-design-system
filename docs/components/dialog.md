@@ -30,15 +30,17 @@ Open over color/bg/overlay scrim. Enter: duration/slow + easing/enter (fade + 8p
 
 ## Accessibility
 
-role=dialog + aria-modal=true, labelled by the title, described by the description. On open, focus moves inside (first field, or Cancel for Danger); Tab/Shift+Tab stay inside; Esc closes; on close focus returns to the trigger. The page behind is inert.
+Role=dialog + aria-modal=true, labelled by the title, described by the description. On open, focus moves inside (first field, or Cancel for Danger); Tab/Shift+Tab stay inside; Esc closes; on close focus returns to the trigger. The page behind is inert.
 
 ## Tokens
 
-bg/surface, bg/overlay, Elevation/3, radius/xl, padding/card, gap/stack, gap/inline, Heading/H3, Body/Medium.
+Bg/surface, bg/overlay, Elevation/3, radius/xl, padding/card, gap/stack, gap/inline, Heading/H3, Body/Medium.
 
 ## Code
 
+```tsx
 <Dialog open onClose={…} title="…" description="…" size="sm|md" tone="default|danger" footer={<>…</>} /> (native <dialog>)
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

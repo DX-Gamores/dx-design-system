@@ -42,7 +42,7 @@ These follow the device automatically:
 1. Open its spec in `docs/components/<name>.md`. It covers when to use it, its properties, tokens, keyboard behaviour and code API.
 2. Look at the Figma page in view-only mode for the visual states. The "Every state, side by side" matrix shows each one.
 3. If a coded version exists in `src/components/ui`, use or extend it. If not, build it from tokens only, following the spec.
-4. Check it in `/kit` in every brand × theme, plus keyboard-only.
+4. Check it on its docs-site page and in the [component gallery](https://dx-gamores.github.io/dx-design-system/start/gallery/) in every brand × theme, plus keyboard-only.
 
 ## 4. Fonts
 

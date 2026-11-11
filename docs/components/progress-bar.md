@@ -16,7 +16,7 @@
 
 ## When
 
-uploads, multi-step setup, storage or quota use. Unknown duration → Spinner / Skeleton.
+Uploads, multi-step setup, storage or quota use. Unknown duration → Spinner / Skeleton.
 
 ## Property notes
 
@@ -24,15 +24,17 @@ Tone (Brand | Success | Warning | Danger) · Size (Medium 8px | Small 4px) · La
 
 ## Tokens
 
-bg/neutral-pressed track; bg/brand, bg/success, bg/warning, bg/danger indicator; radius/full.
+Bg/neutral-pressed track; bg/brand, bg/success, bg/warning, bg/danger indicator; radius/full.
 
 ## Accessibility
 
-role="progressbar" with aria-valuenow/min/max and a visible or aria label.
+Role="progressbar" with aria-valuenow/min/max and a visible or aria label.
 
 ## Code
 
+```tsx
 <Progress value={60} tone="brand" size="md" label="Uploading files" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

@@ -28,11 +28,13 @@ Variant (Primary | Secondary | Ghost) · Tone (Default | Danger) · State (Defau
 
 ## Tokens
 
-button/* component tokens (primary, secondary, ghost, danger); button/radius → shape/radius-control.
+Button/* component tokens (primary, secondary, ghost, danger); button/radius → shape/radius-control.
 
 ## Code
 
+```tsx
 <Button variant="primary|secondary|ghost" tone="default|danger" size="lg|md|sm" />. v3.0 replaces the deprecated Button Danger.
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

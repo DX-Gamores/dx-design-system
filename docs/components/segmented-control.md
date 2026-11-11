@@ -21,15 +21,17 @@ Items (2–5) · Size (Medium 40 | Small 32). Each segment is exposed: set Selec
 
 ## Accessibility
 
-role=radiogroup + aria-label; segments role=radio + aria-checked. Tab enters on the selected segment; ←/→ move and select; Home/End jump. If it swaps panels, use the Tabs pattern (tablist/tab) instead. Icon-only segments need aria-label + Tooltip. Small segments are 24px tall (WCAG 2.5.8 minimum).
+Role=radiogroup + aria-label; segments role=radio + aria-checked. Tab enters on the selected segment; ←/→ move and select; Home/End jump. If it swaps panels, use the Tabs pattern (tablist/tab) instead. Icon-only segments need aria-label + Tooltip. Small segments are 24px tall (WCAG 2.5.8 minimum).
 
 ## Tokens
 
-track bg/surface-subtle + border/default · selected bg/surface-raised + border/default + Elevation/1 · text/secondary → text/primary · radius 8 outer / 4 inner · size/control-md|sm.
+Track bg/surface-subtle + border/default · selected bg/surface-raised + border/default + Elevation/1 · text/secondary → text/primary · radius 8 outer / 4 inner · size/control-md|sm.
 
 ## Code
 
+```tsx
 <SegmentedControl aria-label="View" value={view} onChange={setView} options={[{ value: 'list', label: 'List' }, …]} size="md" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

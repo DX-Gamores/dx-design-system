@@ -23,15 +23,17 @@ Checked (False | True) · State (Default | Focus | Disabled) · Label · Show la
 
 ## Accessibility
 
-role=switch with aria-checked; Space toggles (Enter optional). The label describes the setting, not the state ("Wi-Fi", not "Turn Wi-Fi on"). Off track uses color/bg/control-off (≥3:1 against surface).
+Role=switch with aria-checked; Space toggles (Enter optional). The label describes the setting, not the state ("Wi-Fi", not "Turn Wi-Fi on"). Off track uses color/bg/control-off (≥3:1 against surface).
 
 ## Tokens
 
-bg/control-off, bg/brand, icon/on-color, size/toggle-width/height (density-aware), radius/full.
+Bg/control-off, bg/brand, icon/on-color, size/toggle-width/height (density-aware), radius/full.
 
 ## Code
 
+```tsx
 <Toggle label="Email notifications" defaultChecked onChange={(on) => …} />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

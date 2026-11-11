@@ -24,11 +24,13 @@ Decorative by default (no role). Use role=separator only when it separates meani
 
 ## Tokens
 
-border/default fill, border-width/default thickness.
+Border/default fill, border-width/default thickness.
 
 ## Code
 
+```tsx
 <Divider orientation="horizontal|vertical" />
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

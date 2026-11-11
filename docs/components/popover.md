@@ -16,7 +16,7 @@
 
 ## When
 
-extra detail, a short form or a few options next to the trigger. Not for menus of actions (use Menu) or blocking decisions (use Dialog).
+Extra detail, a short form or a few options next to the trigger. Not for menus of actions (use Menu) or blocking decisions (use Dialog).
 
 ## Property notes
 
@@ -24,15 +24,17 @@ Title · Show title · Description · Content (slot) · Show content.
 
 ## Tokens
 
-bg/surface-raised, border/default, shape/radius-container, Elevation/2, spacing/4; layer z/dropdown.
+Bg/surface-raised, border/default, shape/radius-container, Elevation/2, spacing/4; layer z/dropdown.
 
 ## Accessibility
 
-aria-haspopup="dialog" on the trigger; focus moves into the popover; Escape closes and returns focus.
+Aria-haspopup="dialog" on the trigger; focus moves into the popover; Escape closes and returns focus.
 
 ## Code
 
+```tsx
 <Popover trigger={…} title="…">…</Popover>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._

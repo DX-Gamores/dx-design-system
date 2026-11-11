@@ -19,15 +19,17 @@ Side by side (Desktop/Tablet: intro column 340px + fields filling the rest, gap 
 
 ## Content
 
-the "fields" frame holds placeholder fields — replace with any inputs (Text Field, Select, Textarea, Radio group, Toggle…), keep gap/stack between them. Sections are separated by a top border and layout/section-gap padding.
+The "fields" frame holds placeholder fields — replace with any inputs (Text Field, Select, Textarea, Radio group, Toggle…), keep gap/stack between them. Sections are separated by a top border and layout/section-gap padding.
 
 ## Accessibility
 
-each section is a <fieldset> (or region) with the title as its <legend>/heading.
+Each section is a `<fieldset>` (or region) with the title as its `<legend>`/heading.
 
 ## Code
 
+```tsx
 <FormSection title="…" description="…">{fields}</FormSection>
+```
 
 ---
 _Generated from the Figma component description by `npm run specs`. Edit the description in Figma, re-export, regenerate._
