@@ -7,7 +7,7 @@ The code side of the **DX Design System** Figma file. Developers don't need a Fi
 | Get the brand right in any web project | [`dist/tokens.css`](dist/tokens.css) — CSS variables for 3 brands × 4 colour modes × 2 densities |
 | Style with Tailwind (v4) | [`dist/tailwind.css`](dist/tailwind.css) — `bg-surface`, `text-fg-primary`, `border-line-default`, `text-heading-h1`, `shadow-elevation-2` … |
 | Build a component correctly | [`docs/components/`](docs/components/README.md) — 63 specs: props, states, tokens, keyboard and accessibility. Every one is coded in [`src/components/ui`](src/components/ui) |
-| Start a new app | [`src/app/starter`](src/app/starter) — a working **Next.js 15 + Tailwind 4** app shell (`npm run dev` → `/starter`) |
+| Start a new app | [`src/templates`](src/templates) — Dashboard, Members, Settings, Sign in/up, empty states and both starter shells as code you copy. Clickable at [`/templates/dashboard`](https://dx-gamores.github.io/dx-design-system/templates/dashboard/) |
 | Feed tokens to another tool | [`tokens/tokens.json`](tokens/tokens.json) — W3C Design Tokens format, all modes |
 | Draw charts | [`dist/tokens.ts`](dist/tokens.ts) → `dataviz.series`, colour-blind-checked |
 
@@ -60,6 +60,8 @@ src/components/ui/     React components for all 63 Figma specs — actions, inpu
                        (Dialog, Drawer, Popover, Menu), navigation, data display (Table, List), form and
                        AI patterns, Icon (69 icons). No UI library dependency — copy what you need.
 src/app/(docs)/        Docs site: one page per Figma page (generated from figma/ + docs/)
+src/templates/         Figma templates as components: shells, dashboard, members, settings, auth, empty states, examples
+src/app/templates/     Full-screen routes for the templates (a clickable prototype)
 src/app/starter/       Starter app: app shell, dashboard, placeholder sections
 src/site/              Docs-site building blocks: navigation, live demos, page layouts
 ```

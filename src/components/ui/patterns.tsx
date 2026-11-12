@@ -7,12 +7,13 @@ import { AILabel, Citation } from "./display";
 
 /* ---------- Form Section — Figma: Form Section. A labelled region whose heading is the title.
    Side by side on desktop (intro column + fields), stacked on mobile or when layout="stacked". */
-export function FormSection({ title, description, children, layout = "side-by-side" }: { title: string; description?: string; children: ReactNode; layout?: "side-by-side" | "stacked" }) {
+export function FormSection({ title, description, children, layout = "side-by-side", headingLevel = 2 }: { title: string; description?: string; children: ReactNode; layout?: "side-by-side" | "stacked"; headingLevel?: 2 | 3 }) {
   const id = useId();
+  const H = `h${headingLevel}` as "h2";
   return (
     <section aria-labelledby={id} className={cn("grid gap-6", layout === "side-by-side" && "lg:grid-cols-[minmax(0,320px)_1fr] lg:gap-12")}>
       <div className="flex flex-col gap-1">
-        <h3 id={id} className="text-heading-h4">{title}</h3>
+        <H id={id} className="text-heading-h4">{title}</H>
         {description && <p className="text-body-small text-fg-secondary">{description}</p>}
       </div>
       <div className="flex max-w-xl flex-col gap-4">{children}</div>

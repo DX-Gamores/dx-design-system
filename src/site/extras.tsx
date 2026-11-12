@@ -10,6 +10,9 @@ import { LayoutGrid, MotionDemo } from "./foundations/motion-layout";
 import { ContrastAudit } from "./foundations/themes";
 import { Categorical, ChartAnatomy, ColorBlindCheck, DatavizTokens, PickPalette, SeqDiv } from "./foundations/dataviz";
 import { ContentDoDont, ContentGlance, Glossary, Voice } from "./foundations/content";
+import { ScreenPreview } from "./screen-preview";
+import { scenarios } from "@/templates/empty-data";
+import { ExamplesGallery, InComponentEmptiesDemo } from "./kit-demos";
 import { Checklist, Formats, IconMirroring, L10nDoDont, L10nGlance, RightToLeft, TextExpansion } from "./foundations/l10n";
 
 /* Page bodies for the Figma pages that are mostly visual. Foundations are generated from the
@@ -198,6 +201,101 @@ import { Icon } from "@/components/ui";
   );
 }
 
+const base = process.env.PAGES_BASE_PATH ?? "";
+const repoFile = (f: string) => `https://github.com/DX-Gamores/dx-design-system/blob/main/${f}`;
+const FileLink = ({ f }: { f: string }) => <a href={repoFile(f)} className="font-mono text-code-small text-fg-brand underline underline-offset-2">{f}</a>;
+
+function TemplatesPage() {
+  return (
+    <>
+      <Section title="At a glance"><Glance tiles={[[5, "Ready screens"], [3, "Breakpoints: 1440 · 834 · 390"], [4, "Hard moments: empty, loading, error"], [2, "Starter shells to begin from"]]} /></Section>
+      <Section id="gallery" title="Every template, live" description="These are the real screens, built only from the library. Pick a screen and a breakpoint — the sidebar collapses to a rail on tablet and a drawer on mobile, exactly like Figma.">
+        <ScreenPreview base={base} screens={[
+          { label: "Dashboard", path: "/templates/dashboard" }, { label: "Members", path: "/templates/members" }, { label: "Settings", path: "/templates/settings" },
+          { label: "Sign in", path: "/templates/sign-in" }, { label: "Sign up", path: "/templates/sign-up" },
+        ]} />
+      </Section>
+      <Section id="states" title="Templates show the hard moments too" description="Empty, loading and error — built from Empty State, Skeleton, Spinner and Error Summary.">
+        <ScreenPreview base={base} screens={[
+          { label: "Members · no results", path: "/templates/members/empty" }, { label: "Members · loading", path: "/templates/members/loading" },
+          { label: "Members · couldn’t load", path: "/templates/members/error" }, { label: "Settings · form error", path: "/templates/settings/error" },
+        ]} />
+      </Section>
+      <Section id="how" title="Start from a template">
+        <Panel>{md(`
+1. Copy [\`src/templates/shell.tsx\`](${repoFile("src/templates/shell.tsx")}) and the screen you need (e.g. [\`members.tsx\`](${repoFile("src/templates/members.tsx")})) into your app, with \`src/components\`.
+2. Add a route that renders it: \`<AcmeShell><MembersTemplate /></AcmeShell>\`.
+3. Replace “Acme”, the nav items and the sample data. Keep the components — don’t restyle them.
+4. Wire the real states: pass \`state="loading" | "error"\` while fetching, and let an empty result show the empty state.
+
+In Figma the templates are hidden from publishing — they live in the file as starting points. In code they’re ordinary components you own.`)}</Panel>
+      </Section>
+    </>
+  );
+}
+
+function StarterEmptyPage() {
+  return (
+    <>
+      <Section title="At a glance"><Glance tiles={[[2, "Starter shells: app and auth"], [scenarios.length, "Full-screen empty scenarios"], [5, "Empties inside components"], [3, "Parts in the writing formula"]]} /></Section>
+      <Section id="shells" title="Start every new screen here" description="Header, sidebar, spacing and modes are already right. Replace the dashed slot with your page.">
+        <ScreenPreview base={base} screens={[{ label: "App shell", path: "/templates/app-shell" }, { label: "Auth shell", path: "/templates/auth-shell" }]} />
+      </Section>
+      <Section id="pick" title="Name the situation, then follow the row" description="Every page needs at least “first use” and “couldn’t load”. Lists with search or filters need those two as well.">
+        <div className="overflow-x-auto rounded-container border border-line-default bg-surface">
+          <table className="w-full text-body-small">
+            <thead className="bg-surface-subtle text-left text-label-small"><tr><th className="px-3 py-2">Situation</th><th className="px-3 py-2">When</th><th className="px-3 py-2">Title</th><th className="px-3 py-2">Way forward</th><th className="px-3 py-2"><span className="sr-only">Open</span></th></tr></thead>
+            <tbody>
+              {scenarios.map((s) => (
+                <tr key={s.slug} className="border-t border-line-default">
+                  <td className="px-3 py-2 text-label-medium"><span className="flex items-center gap-2"><Icon name={s.icon} size={16} className="text-icon-secondary" />{s.name}</span></td>
+                  <td className="px-3 py-2 text-fg-secondary">{s.when}</td>
+                  <td className="px-3 py-2">{s.title}</td>
+                  <td className="px-3 py-2 text-fg-secondary">{s.actions.map((a) => a.label).join(" · ") || "None — it’s good news"}</td>
+                  <td className="px-3 py-2"><a href={`${base}/templates/empty/${s.slug}/`} className="text-label-small text-fg-brand underline underline-offset-2">Open<span className="sr-only"> {s.name}</span></a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Section>
+      <Section id="scenarios" title="Nine scenarios, every breakpoint" description="Same shell, same page header — only the content area changes. Titles wrap instead of truncating on mobile.">
+        <ScreenPreview base={base} screens={scenarios.map((s) => ({ label: s.name, path: `/templates/empty/${s.slug}` }))} />
+      </Section>
+      <Section id="in-components" title="Small empties keep their container" description="Keep the card title, the table header, the panel chrome. Dropdowns get a sentence, not an illustration.">
+        <InComponentEmptiesDemo />
+      </Section>
+      <Section id="formula" title="Three parts, one job each">
+        <div className="grid gap-3 md:grid-cols-3">
+          {[["Title", "What’s empty, in plain words.", "No projects yet"], ["Description", "Why, or what happens next. One sentence.", "Create a project to start organizing your team’s work."], ["Action", "One way forward — or none when empty is good news.", "Create project"]].map(([t, d, e], i) => (
+            <Panel key={t} className="flex flex-col gap-2"><span className="flex items-center gap-2 text-label-large"><span className="grid size-6 place-items-center rounded-full bg-brand-subtle text-label-small text-fg-brand">{i + 1}</span>{t}</span><span className="text-body-small text-fg-secondary">{d}</span><span className="text-body-small">e.g. “{e}”</span></Panel>
+          ))}
+        </div>
+      </Section>
+      <Section id="how" title="From starter to shipped screen">
+        <Panel>{md(`
+- **Shells:** [\`src/templates/shell.tsx\`](${repoFile("src/templates/shell.tsx")}) — \`AcmeShell\` (app) and \`AuthShell\` (sign-in, sign-up, invites).
+- **Scenarios:** [\`src/templates/empty.tsx\`](${repoFile("src/templates/empty.tsx")}) — the nine scenarios as data plus \`EmptyScreen\`; copy the words, swap the nouns.
+- **In components:** use \`<EmptyState>\` for full areas; for small containers keep the chrome and write one sentence.`)}</Panel>
+      </Section>
+    </>
+  );
+}
+
+function ExamplesPage() {
+  return (
+    <>
+      <Section id="examples" title="Five examples, built only from the library" description="Each one is a single component in src/templates/examples.tsx — copy it and change the words.">
+        <ExamplesGallery />
+      </Section>
+      <Section title="Full screens">
+        <p className="text-body-medium text-fg-secondary">For whole pages — dashboard, members, settings, sign in and sign up — see <Link href="/product-kit/templates/" className="text-fg-brand underline underline-offset-2">Templates</Link>, or open the <Link href="/templates/dashboard/" className="text-fg-brand underline underline-offset-2">clickable prototype</Link>.</p>
+        <p className="text-caption-default text-fg-secondary">Source: <FileLink f="src/templates/examples.tsx" /></p>
+      </Section>
+    </>
+  );
+}
+
 export const extras: Record<string, ComponentType> = {
   "Foundations": Foundations,
   "Themes & Brands": ThemesBrands,
@@ -205,22 +303,7 @@ export const extras: Record<string, ComponentType> = {
   "Content Guidelines": ContentGuidelines,
   "Localization & RTL": Localization,
   "Icons": Icons,
-  "Templates": () => (
-    <Section title="In code" description="The starter app is the code version of the templates: the app shell, page header and empty states, already wired to the tokens.">
-      <div><StarterLink label="Open the starter app" /></div>
-    </Section>
-  ),
-  "Starter & Empty States": () => (
-    <Section title="In code" description="Start every new screen from the starter shell. For empty screens, use the Empty State component with the writing formula: what's empty, why, and what to do next.">
-      <div className="flex flex-wrap gap-2">
-        <StarterLink label="Open the starter app" />
-        <Link href="/feedback/empty-state/" className={buttonClass({ variant: "ghost" })}>Empty State spec</Link>
-      </div>
-    </Section>
-  ),
-  "Examples": () => (
-    <Section title="In code" description="The starter app is a working example built only from the library: dashboard, empty sections and the app shell.">
-      <div><StarterLink label="Open the starter app" /></div>
-    </Section>
-  ),
+  "Templates": TemplatesPage,
+  "Starter & Empty States": StarterEmptyPage,
+  "Examples": ExamplesPage,
 };

@@ -77,7 +77,7 @@ export function Tabs({ label, tabs, value, onChange }: { label: string; value: s
   };
   return (
     <div className="flex flex-col gap-4">
-      <div role="tablist" aria-label={label} onKeyDown={onKey} className="flex gap-1 border-b border-line-default">
+      <div role="tablist" aria-label={label} onKeyDown={onKey} className="flex gap-1 overflow-x-auto shadow-[inset_0_-1px_0_var(--ds-color-border-default)] [scrollbar-width:none]">
         {tabs.map((t, i) => {
           const on = t.id === value;
           return (
@@ -93,7 +93,7 @@ export function Tabs({ label, tabs, value, onChange }: { label: string; value: s
               tabIndex={on ? 0 : -1}
               onClick={() => onChange(t.id)}
               className={cn(
-                "-mb-px inline-flex h-control-md items-center gap-2 border-b-2 px-3 text-label-medium focus-visible:focus-ring",
+                "inline-flex h-control-md shrink-0 items-center gap-2 border-b-2 px-3 text-label-medium whitespace-nowrap focus-visible:focus-ring",
                 on ? "border-brand text-fg-brand" : "border-transparent text-fg-secondary hover:text-fg-primary",
               )}
             >

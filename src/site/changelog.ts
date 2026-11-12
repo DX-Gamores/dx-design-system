@@ -27,7 +27,7 @@ export const roadmap: { lane: string; sub: string; items: RoadItem[] }[] = [
       { title: "Phase 1 · Docs structure", status: "Done", size: "M", note: "Figma's groups and pages in the sidebar, 63 specs as pages, Getting started, Governance and Changelog." },
       { title: "Phase 2 · Foundations from tokens", status: "Done", size: "M", note: "Colour roles and every semantic token with live values, palette, type, spacing and density, shape, motion demos, layout; live 324-pair contrast audit; data viz with colour-blind simulation; content and RTL pages; Do / Don't frames embedded live from Figma." },
       { title: "Phase 3 · Code the remaining components", status: "Done", size: "L", note: "All 63 specs coded: Combobox, Date Picker, Slider, Radio, Chip, File Upload, Toast, Tooltip, Dialog, Drawer, Popover, Menu, Accordion, Table, Form and AI patterns — each with a live demo. 29 keyboard checks and an axe WCAG 2.2 scan pass." },
-      { title: "Phase 4 · Patterns and templates", status: "Planned", size: "M", note: "Form and AI patterns, templates and empty states as working example pages." },
+      { title: "Phase 4 · Patterns and templates", status: "Done", size: "M", note: "5 templates + 4 states, 2 starter shells, 9 empty-state screens and 5 in-component empties, 5 examples — real, clickable pages at /templates, previewed live at 1440 / 834 / 390." },
       { title: "Phase 5 · Keep Figma and the site matched", status: "Planned", size: "M", note: "Parity check in the build, visual comparison per release, auto-deploy, version badge." },
     ],
   },

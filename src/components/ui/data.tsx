@@ -60,7 +60,7 @@ export function TableCell({ children, align = "start", numeric, className, ...re
   return <td className={cn("h-[var(--ds-size-control-lg)] border-b border-line-default px-4 py-2 text-body-small", (numeric || align === "end") && "text-end tabular-nums", className)} {...rest}>{children}</td>;
 }
 
-export type Column<Row> = { key: string; header: string; sortable?: boolean; numeric?: boolean; width?: number | string; render?: (row: Row) => ReactNode; sortValue?: (row: Row) => string | number };
+export type Column<Row> = { key: string; header: string; /** Keep the header for screen readers but hide it visually (e.g. a select column). */ headerHidden?: boolean; sortable?: boolean; numeric?: boolean; width?: number | string; render?: (row: Row) => ReactNode; sortValue?: (row: Row) => string | number };
 export function Table<Row>({ caption, captionHidden, columns, rows, rowKey, sort, onSortChange, empty }: {
   caption: string; captionHidden?: boolean; columns: Column<Row>[]; rows: Row[]; rowKey: (r: Row) => string;
   sort?: { key: string; direction: SortDir } | null; onSortChange?: (s: { key: string; direction: SortDir }) => void; empty?: ReactNode;
@@ -82,7 +82,7 @@ export function Table<Row>({ caption, captionHidden, columns, rows, rowKey, sort
               <TableHeaderCell key={c.key} style={{ width: c.width }} align={c.numeric ? "end" : "start"} sortable={c.sortable}
                 sort={sort?.key === c.key ? sort.direction : null}
                 onSort={() => onSortChange?.({ key: c.key, direction: sort?.key === c.key && sort.direction === "ascending" ? "descending" : "ascending" })}>
-                {c.header}
+                {c.headerHidden ? <span className="sr-only">{c.header}</span> : c.header}
               </TableHeaderCell>
             ))}
           </tr>

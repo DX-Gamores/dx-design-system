@@ -9,15 +9,16 @@ import { Avatar } from "./ui/display";
 import { brands, themes, densities, type Brand, type Theme, type Density } from "@dxform/tokens";
 
 /* Figma: Skip Link + App Header + Sidebar (Expanded / Rail / Drawer) + Page Header. */
-const nav: { label: string; href: string; icon: IconName }[] = [
-  { label: "Dashboard", href: "/starter", icon: "dashboard" },
+export type NavLink = { label: string; href: string; icon: IconName; count?: number; exact?: boolean };
+export const starterNav: NavLink[] = [
+  { label: "Dashboard", href: "/starter", icon: "dashboard", exact: true },
   { label: "Projects", href: "/starter/projects", icon: "folder" },
   { label: "Reports", href: "/starter/reports", icon: "chart" },
   { label: "Settings", href: "/starter/settings", icon: "settings" },
-  { label: "Design system", href: "/", icon: "grid-view" },
+  { label: "Design system", href: "/", icon: "grid-view", exact: true },
 ];
 
-export function AppShell({ productName = "DXFORM", children }: { productName?: string; children: ReactNode }) {
+export function AppShell({ productName = "DXFORM", nav = starterNav, userName = "Gab D", children }: { productName?: string; nav?: NavLink[]; userName?: string; children: ReactNode }) {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   return (
@@ -26,7 +27,7 @@ export function AppShell({ productName = "DXFORM", children }: { productName?: s
         Skip to content
       </a>
       <header role="banner" className="sticky top-0 z-[var(--ds-z-sticky)] flex h-[var(--ds-layout-header-height)] items-center gap-3 border-b border-line-default bg-surface px-4">
-        <IconButton icon="menu" label="Open navigation" className="lg:hidden" aria-expanded={open} aria-controls="sidebar" onClick={() => setOpen(true)} />
+        <IconButton icon="menu" label="Open navigation" className="md:hidden" aria-expanded={open} aria-controls="sidebar" onClick={() => setOpen(true)} />
         <span className="flex items-center gap-2 text-label-large">
           <span aria-hidden className="size-6 rounded-md bg-brand" />
           {productName}
@@ -34,27 +35,29 @@ export function AppShell({ productName = "DXFORM", children }: { productName?: s
         <div className="ml-auto flex items-center gap-2">
           <ThemeSwitcher />
           <IconButton icon="bell" label="Notifications" />
-          <Avatar name="Gab D" size="md" />
+          <Avatar name={userName} size="md" />
         </div>
       </header>
       <div className="flex">
-        {open && <div className="fixed inset-0 z-[var(--ds-z-overlay)] bg-overlay lg:hidden" onClick={() => setOpen(false)} aria-hidden />}
+        {open && <div className="fixed inset-0 z-[var(--ds-z-overlay)] bg-overlay md:hidden" onClick={() => setOpen(false)} aria-hidden />}
         <nav
           id="sidebar"
           aria-label="Main"
           className={cn(
             "fixed inset-y-0 left-0 z-[var(--ds-z-modal)] w-[288px] -translate-x-full border-r border-line-default bg-surface p-3 transition-transform duration-250 ease-enter",
-            "lg:sticky lg:top-[var(--ds-layout-header-height)] lg:z-auto lg:h-[calc(100dvh-var(--ds-layout-header-height))] lg:w-[var(--ds-layout-sidebar-width)] lg:translate-x-0",
-            open && "translate-x-0",
+            // Tablet (768–1023): a 72px icon rail (layout/sidebar-width switches to 72); desktop: the full sidebar; mobile: a drawer.
+            "md:sticky md:top-[var(--ds-layout-header-height)] md:z-auto md:h-[calc(100dvh-var(--ds-layout-header-height))] md:w-[var(--ds-layout-sidebar-width)] md:translate-x-0",
+            open ? "translate-x-0" : "max-md:invisible",
           )}
         >
-          <div className="mb-2 flex justify-end lg:hidden">
+          <div className="mb-2 flex justify-end md:hidden">
             <IconButton icon="close" label="Close navigation" onClick={() => setOpen(false)} />
           </div>
           <ul className="flex flex-col gap-1">
             {nav.map((n) => {
               const p = path.replace(/\/$/, "") || "/";
-              const current = n.href === "/starter" ? p === "/starter" : n.href === "/" ? false : p.startsWith(n.href);
+              const h = n.href.replace(/\/$/, "") || "/";
+              const current = n.exact ? p === h : p === h || p.startsWith(h + "/");
               return (
                 <li key={n.href}>
                   <Link
@@ -62,12 +65,14 @@ export function AppShell({ productName = "DXFORM", children }: { productName?: s
                     aria-current={current ? "page" : undefined}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "flex h-10 items-center gap-3 rounded-md px-3 text-label-medium focus-visible:focus-ring",
+                      "relative flex h-10 items-center gap-3 rounded-md px-3 text-label-medium focus-visible:focus-ring md:max-lg:justify-center md:max-lg:px-0",
                       current ? "bg-selected text-fg-brand" : "text-fg-secondary hover:bg-neutral-hover hover:text-fg-primary",
                     )}
                   >
                     <Icon name={n.icon} />
-                    <span className="truncate md:max-lg:sr-only">{n.label}</span>
+                    <span className="flex-1 truncate md:max-lg:sr-only">{n.label}</span>
+                    {n.count !== undefined && <span className="rounded-full bg-brand px-1.5 text-label-small text-fg-on-brand md:max-lg:sr-only">{n.count}<span className="sr-only"> unread</span></span>}
+                    {n.count !== undefined && <span aria-hidden className="absolute top-2 right-3 hidden size-2 rounded-full bg-brand md:max-lg:block" />}
                   </Link>
                 </li>
               );
@@ -101,12 +106,17 @@ export function ThemeSwitcher() {
   const [theme, setTheme] = useState<Theme>("light");
   const [density, setDensity] = useState<Density>("comfortable");
   useEffect(() => {
-    try {
-      const s = JSON.parse(localStorage.getItem("ds-theme") || "{}");
-      if (s.brand) setBrand(s.brand);
-      if (s.theme) setTheme(s.theme);
-      if (s.density) setDensity(s.density);
-    } catch {}
+    const load = () => {
+      try {
+        const s = JSON.parse(localStorage.getItem("ds-theme") || "{}");
+        if (s.brand) setBrand(s.brand);
+        if (s.theme) setTheme(s.theme);
+        if (s.density) setDensity(s.density);
+      } catch {}
+    };
+    load();
+    window.addEventListener("storage", load);
+    return () => window.removeEventListener("storage", load);
   }, []);
   useEffect(() => {
     const el = document.documentElement;
@@ -131,4 +141,24 @@ export function ThemeSwitcher() {
       </select>
     </div>
   );
+}
+
+/** Applies the stored brand / theme / density on pages without a ThemeSwitcher (auth screens, previews)
+ *  and follows changes made in other tabs or the parent docs page. */
+export function ThemeSync() {
+  useEffect(() => {
+    const apply = () => {
+      try {
+        const s = JSON.parse(localStorage.getItem("ds-theme") || "{}");
+        const el = document.documentElement;
+        if (s.brand) el.dataset.brand = s.brand;
+        if (s.theme) el.dataset.theme = s.theme;
+        if (s.density) el.dataset.density = s.density;
+      } catch {}
+    };
+    apply();
+    window.addEventListener("storage", apply);
+    return () => window.removeEventListener("storage", apply);
+  }, []);
+  return null;
 }

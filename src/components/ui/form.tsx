@@ -41,9 +41,11 @@ export type TextFieldProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size">
   error?: string;
   hideLabel?: boolean;
   leadingIcon?: IconName;
+  /** Content after the input inside the field, e.g. a show-password IconButton. */
+  trailing?: ReactNode;
   size?: "md" | "sm";
 };
-export function TextField({ id: given, label, helperText, error, hideLabel, leadingIcon, size = "md", className, ...rest }: TextFieldProps) {
+export function TextField({ id: given, label, helperText, error, hideLabel, leadingIcon, trailing, size = "md", className, ...rest }: TextFieldProps) {
   return (
     <Field id={given} label={label} helperText={helperText} error={error} hideLabel={hideLabel}>
       {({ id, describedBy }) => (
@@ -56,6 +58,7 @@ export function TextField({ id: given, label, helperText, error, hideLabel, lead
             className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-fg-placeholder read-only:text-fg-secondary"
             {...rest}
           />
+          {trailing}
         </div>
       )}
     </Field>
@@ -75,9 +78,9 @@ export function Textarea({ id: given, label, helperText, error, maxLength, value
 }
 
 /** Figma: Select — uses the native <select> for free keyboard + screen-reader support. 15+ options → Combobox. */
-export function Select({ id: given, label, helperText, error, options, placeholder, ...rest }: Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> & { label: string; helperText?: string; error?: string; placeholder?: string; options: { value: string; label: string }[] }) {
+export function Select({ id: given, label, hideLabel, helperText, error, options, placeholder, ...rest }: Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> & { label: string; hideLabel?: boolean; helperText?: string; error?: string; placeholder?: string; options: { value: string; label: string }[] }) {
   return (
-    <Field id={given} label={label} helperText={helperText} error={error}>
+    <Field id={given} label={label} hideLabel={hideLabel} helperText={helperText} error={error}>
       {({ id, describedBy }) => (
         <div data-invalid={!!error} className={cn(fieldBox, "relative h-control-md pr-2")}>
           <select id={id} aria-describedby={describedBy} className="h-full flex-1 appearance-none bg-transparent pr-8 outline-none" {...rest}>
