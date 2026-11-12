@@ -2,6 +2,9 @@
 @import "../../dist/tokens.css";
 @import "../../dist/tailwind.css";
 
+/* Utilities the docs site builds from token data (Tailwind can't see them in the source). */
+@source inline("text-display-2xlarge text-display-xlarge text-display-large text-heading-h1 text-heading-h2 text-heading-h3 text-heading-h4 text-body-large text-body-medium text-body-small text-label-large text-label-medium text-label-small text-caption-default text-code-medium text-code-small");
+
 @layer base {
   html {
     background: var(--ds-color-bg-canvas);

@@ -74,7 +74,12 @@
     "Tokens",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "195:506",
+    "w": 1280,
+    "h": 966
+   }
   },
   "Content Guidelines": {
    "id": "59:3116",
@@ -111,7 +116,12 @@
     "Size & color",
     "Do & don't",
     "Accessibility"
-   ]
+   ],
+   "doDont": {
+    "id": "145:772",
+    "w": 1280,
+    "h": 876
+   }
   },
   "Button": {
    "id": "4:172",
@@ -128,7 +138,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "122:230",
+    "w": 1280,
+    "h": 1176
+   }
   },
   "Link": {
    "id": "27:2",
@@ -144,7 +159,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "136:174",
+    "w": 1280,
+    "h": 876
+   }
   },
   "Text Field": {
    "id": "4:173",
@@ -160,7 +180,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "137:289",
+    "w": 1280,
+    "h": 996
+   }
   },
   "Select": {
    "id": "23:2",
@@ -177,7 +202,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "137:1014",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Combobox": {
    "id": "174:56",
@@ -194,7 +224,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "177:704",
+    "w": 1280,
+    "h": 776
+   }
   },
   "Date Picker": {
    "id": "185:56",
@@ -213,7 +248,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "188:1378",
+    "w": 1280,
+    "h": 786
+   }
   },
   "Textarea": {
    "id": "26:2",
@@ -229,7 +269,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "137:1555",
+    "w": 1280,
+    "h": 616
+   }
   },
   "Search Field": {
    "id": "106:1255",
@@ -246,7 +291,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "137:2062",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Checkbox": {
    "id": "4:174",
@@ -263,7 +313,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "138:303",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Radio": {
    "id": "24:2",
@@ -280,7 +335,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "138:769",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Toggle": {
    "id": "25:2",
@@ -297,7 +357,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "138:1234",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Slider": {
    "id": "191:56",
@@ -314,7 +379,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "193:588",
+    "w": 1280,
+    "h": 846
+   }
   },
   "Chip": {
    "id": "106:2",
@@ -330,7 +400,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "138:1701",
+    "w": 1280,
+    "h": 576
+   }
   },
   "File Upload": {
    "id": "107:37",
@@ -347,7 +422,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "138:2209",
+    "w": 1280,
+    "h": 316
+   }
   },
   "Alert": {
    "id": "36:2",
@@ -363,7 +443,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "139:266",
+    "w": 1280,
+    "h": 1116
+   }
   },
   "Toast": {
    "id": "37:2",
@@ -379,7 +464,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "139:875",
+    "w": 1280,
+    "h": 856
+   }
   },
   "Progress": {
    "id": "106:1356",
@@ -395,7 +485,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "139:1479",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Loading": {
    "id": "42:2",
@@ -412,7 +507,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "139:1875",
+    "w": 1280,
+    "h": 276
+   }
   },
   "Empty State": {
    "id": "41:2",
@@ -427,7 +527,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "140:244",
+    "w": 1280,
+    "h": 856
+   }
   },
   "Tooltip": {
    "id": "35:2",
@@ -444,7 +549,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "140:794",
+    "w": 1280,
+    "h": 616
+   }
   },
   "Badge": {
    "id": "4:175",
@@ -460,7 +570,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "140:1201",
+    "w": 1280,
+    "h": 876
+   }
   },
   "Dialog": {
    "id": "38:2",
@@ -477,7 +592,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "140:1800",
+    "w": 1280,
+    "h": 816
+   }
   },
   "Popover & Drawer": {
    "id": "107:2",
@@ -493,7 +613,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "141:292",
+    "w": 1280,
+    "h": 856
+   }
   },
   "Menu": {
    "id": "39:2",
@@ -510,7 +635,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "141:845",
+    "w": 1280,
+    "h": 736
+   }
   },
   "Navigation": {
    "id": "49:2",
@@ -527,7 +657,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "141:1823",
+    "w": 1280,
+    "h": 616
+   }
   },
   "Tabs": {
    "id": "40:2",
@@ -544,7 +679,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "141:2488",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Segmented Control": {
    "id": "182:56",
@@ -562,7 +702,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "183:677",
+    "w": 1280,
+    "h": 756
+   }
   },
   "Stepper": {
    "id": "189:56",
@@ -580,7 +725,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "190:1098",
+    "w": 1280,
+    "h": 786
+   }
   },
   "Accordion": {
    "id": "106:1409",
@@ -597,7 +747,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "142:255",
+    "w": 1280,
+    "h": 656
+   }
   },
   "Avatar": {
    "id": "27:623",
@@ -613,7 +768,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "142:752",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Card": {
    "id": "4:176",
@@ -629,7 +789,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "142:1182",
+    "w": 1280,
+    "h": 736
+   }
   },
   "Divider": {
    "id": "27:692",
@@ -644,7 +809,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "142:1655",
+    "w": 1280,
+    "h": 376
+   }
   },
   "Lists & Tables": {
    "id": "51:2",
@@ -663,7 +833,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "143:464",
+    "w": 1280,
+    "h": 576
+   }
   },
   "Form Patterns": {
    "id": "52:2",
@@ -681,7 +856,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "143:1132",
+    "w": 1280,
+    "h": 576
+   }
   },
   "AI Patterns": {
    "id": "197:56",
@@ -698,7 +878,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "198:607",
+    "w": 1280,
+    "h": 1026
+   }
   },
   "Kit · Stat Card": {
    "id": "107:78",
@@ -714,7 +899,12 @@
     "Accessibility",
     "Themes",
     "Code"
-   ]
+   ],
+   "doDont": {
+    "id": "143:1561",
+    "w": 1280,
+    "h": 316
+   }
   },
   "Templates": {
    "id": "54:2",

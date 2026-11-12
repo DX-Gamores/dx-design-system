@@ -25,7 +25,7 @@ export const roadmap: { lane: string; sub: string; items: RoadItem[] }[] = [
     sub: "Make this site match the Figma file, page for page.",
     items: [
       { title: "Phase 1 · Docs structure", status: "Done", size: "M", note: "Figma's groups and pages in the sidebar, 63 specs as pages, Getting started, Governance and Changelog." },
-      { title: "Phase 2 · Foundations from tokens", status: "Planned", size: "M", note: "Colour per theme with contrast, type, spacing, shape, motion demos, data viz, content and RTL pages; Do / Don't images from Figma." },
+      { title: "Phase 2 · Foundations from tokens", status: "Done", size: "M", note: "Colour roles and every semantic token with live values, palette, type, spacing and density, shape, motion demos, layout; live 324-pair contrast audit; data viz with colour-blind simulation; content and RTL pages; Do / Don't frames embedded live from Figma." },
       { title: "Phase 3 · Code the remaining components", status: "Planned", size: "L", note: "About 30: inputs, overlays, navigation, data display and patterns — each with a live demo and state matrix." },
       { title: "Phase 4 · Patterns and templates", status: "Planned", size: "M", note: "Form and AI patterns, templates and empty states as working example pages." },
       { title: "Phase 5 · Keep Figma and the site matched", status: "Planned", size: "M", note: "Parity check in the build, visual comparison per release, auto-deploy, version badge." },

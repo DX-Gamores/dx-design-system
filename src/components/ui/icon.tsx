@@ -3,6 +3,9 @@ import { cn } from "@/lib/cn";
 
 export type { IconName };
 
+/** Icons that point a direction flip in right-to-left layouts. Objects and time (clock, check, phone) don't. */
+export const mirroredIcons = new Set<IconName>(["arrow-left", "arrow-right", "chevron-left", "chevron-right", "undo", "redo", "send", "sign-out", "sign-in", "list-view"]);
+
 type IconProps = {
   name: IconName;
   /** 16 = sm, 20 = md (default), 24 = lg — matches size/icon-* tokens */
@@ -22,7 +25,7 @@ export function Icon({ name, size = 20, label, className }: IconProps) {
       role={label ? "img" : undefined}
       aria-label={label}
       aria-hidden={label ? undefined : true}
-      className={cn("shrink-0", className)}
+      className={cn("shrink-0", mirroredIcons.has(name) && "rtl:-scale-x-100", className)}
     >
       {iconPaths[name]}
     </svg>

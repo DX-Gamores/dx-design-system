@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Alert } from "@/components/ui";
 import { docPages } from "@/site/content";
-import { CodeStatus, DocHeader, FigmaOutline, Panel, PrevNext, Section, SpecIndex, SpecSection } from "@/site/blocks";
+import { CodeStatus, DocHeader, FigmaEmbed, FigmaOutline, Panel, PrevNext, Section, SpecIndex, SpecSection } from "@/site/blocks";
 import { Demo } from "@/site/demos";
 import { hasDemo } from "@/site/demo-names";
 import { extras } from "@/site/extras";
@@ -44,6 +44,12 @@ export default async function FigmaMirrorPage({ params }: { params: Promise<Para
       )}
 
       {Extra && <Extra />}
+
+      {figma.doDont && (
+        <Section id="do-dont" title="Do & don’t" description="Right and wrong, next to each other — the visual guidance from the Figma page.">
+          <FigmaEmbed nodeId={figma.doDont.id} title={`${item.title}: do and don't`} w={figma.doDont.w} h={figma.doDont.h} />
+        </Section>
+      )}
 
       <FigmaOutline sections={figma.sections} nodeId={figma.id} />
 

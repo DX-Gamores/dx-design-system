@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Badge, Icon } from "@/components/ui";
-import { coded, figmaUrl, neighbours, specBody, specSummary, type Spec } from "./content";
+import { coded, figmaEmbedUrl, figmaUrl, neighbours, specBody, specSummary, type Spec } from "./content";
 
 export function DocHeader({ eyebrow, title, summary, figmaId, children }: { eyebrow?: string; title: string; summary?: string; figmaId?: string; children?: ReactNode }) {
   return (
@@ -125,4 +125,19 @@ export function PrevNext({ href }: { href: string }) {
 
 export function Markdown({ html }: { html: string }) {
   return <div className="ds-prose" dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+/** A live, view-only Figma frame. Viewers need view access to the file (no paid seat); otherwise Figma asks them to sign in. */
+export function FigmaEmbed({ nodeId, title, w, h }: { nodeId: string; title: string; w: number; h: number }) {
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="overflow-hidden rounded-container border border-line-default bg-surface-subtle" style={{ aspectRatio: `${w} / ${h + 48}` }}>
+        <iframe title={title} src={figmaEmbedUrl(nodeId)} loading="lazy" allowFullScreen className="size-full border-0" />
+      </div>
+      <p className="text-caption-default text-fg-secondary">
+        Live from Figma — always the current version. Doesn’t load? Sign in to Figma with your DXFORM account (view access is enough) or{" "}
+        <a href={figmaUrl(nodeId)} className="text-fg-brand underline underline-offset-2 focus-visible:focus-ring">open the frame in Figma</a>.
+      </p>
+    </div>
+  );
 }

@@ -4,7 +4,7 @@ export const demoNames = [
   "Alert", "Progress", "Loading", "Empty State", "Badge",
   "Navigation", "Tabs", "Segmented Control", "Stepper",
   "Avatar", "Card", "AI Patterns", "Kit · Stat Card",
-  "Themes & Brands", "Data Visualization", "Icons",
+  "Themes & Brands", "Icons",
 ] as const;
 export type DemoName = (typeof demoNames)[number];
 export const hasDemo = (name: string): name is DemoName => (demoNames as readonly string[]).includes(name);

@@ -6,7 +6,6 @@ import {
   SegmentedControl, Select, Skeleton, Spinner, StatCard, Stepper, Tabs, TextField, Textarea, Toggle,
 } from "@/components/ui";
 import { PageHeader } from "@/components/app-shell";
-import { dataviz } from "@dxform/tokens";
 import type { DemoName } from "./demo-names";
 
 /* Live examples for the docs pages, keyed by Figma page name. Everything here uses the real
@@ -99,31 +98,6 @@ function ThemeMatrix() {
     </div>
   );
 }
-function DataVizDemo() {
-  const values = [42, 35, 28, 22, 18, 14, 11, 8];
-  return (
-    <Stack>
-      <div className="flex flex-wrap gap-3">
-        {dataviz.series.map((c, i) => (
-          <span key={c} className="flex items-center gap-2 text-label-small"><span className="size-6 rounded-sm" style={{ background: c }} />series-{i + 1}</span>
-        ))}
-      </div>
-      <figure className="flex flex-col gap-2">
-        <figcaption className="text-label-medium">Tickets by channel (example)</figcaption>
-        <div className="flex flex-col gap-2 border-l border-viz-axis pl-3">
-          {values.map((v, i) => (
-            <div key={i} className="flex items-center gap-3">
-              <span className="w-20 shrink-0 text-caption-default text-viz-label">Channel {i + 1}</span>
-              <span className="h-4 rounded-r-sm" style={{ width: `${v * 1.6}%`, background: dataviz.series[i] }} />
-              <span className="text-caption-default tabular-nums text-viz-label">{v}</span>
-            </div>
-          ))}
-        </div>
-      </figure>
-    </Stack>
-  );
-}
-
 export const demos: Record<DemoName, () => ReactNode> = {
   "Button": () => (
     <Stack>
@@ -220,7 +194,6 @@ export const demos: Record<DemoName, () => ReactNode> = {
     </div>
   ),
   "Themes & Brands": () => <ThemeMatrix />,
-  "Data Visualization": () => <DataVizDemo />,
   "Icons": () => <IconGrid />,
 };
 

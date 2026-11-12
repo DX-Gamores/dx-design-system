@@ -14,10 +14,12 @@ export const FIGMA_FILE = "https://www.figma.com/design/myYAMZWk4yKLQMWGBdJVJd/D
 export const REPO = "https://github.com/DX-Gamores/dx-design-system";
 export const VERSION: string = JSON.parse(read("package.json")).version;
 
+export const figmaEmbedUrl = (nodeId: string) =>
+  `https://embed.figma.com/design/myYAMZWk4yKLQMWGBdJVJd/DX-Design-System?node-id=${nodeId.replace(":", "-")}&embed-host=dx-design-system&footer=false&page-selector=false`;
 export const figmaUrl = (nodeId?: string) => (nodeId ? `${FIGMA_FILE}?node-id=${nodeId.replace(":", "-")}` : FIGMA_FILE);
 export const slugify = (s: string) => s.toLowerCase().replace(/^kit · /, "").replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
-type FigmaPage = { id: string; eyebrow: string; summary: string; sections: string[] };
+type FigmaPage = { id: string; eyebrow: string; summary: string; sections: string[]; doDont?: { id: string; w: number; h: number } };
 const figmaPages: Record<string, FigmaPage> = JSON.parse(read("figma/pages.content.json")).pages;
 
 export type Spec = { n: string; slug: string; page: string; pageId: string | null; d: string; vc: number; props: [string, string, unknown][] };

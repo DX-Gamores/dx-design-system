@@ -50,6 +50,9 @@ The site at https://dx-gamores.github.io/dx-design-system/ mirrors the Figma fil
 | Specs | `docs/components/*.md` (`npm run specs`, from component descriptions) |
 | Live examples | `src/site/demos.tsx` — real components from `src/components/ui` |
 | "Coded" badges | `coded` in `src/site/content.ts` — add a spec slug when its component ships |
+| Foundations pages | `figma/variables.raw.json` + text/effect styles, rendered with the live CSS variables (`src/site/foundations/`) |
+| Contrast audit | Measured in the browser from the tokens: 27 pairs × 3 brands × 4 modes |
+| Do & don't | Live, view-only Figma embeds of each page's Do & don't frame (`doDont` in `figma/pages.content.json`) — viewers need view access to the file, no paid seat |
 
 To publish an update:
 

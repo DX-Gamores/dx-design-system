@@ -57,7 +57,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button
     >
       {loading ? <Spinner size="sm" label="" /> : leadingIcon && <Icon name={leadingIcon} size={icon} />}
       {children}
-      {trailingIcon && <Icon name={trailingIcon} size={icon} className="rtl:-scale-x-100" />}
+      {trailingIcon && <Icon name={trailingIcon} size={icon} />}
     </button>
   );
 });
