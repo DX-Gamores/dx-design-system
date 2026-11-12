@@ -1,0 +1,114 @@
+name: CI
+
+# Every push and pull request: generated files fresh, Figma ↔ code parity, types, build, tests.
+# Pushes to main also deploy the docs site to GitHub Pages (gh-pages branch).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Parity, build and tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Generated files are up to date (tokens, icons, specs)
+        run: |
+          npm run build:all
+          git diff --exit-code -- dist tokens docs src/components/ui/icons.generated.tsx \
+            || (echo "::error::Generated files are stale. Run 'npm run build:all' and commit the result." && exit 1)
+
+      - name: Figma ↔ code parity and types
+        run: npm run check
+
+      - name: Build the docs site (static export)
+        run: npm run build:pages
+
+      - name: Install the test browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Keyboard, accessibility (WCAG 2.2) and link tests
+        run: npm run test:functional
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report
+          retention-days: 14
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: out
+          retention-days: 7
+
+  visual:
+    name: Visual regression (non-blocking)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: verify
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: out
+      - run: npx playwright install --with-deps chromium
+      - name: Compare with the committed baselines
+        run: npm run test:visual
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: visual-diffs
+          path: |
+            playwright-report
+            test-results
+          retention-days: 14
+
+  deploy:
+    name: Deploy docs site
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: verify
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: site
+          path: out
+      - name: Publish to the gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          commit_message: "Deploy docs site · ${{ github.sha }}"
