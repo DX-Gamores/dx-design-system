@@ -46,7 +46,7 @@ export function CalendarDay({ date, state, focused, onPick, onHover, buttonRef }
         className="group grid size-10 place-items-center focus-visible:outline-none"
       >
         <span className={cn(
-          "relative grid size-8 place-items-center rounded-full text-body-small tabular-nums transition-colors duration-100 group-focus-visible:focus-ring",
+          "relative grid size-8 place-items-center rounded-full text-body-small tabular-nums transition-colors duration-instant group-focus-visible:focus-ring",
           edge ? "bg-brand text-fg-on-brand" : "group-hover:bg-neutral-hover",
           outside && !edge && "text-fg-secondary",
           today && !edge && "font-semibold text-fg-brand ring-1 ring-line-selected",

@@ -1,0 +1,12 @@
+{
+ "file": "myYAMZWk4yKLQMWGBdJVJd",
+ "version": "3.2.0",
+ "syncedAt": "2026-11-12",
+ "published": {
+  "components": 133,
+  "variables": 567,
+  "collections": 9,
+  "styles": 21
+ },
+ "note": "Updated on every re-export. version must match package.json (checked by npm run check)."
+}

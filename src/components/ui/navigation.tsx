@@ -49,7 +49,7 @@ export function SegmentedControl<T extends string>({
             onClick={() => onChange(o.value)}
             onKeyDown={(e) => move(e, i)}
             className={cn(
-              "inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-sm px-3 transition-colors duration-150 focus-visible:focus-ring",
+              "inline-flex min-w-0 flex-1 items-center justify-center gap-2 rounded-sm px-3 transition-colors duration-fast focus-visible:focus-ring",
               size === "md" ? "text-label-medium" : "text-label-small",
               on ? "border border-line-default bg-surface-raised text-fg-primary shadow-elevation-1" : "text-fg-secondary hover:bg-neutral-hover hover:text-fg-primary",
             )}

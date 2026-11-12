@@ -172,6 +172,8 @@
   --spacing-control-sm: var(--ds-size-control-sm);
   --spacing-control-md: var(--ds-size-control-md);
   --spacing-control-lg: var(--ds-size-control-lg);
+  --default-transition-duration: var(--ds-duration-fast);
+  --default-transition-timing-function: var(--ds-easing-standard);
 }
 
 /* Text styles as utilities: class="text-heading-h1" */
@@ -280,6 +282,18 @@
 @utility focus-ring {
   outline: none;
   box-shadow: var(--ds-shadow-focus-ring);
+}
+@utility duration-instant {
+  transition-duration: var(--ds-duration-instant);
+}
+@utility duration-fast {
+  transition-duration: var(--ds-duration-fast);
+}
+@utility duration-moderate {
+  transition-duration: var(--ds-duration-moderate);
+}
+@utility duration-slow {
+  transition-duration: var(--ds-duration-slow);
 }
 @utility h-control-sm {
   height: var(--ds-size-control-sm);

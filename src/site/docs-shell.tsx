@@ -8,7 +8,7 @@ import { ThemeSwitcher } from "@/components/app-shell";
 import type { NavGroup } from "./content";
 
 /* Docs layout: Skip Link + App Header + grouped Sidebar (same groups and order as the Figma file). */
-export function DocsShell({ nav, version, repo, figma, children }: { nav: NavGroup[]; version: string; repo: string; figma: string; children: ReactNode }) {
+export function DocsShell({ nav, version, repo, figma, syncedAt, parity, children }: { nav: NavGroup[]; version: string; repo: string; figma: string; syncedAt: string; parity: string; children: ReactNode }) {
   const path = usePathname();
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
@@ -50,7 +50,7 @@ export function DocsShell({ nav, version, repo, figma, children }: { nav: NavGro
           id="docs-nav"
           aria-label="Design system"
           className={cn(
-            "fixed inset-y-0 left-0 z-[var(--ds-z-modal)] flex w-[288px] -translate-x-full flex-col border-r border-line-default bg-surface transition-transform duration-250 ease-enter",
+            "fixed inset-y-0 left-0 z-[var(--ds-z-modal)] flex w-[288px] -translate-x-full flex-col border-r border-line-default bg-surface transition-transform duration-moderate ease-enter",
             "lg:sticky lg:top-[var(--ds-layout-header-height)] lg:z-auto lg:h-[calc(100dvh-var(--ds-layout-header-height))] lg:w-[272px] lg:translate-x-0",
             open ? "translate-x-0" : "max-lg:invisible",
           )}
@@ -98,7 +98,15 @@ export function DocsShell({ nav, version, repo, figma, children }: { nav: NavGro
           </div>
         </nav>
         <main id="main" tabIndex={-1} className="min-w-0 flex-1 px-[var(--ds-layout-margin)] py-[var(--ds-layout-section-gap)] outline-none">
-          <div className="mx-auto flex max-w-[960px] flex-col gap-10">{children}</div>
+          <div className="mx-auto flex max-w-[960px] flex-col gap-10">
+            {children}
+            <footer className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-line-default pt-4 text-caption-default text-fg-secondary">
+              <span>v{version}</span><span aria-hidden>·</span>
+              <span>Synced from Figma {new Date(syncedAt + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span><span aria-hidden>·</span>
+              <span>Figma ↔ code parity {parity}</span><span aria-hidden>·</span>
+              <a href={repo} className="rounded-sm underline underline-offset-2 hover:text-fg-primary focus-visible:focus-ring">Source on GitHub</a>
+            </footer>
+          </div>
         </main>
       </div>
     </div>

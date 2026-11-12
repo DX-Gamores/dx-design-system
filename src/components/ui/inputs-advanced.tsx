@@ -116,7 +116,7 @@ export function Combobox({
               onFocus={() => setOpen(true)} onClick={() => setOpen(true)} onBlur={() => { setOpen(false); setTyped(false); }} onKeyDown={onKey}
               className="min-w-0 flex-1 bg-transparent outline-none placeholder:text-fg-placeholder"
             />
-            {loading ? <Spinner size="sm" label="" /> : <Icon name="chevron-down" className={cn("text-icon-primary transition-transform duration-150", open && "rotate-180")} />}
+            {loading ? <Spinner size="sm" label="" /> : <Icon name="chevron-down" className={cn("text-icon-primary transition-transform duration-fast", open && "rotate-180")} />}
           </div>
           <span role="status" aria-live="polite" className="sr-only">{status}</span>
           {open && (
@@ -161,7 +161,7 @@ export function SliderThumb({ value, min, max, step, label, valueText, disabled,
       role="slider" tabIndex={disabled ? -1 : 0} aria-label={label} aria-valuemin={min} aria-valuemax={max} aria-valuenow={value} aria-valuetext={valueText} aria-disabled={disabled || undefined}
       onKeyDown={disabled ? undefined : onKey} style={style}
       className={cn(
-        "absolute top-1/2 size-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 bg-surface shadow-elevation-1 transition-[box-shadow,transform] duration-150 rtl:translate-x-1/2",
+        "absolute top-1/2 size-5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 bg-surface shadow-elevation-1 transition-[box-shadow,transform] duration-fast rtl:translate-x-1/2",
         disabled ? "border-line-disabled" : "cursor-grab border-line-selected hover:scale-110 focus-visible:focus-ring active:cursor-grabbing active:scale-110",
       )}
     />
@@ -305,7 +305,7 @@ export function FileUpload({ label = "Upload files", accept, maxSize, multiple =
         onDragOver={(e) => { e.preventDefault(); setDrag(true); }} onDragLeave={() => setDrag(false)}
         onDrop={(e) => { e.preventDefault(); setDrag(false); if (!disabled) take(e.dataTransfer.files); }}
         className={cn(
-          "flex flex-col items-center gap-2 rounded-container border-2 border-dashed px-6 py-8 text-center transition-colors duration-150 focus-visible:focus-ring",
+          "flex flex-col items-center gap-2 rounded-container border-2 border-dashed px-6 py-8 text-center transition-colors duration-fast focus-visible:focus-ring",
           drag ? "border-line-selected bg-selected" : "border-line-strong bg-surface hover:border-line-hover hover:bg-surface-subtle",
           disabled && "cursor-not-allowed border-line-disabled bg-disabled text-fg-disabled",
         )}

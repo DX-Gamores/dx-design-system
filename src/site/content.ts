@@ -6,6 +6,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { Marked } from "marked";
+import codedJson from "./coded.json";
+import iaJson from "./ia.json";
+import figmaComponents from "../../figma/components.figma.json";
+import figmaMeta from "../../figma/meta.json";
 
 const root = process.cwd();
 const read = (p: string) => fs.readFileSync(path.join(root, p), "utf8");
@@ -25,38 +29,17 @@ const figmaPages: Record<string, FigmaPage> = JSON.parse(read("figma/pages.conte
 export type Spec = { n: string; slug: string; page: string; pageId: string | null; d: string; vc: number; props: [string, string, unknown][] };
 export const specs: Spec[] = JSON.parse(read("docs/components.json"));
 
-/** Specs that have a React component in src/components/ui (or the app shell). Update when one is added. */
-export const coded = new Set([
-  "button", "icon-button", "text-field", "select", "textarea", "checkbox", "toggle",
-  "badge", "alert", "spinner", "skeleton", "empty-state", "progress-bar",
-  "tabs", "tab", "segmented-control", "segmented-control-item", "stepper", "step",
-  "app-header", "sidebar", "nav-item", "page-header", "skip-link",
-  "avatar", "card", "stat-card", "ai-label", "citation",
-  // Phase 3
-  "link", "radio", "search-field", "chip", "slider", "slider-thumb", "file-upload",
-  "combobox", "combobox-option", "combobox-menu", "select-option", "select-menu",
-  "date-field", "calendar", "calendar-day",
-  "toast", "tooltip", "dialog", "popover", "drawer", "menu", "menu-item",
-  "breadcrumbs", "pagination", "accordion-item",
-  "divider", "list-item", "table-header-cell", "table-cell",
-  "form-section", "form-actions", "error-summary", "ai-response", "ai-confidence",
-]);
+/** Specs that have a React component (spec slug → code symbol). Source: src/site/coded.json, checked by npm run check. */
+export const coded = new Set(Object.keys(codedJson.coded));
+export const codeSymbol = (slug: string) => (codedJson.coded as Record<string, string>)[slug];
+export const figmaComponent = (name: string) => (figmaComponents.components as Record<string, { id: string; w: number; h: number }>)[name];
+export const meta = figmaMeta;
 
 // ── Information architecture: the same groups and order as the Figma file ──────────────
 export type NavItem = { title: string; href: string; figmaName?: string };
 export type NavGroup = { title: string; slug: string; items: NavItem[] };
 
-const figmaGroups: [string, string, string[]][] = [
-  ["Foundations", "foundations", ["Foundations", "Themes & Brands", "Data Visualization", "Content Guidelines", "Localization & RTL", "Icons"]],
-  ["Actions", "actions", ["Button", "Link"]],
-  ["Inputs", "inputs", ["Text Field", "Select", "Combobox", "Date Picker", "Textarea", "Search Field", "Checkbox", "Radio", "Toggle", "Slider", "Chip", "File Upload"]],
-  ["Feedback", "feedback", ["Alert", "Toast", "Progress", "Loading", "Empty State", "Tooltip", "Badge"]],
-  ["Overlays", "overlays", ["Dialog", "Popover & Drawer", "Menu"]],
-  ["Navigation", "navigation", ["Navigation", "Tabs", "Segmented Control", "Stepper", "Accordion"]],
-  ["Data display", "data-display", ["Avatar", "Card", "Divider", "Lists & Tables"]],
-  ["Patterns", "patterns", ["Form Patterns", "AI Patterns"]],
-  ["Product kit", "product-kit", ["Kit · Stat Card", "Templates", "Starter & Empty States", "Examples"]],
-];
+const figmaGroups = iaJson.groups as [string, string, string[]][];
 const displayName = (n: string) => (n === "Foundations" ? "Color, type & space" : n.replace(/^Kit · /, ""));
 const pageSlug = (n: string) => (n === "Foundations" ? "overview" : slugify(n));
 

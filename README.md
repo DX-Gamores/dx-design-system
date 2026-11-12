@@ -1,5 +1,7 @@
 # DX Design System — code kit
 
+[![CI](https://github.com/DX-Gamores/dx-design-system/actions/workflows/ci.yml/badge.svg)](https://github.com/DX-Gamores/dx-design-system/actions/workflows/ci.yml)
+
 The code side of the **DX Design System** Figma file. Developers don't need a Figma seat to use it: everything they need from Figma — colours, type, spacing, motion, component rules, icons — is exported here as code.
 
 | You want to… | Use |
@@ -50,8 +52,10 @@ More detail is in **[docs/GETTING-STARTED.md](docs/GETTING-STARTED.md)**, **[doc
 ## What's inside
 
 ```
-figma/                 Exports from the Figma file: variables, components, icons, page outlines (don't edit)
-scripts/               build-tokens · build-icons · build-specs  (npm run build:all)
+figma/                 Exports from the Figma file: variables, components, icons, page outlines, meta.json (don't edit)
+scripts/               build-tokens · build-icons · build-specs (npm run build:all) · check-parity · serve-out
+tests/                 Playwright: components, templates, a11y (axe), site links, visual snapshots
+.github/workflows/     CI (checks, tests, deploy) · Update visual baselines
 tokens/tokens.json     W3C DTCG tokens, every mode
 dist/                  tokens.css · tailwind.css · tokens.ts  (generated, committed)
 docs/components/       63 component specs (generated from Figma descriptions)
@@ -65,6 +69,10 @@ src/app/templates/     Full-screen routes for the templates (a clickable prototy
 src/app/starter/       Starter app: app shell, dashboard, placeholder sections
 src/site/              Docs-site building blocks: navigation, live demos, page layouts
 ```
+
+## Kept in sync with Figma, automatically
+
+Every push runs CI: generated files must match the Figma export, `npm run check` verifies Figma ↔ code parity (every page, component, spec and live example), and the tests cover keyboard behaviour, WCAG 2.2 (axe, light + dark) and visual regression at 1440 / 834 / 390. Passing pushes to `main` deploy the docs site. Details: [docs/WORKFLOW.md](docs/WORKFLOW.md).
 
 ## Rules that keep the brand consistent
 

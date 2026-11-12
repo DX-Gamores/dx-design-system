@@ -1,12 +1,13 @@
 import { Badge, Icon } from "@/components/ui";
 import { figmaPage } from "@/site/content";
+import parity from "@/site/parity.json";
 import { DocHeader, FigmaOutline, Panel, PrevNext, Section } from "@/site/blocks";
 
 export const metadata = { title: "Governance" };
 
 // Mirrors the Figma Governance page.
 const glance: [string, string][] = [
-  ["3", "Ownership tiers"], ["6", "Steps from request to release"], ["0", "Raw values in components"],
+  ["3", "Ownership tiers"], ["6", "Steps from request to release"], [`${parity.coded} / ${parity.specs}`, "Figma ↔ code parity (checked on every build)"],
   ["80 / 80", "WCAG 2.2 checks pass"], ["324 / 324", "Contrast checks"], ["10 / 10", "Release health checks green"],
 ];
 const rings = [
@@ -16,7 +17,7 @@ const rings = [
 ];
 const dod: [string, string[]][] = [
   ["Figma", ["All states as variants", "100% token-bound — health check 0", "Description: WHEN · PROPERTIES · A11Y · TOKENS + CODE", "Visual docs frame", "Light/Dark × brands × densities", "Contrast AA"]],
-  ["Code", ["Props mirror Figma", "APG keyboard behaviour, tested", "Every state shown on its docs page", "WCAG 2.2 A/AA checks pass"]],
+  ["Code", ["Props mirror Figma", "APG keyboard behaviour, tested", "Live example on its docs page", "CI green: parity, axe WCAG 2.2, visual"]],
   ["Docs & release", ["Spec regenerated (npm run build:all)", "Changelog entry", "Version bumped per policy", "Library published"]],
 ];
 const versions = [

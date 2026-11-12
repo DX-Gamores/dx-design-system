@@ -1,0 +1,108 @@
+{
+ "_": "Docs-site sidebar: the same groups and order as the Figma file. Checked against figma/pages.json by npm run check.",
+ "groups": [
+  [
+   "Foundations",
+   "foundations",
+   [
+    "Foundations",
+    "Themes & Brands",
+    "Data Visualization",
+    "Content Guidelines",
+    "Localization & RTL",
+    "Icons"
+   ]
+  ],
+  [
+   "Actions",
+   "actions",
+   [
+    "Button",
+    "Link"
+   ]
+  ],
+  [
+   "Inputs",
+   "inputs",
+   [
+    "Text Field",
+    "Select",
+    "Combobox",
+    "Date Picker",
+    "Textarea",
+    "Search Field",
+    "Checkbox",
+    "Radio",
+    "Toggle",
+    "Slider",
+    "Chip",
+    "File Upload"
+   ]
+  ],
+  [
+   "Feedback",
+   "feedback",
+   [
+    "Alert",
+    "Toast",
+    "Progress",
+    "Loading",
+    "Empty State",
+    "Tooltip",
+    "Badge"
+   ]
+  ],
+  [
+   "Overlays",
+   "overlays",
+   [
+    "Dialog",
+    "Popover & Drawer",
+    "Menu"
+   ]
+  ],
+  [
+   "Navigation",
+   "navigation",
+   [
+    "Navigation",
+    "Tabs",
+    "Segmented Control",
+    "Stepper",
+    "Accordion"
+   ]
+  ],
+  [
+   "Data display",
+   "data-display",
+   [
+    "Avatar",
+    "Card",
+    "Divider",
+    "Lists & Tables"
+   ]
+  ],
+  [
+   "Patterns",
+   "patterns",
+   [
+    "Form Patterns",
+    "AI Patterns"
+   ]
+  ],
+  [
+   "Product kit",
+   "product-kit",
+   [
+    "Kit · Stat Card",
+    "Templates",
+    "Starter & Empty States",
+    "Examples"
+   ]
+  ]
+ ],
+ "startPages": [
+  "Getting Started",
+  "Governance"
+ ]
+}

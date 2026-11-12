@@ -27,11 +27,26 @@ This repo replaces the "Can't" column. Token names, code snippets and component 
 1. Make the change in Figma. Update the component description: it becomes the spec.
 2. Ask Claude to run the release audit (Governance page → Release health). Fix anything red.
 3. Publish the library in Figma.
-4. Ask Claude to **re-export the code kit**. That refreshes `figma/variables.raw.json`, `figma/styles-components.raw.json` and `figma/icons.json`, runs `npm run build:all`, and opens a PR titled with the new version.
-5. Note the change in the Figma changelog and in the PR. Bump the version in `package.json`, following the versioning rules on the Governance page:
+4. Ask Claude to **re-export the code kit**. That refreshes the files in `figma/` (variables, components, icons, page outlines, `meta.json` with the new version and sync date), runs `npm run build:all`, and pushes to `main`.
+5. **CI does the rest** (GitHub Actions, `.github/workflows/ci.yml`):
+   - **Generated files are fresh** — tokens, icons and specs match the Figma export.
+   - **Parity** — `npm run check`: every Figma page is on the site, every published component has a spec, every spec is coded and has a live example, and the version matches Figma. A miss fails the build and names the fix.
+   - **Tests** — keyboard behaviour, an axe WCAG 2.2 scan of every page in light and dark, links, and no sideways scrolling at 390px.
+   - **Deploy** — the docs site is published to GitHub Pages automatically.
+   - **Visual regression** (non-blocking) — every live example and template at 1440 / 834 / 390 compared with the committed baselines. After an intended visual change, run **Actions → Update visual baselines**.
+6. Note the change in the Figma changelog and `src/site/changelog.ts`. Bump the version in `package.json` and `figma/meta.json` together, following the versioning rules on the Governance page:
    - **Patch:** fixes.
    - **Minor:** new components or tokens.
    - **Major:** renames or removals.
+
+## Checking your work locally
+
+```bash
+npm run check          # parity + types
+npm run build:pages    # static site in out/
+npm test               # all tests (needs the build); npm run test:functional / test:visual
+npm run serve:pages    # http://localhost:4173/dx-design-system/
+```
 
 ## Developers
 
@@ -45,19 +60,16 @@ The site at https://dx-gamores.github.io/dx-design-system/ mirrors the Figma fil
 
 | On the site | Comes from |
 |---|---|
-| Sidebar groups and order | The Figma page list (`src/site/content.ts` → `nav`) |
+| Sidebar groups and order | `src/site/ia.json` — same groups and order as the Figma file (checked by `npm run check`) |
 | Page eyebrow, summary, "In the Figma page" outline | `figma/pages.content.json` (exported from each page's header and section headers) |
 | Specs | `docs/components/*.md` (`npm run specs`, from component descriptions) |
 | Live examples | `src/site/demos.tsx` — real components from `src/components/ui` |
-| "Coded" badges | `coded` in `src/site/content.ts` — add a spec slug when its component ships |
+| "Coded" badges | `src/site/coded.json` — spec slug → the code that implements it (checked by `npm run check`) |
+| Figma vs code panel | `figma/components.figma.json` — each published component set's node |
 | Foundations pages | `figma/variables.raw.json` + text/effect styles, rendered with the live CSS variables (`src/site/foundations/`) |
 | Contrast audit | Measured in the browser from the tokens: 27 pairs × 3 brands × 4 modes |
 | Do & don't | Live, view-only Figma embeds of each page's Do & don't frame (`doDont` in `figma/pages.content.json`) — viewers need view access to the file, no paid seat |
 
-To publish an update:
+Every page footer shows the version, the Figma sync date and the parity count. Each spec has a **Compare with the Figma component** panel: the live Figma component set next to a link to its code.
 
-```bash
-npm run build:pages          # static export to out/ (base path /dx-design-system)
-```
-
-Then commit the contents of `out/` to the `gh-pages` branch. Claude does this as part of "re-export the code kit".
+Publishing is automatic: every push to `main` that passes CI deploys the site.

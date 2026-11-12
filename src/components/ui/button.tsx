@@ -11,7 +11,7 @@ type Size = "lg" | "md" | "sm";
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-control text-label-medium whitespace-nowrap select-none " +
-  "transition-colors duration-150 ease-standard focus-visible:focus-ring disabled:cursor-not-allowed " +
+  "transition-colors duration-fast ease-standard focus-visible:focus-ring disabled:cursor-not-allowed " +
   "disabled:bg-disabled disabled:text-fg-disabled disabled:border-line-disabled";
 
 const sizes: Record<Size, string> = {

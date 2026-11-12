@@ -85,7 +85,7 @@ export function AccordionItem({ title, children, id: given }: { title: string; c
         <button type="button" id={`${id}-h`} aria-expanded={expanded} aria-controls={`${id}-p`} onClick={() => c.toggle(id)}
           className="flex w-full items-center justify-between gap-3 px-4 py-3 text-start text-label-large hover:bg-neutral-hover focus-visible:focus-ring first:rounded-t-container">
           {title}
-          <Icon name="chevron-down" className={cn("shrink-0 text-icon-secondary transition-transform duration-[var(--ds-duration-moderate)] ease-standard", expanded && "rotate-180")} />
+          <Icon name="chevron-down" className={cn("shrink-0 text-icon-secondary transition-transform duration-moderate ease-standard", expanded && "rotate-180")} />
         </button>
       </H>
       <div id={`${id}-p`} role="region" aria-labelledby={`${id}-h`} hidden={!expanded} className="px-4 pb-4 text-body-small text-fg-secondary">{children}</div>

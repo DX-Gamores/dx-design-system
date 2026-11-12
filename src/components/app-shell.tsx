@@ -44,7 +44,7 @@ export function AppShell({ productName = "DXFORM", nav = starterNav, userName = 
           id="sidebar"
           aria-label="Main"
           className={cn(
-            "fixed inset-y-0 left-0 z-[var(--ds-z-modal)] w-[288px] -translate-x-full border-r border-line-default bg-surface p-3 transition-transform duration-250 ease-enter",
+            "fixed inset-y-0 left-0 z-[var(--ds-z-modal)] w-[288px] -translate-x-full border-r border-line-default bg-surface p-3 transition-transform duration-moderate ease-enter",
             // Tablet (768–1023): a 72px icon rail (layout/sidebar-width switches to 72); desktop: the full sidebar; mobile: a drawer.
             "md:sticky md:top-[var(--ds-layout-header-height)] md:z-auto md:h-[calc(100dvh-var(--ds-layout-header-height))] md:w-[var(--ds-layout-sidebar-width)] md:translate-x-0",
             open ? "translate-x-0" : "max-md:invisible",

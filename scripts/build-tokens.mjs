@@ -124,11 +124,14 @@ for (const [n] of col.Typography.v.filter(([n]) => n.startsWith("font-size/"))) 
 }
 for (const k of ["standard", "enter", "exit", "spring-snappy", "spring-gentle", "spring-bouncy"]) tw.push([`--ease-${k}`, `var(--ds-easing-${k})`]);
 for (const k of ["sm", "md", "lg"]) tw.push([`--spacing-control-${k}`, `var(--ds-size-control-${k})`]);
+// Every transition follows the Motion collection (Reduced mode → 0ms, linear), even without an explicit duration.
+tw.push(["--default-transition-duration", "var(--ds-duration-fast)"], ["--default-transition-timing-function", "var(--ds-easing-standard)"]);
 let twcss = `/* DX Design System — Tailwind v4 theme. Generated. */\n/* In app/globals.css:  @import "tailwindcss";  @import "@dxform/design-system/tokens.css";  @import "@dxform/design-system/tailwind.css"; */\n\n@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *, [data-theme="dark-hc"], [data-theme="dark-hc"] *));\n\n`;
 twcss += `@theme inline {\n${tw.map(([k, v]) => `  ${k}: ${v};`).join("\n")}\n}\n\n`;
 twcss += "/* Text styles as utilities: class=\"text-heading-h1\" */\n";
 for (const [n, d] of ts) twcss += `@utility text-${n} {\n${d.map(([k, v]) => `  ${k}: ${v};`).join("\n")}\n}\n`;
 twcss += `@utility focus-ring {\n  outline: none;\n  box-shadow: var(--ds-shadow-focus-ring);\n}\n`;
+for (const k of ["instant", "fast", "moderate", "slow"]) twcss += `@utility duration-${k} {\n  transition-duration: var(--ds-duration-${k});\n}\n`;
 twcss += `@utility h-control-sm {\n  height: var(--ds-size-control-sm);\n}\n@utility h-control-md {\n  height: var(--ds-size-control-md);\n}\n@utility h-control-lg {\n  height: var(--ds-size-control-lg);\n}\n`;
 fs.writeFileSync(path.join(root, "dist/tailwind.css"), twcss);
 

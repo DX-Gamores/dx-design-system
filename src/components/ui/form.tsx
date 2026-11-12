@@ -121,14 +121,14 @@ export function Toggle({ label, checked, onChange, disabled }: { label: string; 
     >
       <span
         className={cn(
-          "relative h-[var(--ds-size-toggle-height)] w-[var(--ds-size-toggle-width)] rounded-full transition-colors duration-150 group-focus-visible:focus-ring",
+          "relative h-[var(--ds-size-toggle-height)] w-[var(--ds-size-toggle-width)] rounded-full transition-colors duration-fast group-focus-visible:focus-ring",
           checked ? "bg-brand" : "bg-control-off",
           disabled && "opacity-[var(--ds-opacity-disabled)]",
         )}
       >
         <span
           className={cn(
-            "absolute top-0.5 left-0.5 size-[calc(var(--ds-size-toggle-height)-4px)] rounded-full bg-[var(--ds-color-icon-on-control-off)] shadow-elevation-1 transition-transform duration-150 ease-spring-snappy",
+            "absolute top-0.5 left-0.5 size-[calc(var(--ds-size-toggle-height)-4px)] rounded-full bg-[var(--ds-color-icon-on-control-off)] shadow-elevation-1 transition-transform duration-fast ease-spring-snappy",
             checked && "translate-x-[calc(var(--ds-size-toggle-width)-var(--ds-size-toggle-height))] rtl:-translate-x-[calc(var(--ds-size-toggle-width)-var(--ds-size-toggle-height))]",
           )}
         />
@@ -196,7 +196,7 @@ export function SearchField({ label = "Search", value, onChange, onClear, size =
 /* ---------- Chip — Figma: Chip. Selectable filter (aria-pressed) and/or removable tag. */
 export function Chip({ children, selected, onToggle, onRemove, disabled }: { children: string; selected?: boolean; onToggle?: (selected: boolean) => void; onRemove?: () => void; disabled?: boolean }) {
   const base = cn(
-    "inline-flex h-8 items-center gap-1 rounded-full border text-label-small transition-colors duration-150",
+    "inline-flex h-8 items-center gap-1 rounded-full border text-label-small transition-colors duration-fast",
     disabled ? "cursor-not-allowed border-line-disabled bg-disabled text-fg-disabled"
       : selected ? "border-line-selected bg-selected text-fg-brand" : "border-line-strong bg-surface text-fg-primary",
   );

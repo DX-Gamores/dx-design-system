@@ -14,11 +14,18 @@
     "specs": "node scripts/build-specs.mjs",
     "icons": "node scripts/build-icons.mjs",
     "build:all": "npm run tokens && npm run icons && npm run specs",
+    "check:parity": "node scripts/check-parity.mjs",
+    "check": "npm run check:parity && tsc --noEmit",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "build:pages": "node scripts/check-parity.mjs && PAGES_BASE_PATH=/dx-design-system next build && touch out/.nojekyll",
+    "serve:pages": "node scripts/serve-out.mjs",
+    "test": "playwright test",
+    "test:update": "playwright test --update-snapshots",
     "lint": "tsc --noEmit",
-    "build:pages": "PAGES_BASE_PATH=/dx-design-system next build && touch out/.nojekyll"
+    "test:functional": "playwright test tests/components.spec.ts tests/templates.spec.ts tests/a11y.spec.ts tests/site.spec.ts",
+    "test:visual": "playwright test tests/visual.spec.ts"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
@@ -31,6 +38,8 @@
     "react-dom": "^19.3.1"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "@playwright/test": "1.63.0",
     "@tailwindcss/cli": "^4.3.5",
     "@tailwindcss/postcss": "^4.3.5",
     "@types/node": "^26.6.6",

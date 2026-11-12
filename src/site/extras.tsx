@@ -76,7 +76,7 @@ function Foundations() {
 | \`spacing/4\` (16px) | \`var(--ds-spacing-4)\` | \`p-4\` |
 | Text style \`Heading/H1\` | \`.ds-heading-h1\` | \`text-heading-h1\` |
 | Effect \`Elevation/2\` | \`var(--ds-shadow-elevation-2)\` | \`shadow-elevation-2\` |
-| \`duration/fast\` · \`easing/standard\` | \`var(--ds-duration-fast)\` | \`duration-150 ease-standard\` |`)}
+| \`duration/fast\` · \`easing/standard\` | \`var(--ds-duration-fast)\` | \`duration-fast ease-standard\` |`)}
       </Section>
     </>
   );
