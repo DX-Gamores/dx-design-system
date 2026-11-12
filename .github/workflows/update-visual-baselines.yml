@@ -1,19 +1,29 @@
 name: Update visual baselines
 
-# Run this after an intended visual change (or once after setup): it re-captures every
-# snapshot on CI's own machine and commits them, so CI compares like with like.
+# Re-captures every visual snapshot on CI's own machine, verifies them with a second run,
+# and commits them to main, so CI compares like with like.
+# Run it from Actions → "Update visual baselines" → Run workflow,
+# or push a branch named ci/update-visual-baselines (it's deleted afterwards).
 on:
   workflow_dispatch:
+  push:
+    branches: [ci/update-visual-baselines]
 
 permissions:
   contents: write
 
+concurrency:
+  group: visual-baselines
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -21,13 +31,26 @@ jobs:
       - run: npm ci
       - run: npm run build:pages
       - run: npx playwright install --with-deps chromium
+
       - name: Re-capture snapshots
         run: npx playwright test tests/visual.spec.ts --update-snapshots
-      - name: Commit the new baselines
+
+      - name: Verify they are stable (second run, no updates)
+        run: npx playwright test tests/visual.spec.ts --reporter=list | tee visual-verify.txt
+
+      - name: Commit the new baselines to main
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          RESULT=$(grep -Eo '[0-9]+ passed' visual-verify.txt | tail -1)
           git add tests/visual.spec.ts-snapshots
-          git diff --cached --quiet && echo "Baselines unchanged." && exit 0
-          git commit -m "Update visual baselines (CI)"
-          git push
+          if git diff --cached --quiet; then
+            echo "Baselines unchanged (${RESULT})."
+          else
+            git commit -m "Update visual baselines (CI) · verified: ${RESULT}"
+            git push origin HEAD:main
+          fi
+
+      - name: Remove the trigger branch
+        if: always() && github.event_name == 'push'
+        run: git push origin --delete ci/update-visual-baselines || true
