@@ -95,7 +95,8 @@ const ts = textStyles.map((t) => {
 });
 css += "\n/* Text styles — same names as Figma (Heading/H1 → .ds-heading-h1) */\n";
 for (const [n, d] of ts) css += block(`.ds-${n}`, d);
-css += block(":where(:focus-visible)", [["outline", "none"], ["box-shadow", "var(--ds-shadow-focus-ring)"]]);
+// Safety-net focus ring for anything without its own. In the base layer so components (Tailwind utilities) can override it.
+css += "@layer base {\n" + block(":where(:focus-visible)", [["outline", "none"], ["box-shadow", "var(--ds-shadow-focus-ring)"]]).replace(/^/gm, "  ").trimEnd() + "\n}\n";
 fs.mkdirSync(path.join(root, "dist"), { recursive: true });
 fs.writeFileSync(path.join(root, "dist/tokens.css"), css);
 

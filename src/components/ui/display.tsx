@@ -4,10 +4,11 @@ import { Badge } from "./feedback";
 import { Icon } from "./icon";
 
 /* ---------- Card — Elevation (Flat | Raised). One topic, up to two actions. */
-export function Card({ title, children, actions, elevation = "flat", className }: { title?: string; children?: ReactNode; actions?: ReactNode; elevation?: "flat" | "raised"; className?: string }) {
+export function Card({ title, children, actions, elevation = "flat", className, headingLevel = 3 }: { title?: string; children?: ReactNode; actions?: ReactNode; elevation?: "flat" | "raised"; className?: string; headingLevel?: 2 | 3 | 4 }) {
+  const H = `h${headingLevel}` as "h3";
   return (
     <section className={cn("flex flex-col gap-4 rounded-container border border-line-default bg-surface p-[var(--ds-padding-card)]", elevation === "raised" && "shadow-elevation-2", className)}>
-      {title && <h3 className="text-heading-h4">{title}</h3>}
+      {title && <H className="text-heading-h4">{title}</H>}
       {children}
       {actions && <div className="flex flex-wrap gap-2">{actions}</div>}
     </section>

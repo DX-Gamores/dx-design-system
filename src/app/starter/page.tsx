@@ -38,7 +38,7 @@ export default function Dashboard() {
         <StatCard label="Uptime" value="99.98%" context="this quarter" />
       </div>
       <div className="grid gap-[var(--ds-layout-gutter)] lg:grid-cols-3">
-        <Card title="Sign-ups" className="lg:col-span-2">
+        <Card title="Sign-ups" headingLevel={2} className="lg:col-span-2">
           <SegmentedControl
             label="Period"
             value={period}
@@ -64,7 +64,7 @@ export default function Dashboard() {
             })}
           </svg>
         </Card>
-        <Card title="Members" actions={<Button variant="secondary" size="sm">View all</Button>}>
+        <Card title="Members" headingLevel={2} actions={<Button variant="secondary" size="sm">View all</Button>}>
           <ul className="flex flex-col divide-y divide-[var(--ds-color-border-default)]">
             {members.map((m) => (
               <li key={m.email} className="flex items-center gap-3 py-[var(--ds-padding-row)]">

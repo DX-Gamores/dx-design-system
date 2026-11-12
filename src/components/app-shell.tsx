@@ -82,11 +82,12 @@ export function AppShell({ productName = "DXFORM", children }: { productName?: s
   );
 }
 
-export function PageHeader({ title, description, actions }: { title: string; description?: string; actions?: ReactNode }) {
+export function PageHeader({ title, description, actions, headingLevel = 1 }: { title: string; description?: string; actions?: ReactNode; headingLevel?: 1 | 2 }) {
+  const H = `h${headingLevel}` as "h1";
   return (
     <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
       <div className="flex flex-col gap-1">
-        <h1 className="text-heading-h2">{title}</h1>
+        <H className="text-heading-h2">{title}</H>
         {description && <p className="text-body-medium text-fg-secondary">{description}</p>}
       </div>
       {actions && <div className="flex flex-wrap gap-2">{actions}</div>}

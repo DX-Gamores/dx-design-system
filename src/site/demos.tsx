@@ -7,6 +7,7 @@ import {
 } from "@/components/ui";
 import { PageHeader } from "@/components/app-shell";
 import type { DemoName } from "./demo-names";
+import { demos2 } from "./demos-2";
 
 /* Live examples for the docs pages, keyed by Figma page name. Everything here uses the real
    components from src/components/ui, so the theme switcher in the header re-skins them. */
@@ -99,6 +100,7 @@ function ThemeMatrix() {
   );
 }
 export const demos: Record<DemoName, () => ReactNode> = {
+  ...demos2,
   "Button": () => (
     <Stack>
       {(["primary", "secondary", "ghost"] as const).map((v) => (
@@ -125,12 +127,6 @@ export const demos: Record<DemoName, () => ReactNode> = {
   ),
   "Select": () => <div className="max-w-sm"><Select label="Time zone" placeholder="Select an option" options={[{ value: "mnl", label: "Asia/Manila" }, { value: "sgp", label: "Asia/Singapore" }, { value: "tyo", label: "Asia/Tokyo" }]} /></div>,
   "Textarea": () => <div className="max-w-md"><Textarea label="Bio" placeholder="A short introduction" helperText="Up to 160 characters." maxLength={160} /></div>,
-  "Search Field": () => (
-    <Stack>
-      <div className="max-w-md"><TextField label="Search" leadingIcon="search" placeholder="Search projects…" /></div>
-      <p className="text-caption-default text-fg-secondary">Built with Text Field + a leading search icon today. A dedicated Search Field (with clear button) is on the roadmap.</p>
-    </Stack>
-  ),
   "Checkbox": () => (
     <Stack>
       <Checkbox label="Email me product updates" defaultChecked />
@@ -161,12 +157,6 @@ export const demos: Record<DemoName, () => ReactNode> = {
   ),
   "Empty State": () => <EmptyState icon="search" title="No results for “wade”" description="Check the spelling or clear the filters." actions={<Button variant="secondary">Clear filters</Button>} />,
   "Badge": () => <Row>{(["neutral", "brand", "success", "warning", "danger", "info"] as const).map((t) => <Badge key={t} tone={t}>{t[0].toUpperCase() + t.slice(1)}</Badge>)}</Row>,
-  "Navigation": () => (
-    <Stack>
-      <PageHeader title="Members" description="People who can access this workspace." actions={<Button leadingIcon="plus">Invite people</Button>} />
-      <p className="text-caption-default text-fg-secondary">App Header, Sidebar, Nav Item and Skip Link are live in this site’s own frame and in the <Link className="text-fg-brand underline" href="/starter/">starter app</Link>.</p>
-    </Stack>
-  ),
   "Tabs": () => <TabsDemo />,
   "Segmented Control": () => <SegmentedDemo />,
   "Stepper": () => (
@@ -177,13 +167,6 @@ export const demos: Record<DemoName, () => ReactNode> = {
     <div className="grid gap-4 md:grid-cols-2">
       <Card title="Flat card" actions={<><Button size="sm">Primary</Button><Button size="sm" variant="secondary">Secondary</Button></>}>Supporting text about one subject.</Card>
       <Card title="Raised card" elevation="raised">Use on the canvas or when it needs emphasis.</Card>
-    </div>
-  ),
-  "AI Patterns": () => (
-    <div className="flex max-w-xl flex-col gap-3 rounded-container border border-line-default p-4" aria-live="polite">
-      <Row><AILabel /><span className="text-caption-default text-fg-secondary">Just now · from 2 sources</span></Row>
-      <p>You have 12 vacation days left this year. Up to 5 unused days roll over to 2027.</p>
-      <Row><Citation n={1} title="Leave policy 2026" href="#" /><Citation n={2} title="HR portal" href="#" /></Row>
     </div>
   ),
   "Kit · Stat Card": () => (

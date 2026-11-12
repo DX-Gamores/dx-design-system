@@ -32,6 +32,14 @@ export const coded = new Set([
   "tabs", "tab", "segmented-control", "segmented-control-item", "stepper", "step",
   "app-header", "sidebar", "nav-item", "page-header", "skip-link",
   "avatar", "card", "stat-card", "ai-label", "citation",
+  // Phase 3
+  "link", "radio", "search-field", "chip", "slider", "slider-thumb", "file-upload",
+  "combobox", "combobox-option", "combobox-menu", "select-option", "select-menu",
+  "date-field", "calendar", "calendar-day",
+  "toast", "tooltip", "dialog", "popover", "drawer", "menu", "menu-item",
+  "breadcrumbs", "pagination", "accordion-item",
+  "divider", "list-item", "table-header-cell", "table-cell",
+  "form-section", "form-actions", "error-summary", "ai-response", "ai-confidence",
 ]);
 
 // ── Information architecture: the same groups and order as the Figma file ──────────────

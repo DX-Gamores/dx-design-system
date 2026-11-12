@@ -44,10 +44,23 @@ These follow the device automatically:
 3. If a coded version exists in `src/components/ui`, use or extend it. If not, build it from tokens only, following the spec.
 4. Check it on its docs-site page and in the [component gallery](https://dx-gamores.github.io/dx-design-system/start/gallery/) in every brand × theme, plus keyboard-only.
 
-## 4. Fonts
+## 4. App-level setup
+
+Most components need nothing. Two need one line each:
+
+```tsx
+// app/layout.tsx — toasts render in one shared live region
+import { ToastProvider } from "@/components/ui";
+<body><ToastProvider>{children}</ToastProvider></body>
+```
+
+- **Toast:** call `const toast = useToast(); toast.show({ message: "Saved", tone: "success" })` anywhere inside the provider.
+- **Dialog / Drawer:** use the native `<dialog>` element, so the page behind is inert and focus is trapped with no extra setup. Control them with `open` and `onClose`.
+
+## 5. Fonts
 
 The fonts for the three brands are self-hosted with Fontsource (`src/app/fonts.ts`): Inter, Manrope, Poppins and Roboto Mono. Delete the ones your brand doesn't use.
 
-## 5. Updating when design changes
+## 6. Updating when design changes
 
 You never edit `dist/` or `docs/components/` by hand. When design publishes a change, the export in `figma/` is refreshed and `npm run build:all` regenerates everything (see [WORKFLOW.md](WORKFLOW.md)).

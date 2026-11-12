@@ -6,7 +6,7 @@ The code side of the **DX Design System** Figma file. Developers don't need a Fi
 |---|---|
 | Get the brand right in any web project | [`dist/tokens.css`](dist/tokens.css) — CSS variables for 3 brands × 4 colour modes × 2 densities |
 | Style with Tailwind (v4) | [`dist/tailwind.css`](dist/tailwind.css) — `bg-surface`, `text-fg-primary`, `border-line-default`, `text-heading-h1`, `shadow-elevation-2` … |
-| Build a component correctly | [`docs/components/`](docs/components/README.md) — 63 specs: props, states, tokens, keyboard and accessibility |
+| Build a component correctly | [`docs/components/`](docs/components/README.md) — 63 specs: props, states, tokens, keyboard and accessibility. Every one is coded in [`src/components/ui`](src/components/ui) |
 | Start a new app | [`src/app/starter`](src/app/starter) — a working **Next.js 15 + Tailwind 4** app shell (`npm run dev` → `/starter`) |
 | Feed tokens to another tool | [`tokens/tokens.json`](tokens/tokens.json) — W3C Design Tokens format, all modes |
 | Draw charts | [`dist/tokens.ts`](dist/tokens.ts) → `dataviz.series`, colour-blind-checked |
@@ -55,9 +55,10 @@ scripts/               build-tokens · build-icons · build-specs  (npm run buil
 tokens/tokens.json     W3C DTCG tokens, every mode
 dist/                  tokens.css · tailwind.css · tokens.ts  (generated, committed)
 docs/components/       63 component specs (generated from Figma descriptions)
-src/components/ui/     React components: Button, IconButton, TextField, Textarea, Select, Checkbox,
-                       Toggle, SegmentedControl, Tabs, Stepper, Badge, Alert, Spinner, Skeleton,
-                       Progress, EmptyState, Card, Avatar, StatCard, AILabel, Citation, Icon (69 icons)
+src/components/ui/     React components for all 63 Figma specs — actions, inputs (Combobox, DatePicker,
+                       Slider, RadioGroup, Chip, FileUpload…), feedback (Toast, Tooltip…), overlays
+                       (Dialog, Drawer, Popover, Menu), navigation, data display (Table, List), form and
+                       AI patterns, Icon (69 icons). No UI library dependency — copy what you need.
 src/app/(docs)/        Docs site: one page per Figma page (generated from figma/ + docs/)
 src/app/starter/       Starter app: app shell, dashboard, placeholder sections
 src/site/              Docs-site building blocks: navigation, live demos, page layouts

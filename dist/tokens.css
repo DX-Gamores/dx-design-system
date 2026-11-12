@@ -1624,7 +1624,9 @@
   line-height: var(--ds-line-height-7xl);
   letter-spacing: var(--ds-letter-spacing-7xl);
 }
-:where(:focus-visible) {
-  outline: none;
-  box-shadow: var(--ds-shadow-focus-ring);
+@layer base {
+  :where(:focus-visible) {
+    outline: none;
+    box-shadow: var(--ds-shadow-focus-ring);
+  }
 }
