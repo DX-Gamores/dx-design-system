@@ -6,10 +6,12 @@ import { cn } from "@/lib/cn";
 import { Icon, IconButton } from "@/components/ui";
 import { ThemeSwitcher } from "@/components/app-shell";
 import type { NavGroup } from "./content";
+import { DocsSearch, useCodeCopy, type SearchEntry } from "./search";
 
 /* Docs layout: Skip Link + App Header + grouped Sidebar (same groups and order as the Figma file). */
-export function DocsShell({ nav, version, repo, figma, syncedAt, parity, children }: { nav: NavGroup[]; version: string; repo: string; figma: string; syncedAt: string; parity: string; children: ReactNode }) {
+export function DocsShell({ nav, searchIndex, version, repo, figma, syncedAt, parity, children }: { nav: NavGroup[]; searchIndex: SearchEntry[]; version: string; repo: string; figma: string; syncedAt: string; parity: string; children: ReactNode }) {
   const path = usePathname();
+  useCodeCopy(path);
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
   const query = q.trim().toLowerCase();
@@ -31,10 +33,11 @@ export function DocsShell({ nav, version, repo, figma, syncedAt, parity, childre
         <IconButton icon="menu" label="Open navigation" className="lg:hidden" aria-expanded={open} aria-controls="docs-nav" onClick={() => setOpen(true)} />
         <Link href="/" className="flex items-center gap-2 rounded-md text-label-large focus-visible:focus-ring">
           <span aria-hidden className="size-6 rounded-md bg-brand" />
-          <span>DX Design System</span>
+          <span className="whitespace-nowrap">DX Design System</span>
         </Link>
         <span className="hidden rounded-full bg-surface-subtle px-2 py-0.5 text-label-small text-fg-secondary sm:inline">v{version}</span>
         <div className="ml-auto flex items-center gap-2">
+          <DocsSearch index={searchIndex} />
           <ThemeSwitcher />
           <a href={figma} className="hidden h-control-sm items-center gap-1 rounded-control px-2 text-label-small text-fg-secondary hover:bg-neutral-hover hover:text-fg-primary focus-visible:focus-ring sm:flex">
             Figma <Icon name="external-link" size={16} />

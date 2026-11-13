@@ -11,9 +11,9 @@ export default function Overview() {
     [s.pages, "Figma pages mirrored here"],
     [s.specs, "Component specs"],
     [s.coded, "Coded in React"],
-    [s.icons, "Icons · 24px grid"],
+    [s.icons, "Icons in code · 24px grid"],
     [s.variables, `Variables in ${s.collections} collections`],
-    [`${s.brands} × ${s.modes}`, "Brands × colour modes"],
+    [s.brands * s.modes, `Themes · ${s.brands} brands × ${s.modes} colour modes`],
   ];
   const layers = [
     ["Layer 1", "Primitive", "color/blue/600", "Raw palette value. Hidden from pickers."],

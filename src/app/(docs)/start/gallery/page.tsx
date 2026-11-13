@@ -12,7 +12,7 @@ export default function Gallery() {
   const total = specs.filter((s) => coded.has(s.slug)).length;
   return (
     <>
-      <DocHeader eyebrow="Start here" title="Component gallery" summary={`All ${total} coded components, live, in the same order as the Figma file. Switch brand, theme and density in the header to re-skin everything at once.`} />
+      <DocHeader eyebrow="Start here" title="Component gallery" summary={`All ${total} coded components (sub-components such as Icon Button included), live, in the same order as the Figma file. Switch brand, theme and density in the header to re-skin everything at once.`} />
       {groups.map((g) => (
         <section key={g.slug} className="flex flex-col gap-6">
           <h2 className="border-b border-line-default pb-2 text-heading-h2">{g.title}</h2>
