@@ -29,3 +29,22 @@ test("no sideways scrolling at 390px", async ({ browser }) => {
   }
   expect(wide).toEqual([]);
 });
+
+test("search: Ctrl+K opens, arrow keys move, Enter opens the result", async ({ page }) => {
+  await page.goto("start/getting-started/");
+  await page.keyboard.press("Control+k");
+  const box = page.getByRole("combobox", { name: "Search pages and components" });
+  await expect(box).toBeFocused();
+  await box.fill("dialog");
+  await expect(page.getByRole("option").first()).toContainText("Dialog");
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/overlays\/dialog\/$/);
+  await expect(page.getByRole("dialog", { name: "Search docs" })).toBeHidden();
+});
+
+test("every code block has a Copy button", async ({ page }) => {
+  await page.goto("start/getting-started/");
+  const blocks = await page.locator("main pre").count();
+  expect(blocks).toBeGreaterThan(0);
+  await expect(page.locator("main pre button", { hasText: "Copy" })).toHaveCount(blocks);
+});
