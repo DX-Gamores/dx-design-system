@@ -30,4 +30,9 @@ Done in November 2026:
 1. The `deploy` job was removed from `.github/workflows/ci.yml`. The test jobs stay: they still run `npm run build:pages`, because Playwright serves that static export.
 2. Links in `README.md`, `docs/` and the site point at the Vercel URL.
 3. Repo **Settings → Pages → Source** set to *None* (Gab, after merging). The `gh-pages` branch can be deleted afterwards.
-4. Still to do: replace any `dx-gamores.github.io/dx-design-system` links in the Figma file (Gab).
+4. Figma file checked on 2026-11-18: it has no links to the old address.
+5. `gh-pages` branch deleted; merged branches `revamp/phase-0` and `revamp/retire-pages` deleted.
+
+## Cleanup after a deploy change (required)
+
+Any change to hosting, domains or the deploy pipeline ends with section 4 of [docs/CLEANUP.md](CLEANUP.md): switch off the old site in the same piece of work, replace every old link (repo, site, Figma, plan doc, AI handoff file), check who can see the new site in a private browser window, and revoke any token used.

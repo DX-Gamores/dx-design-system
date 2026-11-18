@@ -47,7 +47,7 @@ npm i github:DX-Gamores/dx-design-system      # or copy the dist/ folder
 
 Components live in [`src/components/ui`](src/components/ui). Copy the ones you need into your project and own them (the shadcn/ui approach). They only depend on the tokens, so they re-skin for any brand. To start a new app from the shell, copy [`src/app/starter`](src/app/starter) too.
 
-More detail is in **[docs/GETTING-STARTED.md](docs/GETTING-STARTED.md)**, **[docs/NEW-BRAND.md](docs/NEW-BRAND.md)** and **[docs/WORKFLOW.md](docs/WORKFLOW.md)**.
+More detail is in **[docs/GETTING-STARTED.md](docs/GETTING-STARTED.md)**, **[docs/NEW-BRAND.md](docs/NEW-BRAND.md)**, **[docs/WORKFLOW.md](docs/WORKFLOW.md)** and **[docs/CLEANUP.md](docs/CLEANUP.md)**.
 
 ## What's inside
 
@@ -72,7 +72,7 @@ src/site/              Docs-site building blocks: navigation, live demos, page l
 
 ## Kept in sync with Figma, automatically
 
-Every push runs CI: generated files must match the Figma export, `npm run check` verifies Figma ↔ code parity (every page, component, spec and live example), and the tests cover keyboard behaviour, WCAG 2.2 (axe, light + dark) and visual regression at 1440 / 834 / 390. Passing pushes to `main` deploy the docs site. Details: [docs/WORKFLOW.md](docs/WORKFLOW.md).
+Every push runs CI: generated files must match the Figma export, `npm run check` verifies Figma ↔ code parity (every page, component, spec and live example), and the tests cover keyboard behaviour, WCAG 2.2 (axe, light + dark) and visual regression at 1440 / 834 / 390. Vercel deploys the docs site from `main`. Details: [docs/WORKFLOW.md](docs/WORKFLOW.md). Every process ends with cleanup: [docs/CLEANUP.md](docs/CLEANUP.md).
 
 ## Rules that keep the brand consistent
 

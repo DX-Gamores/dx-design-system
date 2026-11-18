@@ -38,6 +38,7 @@ This repo replaces the "Can't" column. Token names, code snippets and component 
    - **Patch:** fixes.
    - **Minor:** new components or tokens.
    - **Major:** renames or removals.
+7. **Clean up — required, every release.** Follow [docs/CLEANUP.md](CLEANUP.md): revoke any access token used, delete the merged branch, remove scratch files and exports, and replace any outdated links. A release isn't finished until this is done.
 
 ## Checking your work locally
 
@@ -47,6 +48,8 @@ npm run build:pages    # static site in out/ (what the tests use)
 npm test               # all tests (needs the build); npm run test:functional / test:visual
 npm run serve:pages    # http://localhost:4173/dx-design-system/
 ```
+
+When you're done: `git status` should be clean, and build output (`out/`, `.next/`, `test-results/`, `playwright-report/`) never gets committed. See [docs/CLEANUP.md](CLEANUP.md).
 
 ## Developers
 

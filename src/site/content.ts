@@ -115,7 +115,9 @@ function mapLink(href: string) {
   if (doc[href]) return base + doc[href];
   if (href.startsWith("/")) return base + href;
   if (/^(https?:|#|mailto:)/.test(href)) return href;
-  return `${REPO}/blob/main/${href.replace(/^\.\.\//, "").replace(/^\.\//, "docs/")}`;
+  // Paths in docs/*.md are relative to docs/: "CLEANUP.md" → docs/CLEANUP.md, "../src/x" → src/x.
+  const path = href.startsWith("../") ? href.slice(3) : `docs/${href.replace(/^\.\//, "")}`;
+  return `${REPO}/blob/main/${path}`;
 }
 
 /** A spec without the parts the page already shows (title, summary, Figma link, footer). */
