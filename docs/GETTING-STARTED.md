@@ -43,6 +43,7 @@ These follow the device automatically:
 2. Look at the Figma page in view-only mode for the visual states. The "Every state, side by side" matrix shows each one.
 3. If a coded version exists in `src/components/ui`, use or extend it. If not, build it from tokens only, following the spec.
 4. Check it on its docs-site page and in the [component gallery](https://dx-design-system.vercel.app/start/gallery/) in every brand × theme, plus keyboard-only.
+5. **Clean up before you hand it over:** delete test pages, scratch files and unused code, keep build output out of the commit, and delete your branch after the pull request is merged. Checklist: [docs/CLEANUP.md](CLEANUP.md).
 
 ## 4. App-level setup
 

@@ -5,11 +5,37 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 **Maintainers:** Gab (design lead, only Figma editor) and Claude.
 **Phases:** 0 Quick wins → 1 Distribution → 2 Site redesign → 3 Blocks + theme builder → 4 Figma and launch.
 
+> **Important: every entry ends with a Cleanup line.** A session isn't finished until it has followed [docs/CLEANUP.md](CLEANUP.md): tokens revoked, merged branches deleted, scratch and build output removed, old links replaced. Write down what was cleaned up and what is left for Gab.
+
 ## Where we left off
 
-- Phase: **0 · Quick wins — done.** Merged in PR #1; the docs site is live on Vercel at https://dx-design-system.vercel.app. GitHub Pages retired on branch `revamp/retire-pages`.
-- Waiting on Gab: merge the retire-pages pull request, set **Settings → Pages → Source** to *None*, and set Vercel Authentication to **Only Preview Deployments** so the site is public.
+- Phase: **0 · Quick wins — done and cleaned up.** Docs site live and public on Vercel (https://dx-design-system.vercel.app); GitHub Pages switched off and its branch deleted.
+- Open: merge `revamp/cleanup-process` (cleanup checklist added to every process).
 - Next up: Phase 1 · Distribution — shadcn registry (`registry.json`, `@dx/init`), React Native token build, Lucide icon base, Downloads page, `llms.txt`.
+
+---
+
+## 2026-11-18 · Cleanup, and cleanup made part of every process
+
+**Checked**
+
+- Vercel: Vercel Authentication is now off, so the site is public. Production deploy of `94f2660` (PR #2 merge) is ready.
+- GitHub: PR #2 merged; the CI `deploy` job is gone from `main`; GitHub Pages is switched off (Branch → None) and the `gh-pages` branch is deleted.
+- Figma: searched every text layer and prototype link on Cover, Getting Started, Governance, Templates, Starter & Empty States and Doc Kit & Template. No links to the old github.io address (the file has no URL links at all), so nothing to change.
+
+**Code (branch `revamp/cleanup-process`)**
+
+| Change | Files |
+| --- | --- |
+| New checklist: cleanup is the last step of every process (credentials, branches, build output, hosting changes, Figma releases, AI sessions) | `docs/CLEANUP.md` |
+| Cleanup step added to each process | `docs/WORKFLOW.md` (release step 7), `docs/GETTING-STARTED.md` (component step 5), `docs/DEPLOY.md`, `README.md` |
+| Pull request template with a required cleanup checklist | `.github/pull_request_template.md` |
+| Every log entry now ends with a Cleanup line | `docs/REVAMP-LOG.md` |
+| Fix: links like `CLEANUP.md` inside `docs/*.md` now open `docs/CLEANUP.md` on GitHub (they pointed at the repo root) | `src/site/content.ts` |
+
+**Verified:** `npm run check` (parity 63/63, 11/11), `npm run build:pages`, `npm run test:functional` (244 passed).
+
+**Cleanup:** deleted the merged branches `revamp/phase-0` and `revamp/retire-pages` (remote and local) and the local `gh-pages` copy; removed build and test output from the workspace; checked that no token is stored in git config, files or shell history. Left for Gab: revoke the GitHub token used for this push; turn on **Settings → General → Automatically delete head branches**; delete `revamp/cleanup-process` after merging.
 
 ---
 
@@ -35,6 +61,8 @@ Found: **Vercel Authentication is on for all deployments**, so people without a 
 - [ ] Vercel → Settings → Deployment Protection → Vercel Authentication: **Only Preview Deployments**.
 - [ ] Replace any `dx-gamores.github.io` links in the Figma file.
 - [ ] Revoke the GitHub token used for this push.
+
+**Cleanup:** done in the entry above (branches deleted, Pages switched off).
 
 ---
 
