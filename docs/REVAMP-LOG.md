@@ -7,9 +7,34 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 ## Where we left off
 
-- Phase: **0 · Quick wins** — code done on branch `revamp/phase-0`, waiting to be pushed and merged.
-- Blocked on: GitHub access for Claude (to push the branch and open the pull request); Vercel project setup (Gab, see `docs/DEPLOY.md`).
+- Phase: **0 · Quick wins — done.** Merged in PR #1; the docs site is live on Vercel at https://dx-design-system.vercel.app. GitHub Pages retired on branch `revamp/retire-pages`.
+- Waiting on Gab: merge the retire-pages pull request, set **Settings → Pages → Source** to *None*, and set Vercel Authentication to **Only Preview Deployments** so the site is public.
 - Next up: Phase 1 · Distribution — shadcn registry (`registry.json`, `@dx/init`), React Native token build, Lucide icon base, Downloads page, `llms.txt`.
+
+---
+
+## 2026-11-18 · Vercel live, GitHub Pages retired
+
+**Vercel (set up by Gab)** — project `dx-design-system` (team `gamores-projects`). First production deploy built from `18ad7a8` (PR #1 merge): `npm ci` → parity 63/63, 11/11 checks → `next build`, 54 s. Checked `/`, `/foundations/icons/` (69 icons), `/actions/button/`, `/starter/` and `/templates/members/`: all 200, search and footer present, assets at the domain root (no `/dx-design-system` base path).
+
+Found: **Vercel Authentication is on for all deployments**, so people without a Vercel login on the team see a login screen. Fix in `docs/DEPLOY.md` → "Who can see the site".
+
+**Code (branch `revamp/retire-pages`)**
+
+| Change | Files |
+| --- | --- |
+| Removed the `deploy` job (gh-pages publish). Verify and visual jobs unchanged; they still build the static export for Playwright | `.github/workflows/ci.yml` |
+| Links now point at `dx-design-system.vercel.app` | `README.md`, `docs/GETTING-STARTED.md`, `docs/WORKFLOW.md` |
+| Deploy guide: who can see the site, what was retired, what's left | `docs/DEPLOY.md` |
+| Comments: the static export is now only for tests | `next.config.mjs`, `scripts/serve-out.mjs`, `playwright.config.ts` |
+
+**For Gab**
+
+- [ ] Merge the `revamp/retire-pages` pull request.
+- [ ] GitHub repo → Settings → Pages → Source: *None*. Then delete the `gh-pages` branch.
+- [ ] Vercel → Settings → Deployment Protection → Vercel Authentication: **Only Preview Deployments**.
+- [ ] Replace any `dx-gamores.github.io` links in the Figma file.
+- [ ] Revoke the GitHub token used for this push.
 
 ---
 

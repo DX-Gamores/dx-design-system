@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
-// Runs against the static export (npm run build:pages), served under the GitHub Pages path.
+// Runs against the static export (npm run build:pages), served under /dx-design-system/ (the export's base path).
 export default defineConfig({
   testDir: "tests",
   fullyParallel: true,
