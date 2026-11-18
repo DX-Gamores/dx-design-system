@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ai-label",
+  "type": "registry:ui",
+  "title": "AI Label",
+  "description": "AI Label — discloses that content was made or changed by AI. Generated (accent) | Edited (neutral, after a person edits it). Always visible on AI output; never hidden in a tooltip. Code: <AILabel type=\"generated\" />",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "AILabel",
+    "figmaPage": "AI Patterns"
+  }
+}

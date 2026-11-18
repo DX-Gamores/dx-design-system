@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-actions",
+  "type": "registry:ui",
+  "title": "Form Actions",
+  "description": "Form Actions — the buttons that submit or cancel a form.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "FormActions",
+    "figmaPage": "Form Patterns"
+  }
+}

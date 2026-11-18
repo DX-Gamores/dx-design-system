@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider",
+  "type": "registry:ui",
+  "title": "Slider",
+  "description": "Slider — pick a value (Single) or a range (Range) on a continuous scale where the exact number matters less than the position: volume, price filters, zoom.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Slider",
+    "figmaPage": "Slider"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skeleton",
+  "type": "registry:ui",
+  "title": "Skeleton",
+  "description": "Skeleton — a placeholder that mirrors the shape of content while it loads.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Skeleton",
+    "figmaPage": "Loading"
+  }
+}

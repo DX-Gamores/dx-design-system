@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "type": "registry:ui",
+  "title": "Tooltip",
+  "description": "Tooltip — a short text label that appears on hover or keyboard focus of a control.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Tooltip",
+    "figmaPage": "Tooltip"
+  }
+}

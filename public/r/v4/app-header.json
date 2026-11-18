@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "app-header",
+  "type": "registry:ui",
+  "title": "App Header",
+  "description": "App Header — the top bar of every app screen. Height = layout/header-height (64 Desktop / 56 Tablet+Mobile).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "AppShell",
+    "figmaPage": "Navigation"
+  }
+}

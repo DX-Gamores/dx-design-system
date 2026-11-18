@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-option",
+  "type": "registry:ui",
+  "title": "Select Option",
+  "description": "Select Option — one row inside a Select Menu (listbox option). States: Default, Hover, Selected (brand-subtle + check), Disabled. Reused later by Menu (v0.5).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "SelectOption",
+    "figmaPage": "Select"
+  }
+}

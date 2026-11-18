@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-card",
+  "type": "registry:ui",
+  "title": "Stat Card",
+  "description": "PRODUCT KIT (SaaS admin) — not Core. Stat Card — one key number on a dashboard.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "StatCard",
+    "figmaPage": "Kit · Stat Card"
+  }
+}

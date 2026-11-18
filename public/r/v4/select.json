@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select",
+  "type": "registry:ui",
+  "title": "Select",
+  "description": "Select — choose one option from a list (select-only combobox; no typing to filter).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Select",
+    "figmaPage": "Select"
+  }
+}

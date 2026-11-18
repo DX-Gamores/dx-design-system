@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "segmented-control-item",
+  "type": "registry:ui",
+  "title": "Segmented Control Item",
+  "description": "Segmented Control Item — one segment. Use inside Segmented Control; don't place on its own.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "SegmentedControl",
+    "figmaPage": "Segmented Control"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar-day",
+  "type": "registry:ui",
+  "title": "Calendar Day",
+  "description": "Calendar Day — one cell of the Calendar grid (40×40 hit area, 32px circle).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-date.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "CalendarDay",
+    "figmaPage": "Date Picker"
+  }
+}

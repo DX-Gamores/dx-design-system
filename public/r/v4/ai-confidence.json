@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ai-confidence",
+  "type": "registry:ui",
+  "title": "AI Confidence",
+  "description": "AI Confidence — how sure the system is, in words + icon (never colour alone). High (sources agree) · Medium (partial support) · Low (check before using). Only show when the model gives a real signal.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "AIConfidence",
+    "figmaPage": "AI Patterns"
+  }
+}

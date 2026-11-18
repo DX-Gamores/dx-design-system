@@ -1,0 +1,61 @@
+name: Release
+
+# Push a version tag (v4.0.0) to publish a GitHub release with every download attached:
+# tokens (CSS, Tailwind, DTCG JSON, TS, React Native, zip), icons (SVG zip), starter app,
+# llms-full.txt, and the whole docs site as an offline zip.
+#   git tag v4.0.0 && git push origin v4.0.0
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to (re)publish, e.g. v4.0.0"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TAG: ${{ github.event.inputs.tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.TAG }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+
+      - name: Version matches the tag
+        run: |
+          v="v$(node -p "require('./package.json').version")"
+          [ "$v" = "$TAG" ] || (echo "::error::package.json is $v but the tag is $TAG" && exit 1)
+
+      - name: Checks
+        run: npm run check
+
+      - name: Build the site as a static export at the root (offline docs + downloads)
+        run: PAGES_BASE_PATH= npx next build
+
+      - name: Collect release files
+        run: |
+          mkdir -p release
+          cp out/downloads/* release/
+          cp out/llms-full.txt release/
+          cp -r out dx-docs-offline
+          printf 'DX Design System docs (%s), offline.\n\nServe this folder and open the address it prints:\n  npx serve dx-docs-offline\n' "$TAG" > dx-docs-offline/README.txt
+          zip -qr release/dx-docs-offline.zip dx-docs-offline
+          ls -la release
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ env.TAG }}
+          name: DX Design System ${{ env.TAG }}
+          generate_release_notes: true
+          files: release/*

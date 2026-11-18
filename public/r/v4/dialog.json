@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog",
+  "type": "registry:ui",
+  "title": "Dialog",
+  "description": "Dialog — a modal window that interrupts the page for a decision or a short focused task.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Dialog",
+    "figmaPage": "Dialog"
+  }
+}

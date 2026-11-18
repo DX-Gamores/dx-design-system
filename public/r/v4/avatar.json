@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "type": "registry:ui",
+  "title": "Avatar",
+  "description": "Avatar — represents a person or workspace.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Avatar",
+    "figmaPage": "Avatar"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "menu",
+  "type": "registry:ui",
+  "title": "Menu",
+  "description": "Menu — a list of actions that opens from a trigger (usually an Icon Button \"More\" or a Button with a Chevron Down).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Menu",
+    "figmaPage": "Menu"
+  }
+}

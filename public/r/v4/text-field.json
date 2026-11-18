@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-field",
+  "type": "registry:ui",
+  "title": "Text Field",
+  "description": "Text Field — single-line text input with label and helper text.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "TextField",
+    "figmaPage": "Text Field"
+  }
+}

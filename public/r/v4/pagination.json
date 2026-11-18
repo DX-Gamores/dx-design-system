@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination",
+  "type": "registry:ui",
+  "title": "Pagination",
+  "description": "Pagination — moves through pages of a table or list. Summary text (what is shown) + previous/next Icon Buttons (Secondary, Small; Disabled at the ends) + current page. <nav aria-label=\"Table pagination\">; announce the new range in a polite status message after paging.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Pagination",
+    "figmaPage": "Lists & Tables"
+  }
+}

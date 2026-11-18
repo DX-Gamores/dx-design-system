@@ -10,6 +10,7 @@ for (const theme of ["light", "dark"] as const) {
   test.describe(`axe · ${theme}`, () => {
     for (const r of routes) {
       test(r, async ({ page }) => {
+        test.slow(r.includes("gallery"), "the gallery renders all 63 components; axe needs more than 30 s there under parallel load");
         await page.goto(r);
         await page.evaluate((t) => { document.documentElement.dataset.theme = t; }, theme);
         const res = await new AxeBuilder({ page }).exclude("iframe").withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa", "wcag22aa", "best-practice"]).analyze();

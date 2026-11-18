@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "error-summary",
+  "type": "registry:ui",
+  "title": "Error Summary",
+  "description": "Error Summary — shown at the top of a form after a failed submit when there is more than one error.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "ErrorSummary",
+    "figmaPage": "Form Patterns"
+  }
+}

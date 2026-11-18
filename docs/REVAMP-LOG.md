@@ -9,9 +9,56 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 ## Where we left off
 
-- Phase: **0 · Quick wins — done and cleaned up.** Docs site live and public on Vercel (https://dx-design-system.vercel.app); GitHub Pages switched off and its branch deleted.
-- Open: merge `revamp/cleanup-process` (cleanup checklist added to every process).
-- Next up: Phase 1 · Distribution — shadcn registry (`registry.json`, `@dx/init`), React Native token build, Lucide icon base, Downloads page, `llms.txt`.
+- Phase: **1 · Distribution — code complete on `revamp/phase-1`, not merged yet** (push was blocked from the AI session; see the 2026-11-18 Phase 1 entry). Gate G1 passed locally.
+- Open: push `revamp/phase-1` and open the PR; after merging, run **Actions → Update visual baselines** (icons are now Lucide, new sidebar items).
+- Left in Phase 1: DX custom icons that Lucide lacks (Agriculture & Field Ops, AI, Filled) need an icon export from Figma; try `createTheme` in a real Expo app.
+- Decide: custom domain (the registry URL is in `scripts/build-registry.mjs`, `src/site/llms.ts`, `src/site/downloads.ts`, `docs/INSTALL.md`, `docs/AGENTS.md`).
+- Next up: Phase 2 · Site redesign (new shell, component page template with Preview/Code and install commands, token explorer, icon browser, IA + redirects).
+
+---
+
+## 2026-11-18 · Phase 1 · Distribution
+
+**Checked first:** Phase 0 is merged (PR #1) and live on Vercel; PRs #2 and #3 merged. The last log commit on `revamp/cleanup-process` (`a5a4e38`, Figma badge note) was not in `main`, so it is carried on this branch. Figma: Icons frames renamed; the three working pages (Research, QA · Agent test, Doc Kit) are still in the main file.
+
+**Decisions taken with Gab's go-ahead (defaults, easy to change)**
+
+- Token build stays on the existing script; **no Style Dictionary/Terrazzo yet**. It already resolves all 567 variables, and Style Dictionary handles the 9 Figma mode collections poorly. React Native output is a second script reading the same export. Revisit before Flutter.
+- Registry served from `dx-design-system.vercel.app/r/v4/` until the custom domain is decided (one constant per file).
+- Progress log kept here only (the plan doc wasn't updated from this session).
+
+**Code (branch `revamp/phase-1`)**
+
+| Change | Files |
+| --- | --- |
+| React Native tokens: every alias resolved (hex, dp numbers), colors per brand × mode, palette, fonts, density sizes, typography (phone/tablet), elevation (RN 0.76 `boxShadow` + legacy props), component tokens, motion (ms, bezier, springs), `createTheme({ brand, mode, density })` | `scripts/build-native.mjs`, `dist/tokens.native.ts`, `package.json` (`./tokens.native` export), `tsconfig.json` |
+| shadcn alias layer: `--background`, `--primary`, `--muted`, `--border`, `--ring`, `--radius`, `--chart-1..5`, `--sidebar-*` → DX tokens, on `:root[data-theme]`/`[data-brand]` so they beat `shadcn init`'s `:root`/`.dark`; Tailwind `bg-primary`, `text-muted-foreground` … Additive only | `scripts/build-tokens.mjs`, `dist/tokens.css`, `dist/tailwind.css` |
+| shadcn registry: `init` (tokens, Tailwind theme, `dx-tokens.ts`, `cn()`, fonts, globals.css imports), 13 `ui-<module>` items with dependencies from imports, `app-shell`, `agents`, and 63 component items | `scripts/build-registry.mjs`, `registry.json`, `public/r/v4/*.json` |
+| Lucide icon base: `Icon` renders Lucide; the 69 DX names map in `icon-map.ts`; any Lucide icon via `name={Rocket}`; `mirror` prop. Figma-drawn originals kept in `icons.generated.tsx` (not shipped) | `src/components/ui/icon.tsx`, `src/components/ui/icon-map.ts`, `scripts/build-icons.mjs`, `src/site/lucide-names.json` |
+| Icons page: copy as DX / Lucide React / React Native / SVG | `src/site/demos.tsx` |
+| Downloads page: tokens in 5 formats + zip, icon SVG zip, starter zip, all built at build time | `src/app/(docs)/start/downloads/page.tsx`, `src/app/downloads/[file]/route.ts`, `src/site/downloads.ts`, `src/site/zip.ts` |
+| AI-readable docs: `/llms.txt`, `/llms-full.txt`, Markdown twin of every page at `/md/<group>/<page>.md`; `AGENTS.md` rules (registry item installs `AGENTS.dx.md`) | `src/site/llms.ts`, `src/app/llms.txt/`, `src/app/llms-full.txt/`, `src/app/md/[...path]/`, `docs/AGENTS.md` |
+| Docs: Install with the CLI, React Native; Getting started leads with the CLI; README | `docs/INSTALL.md`, `docs/REACT-NATIVE.md`, `src/app/(docs)/start/{cli,react-native}/`, `src/site/content.ts`, `README.md` |
+| Release workflow: on a `v*` tag, attach every download, `llms-full.txt` and an offline docs zip to the GitHub release | `.github/workflows/release.yml` |
+| CI: freshness check covers the registry and Lucide name map; gallery axe test marked slow (flaky timeout under parallel load) | `.github/workflows/ci.yml`, `tests/a11y.spec.ts` |
+| Tests: native colors = CSS in 3 brands × 4 modes (1,464 values); shadcn aliases; registry completeness; downloads served and valid; every Markdown twin resolves | `tests/tokens.spec.ts`, `tests/registry.spec.ts`, `tests/site.spec.ts` |
+
+**Verified:** `npm run check` (parity 63/63, 11/11), `npm run build:pages`, plain `next build` (Vercel mode: `/llms.txt`, `/md/…`, `/downloads/…`, `/r/v4/…` all 200), `npm run test:functional` **261 passed**.
+
+**Gate G1 (local):** fresh `create-next-app` (Next 16.4, Tailwind 4.3) with shadcn's `globals.css`, then `npx shadcn@4.23.0 add @dx/init @dx/button @dx/alert @dx/card @dx/text-field @dx/agents` from a local copy of the registry: about 7 s, `next build` passes, and default/light, violet/dark/compact and amber render themed (DX fonts, Lucide icons, shadcn classes on DX tokens). The sandbox couldn't reach ui.shadcn.com, so `shadcn init` and shadcn's base-color file were stubbed; re-run once against the deployed registry. React Native: `createTheme` type-checks and is tested in Node; not yet tried in an Expo app.
+
+**Known differences in existing shadcn projects** (documented in `docs/INSTALL.md`): `shadcn init`'s `@theme inline` redefines `--radius-sm…xl` (DX components use `rounded-sm`/`rounded-md`) and `--font-sans`; delete those lines for exact DX values. The shadcn CLI can't override them from a registry item.
+
+**For Gab**
+
+- [ ] Push `revamp/phase-1` (`git am` the patch, or `git fetch` the bundle) and open the PR. Or add the repo to the AI session's sources so Claude can push.
+- [ ] After merging: **Actions → Update visual baselines**.
+- [ ] After the Vercel deploy, try the real thing in a new folder: `npx create-next-app@latest`, `npx shadcn@latest init`, then `npx shadcn@latest add https://dx-design-system.vercel.app/r/v4/init.json https://dx-design-system.vercel.app/r/v4/button.json`.
+- [ ] Decide the custom domain (before v4.0.0).
+- [ ] For the DX custom icons (Agriculture & Field Ops, AI, Filled): OK for Claude to export them from the Figma Icons page (read-only)?
+- [ ] Still open from before: move the 3 working pages to a "DX Workshop" file; revoke the old GitHub token; turn on automatic deletion of head branches; brand guide and logo.
+
+**Cleanup:** removed the scratch Next.js app, the shadcn CLI scratch install, the local registry stub and test servers; regenerated the registry with production URLs (no `localhost` left). No credentials used or stored. `out/`, `.next/`, `test-results/` are git-ignored build output. Left for Gab: delete `revamp/cleanup-process` once this branch is merged (its one extra commit is included here).
 
 ---
 
@@ -22,6 +69,7 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 - Vercel: Vercel Authentication is now off, so the site is public. Production deploy of `94f2660` (PR #2 merge) is ready.
 - GitHub: PR #2 merged; the CI `deploy` job is gone from `main`; GitHub Pages is switched off (Branch → None) and the `gh-pages` branch is deleted.
 - Figma: searched every text layer and prototype link on Cover, Getting Started, Governance, Templates, Starter & Empty States and Doc Kit & Template. No links to the old github.io address (the file has no URL links at all), so nothing to change.
+- Figma change (Gab's go-ahead): the "Docs site →" badge in the Developer path on the Getting Started page (`124:164`) now links to https://dx-design-system.vercel.app/, as a text link on its label and a click action on the instance. No visual change.
 
 **Code (branch `revamp/cleanup-process`)**
 

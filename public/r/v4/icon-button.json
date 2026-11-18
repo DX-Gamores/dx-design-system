@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "icon-button",
+  "type": "registry:ui",
+  "title": "Icon Button",
+  "description": "Icon Button — a square button with only an icon (row actions, toolbars, close, overflow menus).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-button.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "IconButton",
+    "figmaPage": "Button"
+  }
+}

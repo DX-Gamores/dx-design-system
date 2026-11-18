@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "type": "registry:ui",
+  "title": "Badge",
+  "description": "Badge — short, non-interactive status or category label (1–2 words).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Badge",
+    "figmaPage": "Badge"
+  }
+}

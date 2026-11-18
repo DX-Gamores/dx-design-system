@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "toggle",
+  "type": "registry:ui",
+  "title": "Toggle",
+  "description": "Toggle — switch a single setting on or off with immediate effect (role=switch).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Toggle",
+    "figmaPage": "Toggle"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "list-item",
+  "type": "registry:ui",
+  "title": "List Item",
+  "description": "List Item — one row in a simple list (members, files, notifications). Replaces hand-built rows from the v0.4.1 agent test.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "ListItem",
+    "figmaPage": "Lists & Tables"
+  }
+}

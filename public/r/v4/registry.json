@@ -1,0 +1,1187 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "dx",
+  "homepage": "https://dx-design-system.vercel.app",
+  "items": [
+    {
+      "name": "init",
+      "type": "registry:item",
+      "title": "DX Design System — init",
+      "description": "Installs DX tokens (CSS variables for 3 brands × 4 color modes × 2 densities, Tailwind v4 theme, shadcn/ui aliases), the cn() helper and fonts. Install this first. Set <html data-brand data-theme data-density> to switch.",
+      "dependencies": [
+        "@fontsource/inter",
+        "@fontsource/manrope",
+        "@fontsource/poppins",
+        "@fontsource/roboto-mono"
+      ],
+      "files": [
+        {
+          "path": "src/lib/cn.ts",
+          "type": "registry:lib"
+        },
+        {
+          "path": "dist/tokens.ts",
+          "type": "registry:lib",
+          "target": "lib/dx-tokens.ts"
+        },
+        {
+          "path": "dist/tokens.css",
+          "type": "registry:file",
+          "target": "styles/dx-tokens.css"
+        },
+        {
+          "path": "dist/tailwind.css",
+          "type": "registry:file",
+          "target": "styles/dx-tailwind.css"
+        }
+      ]
+    },
+    {
+      "name": "ui-button",
+      "type": "registry:ui",
+      "title": "DX module · button.tsx",
+      "description": "Source module button.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-data",
+      "type": "registry:ui",
+      "title": "DX module · data.tsx",
+      "description": "Source module data.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/data.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-date",
+      "type": "registry:ui",
+      "title": "DX module · date.tsx",
+      "description": "Source module date.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/date.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-display",
+      "type": "registry:ui",
+      "title": "DX module · display.tsx",
+      "description": "Source module display.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/display.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-feedback",
+      "type": "registry:ui",
+      "title": "DX module · feedback.tsx",
+      "description": "Source module feedback.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/feedback.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-form",
+      "type": "registry:ui",
+      "title": "DX module · form.tsx",
+      "description": "Source module form.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-icon-map",
+      "type": "registry:ui",
+      "title": "DX module · icon-map.ts",
+      "description": "Source module icon-map.ts from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/icon-map.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-icon",
+      "type": "registry:ui",
+      "title": "DX module · icon.tsx",
+      "description": "Source module icon.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon-map.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/icon.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-inputs-advanced",
+      "type": "registry:ui",
+      "title": "DX module · inputs-advanced.tsx",
+      "description": "Source module inputs-advanced.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/inputs-advanced.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-nav-extra",
+      "type": "registry:ui",
+      "title": "DX module · nav-extra.tsx",
+      "description": "Source module nav-extra.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/nav-extra.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-navigation",
+      "type": "registry:ui",
+      "title": "DX module · navigation.tsx",
+      "description": "Source module navigation.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/navigation.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-overlays",
+      "type": "registry:ui",
+      "title": "DX module · overlays.tsx",
+      "description": "Source module overlays.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/overlays.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-patterns",
+      "type": "registry:ui",
+      "title": "DX module · patterns.tsx",
+      "description": "Source module patterns.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/patterns.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "agents",
+      "type": "registry:file",
+      "title": "AI assistant rules",
+      "description": "AGENTS.dx.md: rules for AI coding assistants (use DX components and tokens, theming, icons, accessibility). Reference it from AGENTS.md or CLAUDE.md.",
+      "files": [
+        {
+          "path": "docs/AGENTS.md",
+          "type": "registry:file",
+          "target": "~/AGENTS.dx.md"
+        }
+      ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:component",
+      "title": "App shell",
+      "description": "AppShell (skip link, header, sidebar with nav items), PageHeader and ThemeSwitcher for Next.js App Router.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/app-shell.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Button — triggers an action.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json"
+      ],
+      "meta": {
+        "export": "Button",
+        "figmaPage": "Button"
+      },
+      "files": []
+    },
+    {
+      "name": "icon-button",
+      "type": "registry:ui",
+      "title": "Icon Button",
+      "description": "Icon Button — a square button with only an icon (row actions, toolbars, close, overflow menus).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json"
+      ],
+      "meta": {
+        "export": "IconButton",
+        "figmaPage": "Button"
+      },
+      "files": []
+    },
+    {
+      "name": "link",
+      "type": "registry:ui",
+      "title": "Link",
+      "description": "Link — navigates to another page or resource. Always underlined so it is identifiable without color.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "meta": {
+        "export": "Link",
+        "figmaPage": "Link"
+      },
+      "files": []
+    },
+    {
+      "name": "text-field",
+      "type": "registry:ui",
+      "title": "Text Field",
+      "description": "Text Field — single-line text input with label and helper text.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "meta": {
+        "export": "TextField",
+        "figmaPage": "Text Field"
+      },
+      "files": []
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Select — choose one option from a list (select-only combobox; no typing to filter).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "meta": {
+        "export": "Select",
+        "figmaPage": "Select"
+      },
+      "files": []
+    },
+    {
+      "name": "select-option",
+      "type": "registry:ui",
+      "title": "Select Option",
+      "description": "Select Option — one row inside a Select Menu (listbox option). States: Default, Hover, Selected (brand-subtle + check), Disabled. Reused later by Menu (v0.5).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+      ],
+      "meta": {
+        "export": "SelectOption",
+        "figmaPage": "Select"
+      },
+      "files": []
+    },
+    {
+      "name": "select-menu",
+      "type": "registry:ui",
+      "title": "Select Menu",
+      "description": "Select Menu — the open listbox shown under a focused Select (4px gap). Elevation/2, radius/md. Override option labels and states on the nested Select Option instances; add or remove rows as needed.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+      ],
+      "meta": {
+        "export": "SelectMenu",
+        "figmaPage": "Select"
+      },
+      "files": []
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "description": "Combobox — a text field you can type into to filter a list, then pick one option (ARIA 1.2 combobox, list autocomplete).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+      ],
+      "meta": {
+        "export": "Combobox",
+        "figmaPage": "Combobox"
+      },
+      "files": []
+    },
+    {
+      "name": "combobox-option",
+      "type": "registry:ui",
+      "title": "Combobox Option",
+      "description": "Combobox Option — one row in the Combobox Menu. Same states as Select Option; Active = the option highlighted with the arrow keys (aria-activedescendant) — DOM focus stays in the input, so it gets a background + 2px brand bar, not a focus ring, Selected = the committed value (check).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+      ],
+      "meta": {
+        "export": "ComboboxOption",
+        "figmaPage": "Combobox"
+      },
+      "files": []
+    },
+    {
+      "name": "combobox-menu",
+      "type": "registry:ui",
+      "title": "Combobox Menu",
+      "description": "Combobox Menu — the listbox that opens 4px under a focused Combobox. Content: Results (matches bolded; Focus = highlighted with arrow keys) · Recent (empty query) · Loading (async search, show after 300ms) · No results (say what was typed + what to try) · Create (offer to add the typed value). Show keyboard hint for first-run or power-user surfaces. Max height 320 then scroll; width = field width.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+      ],
+      "meta": {
+        "export": "ComboboxMenu",
+        "figmaPage": "Combobox"
+      },
+      "files": []
+    },
+    {
+      "name": "date-field",
+      "type": "registry:ui",
+      "title": "Date Field",
+      "description": "Date Field — type a date or open the Calendar from the calendar button. Pair with Calendar (popover, 4px below) to make a Date Picker.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-date.json"
+      ],
+      "meta": {
+        "export": "DateField",
+        "figmaPage": "Date Picker"
+      },
+      "files": []
+    },
+    {
+      "name": "calendar-day",
+      "type": "registry:ui",
+      "title": "Calendar Day",
+      "description": "Calendar Day — one cell of the Calendar grid (40×40 hit area, 32px circle).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-date.json"
+      ],
+      "meta": {
+        "export": "CalendarDay",
+        "figmaPage": "Date Picker"
+      },
+      "files": []
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "Calendar",
+      "description": "Calendar — month grid that opens in a popover under Date Field (Date Picker), or sits inline on booking pages.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-date.json"
+      ],
+      "meta": {
+        "export": "Calendar",
+        "figmaPage": "Date Picker"
+      },
+      "files": []
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Textarea — multi-line free text (comments, descriptions, feedback).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "meta": {
+        "export": "Textarea",
+        "figmaPage": "Textarea"
+      },
+      "files": []
+    },
+    {
+      "name": "search-field",
+      "type": "registry:ui",
+      "title": "Search Field",
+      "description": "Search Field — single-line search with a search icon and clear button.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "meta": {
+        "export": "SearchField",
+        "figmaPage": "Search Field"
+      },
+      "files": []
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "Checkbox — select zero, one or many independent options.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "meta": {
+        "export": "Checkbox",
+        "figmaPage": "Checkbox"
+      },
+      "files": []
+    },
+    {
+      "name": "radio",
+      "type": "registry:ui",
+      "title": "Radio",
+      "description": "Radio — pick exactly one option from a small, visible set (2–5). Always used in a group with a visible group label.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "meta": {
+        "export": "Radio",
+        "figmaPage": "Radio"
+      },
+      "files": []
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "Toggle — switch a single setting on or off with immediate effect (role=switch).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "meta": {
+        "export": "Toggle",
+        "figmaPage": "Toggle"
+      },
+      "files": []
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "Slider — pick a value (Single) or a range (Range) on a continuous scale where the exact number matters less than the position: volume, price filters, zoom.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+      ],
+      "meta": {
+        "export": "Slider",
+        "figmaPage": "Slider"
+      },
+      "files": []
+    },
+    {
+      "name": "slider-thumb",
+      "type": "registry:ui",
+      "title": "Slider Thumb",
+      "description": "Slider Thumb — the handle. 20px visual, 40px hit area in code.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+      ],
+      "meta": {
+        "export": "SliderThumb",
+        "figmaPage": "Slider"
+      },
+      "files": []
+    },
+    {
+      "name": "chip",
+      "type": "registry:ui",
+      "title": "Chip",
+      "description": "Chip — compact selectable token for filters and tags.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "meta": {
+        "export": "Chip",
+        "figmaPage": "Chip"
+      },
+      "files": []
+    },
+    {
+      "name": "file-upload",
+      "type": "registry:ui",
+      "title": "File Upload",
+      "description": "File Upload — drop zone for attaching files.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+      ],
+      "meta": {
+        "export": "FileUpload",
+        "figmaPage": "File Upload"
+      },
+      "files": []
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Alert — an inline, persistent message about the page or a section (also called banner or callout).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "meta": {
+        "export": "Alert",
+        "figmaPage": "Alert"
+      },
+      "files": []
+    },
+    {
+      "name": "toast",
+      "type": "registry:ui",
+      "title": "Toast",
+      "description": "Toast — a brief, non-blocking confirmation that appears in a corner (bottom-right or bottom-center) and goes away.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "meta": {
+        "export": "Toast",
+        "figmaPage": "Toast"
+      },
+      "files": []
+    },
+    {
+      "name": "progress-bar",
+      "type": "registry:ui",
+      "title": "Progress Bar",
+      "description": "Progress Bar — determinate progress.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "meta": {
+        "export": "Progress",
+        "figmaPage": "Progress"
+      },
+      "files": []
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "Skeleton — a placeholder that mirrors the shape of content while it loads.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "meta": {
+        "export": "Skeleton",
+        "figmaPage": "Loading"
+      },
+      "files": []
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "description": "Spinner — indicates that something is in progress when its duration and shape are unknown.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "meta": {
+        "export": "Spinner",
+        "figmaPage": "Loading"
+      },
+      "files": []
+    },
+    {
+      "name": "empty-state",
+      "type": "registry:ui",
+      "title": "Empty State",
+      "description": "Empty State — explains why a space is empty and what to do next.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "meta": {
+        "export": "EmptyState",
+        "figmaPage": "Empty State"
+      },
+      "files": []
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "Tooltip — a short text label that appears on hover or keyboard focus of a control.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "meta": {
+        "export": "Tooltip",
+        "figmaPage": "Tooltip"
+      },
+      "files": []
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Badge — short, non-interactive status or category label (1–2 words).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "meta": {
+        "export": "Badge",
+        "figmaPage": "Badge"
+      },
+      "files": []
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "Dialog — a modal window that interrupts the page for a decision or a short focused task.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "meta": {
+        "export": "Dialog",
+        "figmaPage": "Dialog"
+      },
+      "files": []
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "description": "Popover — small floating panel anchored to a trigger.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "meta": {
+        "export": "Popover",
+        "figmaPage": "Popover & Drawer"
+      },
+      "files": []
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "description": "Drawer — full-height side panel over the page.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "meta": {
+        "export": "Drawer",
+        "figmaPage": "Popover & Drawer"
+      },
+      "files": []
+    },
+    {
+      "name": "menu-item",
+      "type": "registry:ui",
+      "title": "Menu Item",
+      "description": "Menu Item — one action inside a Menu.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "meta": {
+        "export": "MenuItem",
+        "figmaPage": "Menu"
+      },
+      "files": []
+    },
+    {
+      "name": "menu",
+      "type": "registry:ui",
+      "title": "Menu",
+      "description": "Menu — a list of actions that opens from a trigger (usually an Icon Button \"More\" or a Button with a Chevron Down).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "meta": {
+        "export": "Menu",
+        "figmaPage": "Menu"
+      },
+      "files": []
+    },
+    {
+      "name": "nav-item",
+      "type": "registry:ui",
+      "title": "Nav Item",
+      "description": "Nav Item — one destination in the Sidebar.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+      ],
+      "meta": {
+        "export": "AppShell",
+        "figmaPage": "Navigation"
+      },
+      "files": []
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "description": "Sidebar — primary app navigation, used together with the App Header.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+      ],
+      "meta": {
+        "export": "AppShell",
+        "figmaPage": "Navigation"
+      },
+      "files": []
+    },
+    {
+      "name": "skip-link",
+      "type": "registry:ui",
+      "title": "Skip Link",
+      "description": "Skip Link — first focusable element on every page (WCAG 2.4.1). Hidden until it receives keyboard focus, then appears top-left above the App Header; Enter moves focus to <main>. Shown here in its focused state.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+      ],
+      "meta": {
+        "export": "AppShell",
+        "figmaPage": "Navigation"
+      },
+      "files": []
+    },
+    {
+      "name": "app-header",
+      "type": "registry:ui",
+      "title": "App Header",
+      "description": "App Header — the top bar of every app screen. Height = layout/header-height (64 Desktop / 56 Tablet+Mobile).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+      ],
+      "meta": {
+        "export": "AppShell",
+        "figmaPage": "Navigation"
+      },
+      "files": []
+    },
+    {
+      "name": "breadcrumbs",
+      "type": "registry:ui",
+      "title": "Breadcrumbs",
+      "description": "Breadcrumbs — shows where the page sits in the hierarchy. Up to 2 ancestor Links (exposed) + the current page (plain text, aria-current=\"page\"). <nav aria-label=\"Breadcrumb\">. Hide on Mobile when the back path is obvious; never more than 4 levels.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "meta": {
+        "export": "Breadcrumbs",
+        "figmaPage": "Navigation"
+      },
+      "files": []
+    },
+    {
+      "name": "page-header",
+      "type": "registry:ui",
+      "title": "Page Header",
+      "description": "Page Header — the top block of a page's content area: optional Breadcrumbs, title (the page's only H1 in code), description and page-level actions.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+      ],
+      "meta": {
+        "export": "PageHeader",
+        "figmaPage": "Navigation"
+      },
+      "files": []
+    },
+    {
+      "name": "tab",
+      "type": "registry:ui",
+      "title": "Tab",
+      "description": "Tab — one item in a Tabs bar. Selected tabs use color/text/brand with a 2px brand indicator; unselected use text/secondary.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+      ],
+      "meta": {
+        "export": "Tabs",
+        "figmaPage": "Tabs"
+      },
+      "files": []
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Tabs — switch between related views of the same content without leaving the page.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+      ],
+      "meta": {
+        "export": "Tabs",
+        "figmaPage": "Tabs"
+      },
+      "files": []
+    },
+    {
+      "name": "segmented-control",
+      "type": "registry:ui",
+      "title": "Segmented Control",
+      "description": "Segmented Control — pick one of 2–5 related options that change how the same content is shown (view, period, filter). Selection applies immediately.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+      ],
+      "meta": {
+        "export": "SegmentedControl",
+        "figmaPage": "Segmented Control"
+      },
+      "files": []
+    },
+    {
+      "name": "segmented-control-item",
+      "type": "registry:ui",
+      "title": "Segmented Control Item",
+      "description": "Segmented Control Item — one segment. Use inside Segmented Control; don't place on its own.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+      ],
+      "meta": {
+        "export": "SegmentedControl",
+        "figmaPage": "Segmented Control"
+      },
+      "files": []
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "Stepper",
+      "description": "Stepper — shows where someone is in a linear, multi-step flow (onboarding, checkout, setup) and lets them go back to finished steps.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+      ],
+      "meta": {
+        "export": "Stepper",
+        "figmaPage": "Stepper"
+      },
+      "files": []
+    },
+    {
+      "name": "step",
+      "type": "registry:ui",
+      "title": "Step",
+      "description": "Step — one step of a Stepper. Use inside Stepper.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+      ],
+      "meta": {
+        "export": "Stepper",
+        "figmaPage": "Stepper"
+      },
+      "files": []
+    },
+    {
+      "name": "accordion-item",
+      "type": "registry:ui",
+      "title": "Accordion Item",
+      "description": "Accordion Item — one collapsible section.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "meta": {
+        "export": "AccordionItem",
+        "figmaPage": "Accordion"
+      },
+      "files": []
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "Avatar",
+      "description": "Avatar — represents a person or workspace.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+      ],
+      "meta": {
+        "export": "Avatar",
+        "figmaPage": "Avatar"
+      },
+      "files": []
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card — container grouping content and up to two actions about one subject.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+      ],
+      "meta": {
+        "export": "Card",
+        "figmaPage": "Card"
+      },
+      "files": []
+    },
+    {
+      "name": "divider",
+      "type": "registry:ui",
+      "title": "Divider",
+      "description": "Divider — a 1px rule that separates groups of content.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+      ],
+      "meta": {
+        "export": "Divider",
+        "figmaPage": "Divider"
+      },
+      "files": []
+    },
+    {
+      "name": "list-item",
+      "type": "registry:ui",
+      "title": "List Item",
+      "description": "List Item — one row in a simple list (members, files, notifications). Replaces hand-built rows from the v0.4.1 agent test.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+      ],
+      "meta": {
+        "export": "ListItem",
+        "figmaPage": "Lists & Tables"
+      },
+      "files": []
+    },
+    {
+      "name": "table-header-cell",
+      "type": "registry:ui",
+      "title": "Table Header Cell",
+      "description": "Table Header Cell — column header. Sort: None (sortable, unsorted) · Ascending · Descending · Not sortable.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+      ],
+      "meta": {
+        "export": "TableHeaderCell",
+        "figmaPage": "Lists & Tables"
+      },
+      "files": []
+    },
+    {
+      "name": "table-cell",
+      "type": "registry:ui",
+      "title": "Table Cell",
+      "description": "Table Cell — one cell in a data table row. Types: Text · Two-line · Avatar (person) · Badge (status) · Numeric (right-aligned, tabular) · Checkbox (row selection, 48px) · Actions (Icon Button \"More\", 64px).",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+      ],
+      "meta": {
+        "export": "TableCell",
+        "figmaPage": "Lists & Tables"
+      },
+      "files": []
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "Pagination — moves through pages of a table or list. Summary text (what is shown) + previous/next Icon Buttons (Secondary, Small; Disabled at the ends) + current page. <nav aria-label=\"Table pagination\">; announce the new range in a polite status message after paging.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "meta": {
+        "export": "Pagination",
+        "figmaPage": "Lists & Tables"
+      },
+      "files": []
+    },
+    {
+      "name": "form-section",
+      "type": "registry:ui",
+      "title": "Form Section",
+      "description": "Form Section — groups related fields under a title and description inside long forms and settings pages.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "meta": {
+        "export": "FormSection",
+        "figmaPage": "Form Patterns"
+      },
+      "files": []
+    },
+    {
+      "name": "error-summary",
+      "type": "registry:ui",
+      "title": "Error Summary",
+      "description": "Error Summary — shown at the top of a form after a failed submit when there is more than one error.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "meta": {
+        "export": "ErrorSummary",
+        "figmaPage": "Form Patterns"
+      },
+      "files": []
+    },
+    {
+      "name": "form-actions",
+      "type": "registry:ui",
+      "title": "Form Actions",
+      "description": "Form Actions — the buttons that submit or cancel a form.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "meta": {
+        "export": "FormActions",
+        "figmaPage": "Form Patterns"
+      },
+      "files": []
+    },
+    {
+      "name": "ai-response",
+      "type": "registry:ui",
+      "title": "AI Response",
+      "description": "AI Response — an answer written by AI, with its disclosure, sources and controls.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "meta": {
+        "export": "AIResponse",
+        "figmaPage": "AI Patterns"
+      },
+      "files": []
+    },
+    {
+      "name": "ai-label",
+      "type": "registry:ui",
+      "title": "AI Label",
+      "description": "AI Label — discloses that content was made or changed by AI. Generated (accent) | Edited (neutral, after a person edits it). Always visible on AI output; never hidden in a tooltip. Code: <AILabel type=\"generated\" />",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+      ],
+      "meta": {
+        "export": "AILabel",
+        "figmaPage": "AI Patterns"
+      },
+      "files": []
+    },
+    {
+      "name": "citation",
+      "type": "registry:ui",
+      "title": "Citation",
+      "description": "Citation — a numbered source behind an AI answer. A link: opens the source, with an accessible name like \"Source 1: Leave policy 2026\". Put them right under the claim they support.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+      ],
+      "meta": {
+        "export": "Citation",
+        "figmaPage": "AI Patterns"
+      },
+      "files": []
+    },
+    {
+      "name": "ai-confidence",
+      "type": "registry:ui",
+      "title": "AI Confidence",
+      "description": "AI Confidence — how sure the system is, in words + icon (never colour alone). High (sources agree) · Medium (partial support) · Low (check before using). Only show when the model gives a real signal.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "meta": {
+        "export": "AIConfidence",
+        "figmaPage": "AI Patterns"
+      },
+      "files": []
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:ui",
+      "title": "Stat Card",
+      "description": "PRODUCT KIT (SaaS admin) — not Core. Stat Card — one key number on a dashboard.",
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+      ],
+      "meta": {
+        "export": "StatCard",
+        "figmaPage": "Kit · Stat Card"
+      },
+      "files": []
+    }
+  ]
+}

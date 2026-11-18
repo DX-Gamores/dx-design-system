@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tab",
+  "type": "registry:ui",
+  "title": "Tab",
+  "description": "Tab — one item in a Tabs bar. Selected tabs use color/text/brand with a 2px brand indicator; unselected use text/secondary.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Tabs",
+    "figmaPage": "Tabs"
+  }
+}

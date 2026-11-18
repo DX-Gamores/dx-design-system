@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-option",
+  "type": "registry:ui",
+  "title": "Combobox Option",
+  "description": "Combobox Option — one row in the Combobox Menu. Same states as Select Option; Active = the option highlighted with the arrow keys (aria-activedescendant) — DOM focus stays in the input, so it gets a background + 2px brand bar, not a focus ring, Selected = the committed value (check).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "ComboboxOption",
+    "figmaPage": "Combobox"
+  }
+}

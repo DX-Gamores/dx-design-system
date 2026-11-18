@@ -24,3 +24,11 @@ out += "};\n";
 fs.mkdirSync(path.join(root, "src/components/ui"), { recursive: true });
 fs.writeFileSync(path.join(root, "src/components/ui/icons.generated.tsx"), out);
 console.log(`✓ ${names.length} icons → src/components/ui/icons.generated.tsx`);
+
+// DX name → Lucide export name, for the docs site's copy buttons (Lucide's displayName differs for some icons).
+const lucide = await import("lucide-react");
+const map = fs.readFileSync(path.join(root, "src/components/ui/icon-map.ts"), "utf8");
+const pairs = [...map.matchAll(/^\s+"?([\w-]+)"?: (\w+),$/gm)].map((m) => [m[1], m[2]]);
+for (const [, exp] of pairs) if (!lucide[exp]) throw new Error(`lucide-react has no export ${exp} (src/components/ui/icon-map.ts)`);
+fs.writeFileSync(path.join(root, "src/site/lucide-names.json"), JSON.stringify(Object.fromEntries(pairs), null, 1) + "\n");
+console.log(`✓ ${pairs.length} DX icon names → Lucide (src/site/lucide-names.json)`);

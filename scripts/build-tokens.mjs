@@ -81,6 +81,27 @@ const shadow = (e) =>
   [...e.e].reverse().map((s) => `${s.x || 0}px ${s.y || 0}px ${s.r || 0}px ${s.sp || 0}px var(${cssVar(s.c)})`).join(", ");
 const effects = effectStyles.map((e) => [`--ds-shadow-${slug(e.n)}`, shadow(e)]);
 css += block(":root, [data-theme]", effects);
+// shadcn/ui alias layer: community shadcn components and blocks pick up the DX brand, mode and density unchanged.
+// Declared wherever brand or theme can switch, so the aliases resolve against that element's tokens.
+const shadcn = [
+  ["background", "color/bg/canvas"], ["foreground", "color/text/primary"],
+  ["card", "color/bg/surface"], ["card-foreground", "color/text/primary"],
+  ["popover", "color/bg/surface-raised"], ["popover-foreground", "color/text/primary"],
+  ["primary", "color/bg/brand"], ["primary-foreground", "color/text/on-brand"],
+  ["secondary", "color/bg/surface-subtle"], ["secondary-foreground", "color/text/primary"],
+  ["muted", "color/bg/surface-subtle"], ["muted-foreground", "color/text/secondary"],
+  ["accent", "color/bg/neutral-hover"], ["accent-foreground", "color/text/primary"],
+  ["destructive", "color/bg/danger"], ["destructive-foreground", "color/text/on-color"],
+  ["border", "color/border/default"], ["input", "color/border/strong"], ["ring", "color/border/focus"],
+  ...[1, 2, 3, 4, 5].map((i) => [`chart-${i}`, `color/dataviz/series-${i}`]),
+  ["sidebar", "color/bg/surface"], ["sidebar-foreground", "color/text/primary"],
+  ["sidebar-primary", "color/bg/brand"], ["sidebar-primary-foreground", "color/text/on-brand"],
+  ["sidebar-accent", "color/bg/neutral-hover"], ["sidebar-accent-foreground", "color/text/primary"],
+  ["sidebar-border", "color/border/default"], ["sidebar-ring", "color/border/focus"],
+];
+css += "\n/* shadcn/ui aliases (--background, --primary, --sidebar-*, --chart-*) → DX semantic tokens */\n";
+// :root[data-…] outranks the plain :root / .dark blocks that `shadcn init` writes into globals.css after this file.
+css += block(":root, :root[data-theme], :root[data-brand], [data-theme], [data-brand]", [...shadcn.map(([k, n]) => [`--${k}`, `var(${cssVar(n)})`]), ["--radius", "var(--ds-shape-radius-container)"]]);
 // Text styles -> utility classes
 const ts = textStyles.map((t) => {
   const b = t.bv;
@@ -114,6 +135,8 @@ for (const n of colorNames) {
   else if ((m = n.match(/^color\/category\/(.+)$/))) tw.push([`--color-cat-${m[1].replace(/\//g, "-")}`, v]);
   else if ((m = n.match(/^color\/shadow\/(.+)$/))) tw.push([`--color-shadow-${m[1]}`, v]);
 }
+// shadcn/ui color utilities (bg-primary, text-muted-foreground, border-border, bg-sidebar …) read the alias layer in tokens.css
+for (const [k] of shadcn) tw.push([`--color-${k}`, `var(--${k})`]);
 for (const k of ["sm", "md", "lg", "xl", "full"]) tw.push([`--radius-${k}`, `var(--ds-radius-${k})`]);
 tw.push(["--radius-control", "var(--ds-shape-radius-control)"], ["--radius-container", "var(--ds-shape-radius-container)"]);
 for (const e of effectStyles) tw.push([`--shadow-${slug(e.n).replace("elevation-", "elevation-")}`, `var(--ds-shadow-${slug(e.n)})`]);

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "calendar",
+  "type": "registry:ui",
+  "title": "Calendar",
+  "description": "Calendar — month grid that opens in a popover under Date Field (Date Picker), or sits inline on booking pages.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-date.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Calendar",
+    "figmaPage": "Date Picker"
+  }
+}

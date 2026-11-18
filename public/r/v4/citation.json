@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "citation",
+  "type": "registry:ui",
+  "title": "Citation",
+  "description": "Citation — a numbered source behind an AI answer. A link: opens the source, with an accessible name like \"Source 1: Leave policy 2026\". Put them right under the claim they support.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Citation",
+    "figmaPage": "AI Patterns"
+  }
+}

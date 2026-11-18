@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert",
+  "type": "registry:ui",
+  "title": "Alert",
+  "description": "Alert — an inline, persistent message about the page or a section (also called banner or callout).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Alert",
+    "figmaPage": "Alert"
+  }
+}

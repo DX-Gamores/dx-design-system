@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "link",
+  "type": "registry:ui",
+  "title": "Link",
+  "description": "Link — navigates to another page or resource. Always underlined so it is identifiable without color.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Link",
+    "figmaPage": "Link"
+  }
+}

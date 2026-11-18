@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stepper",
+  "type": "registry:ui",
+  "title": "Stepper",
+  "description": "Stepper — shows where someone is in a linear, multi-step flow (onboarding, checkout, setup) and lets them go back to finished steps.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Stepper",
+    "figmaPage": "Stepper"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ai-response",
+  "type": "registry:ui",
+  "title": "AI Response",
+  "description": "AI Response — an answer written by AI, with its disclosure, sources and controls.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "AIResponse",
+    "figmaPage": "AI Patterns"
+  }
+}

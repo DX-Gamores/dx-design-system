@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "page-header",
+  "type": "registry:ui",
+  "title": "Page Header",
+  "description": "Page Header — the top block of a page's content area: optional Breadcrumbs, title (the page's only H1 in code), description and page-level actions.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "PageHeader",
+    "figmaPage": "Navigation"
+  }
+}

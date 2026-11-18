@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "divider",
+  "type": "registry:ui",
+  "title": "Divider",
+  "description": "Divider — a 1px rule that separates groups of content.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Divider",
+    "figmaPage": "Divider"
+  }
+}

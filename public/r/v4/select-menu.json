@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "select-menu",
+  "type": "registry:ui",
+  "title": "Select Menu",
+  "description": "Select Menu — the open listbox shown under a focused Select (4px gap). Elevation/2, radius/md. Override option labels and states on the nested Select Option instances; add or remove rows as needed.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "SelectMenu",
+    "figmaPage": "Select"
+  }
+}

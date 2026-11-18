@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "breadcrumbs",
+  "type": "registry:ui",
+  "title": "Breadcrumbs",
+  "description": "Breadcrumbs — shows where the page sits in the hierarchy. Up to 2 ancestor Links (exposed) + the current page (plain text, aria-current=\"page\"). <nav aria-label=\"Breadcrumb\">. Hide on Mobile when the back path is obvious; never more than 4 levels.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Breadcrumbs",
+    "figmaPage": "Navigation"
+  }
+}

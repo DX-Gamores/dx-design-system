@@ -4,6 +4,16 @@ export const metadata = { title: "Getting started" };
 
 const install = `## 0. Install
 
+**Fastest: the CLI.** In a Next.js project with \`components.json\`, one command adds tokens, fonts and a component as code you own. See [Install with the CLI](/start/cli/).
+
+\`\`\`bash
+npx shadcn@latest add https://dx-design-system.vercel.app/r/v4/init.json https://dx-design-system.vercel.app/r/v4/button.json
+\`\`\`
+
+Mobile apps use one token file instead: see [React Native](/start/react-native/).
+
+### Or install from GitHub
+
 Add the kit to any web project straight from GitHub (or copy the \`dist/\` folder):
 
 \`\`\`bash

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tabs",
+  "type": "registry:ui",
+  "title": "Tabs",
+  "description": "Tabs — switch between related views of the same content without leaving the page.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Tabs",
+    "figmaPage": "Tabs"
+  }
+}
