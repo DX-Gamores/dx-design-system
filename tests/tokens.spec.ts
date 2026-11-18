@@ -51,3 +51,32 @@ test("createTheme picks brand, mode and density", () => {
   expect(a.fonts.heading).toBe("Poppins");
   expect(createTheme({ reducedMotion: true }).motion.duration.fast).toBe(0);
 });
+
+test("shadcn aliases follow the DX brand and mode", async ({ page }) => {
+  await page.goto("start/getting-started/");
+  for (const brand of brands) {
+    for (const mode of modes) {
+      const v = await page.evaluate(
+        ({ brand, mode }) => {
+          const el = document.createElement("div");
+          el.dataset.brand = brand;
+          el.dataset.theme = mode;
+          document.body.append(el);
+          const cs = getComputedStyle(el);
+          const g = (n: string) => cs.getPropertyValue(n).trim().toLowerCase();
+          const out = { primary: g("--primary"), primaryFg: g("--primary-foreground"), background: g("--background"), ring: g("--ring"), sidebar: g("--sidebar"), radius: g("--radius") };
+          el.remove();
+          return out;
+        },
+        { brand, mode },
+      );
+      const c = colors[brand][mode];
+      expect(full(v.primary), `${brand}/${mode} --primary`).toBe(full(c.bg.brand));
+      expect(full(v.primaryFg)).toBe(full(c.text.onBrand));
+      expect(full(v.background)).toBe(full(c.bg.canvas));
+      expect(full(v.ring)).toBe(full(c.border.focus));
+      expect(full(v.sidebar)).toBe(full(c.bg.surface));
+      expect(v.radius).toMatch(/px$/);
+    }
+  }
+});

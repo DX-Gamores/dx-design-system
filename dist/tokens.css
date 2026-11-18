@@ -1521,6 +1521,43 @@
   --ds-shadow-focus-ring: 0px 0px 0px 2px var(--ds-color-bg-surface), 0px 0px 0px 4px var(--ds-color-border-focus);
 }
 
+/* shadcn/ui aliases (--background, --primary, --sidebar-*, --chart-*) → DX semantic tokens */
+:root, [data-theme], [data-brand] {
+  --background: var(--ds-color-bg-canvas);
+  --foreground: var(--ds-color-text-primary);
+  --card: var(--ds-color-bg-surface);
+  --card-foreground: var(--ds-color-text-primary);
+  --popover: var(--ds-color-bg-surface-raised);
+  --popover-foreground: var(--ds-color-text-primary);
+  --primary: var(--ds-color-bg-brand);
+  --primary-foreground: var(--ds-color-text-on-brand);
+  --secondary: var(--ds-color-bg-surface-subtle);
+  --secondary-foreground: var(--ds-color-text-primary);
+  --muted: var(--ds-color-bg-surface-subtle);
+  --muted-foreground: var(--ds-color-text-secondary);
+  --accent: var(--ds-color-bg-neutral-hover);
+  --accent-foreground: var(--ds-color-text-primary);
+  --destructive: var(--ds-color-bg-danger);
+  --destructive-foreground: var(--ds-color-text-on-color);
+  --border: var(--ds-color-border-default);
+  --input: var(--ds-color-border-strong);
+  --ring: var(--ds-color-border-focus);
+  --chart-1: var(--ds-color-dataviz-series-1);
+  --chart-2: var(--ds-color-dataviz-series-2);
+  --chart-3: var(--ds-color-dataviz-series-3);
+  --chart-4: var(--ds-color-dataviz-series-4);
+  --chart-5: var(--ds-color-dataviz-series-5);
+  --sidebar: var(--ds-color-bg-surface);
+  --sidebar-foreground: var(--ds-color-text-primary);
+  --sidebar-primary: var(--ds-color-bg-brand);
+  --sidebar-primary-foreground: var(--ds-color-text-on-brand);
+  --sidebar-accent: var(--ds-color-bg-neutral-hover);
+  --sidebar-accent-foreground: var(--ds-color-text-primary);
+  --sidebar-border: var(--ds-color-border-default);
+  --sidebar-ring: var(--ds-color-border-focus);
+  --radius: var(--ds-shape-radius-container);
+}
+
 /* Text styles — same names as Figma (Heading/H1 → .ds-heading-h1) */
 .ds-display-large {
   font-family: var(--ds-font-family-heading);
