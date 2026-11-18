@@ -47,22 +47,25 @@ npm i github:DX-Gamores/dx-design-system      # or copy the dist/ folder
 
 Components live in [`src/components/ui`](src/components/ui). Copy the ones you need into your project and own them (the shadcn/ui approach). They only depend on the tokens, so they re-skin for any brand. To start a new app from the shell, copy [`src/app/starter`](src/app/starter) too.
 
+Install with one command: **[docs/INSTALL.md](docs/INSTALL.md)** (`npx shadcn add @dx/init @dx/button`). React Native: **[docs/REACT-NATIVE.md](docs/REACT-NATIVE.md)**.
+
 More detail is in **[docs/GETTING-STARTED.md](docs/GETTING-STARTED.md)**, **[docs/NEW-BRAND.md](docs/NEW-BRAND.md)**, **[docs/WORKFLOW.md](docs/WORKFLOW.md)** and **[docs/CLEANUP.md](docs/CLEANUP.md)**.
 
 ## What's inside
 
 ```
 figma/                 Exports from the Figma file: variables, components, icons, page outlines, meta.json (don't edit)
-scripts/               build-tokens · build-icons · build-specs (npm run build:all) · check-parity · serve-out
+scripts/               build-tokens · build-native · build-icons · build-specs · build-registry (npm run build:all) · check-parity · serve-out
 tests/                 Playwright: components, templates, a11y (axe), site links, visual snapshots
 .github/workflows/     CI (checks, tests, deploy) · Update visual baselines
 tokens/tokens.json     W3C DTCG tokens, every mode
-dist/                  tokens.css · tailwind.css · tokens.ts  (generated, committed)
+dist/                  tokens.css · tailwind.css · tokens.ts · tokens.native.ts (React Native)  (generated, committed)
+registry.json          shadcn registry manifest; built items in public/r/v4/ (npx shadcn add @dx/<item>)
 docs/components/       63 component specs (generated from Figma descriptions)
 src/components/ui/     React components for all 63 Figma specs — actions, inputs (Combobox, DatePicker,
                        Slider, RadioGroup, Chip, FileUpload…), feedback (Toast, Tooltip…), overlays
                        (Dialog, Drawer, Popover, Menu), navigation, data display (Table, List), form and
-                       AI patterns, Icon (69 icons). No UI library dependency — copy what you need.
+                       AI patterns, Icon (69 DX names on Lucide, plus any Lucide icon). Install with the shadcn CLI or copy.
 src/app/(docs)/        Docs site: one page per Figma page (generated from figma/ + docs/)
 src/templates/         Figma templates as components: shells, dashboard, members, settings, auth, empty states, examples
 src/app/templates/     Full-screen routes for the templates (a clickable prototype)

@@ -7,6 +7,8 @@ import {
 } from "@/components/ui";
 import { PageHeader } from "@/components/app-shell";
 import type { DemoName } from "./demo-names";
+import type { IconName } from "@/components/ui/icon";
+import lucideNames from "./lucide-names.json";
 import { demos2 } from "./demos-2";
 
 /* Live examples for the docs pages, keyed by Figma page name. Everything here uses the real
@@ -45,20 +47,44 @@ function TabsDemo() {
     ]} />
   );
 }
+type IconFormat = "dx" | "jsx" | "rn" | "svg";
+const iconFormats: { value: IconFormat; label: string }[] = [
+  { value: "dx", label: "DX" },
+  { value: "jsx", label: "Lucide React" },
+  { value: "rn", label: "React Native" },
+  { value: "svg", label: "SVG" },
+];
+function iconCode(n: IconName, f: IconFormat, svg: string) {
+  const L = (lucideNames as Record<string, string>)[n];
+  if (f === "dx") return `<Icon name="${n}" />`;
+  if (f === "jsx") return `import { ${L} } from "lucide-react";\n\n<${L} size={20} />`;
+  if (f === "rn") return `import { ${L} } from "lucide-react-native";\n\n<${L} size={20} color={theme.colors.icon.primary} />`;
+  return svg;
+}
 function IconGrid() {
   const [q, setQ] = useState("");
+  const [format, setFormat] = useState<IconFormat>("dx");
   const [copied, setCopied] = useState<string | null>(null);
-  const list = iconNames.filter((n) => n.includes(q.trim().toLowerCase()));
+  const list = iconNames.filter((n) => n.includes(q.trim().toLowerCase()) || (lucideNames as Record<string, string>)[n].toLowerCase().includes(q.trim().toLowerCase()));
+  const label = iconFormats.find((f) => f.value === format)!.label;
   return (
     <Stack>
-      <div className="max-w-sm"><TextField label="Search icons" leadingIcon="search" placeholder="e.g. arrow, user, chart" value={q} onChange={(e) => setQ(e.target.value)} /></div>
-      <p className="text-caption-default text-fg-secondary" aria-live="polite">{copied ? `Copied <Icon name="${copied}" />` : `${list.length} icons · click one to copy its code`}</p>
+      <div className="flex flex-wrap items-end gap-4">
+        <div className="w-full max-w-sm"><TextField label="Search icons" leadingIcon="search" placeholder="e.g. arrow, user, chart" value={q} onChange={(e) => setQ(e.target.value)} /></div>
+        <SegmentedControl label="Copy as" value={format} onChange={setFormat} options={iconFormats} size="sm" />
+      </div>
+      <p className="text-caption-default text-fg-secondary" aria-live="polite">{copied ? `Copied ${copied} as ${label}` : `${list.length} icons · drawn by Lucide (ISC) · click one to copy it as ${label}`}</p>
       <ul className="grid grid-cols-[repeat(auto-fill,minmax(104px,1fr))] gap-2">
         {list.map((n) => (
           <li key={n}>
             <button
               type="button"
-              onClick={() => { navigator.clipboard?.writeText(`<Icon name="${n}" />`).catch(() => {}); setCopied(n); }}
+              title={`Lucide: ${(lucideNames as Record<string, string>)[n]}`}
+              onClick={(e) => {
+                const svg = (e.currentTarget.querySelector("svg")?.outerHTML ?? "").replace(/ class="[^"]*"/, "").replace(/ aria-hidden="true"| focusable="false"/g, "");
+                navigator.clipboard?.writeText(iconCode(n, format, svg)).catch(() => {});
+                setCopied(n);
+              }}
               className="flex w-full flex-col items-center gap-2 rounded-md p-3 text-caption-default text-fg-secondary hover:bg-neutral-hover focus-visible:focus-ring"
             >
               <Icon name={n} size={24} className="text-icon-primary" />
@@ -67,6 +93,9 @@ function IconGrid() {
           </li>
         ))}
       </ul>
+      <p className="text-body-small text-fg-secondary">
+        Need an icon that isn&apos;t here? Use any of Lucide&apos;s 1,600+ icons: <code className="text-code-small">{'<Icon name={Rocket} />'}</code> with <code className="text-code-small">{'import { Rocket } from "lucide-react"'}</code>, or add it to <code className="text-code-small">icon-map.ts</code> to give it a DX name. Browse them at <a className="text-fg-brand underline" href="https://lucide.dev/icons/">lucide.dev/icons</a>.
+      </p>
     </Stack>
   );
 }

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "ui-icon-map",
+  "type": "registry:ui",
+  "title": "DX module · icon-map.ts",
+  "description": "Source module icon-map.ts from src/components/ui. Installed automatically by the components that live in it.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/init.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/icon-map.ts",
+      "type": "registry:ui",
+      "content": "// DX icon names → Lucide icons (https://lucide.dev, ISC licence). Same grammar as the Figma Icons page:\n// 24×24 grid, 2px round stroke, currentColor.\n// Names stay stable across releases; add the Lucide icons your project needs here (this file is yours once installed).\nimport {\n  ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Bell, Bookmark, Calendar, ChartColumn, Check, ChevronDown, ChevronLeft,\n  ChevronRight, ChevronsUpDown, ChevronUp, CircleAlert, CircleCheck, CircleHelp, CirclePlus, CircleX, Clock, Copy,\n  CreditCard, Download, Ellipsis, ExternalLink, Eye, EyeOff, File, Folder, Globe, GripVertical, Heart, House, Image,\n  Info, LayoutDashboard, LayoutGrid, Link, List, ListFilter, Lock, LogIn, LogOut, Mail, MapPin, Menu, Minus, Moon,\n  Paperclip, Pencil, Phone, Plus, Printer, Redo2, RefreshCw, Save, Search, Send, Settings, Share2, ShoppingCart, Star,\n  Sun, Trash2, TriangleAlert, Undo2, Upload, User, X, type LucideIcon,\n} from \"lucide-react\";\n\nexport const iconMap = {\n  check: Check,\n  close: X,\n  plus: Plus,\n  minus: Minus,\n  \"chevron-down\": ChevronDown,\n  \"chevron-up\": ChevronUp,\n  \"chevron-left\": ChevronLeft,\n  \"chevron-right\": ChevronRight,\n  \"arrow-left\": ArrowLeft,\n  \"arrow-right\": ArrowRight,\n  search: Search,\n  menu: Menu,\n  more: Ellipsis,\n  info: Info,\n  \"alert-circle\": CircleAlert,\n  \"alert-triangle\": TriangleAlert,\n  \"check-circle\": CircleCheck,\n  eye: Eye,\n  \"eye-off\": EyeOff,\n  user: User,\n  bell: Bell,\n  mail: Mail,\n  calendar: Calendar,\n  trash: Trash2,\n  edit: Pencil,\n  \"external-link\": ExternalLink,\n  lock: Lock,\n  home: House,\n  settings: Settings,\n  dashboard: LayoutDashboard,\n  folder: Folder,\n  chart: ChartColumn,\n  filter: ListFilter,\n  sort: ChevronsUpDown,\n  \"sign-out\": LogOut,\n  \"x-circle\": CircleX,\n  \"help-circle\": CircleHelp,\n  upload: Upload,\n  download: Download,\n  copy: Copy,\n  link: Link,\n  refresh: RefreshCw,\n  clock: Clock,\n  star: Star,\n  share: Share2,\n  file: File,\n  image: Image,\n  attachment: Paperclip,\n  send: Send,\n  globe: Globe,\n  phone: Phone,\n  \"map-pin\": MapPin,\n  \"grid-view\": LayoutGrid,\n  \"list-view\": List,\n  \"drag-handle\": GripVertical,\n  \"arrow-up\": ArrowUp,\n  \"arrow-down\": ArrowDown,\n  sun: Sun,\n  moon: Moon,\n  \"plus-circle\": CirclePlus,\n  bookmark: Bookmark,\n  heart: Heart,\n  cart: ShoppingCart,\n  \"credit-card\": CreditCard,\n  print: Printer,\n  save: Save,\n  undo: Undo2,\n  redo: Redo2,\n  \"sign-in\": LogIn,\n} satisfies Record<string, LucideIcon>;\n\nexport type IconName = keyof typeof iconMap;\nexport const iconNames = Object.keys(iconMap) as IconName[];\n"
+    }
+  ]
+}

@@ -34,7 +34,7 @@ test("every item resolves: dependencies exist, files have content, imports are p
       expect(f.content, `${name}: ${f.path} imports the repo-only @dxform alias`).not.toMatch(/from "@dxform\//);
       for (const [, rel] of f.content!.matchAll(/from "\.\/([\w.-]+)"/g)) {
         // a relative import must be installed by this item or one it depends on (directly or through init)
-        const mod = `ui-${rel.replace(/\.generated$/, "s")}`;
+        const mod = `ui-${rel}`;
         expect(names.has(mod), `${name}: ./${rel}`).toBe(true);
       }
     }

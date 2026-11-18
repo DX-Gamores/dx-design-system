@@ -1,6 +1,6 @@
 // DX Design System — React components. Names and props mirror the Figma components.
 export { Icon, mirroredIcons, type IconName } from "./icon";
-export { iconNames } from "./icons.generated";
+export { iconNames, iconMap } from "./icon-map";
 export { Button, IconButton, buttonClass, type ButtonProps, type IconButtonProps } from "./button";
 export { Badge, Alert, Spinner, Skeleton, EmptyState, Progress } from "./feedback";
 export { TextField, Textarea, Select, Checkbox, Toggle, Radio, RadioGroup, SearchField, Chip, Field, type TextFieldProps } from "./form";

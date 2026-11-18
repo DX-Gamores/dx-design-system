@@ -30,7 +30,7 @@ jobs:
       - name: Generated files are up to date (tokens, icons, specs, registry)
         run: |
           npm run build:all
-          git diff --exit-code -- dist tokens docs src/components/ui/icons.generated.tsx registry.json public/r \
+          git diff --exit-code -- dist tokens docs src/components/ui/icons.generated.tsx src/site/lucide-names.json registry.json public/r \
             || (echo "::error::Generated files are stale. Run 'npm run build:all' and commit the result." && exit 1)
 
       - name: Figma ↔ code parity and types

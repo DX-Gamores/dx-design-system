@@ -143,34 +143,38 @@
       ]
     },
     {
-      "name": "ui-icon",
+      "name": "ui-icon-map",
       "type": "registry:ui",
-      "title": "DX module · icon.tsx",
-      "description": "Source module icon.tsx from src/components/ui. Installed automatically by the components that live in it.",
-      "dependencies": [],
-      "registryDependencies": [
-        "https://dx-design-system.vercel.app/r/v4/init.json",
-        "https://dx-design-system.vercel.app/r/v4/ui-iconss.json"
+      "title": "DX module · icon-map.ts",
+      "description": "Source module icon-map.ts from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [
+        "lucide-react"
       ],
-      "files": [
-        {
-          "path": "src/components/ui/icon.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "ui-iconss",
-      "type": "registry:ui",
-      "title": "DX module · icons.generated.tsx",
-      "description": "Source module icons.generated.tsx from src/components/ui. Installed automatically by the components that live in it.",
-      "dependencies": [],
       "registryDependencies": [
         "https://dx-design-system.vercel.app/r/v4/init.json"
       ],
       "files": [
         {
-          "path": "src/components/ui/icons.generated.tsx",
+          "path": "src/components/ui/icon-map.ts",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "ui-icon",
+      "type": "registry:ui",
+      "title": "DX module · icon.tsx",
+      "description": "Source module icon.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon-map.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/icon.tsx",
           "type": "registry:ui"
         }
       ]

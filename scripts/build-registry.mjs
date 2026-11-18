@@ -41,8 +41,11 @@ for (const m of index.matchAll(/export\s*\{([^}]+)\}\s*from\s*"\.\/([\w.-]+)"/g)
 
 // ---------- modules: one item per src/components/ui file, with dependencies from its imports
 const uiDir = "src/components/ui";
-const moduleFiles = fs.readdirSync(path.join(root, uiDir)).filter((f) => f.endsWith(".tsx")).sort();
-const moduleName = (file) => `ui-${file.replace(/\.tsx$/, "").replace(/\.generated$/, "s")}`; // icons.generated.tsx → ui-icons
+// icons.generated.tsx holds the Figma-drawn originals for reference; Icon renders Lucide (icon-map.ts), so it isn't shipped.
+const skip = new Set(["index.ts", "icons.generated.tsx"]);
+const moduleFiles = fs.readdirSync(path.join(root, uiDir)).filter((f) => /\.tsx?$/.test(f) && !skip.has(f)).sort();
+const moduleName = (file) => `ui-${file.replace(/\.tsx?$/, "")}`;
+const fileOf = (spec) => moduleFiles.find((f) => f.replace(/\.tsx?$/, "") === spec);
 const npmDeps = (src) =>
   [...src.matchAll(/from\s+"([^".][^"]*)"/g)]
     .map((m) => m[1])
@@ -82,7 +85,7 @@ items.push({
 
 for (const file of moduleFiles) {
   const src = read(`${uiDir}/${file}`);
-  const local = [...src.matchAll(/from\s+"\.\/([\w.-]+)"/g)].map((m) => `${m[1]}.tsx`);
+  const local = [...src.matchAll(/from\s+"\.\/([\w.-]+)"/g)].map((m) => fileOf(m[1]));
   items.push({
     name: moduleName(file),
     type: "registry:ui",
@@ -96,7 +99,7 @@ for (const file of moduleFiles) {
 
 // app shell (Next.js)
 const shellSrc = read("src/components/app-shell.tsx");
-const shellLocal = [...shellSrc.matchAll(/from\s+"\.\/ui\/([\w.-]+)"/g)].map((m) => `${m[1]}.tsx`);
+const shellLocal = [...shellSrc.matchAll(/from\s+"\.\/ui\/([\w.-]+)"/g)].map((m) => fileOf(m[1]));
 items.push({
   name: "app-shell",
   type: "registry:component",
@@ -110,7 +113,7 @@ items.push({
 for (const s of specs) {
   const impl = coded[s.slug];
   if (!impl) continue;
-  const dep = impl.includes(":") ? url(impl.split(":")[0]) : url(moduleName(`${exportFile.get(impl)}.tsx`));
+  const dep = impl.includes(":") ? url(impl.split(":")[0]) : url(moduleName(fileOf(exportFile.get(impl))));
   if (!impl.includes(":") && !exportFile.get(impl)) throw new Error(`No module exports ${impl} (${s.slug})`);
   items.push({
     name: s.slug,

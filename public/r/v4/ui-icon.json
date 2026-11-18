@@ -4,16 +4,18 @@
   "type": "registry:ui",
   "title": "DX module · icon.tsx",
   "description": "Source module icon.tsx from src/components/ui. Installed automatically by the components that live in it.",
-  "dependencies": [],
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "https://dx-design-system.vercel.app/r/v4/init.json",
-    "https://dx-design-system.vercel.app/r/v4/ui-iconss.json"
+    "https://dx-design-system.vercel.app/r/v4/ui-icon-map.json"
   ],
   "files": [
     {
       "path": "components/ui/icon.tsx",
       "type": "registry:ui",
-      "content": "import { iconPaths, type IconName } from \"./icons.generated\";\nimport { cn } from \"@/lib/cn\";\n\nexport type { IconName };\n\n/** Icons that point a direction flip in right-to-left layouts. Objects and time (clock, check, phone) don't. */\nexport const mirroredIcons = new Set<IconName>([\"arrow-left\", \"arrow-right\", \"chevron-left\", \"chevron-right\", \"undo\", \"redo\", \"send\", \"sign-out\", \"sign-in\", \"list-view\"]);\n\ntype IconProps = {\n  name: IconName;\n  /** 16 = sm, 20 = md (default), 24 = lg — matches size/icon-* tokens */\n  size?: 16 | 20 | 24;\n  /** Give a label only when the icon carries meaning on its own. Otherwise it's decorative. */\n  label?: string;\n  className?: string;\n};\n\nexport function Icon({ name, size = 20, label, className }: IconProps) {\n  return (\n    <svg\n      width={size}\n      height={size}\n      viewBox=\"0 0 24 24\"\n      fill=\"none\"\n      role={label ? \"img\" : undefined}\n      aria-label={label}\n      aria-hidden={label ? undefined : true}\n      className={cn(\"shrink-0\", mirroredIcons.has(name) && \"rtl:-scale-x-100\", className)}\n    >\n      {iconPaths[name]}\n    </svg>\n  );\n}\n"
+      "content": "import type { LucideIcon } from \"lucide-react\";\nimport { cn } from \"@/lib/cn\";\nimport { iconMap, type IconName } from \"./icon-map\";\n\nexport type { IconName };\n\n/** Icons that point a direction flip in right-to-left layouts. Objects and time (clock, check, phone) don't. */\nexport const mirroredIcons = new Set<IconName>([\"arrow-left\", \"arrow-right\", \"chevron-left\", \"chevron-right\", \"undo\", \"redo\", \"send\", \"sign-out\", \"sign-in\", \"list-view\"]);\n\ntype IconProps = {\n  /** A DX icon name (see icon-map.ts), or any Lucide icon component: name={Rocket} */\n  name: IconName | LucideIcon;\n  /** 16 = sm, 20 = md (default), 24 = lg — matches size/icon-* tokens */\n  size?: 16 | 20 | 24;\n  /** Give a label only when the icon carries meaning on its own. Otherwise it's decorative. */\n  label?: string;\n  /** Flip in right-to-left layouts. Defaults to true for directional DX icons. */\n  mirror?: boolean;\n  className?: string;\n};\n\nexport function Icon({ name, size = 20, label, mirror, className }: IconProps) {\n  const Svg = typeof name === \"string\" ? iconMap[name] : name;\n  const flip = mirror ?? (typeof name === \"string\" && mirroredIcons.has(name));\n  return (\n    <Svg\n      size={size}\n      strokeWidth={2}\n      absoluteStrokeWidth={false}\n      role={label ? \"img\" : undefined}\n      aria-label={label}\n      aria-hidden={label ? undefined : true}\n      focusable=\"false\"\n      className={cn(\"shrink-0\", flip && \"rtl:-scale-x-100\", className)}\n    />\n  );\n}\n"
     }
   ]
 }
