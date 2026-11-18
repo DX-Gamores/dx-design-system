@@ -48,11 +48,11 @@ function TabsDemo() {
   );
 }
 type IconFormat = "dx" | "jsx" | "rn" | "svg";
-const iconFormats: { value: IconFormat; label: string }[] = [
-  { value: "dx", label: "DX" },
-  { value: "jsx", label: "Lucide React" },
-  { value: "rn", label: "React Native" },
-  { value: "svg", label: "SVG" },
+const iconFormats: { value: IconFormat; label: string; long: string }[] = [
+  { value: "dx", label: "DX", long: "<Icon name>" },
+  { value: "jsx", label: "React", long: "Lucide React" },
+  { value: "rn", label: "Native", long: "Lucide React Native" },
+  { value: "svg", label: "SVG", long: "SVG" },
 ];
 function iconCode(n: IconName, f: IconFormat, svg: string) {
   const L = (lucideNames as Record<string, string>)[n];
@@ -66,12 +66,12 @@ function IconGrid() {
   const [format, setFormat] = useState<IconFormat>("dx");
   const [copied, setCopied] = useState<string | null>(null);
   const list = iconNames.filter((n) => n.includes(q.trim().toLowerCase()) || (lucideNames as Record<string, string>)[n].toLowerCase().includes(q.trim().toLowerCase()));
-  const label = iconFormats.find((f) => f.value === format)!.label;
+  const label = iconFormats.find((f) => f.value === format)!.long;
   return (
     <Stack>
       <div className="flex flex-wrap items-end gap-4">
-        <div className="w-full max-w-sm"><TextField label="Search icons" leadingIcon="search" placeholder="e.g. arrow, user, chart" value={q} onChange={(e) => setQ(e.target.value)} /></div>
-        <SegmentedControl label="Copy as" value={format} onChange={setFormat} options={iconFormats} size="sm" />
+        <div className="w-full max-w-sm flex-1"><TextField label="Search icons" leadingIcon="search" placeholder="e.g. arrow, user, chart" value={q} onChange={(e) => setQ(e.target.value)} /></div>
+        <div className="shrink-0"><SegmentedControl label="Copy as" value={format} onChange={setFormat} options={iconFormats.map(({ value, label }) => ({ value, label }))} /></div>
       </div>
       <p className="text-caption-default text-fg-secondary" aria-live="polite">{copied ? `Copied ${copied} as ${label}` : `${list.length} icons · drawn by Lucide (ISC) · click one to copy it as ${label}`}</p>
       <ul className="grid grid-cols-[repeat(auto-fill,minmax(104px,1fr))] gap-2">

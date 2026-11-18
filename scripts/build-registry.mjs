@@ -80,7 +80,7 @@ items.push({
     // Unlayered and appended last, so it replaces create-next-app's Arial body rule.
     body: { background: "var(--ds-color-bg-canvas)", color: "var(--ds-color-text-primary)", "font-family": "var(--ds-font-family-body)" },
   },
-  docs: 'DX installed. Set <html data-brand="default" data-theme="light" data-density="comfortable">. Docs: ' + HOST + "/start/getting-started/",
+  docs: 'DX installed. Set <html data-brand="default" data-theme="light" data-density="comfortable">. Docs: ' + HOST + "/start/cli/",
 });
 
 for (const file of moduleFiles) {
@@ -96,6 +96,16 @@ for (const file of moduleFiles) {
     files: [fileEntry(`${uiDir}/${file}`, "registry:ui")],
   });
 }
+
+// AGENTS.md for AI coding assistants (Claude, Cursor, Copilot, Codex). Written next to the project's own AGENTS.md.
+items.push({
+  name: "agents",
+  type: "registry:file",
+  title: "AI assistant rules",
+  description: "AGENTS.dx.md: rules for AI coding assistants (use DX components and tokens, theming, icons, accessibility). Reference it from AGENTS.md or CLAUDE.md.",
+  files: [fileEntry("docs/AGENTS.md", "registry:file", "~/AGENTS.dx.md")],
+  docs: "Add one line to AGENTS.md (or CLAUDE.md): See AGENTS.dx.md for the DX Design System rules.",
+});
 
 // app shell (Next.js)
 const shellSrc = read("src/components/app-shell.tsx");
@@ -142,7 +152,7 @@ for (const it of items) {
   const built = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     ...it,
-    files: it.files.map((f) => ({ ...f, path: f.path.replace(/^src\/|^dist\//, ""), content: rewrite(read(f.path)) })),
+    files: it.files.map((f) => ({ ...f, path: f.path.replace(/^src\/|^dist\/|^docs\//, ""), content: rewrite(read(f.path)) })),
   };
   fs.writeFileSync(path.join(out, `${it.name}.json`), JSON.stringify(built, null, 2) + "\n");
 }
@@ -150,5 +160,5 @@ fs.writeFileSync(
   path.join(out, "registry.json"),
   JSON.stringify({ $schema: "https://ui.shadcn.com/schema/registry.json", name: "dx", homepage: HOST, items: items.map(({ files, css, docs, ...it }) => ({ ...it, files: files.map((f) => ({ path: f.path, type: f.type, ...(f.target ? { target: f.target } : {}) })) })) }, null, 2) + "\n",
 );
-const comps = items.filter((i) => !i.name.startsWith("ui-") && !["init", "app-shell"].includes(i.name)).length;
+const comps = items.filter((i) => !i.name.startsWith("ui-") && !["init", "app-shell", "agents"].includes(i.name)).length;
 console.log(`✓ Registry: init + ${moduleFiles.length} modules + app-shell + ${comps} components → registry.json, public/r/v${major}/ (${BASE})`);

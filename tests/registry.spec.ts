@@ -14,7 +14,8 @@ test("registry index lists init, modules, app shell and all 63 components", asyn
   expect(names).toContain("init");
   expect(names).toContain("app-shell");
   expect(names.filter((n) => n.startsWith("ui-")).length).toBeGreaterThanOrEqual(12);
-  expect(index.items.filter((i) => !i.name.startsWith("ui-") && !["init", "app-shell"].includes(i.name)).length).toBe(63);
+  expect(index.items.filter((i) => !i.name.startsWith("ui-") && !["init", "app-shell", "agents"].includes(i.name)).length).toBe(63);
+  expect(names).toContain("agents");
 });
 
 test("every item resolves: dependencies exist, files have content, imports are portable", async ({ request }) => {

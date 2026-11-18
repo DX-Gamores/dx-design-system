@@ -57,5 +57,5 @@
       "font-family": "var(--ds-font-family-body)"
     }
   },
-  "docs": "DX installed. Set <html data-brand=\"default\" data-theme=\"light\" data-density=\"comfortable\">. Docs: https://dx-design-system.vercel.app/start/getting-started/"
+  "docs": "DX installed. Set <html data-brand=\"default\" data-theme=\"light\" data-density=\"comfortable\">. Docs: https://dx-design-system.vercel.app/start/cli/"
 }

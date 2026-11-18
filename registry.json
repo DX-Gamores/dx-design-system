@@ -57,7 +57,7 @@
           "font-family": "var(--ds-font-family-body)"
         }
       },
-      "docs": "DX installed. Set <html data-brand=\"default\" data-theme=\"light\" data-density=\"comfortable\">. Docs: https://dx-design-system.vercel.app/start/getting-started/"
+      "docs": "DX installed. Set <html data-brand=\"default\" data-theme=\"light\" data-density=\"comfortable\">. Docs: https://dx-design-system.vercel.app/start/cli/"
     },
     {
       "name": "ui-button",
@@ -292,6 +292,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "agents",
+      "type": "registry:file",
+      "title": "AI assistant rules",
+      "description": "AGENTS.dx.md: rules for AI coding assistants (use DX components and tokens, theming, icons, accessibility). Reference it from AGENTS.md or CLAUDE.md.",
+      "files": [
+        {
+          "path": "docs/AGENTS.md",
+          "type": "registry:file",
+          "target": "~/AGENTS.dx.md"
+        }
+      ],
+      "docs": "Add one line to AGENTS.md (or CLAUDE.md): See AGENTS.dx.md for the DX Design System rules."
     },
     {
       "name": "app-shell",

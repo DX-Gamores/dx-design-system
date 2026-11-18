@@ -52,6 +52,7 @@ export const nav: NavGroup[] = [
       { title: "Getting started", href: "/start/getting-started/" },
       { title: "Install with the CLI", href: "/start/cli/" },
       { title: "React Native", href: "/start/react-native/" },
+      { title: "Downloads", href: "/start/downloads/" },
       { title: "Governance", href: "/start/governance/", figmaName: "Governance" },
       { title: "Changelog & roadmap", href: "/start/changelog/" },
       { title: "Working with one seat", href: "/start/workflow/" },

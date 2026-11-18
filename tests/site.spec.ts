@@ -48,3 +48,29 @@ test("every code block has a Copy button", async ({ page }) => {
   expect(blocks).toBeGreaterThan(0);
   await expect(page.locator("main pre button", { hasText: "Copy" })).toHaveCount(blocks);
 });
+
+test("downloads: every file is served, zips are valid", async ({ request, page }) => {
+  await page.goto("start/downloads/");
+  const links = await page.$$eval("a[download]", (as) => as.map((a) => (a as HTMLAnchorElement).href));
+  expect(links.length).toBeGreaterThanOrEqual(8);
+  for (const l of links) {
+    const res = await request.get(l);
+    expect(res.status(), l).toBe(200);
+    const body = await res.body();
+    expect(body.length, l).toBeGreaterThan(500);
+    if (l.endsWith(".zip")) expect(body.subarray(0, 4).toString("hex"), l).toBe("504b0304"); // PK\x03\x04
+  }
+});
+
+test("AI docs: llms.txt links to a Markdown twin of every page", async ({ request }) => {
+  const txt = await (await request.get("llms.txt")).text();
+  expect(txt).toMatch(/^# DX Design System/);
+  const twins = [...txt.matchAll(/\]\(https:\/\/dx-design-system\.vercel\.app\/(md\/[^)]+\.md)\)/g)].map((m) => m[1]);
+  expect(twins.length).toBeGreaterThan(50);
+  for (const t of twins) {
+    const res = await request.get(t);
+    expect(res.status(), t).toBe(200);
+    expect(await res.text(), t).toMatch(/^# /);
+  }
+  expect((await request.get("llms-full.txt")).status()).toBe(200);
+});

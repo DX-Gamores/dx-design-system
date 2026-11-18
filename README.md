@@ -48,6 +48,7 @@ npm i github:DX-Gamores/dx-design-system      # or copy the dist/ folder
 Components live in [`src/components/ui`](src/components/ui). Copy the ones you need into your project and own them (the shadcn/ui approach). They only depend on the tokens, so they re-skin for any brand. To start a new app from the shell, copy [`src/app/starter`](src/app/starter) too.
 
 Install with one command: **[docs/INSTALL.md](docs/INSTALL.md)** (`npx shadcn add @dx/init @dx/button`). React Native: **[docs/REACT-NATIVE.md](docs/REACT-NATIVE.md)**.
+Every token format, the icon SVGs and the starter as files: **[Downloads](https://dx-design-system.vercel.app/start/downloads/)**. For AI assistants: [llms.txt](https://dx-design-system.vercel.app/llms.txt) and [docs/AGENTS.md](docs/AGENTS.md).
 
 More detail is in **[docs/GETTING-STARTED.md](docs/GETTING-STARTED.md)**, **[docs/NEW-BRAND.md](docs/NEW-BRAND.md)**, **[docs/WORKFLOW.md](docs/WORKFLOW.md)** and **[docs/CLEANUP.md](docs/CLEANUP.md)**.
 
