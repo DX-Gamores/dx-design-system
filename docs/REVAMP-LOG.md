@@ -22,6 +22,7 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 - Vercel: Vercel Authentication is now off, so the site is public. Production deploy of `94f2660` (PR #2 merge) is ready.
 - GitHub: PR #2 merged; the CI `deploy` job is gone from `main`; GitHub Pages is switched off (Branch → None) and the `gh-pages` branch is deleted.
 - Figma: searched every text layer and prototype link on Cover, Getting Started, Governance, Templates, Starter & Empty States and Doc Kit & Template. No links to the old github.io address (the file has no URL links at all), so nothing to change.
+- Figma change (Gab's go-ahead): the "Docs site →" badge in the Developer path on the Getting Started page (`124:164`) now links to https://dx-design-system.vercel.app/, as a text link on its label and a click action on the instance. No visual change.
 
 **Code (branch `revamp/cleanup-process`)**
 
