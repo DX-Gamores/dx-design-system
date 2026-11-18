@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "type": "registry:ui",
+  "title": "Button",
+  "description": "Button — triggers an action.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-button.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Button",
+    "figmaPage": "Button"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card",
+  "type": "registry:ui",
+  "title": "Card",
+  "description": "Card — container grouping content and up to two actions about one subject.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-display.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Card",
+    "figmaPage": "Card"
+  }
+}

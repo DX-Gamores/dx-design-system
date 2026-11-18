@@ -50,6 +50,8 @@ export const nav: NavGroup[] = [
     items: [
       { title: "Overview", href: "/", figmaName: "Getting Started" },
       { title: "Getting started", href: "/start/getting-started/" },
+      { title: "Install with the CLI", href: "/start/cli/" },
+      { title: "React Native", href: "/start/react-native/" },
       { title: "Governance", href: "/start/governance/", figmaName: "Governance" },
       { title: "Changelog & roadmap", href: "/start/changelog/" },
       { title: "Working with one seat", href: "/start/workflow/" },
@@ -110,6 +112,8 @@ function mapLink(href: string) {
     "WORKFLOW.md": "/start/workflow/", "docs/WORKFLOW.md": "/start/workflow/",
     "NEW-BRAND.md": "/start/new-brand/", "docs/NEW-BRAND.md": "/start/new-brand/",
     "GETTING-STARTED.md": "/start/getting-started/", "docs/GETTING-STARTED.md": "/start/getting-started/",
+    "INSTALL.md": "/start/cli/", "docs/INSTALL.md": "/start/cli/",
+    "REACT-NATIVE.md": "/start/react-native/", "docs/REACT-NATIVE.md": "/start/react-native/",
   };
   const base = process.env.PAGES_BASE_PATH ?? ""; // Markdown links aren't next/link, so add the Pages base path here
   if (doc[href]) return base + doc[href];

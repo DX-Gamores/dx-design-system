@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "spinner",
+  "type": "registry:ui",
+  "title": "Spinner",
+  "description": "Spinner — indicates that something is in progress when its duration and shape are unknown.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Spinner",
+    "figmaPage": "Loading"
+  }
+}

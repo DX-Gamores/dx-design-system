@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state",
+  "type": "registry:ui",
+  "title": "Empty State",
+  "description": "Empty State — explains why a space is empty and what to do next.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "EmptyState",
+    "figmaPage": "Empty State"
+  }
+}

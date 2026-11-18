@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "radio",
+  "type": "registry:ui",
+  "title": "Radio",
+  "description": "Radio — pick exactly one option from a small, visible set (2–5). Always used in a group with a visible group label.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Radio",
+    "figmaPage": "Radio"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "textarea",
+  "type": "registry:ui",
+  "title": "Textarea",
+  "description": "Textarea — multi-line free text (comments, descriptions, feedback).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Textarea",
+    "figmaPage": "Textarea"
+  }
+}

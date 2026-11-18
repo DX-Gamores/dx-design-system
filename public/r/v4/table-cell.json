@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-cell",
+  "type": "registry:ui",
+  "title": "Table Cell",
+  "description": "Table Cell — one cell in a data table row. Types: Text · Two-line · Avatar (person) · Badge (status) · Numeric (right-aligned, tabular) · Checkbox (row selection, 48px) · Actions (Icon Button \"More\", 64px).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "TableCell",
+    "figmaPage": "Lists & Tables"
+  }
+}

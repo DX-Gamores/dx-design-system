@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "date-field",
+  "type": "registry:ui",
+  "title": "Date Field",
+  "description": "Date Field — type a date or open the Calendar from the calendar button. Pair with Calendar (popover, 4px below) to make a Date Picker.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-date.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "DateField",
+    "figmaPage": "Date Picker"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "step",
+  "type": "registry:ui",
+  "title": "Step",
+  "description": "Step — one step of a Stepper. Use inside Stepper.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Stepper",
+    "figmaPage": "Stepper"
+  }
+}

@@ -14,7 +14,7 @@
     "tokens": "node scripts/build-tokens.mjs && node scripts/build-native.mjs",
     "specs": "node scripts/build-specs.mjs",
     "icons": "node scripts/build-icons.mjs",
-    "build:all": "npm run tokens && npm run icons && npm run specs",
+    "build:all": "npm run tokens && npm run icons && npm run specs && npm run registry",
     "check:parity": "node scripts/check-parity.mjs",
     "check": "npm run check:parity && tsc --noEmit",
     "dev": "next dev",
@@ -25,8 +25,9 @@
     "test": "playwright test",
     "test:update": "playwright test --update-snapshots",
     "lint": "tsc --noEmit",
-    "test:functional": "playwright test tests/components.spec.ts tests/templates.spec.ts tests/a11y.spec.ts tests/site.spec.ts tests/tokens.spec.ts",
-    "test:visual": "playwright test tests/visual.spec.ts"
+    "test:functional": "playwright test tests/components.spec.ts tests/templates.spec.ts tests/a11y.spec.ts tests/site.spec.ts tests/tokens.spec.ts tests/registry.spec.ts",
+    "test:visual": "playwright test tests/visual.spec.ts",
+    "registry": "node scripts/build-registry.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",

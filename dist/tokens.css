@@ -1522,7 +1522,7 @@
 }
 
 /* shadcn/ui aliases (--background, --primary, --sidebar-*, --chart-*) → DX semantic tokens */
-:root, [data-theme], [data-brand] {
+:root, :root[data-theme], :root[data-brand], [data-theme], [data-brand] {
   --background: var(--ds-color-bg-canvas);
   --foreground: var(--ds-color-text-primary);
   --card: var(--ds-color-bg-surface);

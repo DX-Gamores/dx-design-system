@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox",
+  "type": "registry:ui",
+  "title": "Combobox",
+  "description": "Combobox — a text field you can type into to filter a list, then pick one option (ARIA 1.2 combobox, list autocomplete).",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Combobox",
+    "figmaPage": "Combobox"
+  }
+}

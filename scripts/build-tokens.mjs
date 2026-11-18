@@ -100,7 +100,8 @@ const shadcn = [
   ["sidebar-border", "color/border/default"], ["sidebar-ring", "color/border/focus"],
 ];
 css += "\n/* shadcn/ui aliases (--background, --primary, --sidebar-*, --chart-*) → DX semantic tokens */\n";
-css += block(":root, [data-theme], [data-brand]", [...shadcn.map(([k, n]) => [`--${k}`, `var(${cssVar(n)})`]), ["--radius", "var(--ds-shape-radius-container)"]]);
+// :root[data-…] outranks the plain :root / .dark blocks that `shadcn init` writes into globals.css after this file.
+css += block(":root, :root[data-theme], :root[data-brand], [data-theme], [data-brand]", [...shadcn.map(([k, n]) => [`--${k}`, `var(${cssVar(n)})`]), ["--radius", "var(--ds-shape-radius-container)"]]);
 // Text styles -> utility classes
 const ts = textStyles.map((t) => {
   const b = t.bv;

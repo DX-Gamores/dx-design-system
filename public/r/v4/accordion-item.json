@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "accordion-item",
+  "type": "registry:ui",
+  "title": "Accordion Item",
+  "description": "Accordion Item — one collapsible section.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "AccordionItem",
+    "figmaPage": "Accordion"
+  }
+}

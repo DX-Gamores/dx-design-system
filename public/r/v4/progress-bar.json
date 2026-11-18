@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress-bar",
+  "type": "registry:ui",
+  "title": "Progress Bar",
+  "description": "Progress Bar — determinate progress.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "Progress",
+    "figmaPage": "Progress"
+  }
+}

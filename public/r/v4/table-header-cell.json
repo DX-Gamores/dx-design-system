@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table-header-cell",
+  "type": "registry:ui",
+  "title": "Table Header Cell",
+  "description": "Table Header Cell — column header. Sort: None (sortable, unsorted) · Ascending · Descending · Not sortable.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "TableHeaderCell",
+    "figmaPage": "Lists & Tables"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-section",
+  "type": "registry:ui",
+  "title": "Form Section",
+  "description": "Form Section — groups related fields under a title and description inside long forms and settings pages.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "FormSection",
+    "figmaPage": "Form Patterns"
+  }
+}

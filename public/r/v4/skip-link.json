@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "skip-link",
+  "type": "registry:ui",
+  "title": "Skip Link",
+  "description": "Skip Link — first focusable element on every page (WCAG 2.4.1). Hidden until it receives keyboard focus, then appears top-left above the App Header; Enter moves focus to <main>. Shown here in its focused state.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "AppShell",
+    "figmaPage": "Navigation"
+  }
+}

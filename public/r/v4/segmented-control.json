@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "segmented-control",
+  "type": "registry:ui",
+  "title": "Segmented Control",
+  "description": "Segmented Control — pick one of 2–5 related options that change how the same content is shown (view, period, filter). Selection applies immediately.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "SegmentedControl",
+    "figmaPage": "Segmented Control"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar",
+  "type": "registry:ui",
+  "title": "Sidebar",
+  "description": "Sidebar — primary app navigation, used together with the App Header.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/app-shell.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "AppShell",
+    "figmaPage": "Navigation"
+  }
+}

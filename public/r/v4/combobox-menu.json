@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "combobox-menu",
+  "type": "registry:ui",
+  "title": "Combobox Menu",
+  "description": "Combobox Menu — the listbox that opens 4px under a focused Combobox. Content: Results (matches bolded; Focus = highlighted with arrow keys) · Recent (empty query) · Loading (async search, show after 300ms) · No results (say what was typed + what to try) · Create (offer to add the typed value). Show keyboard hint for first-run or power-user surfaces. Max height 320 then scroll; width = field width.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "ComboboxMenu",
+    "figmaPage": "Combobox"
+  }
+}

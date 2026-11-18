@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "slider-thumb",
+  "type": "registry:ui",
+  "title": "Slider Thumb",
+  "description": "Slider Thumb — the handle. 20px visual, 40px hit area in code.",
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/ui-inputs-advanced.json"
+  ],
+  "files": [],
+  "meta": {
+    "export": "SliderThumb",
+    "figmaPage": "Slider"
+  }
+}
