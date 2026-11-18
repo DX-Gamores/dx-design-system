@@ -1,8 +1,8 @@
 /**
  * Two ways to build the docs site:
- * - Vercel (primary from v4): plain `next build`. No base path; Vercel serves the app at the domain root.
- * - GitHub Pages (legacy, until Vercel is live): `npm run build:pages` sets PAGES_BASE_PATH and
- *   produces a static site in out/ for https://<owner>.github.io/dx-design-system/.
+ * - Vercel (the live site, https://dx-design-system.vercel.app): plain `next build`, served at the domain root.
+ * - Static export for tests: `npm run build:pages` sets PAGES_BASE_PATH and writes out/, which
+ *   Playwright serves at http://localhost:4173/dx-design-system/. (GitHub Pages hosting was retired in v4.)
  * trailingSlash stays on for both, so every URL matches the sidebar links (/actions/button/).
  * @type {import("next").NextConfig}
  */

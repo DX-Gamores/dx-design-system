@@ -1,6 +1,6 @@
 # Deploying the docs site
 
-From v4 the docs site, registry and downloads are hosted on **Vercel**. GitHub Pages keeps running until the Vercel site is live and checked, then its deploy job is switched off.
+From v4 the docs site, registry and downloads are hosted on **Vercel** at https://dx-design-system.vercel.app. GitHub Pages was retired in November 2026 (see the end of this page).
 
 ## First-time setup on Vercel (one person, about 10 minutes)
 
@@ -19,10 +19,15 @@ From v4 the docs site, registry and downloads are hosted on **Vercel**. GitHub P
 - Press `⌘K` (Mac) or `Ctrl+K` (Windows) and search for "dialog".
 - Hover a code block on `/start/getting-started/` and press **Copy**.
 
-## Switching off GitHub Pages
+## Who can see the site
 
-When the Vercel site is confirmed:
+Vercel → project **dx-design-system** → **Settings → Deployment Protection**. Keep **Vercel Authentication** on **Only Preview Deployments** (or off): with it on for everything, developers without a Vercel login on the team get a login screen instead of the docs.
 
-1. In `.github/workflows/ci.yml`, delete the `deploy` job (it publishes `out/` to the `gh-pages` branch). Keep the test jobs: they still run `npm run build:pages` because Playwright serves the static export.
-2. In the repo **Settings → Pages**, set the source to *None*.
-3. Replace links to `dx-gamores.github.io/dx-design-system` in `README.md` and the Figma file with the Vercel URL.
+## GitHub Pages (retired)
+
+Done in November 2026:
+
+1. The `deploy` job was removed from `.github/workflows/ci.yml`. The test jobs stay: they still run `npm run build:pages`, because Playwright serves that static export.
+2. Links in `README.md`, `docs/` and the site point at the Vercel URL.
+3. Repo **Settings → Pages → Source** set to *None* (Gab, after merging). The `gh-pages` branch can be deleted afterwards.
+4. Still to do: replace any `dx-gamores.github.io/dx-design-system` links in the Figma file (Gab).

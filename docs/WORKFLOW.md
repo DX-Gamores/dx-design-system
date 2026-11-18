@@ -32,7 +32,7 @@ This repo replaces the "Can't" column. Token names, code snippets and component 
    - **Generated files are fresh** — tokens, icons and specs match the Figma export.
    - **Parity** — `npm run check`: every Figma page is on the site, every published component has a spec, every spec is coded and has a live example, and the version matches Figma. A miss fails the build and names the fix.
    - **Tests** — keyboard behaviour, an axe WCAG 2.2 scan of every page in light and dark, links, and no sideways scrolling at 390px.
-   - **Deploy** — the docs site is published to GitHub Pages automatically.
+   - **Deploy** — Vercel builds and publishes the docs site from `main` on its own (pull requests get a preview link).
    - **Visual regression** (non-blocking) — every live example and template at 1440 / 834 / 390 compared with the committed baselines. After an intended visual change, run **Actions → Update visual baselines**.
 6. Note the change in the Figma changelog and `src/site/changelog.ts`. Bump the version in `package.json` and `figma/meta.json` together, following the versioning rules on the Governance page:
    - **Patch:** fixes.
@@ -43,7 +43,7 @@ This repo replaces the "Can't" column. Token names, code snippets and component 
 
 ```bash
 npm run check          # parity + types
-npm run build:pages    # static site in out/
+npm run build:pages    # static site in out/ (what the tests use)
 npm test               # all tests (needs the build); npm run test:functional / test:visual
 npm run serve:pages    # http://localhost:4173/dx-design-system/
 ```
@@ -54,9 +54,9 @@ npm run serve:pages    # http://localhost:4173/dx-design-system/
 - **Components:** the copies in your project are yours. Compare against `src/components/ui` when the changelog mentions a component you use.
 - **Questions:** comment on the Figma frame, or open a GitHub issue on this repo with the label `design-system`.
 
-## The docs site (GitHub Pages)
+## The docs site (Vercel)
 
-The site at https://dx-gamores.github.io/dx-design-system/ mirrors the Figma file page for page. It is generated, not hand-written:
+The site at https://dx-design-system.vercel.app/ mirrors the Figma file page for page. It is generated, not hand-written:
 
 | On the site | Comes from |
 |---|---|
@@ -72,4 +72,4 @@ The site at https://dx-gamores.github.io/dx-design-system/ mirrors the Figma fil
 
 Every page footer shows the version, the Figma sync date and the parity count. Each spec has a **Compare with the Figma component** panel: the live Figma component set next to a link to its code.
 
-Publishing is automatic: every push to `main` that passes CI deploys the site.
+Publishing is automatic: Vercel deploys every push to `main` (its build runs the parity check first, so a Figma ↔ code mismatch never goes live). Setup and settings: `docs/DEPLOY.md`.

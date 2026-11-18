@@ -9,11 +9,11 @@ The code side of the **DX Design System** Figma file. Developers don't need a Fi
 | Get the brand right in any web project | [`dist/tokens.css`](dist/tokens.css) — CSS variables for 3 brands × 4 colour modes × 2 densities |
 | Style with Tailwind (v4) | [`dist/tailwind.css`](dist/tailwind.css) — `bg-surface`, `text-fg-primary`, `border-line-default`, `text-heading-h1`, `shadow-elevation-2` … |
 | Build a component correctly | [`docs/components/`](docs/components/README.md) — 63 specs: props, states, tokens, keyboard and accessibility. Every one is coded in [`src/components/ui`](src/components/ui) |
-| Start a new app | [`src/templates`](src/templates) — Dashboard, Members, Settings, Sign in/up, empty states and both starter shells as code you copy. Clickable at [`/templates/dashboard`](https://dx-gamores.github.io/dx-design-system/templates/dashboard/) |
+| Start a new app | [`src/templates`](src/templates) — Dashboard, Members, Settings, Sign in/up, empty states and both starter shells as code you copy. Clickable at [`/templates/dashboard`](https://dx-design-system.vercel.app/templates/dashboard/) |
 | Feed tokens to another tool | [`tokens/tokens.json`](tokens/tokens.json) — W3C Design Tokens format, all modes |
 | Draw charts | [`dist/tokens.ts`](dist/tokens.ts) → `dataviz.series`, colour-blind-checked |
 
-**Docs site:** [dx-gamores.github.io/dx-design-system](https://dx-gamores.github.io/dx-design-system/) — every Figma page mirrored: specs, live components, governance and changelog, with brand / theme / density switches. No Figma seat needed.
+**Docs site:** [dx-design-system.vercel.app](https://dx-design-system.vercel.app/) — every Figma page mirrored: specs, live components, governance and changelog, with brand / theme / density switches. No Figma seat needed.
 
 **Also on Claude:** [DX Design System on Claude](https://claude.ai/artifact/Qrht2ZAQ4WQJXYr4bHC332) — tokens per theme, live component previews, specs and icons (ask the design lead for access).
 

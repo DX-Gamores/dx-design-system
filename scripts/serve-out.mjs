@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Serves the static export in out/ under /dx-design-system (the GitHub Pages path) for tests and local preview.
+// Serves the static export in out/ under /dx-design-system (the base path the static export is built with) for tests and local preview.
 import http from "node:http";
 import fs from "node:fs";
 import path from "node:path";

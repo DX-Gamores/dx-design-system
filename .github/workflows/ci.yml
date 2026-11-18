@@ -1,7 +1,7 @@
 name: CI
 
 # Every push and pull request: generated files fresh, Figma ↔ code parity, types, build, tests.
-# Pushes to main also deploy the docs site to GitHub Pages (gh-pages branch).
+# The docs site itself is deployed by Vercel (see docs/DEPLOY.md): production on main, a preview per pull request.
 on:
   push:
     branches: [main]
@@ -36,7 +36,7 @@ jobs:
       - name: Figma ↔ code parity and types
         run: npm run check
 
-      - name: Build the docs site (static export)
+      - name: Build the docs site (static export, served to the tests below)
         run: npm run build:pages
 
       - name: Install the test browser
@@ -88,27 +88,3 @@ jobs:
             test-results
           retention-days: 14
 
-  deploy:
-    name: Deploy docs site
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: verify
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    concurrency:
-      group: pages
-      cancel-in-progress: false
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: site
-          path: out
-      - name: Publish to the gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./out
-          publish_branch: gh-pages
-          user_name: github-actions[bot]
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
-          commit_message: "Deploy docs site · ${{ github.sha }}"
