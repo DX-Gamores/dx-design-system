@@ -45,7 +45,7 @@ A sidebar dashboard built only from DX tokens and components (Next.js App Router
 6. In src/app/layout.tsx: import "./fonts"; and set <html data-brand="default" data-theme="light" data-density="comfortable">
 7. npm run dev → http://localhost:3000/starter
 
-Prefer the CLI for single components: ${HOST}/start/cli/
+Prefer the CLI for single components: ${HOST}/docs/installation/
 `;
 
 type Download = { file: string; title: string; description: string; type: string; build: () => Buffer | string };

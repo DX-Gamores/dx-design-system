@@ -15,9 +15,9 @@ From v4 the docs site, registry and downloads are hosted on **Vercel** at https:
 
 ## Checks after the first deploy
 
-- Open `/`, `/actions/button/`, `/start/gallery/` and `/starter/`. Brand, theme and density switches work.
+- Open `/`, `/components/button/`, `/components/` and `/starter/`. Brand, theme and density switches work.
 - Press `⌘K` (Mac) or `Ctrl+K` (Windows) and search for "dialog".
-- Hover a code block on `/start/getting-started/` and press **Copy**.
+- Hover a code block on `/docs/figma-to-code/` and press **Copy**.
 
 ## Who can see the site
 

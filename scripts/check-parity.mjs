@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 // Figma ↔ code ↔ docs-site parity. Fails (exit 1) when something drifts:
 //  1. package.json version = figma/meta.json version
-//  2. every Figma page is in the site sidebar (src/site/ia.json), and nothing extra is
+//  2. every Figma page has a place on the site (a route in src/site/ia.json, or component pages), and nothing extra
 //  3. every Figma page has its exported header/outline (figma/pages.content.json)
-//  4. every Figma component spec has a Markdown spec and lives on a sidebar page
+//  4. every Figma component spec has a Markdown spec (each spec gets its own page at /components/<slug>/)
 //  5. every published Figma component has a spec, and every spec maps to a Figma component
 //  6. every spec is coded — its code symbol exists and is exported
-//  7. every page with coded components has a live example on the site
+//  7. every coded component has at least one example in src/examples/<slug>/ (shown with its code on its page)
 // Writes src/site/parity.json (counts only, so the file only changes when parity does).
 import fs from "node:fs";
 import path from "node:path";
@@ -26,22 +26,21 @@ const specs = j("docs/components.json");
 const figma = j("figma/components.figma.json");
 const coded = j("src/site/coded.json").coded;
 const uiIndex = read("src/components/ui/index.ts");
-const demoNames = [...read("src/site/demo-names.ts").matchAll(/"([^"]+)"/g)].map((m) => m[1]);
 
 // 1
 check(`Version ${pkg.version} matches the Figma export`, pkg.version === meta.version ? [] : [`package.json ${pkg.version} ≠ figma/meta.json ${meta.version}`]);
 
 // 2 + 3
-const iaPages = ia.groups.flatMap(([, , list]) => list);
-const sitePages = new Set([...ia.startPages, ...iaPages]);
 const figmaPages = Object.keys(pages);
-check(`${figmaPages.length} Figma pages are all in the site sidebar`, figmaPages.filter((p) => !sitePages.has(p)).map((p) => `Figma page “${p}” has no site page — add it to src/site/ia.json`));
-check("No site page without a Figma page", [...sitePages].filter((p) => !pages[p]).map((p) => `“${p}” is in the sidebar but not in figma/pages.content.json`));
+const componentPagesOf = new Set(specs.map((s) => s.page));
+const placed = (p) => Boolean(ia.routes[p]) || componentPagesOf.has(p);
+check(`${figmaPages.length} Figma pages all have a place on the site`, figmaPages.filter((p) => !placed(p)).map((p) => `Figma page “${p}” has no site page — add a route to src/site/ia.json`));
+check("No site route without a Figma page", Object.keys(ia.routes).filter((p) => !pages[p]).map((p) => `“${p}” is in src/site/ia.json routes but not in figma/pages.content.json`));
 check("Every page has its Figma header and outline", figmaPages.filter((p) => !pages[p].summary || !pages[p].sections?.length).map((p) => `“${p}” is missing summary or sections`));
 
 // 4
 check(`${specs.length} specs have Markdown files`, specs.filter((s) => !fs.existsSync(path.join(root, `docs/components/${s.slug}.md`))).map((s) => `docs/components/${s.slug}.md missing — run npm run specs`));
-check("Every spec lives on a sidebar page", specs.filter((s) => !sitePages.has(s.page)).map((s) => `${s.n} is on Figma page “${s.page}”, which isn't in the sidebar`));
+check("Every spec's Figma page exists", specs.filter((s) => !pages[s.page]).map((s) => `${s.n} is on Figma page “${s.page}”, which isn't in figma/pages.content.json`));
 
 // 5
 const published = Object.keys(figma.components).filter((n) => !figma.deprecated.includes(n));
@@ -64,8 +63,9 @@ check(`${specs.length} specs are coded`, specs.filter((s) => !symbolOk(coded[s.s
 check("No code mapping for a spec that doesn't exist", Object.keys(coded).filter((k) => !specs.some((s) => s.slug === k)).map((k) => `src/site/coded.json lists “${k}”, which has no spec`));
 
 // 7
-const pagesWithCode = [...new Set(specs.filter((s) => coded[s.slug]).map((s) => s.page))];
-check("Every page with coded components has a live example", pagesWithCode.filter((p) => !demoNames.includes(p)).map((p) => `“${p}” has coded components but no demo in src/site/demos*.tsx`));
+const exampleDir = path.join(root, "src/examples");
+const hasExample = (slug) => fs.existsSync(path.join(exampleDir, slug)) && fs.readdirSync(path.join(exampleDir, slug)).some((f) => /^\d\d-[\w-]+\.tsx$/.test(f));
+check("Every coded component has an example", specs.filter((s) => coded[s.slug] && !hasExample(s.slug)).map((s) => `${s.n} has no example — add src/examples/${s.slug}/01-default.tsx`));
 
 const summary = {
   version: pkg.version,

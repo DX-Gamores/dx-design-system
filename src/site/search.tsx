@@ -34,7 +34,7 @@ export function DocsSearch({ index }: { index: SearchEntry[] }) {
 
   const results = useMemo(() => {
     const query = q.trim().toLowerCase();
-    if (!query) return index.filter((e) => e.kind === "Page" && e.group === "Start here");
+    if (!query) return index.filter((e) => e.kind === "Page" && e.group === "Get started");
     return index
       .map((e) => ({ e, s: score(e, query) }))
       .filter((r) => r.s >= 0)
@@ -163,7 +163,7 @@ export function useCodeCopy(dep: string) {
   useEffect(() => {
     const main = document.getElementById("main");
     if (!main) return;
-    const blocks = main.querySelectorAll<HTMLPreElement>("pre:not([data-copy])");
+    const blocks = main.querySelectorAll<HTMLPreElement>("pre:not([data-copy]):not(.ds-code pre)");
     blocks.forEach((pre) => {
       pre.dataset.copy = "";
       pre.classList.add("group/code", "relative", "pr-16");

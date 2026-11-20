@@ -1,98 +1,117 @@
 // AI-readable docs: llms.txt (index), llms-full.txt (everything in one file) and a Markdown twin of every page.
-// Built from the same sources as the HTML pages (docs/*.md, docs/components/*.md, figma/pages.content.json).
+// Built from the same sources as the HTML pages (docs/*.md, docs/components/*.md, src/examples, figma/pages.content.json).
 import fs from "node:fs";
 import path from "node:path";
-import { codeSymbol, coded, docPages, figmaPage, figmaUrl, flatNav, nav, specSummary, specs, VERSION } from "./content";
+import { coded, componentPage, docPages, figmaPage, figmaUrl, flatNav, nav, specs, specSummary, VERSION } from "./content";
 import { releases } from "./changelog";
+import componentData from "./component-data.json";
 import { downloads, downloadUrl } from "./downloads";
+import { a11y } from "./a11y";
 
 const root = process.cwd();
 const read = (p: string) => fs.readFileSync(path.join(root, p), "utf8");
 export const HOST = "https://dx-design-system.vercel.app";
 const REGISTRY = `${HOST}/r/v4`;
+const data = componentData as Record<string, { export: string; importPath: string; props: { name: string; type: string; required: boolean; default?: string }[] }>;
 
-/** /actions/button/ → actions/button ; / → index */
+/** /components/button/ → components/button ; /docs/ → docs */
 export const mdPath = (href: string) => href.replace(/^\/|\/$/g, "") || "index";
 export const mdUrl = (href: string) => `${HOST}/md/${mdPath(href)}.md`;
 
-const startDocs: Record<string, [file: string, summary: string]> = {
-  "/start/getting-started/": ["docs/GETTING-STARTED.md", "Install the tokens, map Figma names to code, and build a component the way the spec describes."],
-  "/start/cli/": ["docs/INSTALL.md", "Add DX tokens and components to any React or Next.js project with one shadcn command."],
-  "/start/react-native/": ["docs/REACT-NATIVE.md", "One dependency-free theme file with every token resolved per brand, color mode and density."],
-  "/start/workflow/": ["docs/WORKFLOW.md", "Only the design lead edits Figma; everyone else builds from the site, the repo and view-only links."],
-  "/start/new-brand/": ["docs/NEW-BRAND.md", "Add a client brand: Brand-tier tokens only, contrast-checked in all four color modes."],
+const mdDocs: Record<string, [file: string, summary: string]> = {
+  "/docs/installation/": ["docs/INSTALL.md", "Add DX tokens and components to any React or Next.js project with one shadcn command."],
+  "/docs/react-native/": ["docs/REACT-NATIVE.md", "One dependency-free theme file with every token resolved per brand, color mode and density."],
+  "/docs/figma-to-code/": ["docs/GETTING-STARTED.md", "Map Figma names to code and build a component the way the spec describes."],
+  "/docs/ai/": ["docs/AI.md", "Point AI assistants at the DX docs and rules so the code they write uses DX components and tokens."],
+  "/contribute/workflow/": ["docs/WORKFLOW.md", "Only the design lead edits Figma; everyone else builds from the site, the repo and view-only links."],
+  "/contribute/cleanup/": ["docs/CLEANUP.md", "The last step of every process: credentials, branches, build output and hosting."],
+  "/themes/adding-a-brand/": ["docs/NEW-BRAND.md", "Add a client brand: Brand-tier tokens only, contrast-checked in all four color modes."],
 };
 
-const specMarkdown = (slug: string) =>
-  read(`docs/components/${slug}.md`)
-    .replace(/\n---\n_Generated[\s\S]*$/, "")
-    .replace(/^# /, "### ")
-    .replace(/^## /gm, "#### ");
-
-function install(slug: string) {
-  if (!coded.has(slug)) return "";
-  const sym = codeSymbol(slug);
-  const file = sym.includes(":") ? `@/components/${sym.split(":")[0]}` : "@/components/ui";
-  return `\nInstall: \`npx shadcn@latest add ${REGISTRY}/${slug}.json\` · Import: \`import { ${sym.split(":").pop()} } from "${file}"\`\n`;
-}
+const other: Record<string, string> = {
+  "/docs/": figmaPage("Getting Started")?.summary ?? "",
+  "/docs/changelog/": "Releases and what's next.",
+  "/docs/downloads/": "Tokens in every format, icons, the starter app, and docs for AI assistants as files.",
+  "/components/": "All components, A–Z, with their category.",
+  "/tokens/": "Every design token: tiers, names and values per brand and color mode.",
+  "/icons/": "The DX icon set (Lucide): names and how to use any Lucide icon.",
+  "/themes/": figmaPage("Themes & Brands")?.summary ?? "",
+  "/contribute/governance/": figmaPage("Governance")?.summary ?? "",
+};
 
 const summaryOf = (href: string) => {
-  if (startDocs[href]) return startDocs[href][1];
-  const page = docPages().find((p) => p.item.href === href);
-  if (page) return page.figma?.summary ?? "";
-  if (href === "/") return figmaPage("Getting Started")?.summary ?? "";
-  if (href === "/start/governance/") return figmaPage("Governance")?.summary ?? "";
-  if (href === "/start/changelog/") return "Releases and what's next.";
-  if (href === "/start/gallery/") return "Every coded component on one page.";
-  if (href === "/start/downloads/") return "Tokens in every format, icons, the starter app, and docs for AI assistants as files.";
-  return "";
+  if (mdDocs[href]) return mdDocs[href][1];
+  if (other[href] !== undefined) return other[href];
+  const c = componentPage(href.split("/")[2] ?? "");
+  if (c && href.startsWith("/components/")) return specSummary(c.spec);
+  return docPages().find((p) => p.item.href === href)?.figma?.summary ?? "";
 };
+
+const exampleSource = (slug: string) => {
+  const dir = path.join(root, "src/examples", slug);
+  const f = fs.existsSync(dir) ? fs.readdirSync(dir).filter((x) => /^\d\d-/.test(x)).sort()[0] : undefined;
+  return f ? fs.readFileSync(path.join(dir, f), "utf8").replace(/^\/\*\*[\s\S]*?\*\/\s*/, "").replace(/^"use client";\s*/m, "").trim() : "";
+};
+
+function componentMarkdown(slug: string, href: string) {
+  const c = componentPage(slug)!;
+  const d = data[slug];
+  const acc = a11y[slug];
+  let md = `# ${c.spec.n}\n\n> ${specSummary(c.spec)}\n\nHTML: ${HOST}${href} · Category: ${c.category.title} · Figma page: ${c.figmaPage}\n\n`;
+  if (d) {
+    md += `## Install\n\n\`\`\`bash\nnpx shadcn@latest add ${REGISTRY}/${slug}.json\n\`\`\`\n\n\`\`\`tsx\nimport { ${d.export} } from "${d.importPath}";\n\`\`\`\n\n`;
+    const ex = exampleSource(slug);
+    if (ex) md += `## Example\n\n\`\`\`tsx\n${ex}\n\`\`\`\n\n`;
+    if (d.props.length) md += `## Props\n\n| Prop | Type | Default |\n| --- | --- | --- |\n${d.props.map((p) => `| ${p.name}${p.required ? " (required)" : ""} | \`${p.type.replace(/\|/g, "\\|")}\` | ${p.default ? `\`${p.default}\`` : "—"} |`).join("\n")}\n\n`;
+  }
+  if (acc) md += `## Accessibility\n\n${acc.keyboard.map(([k, v]) => `- **${k}**: ${v}`).join("\n")}\n${[...acc.aria, ...(acc.notes ?? [])].map((a) => `- ${a}`).join("\n")}\n\n`;
+  md += `## Figma spec\n\n${read(`docs/components/${slug}.md`).replace(/\n---\n_Generated[\s\S]*$/, "").replace(/^# .*\n+/, "").replace(/^## /gm, "### ")}\n`;
+  return md;
+}
 
 /** Markdown twin of one docs-site page. */
 export function pageMarkdown(href: string): string {
   const item = flatNav.find((n) => n.href === href);
   if (!item) throw new Error(`No page ${href}`);
-  const head = (title: string, summary: string, extra = "") => `# ${title}\n\n> ${summary}\n\nHTML: ${HOST}${href}${extra}\n\n`;
+  if (href.startsWith("/components/") && href !== "/components/") return componentMarkdown(href.split("/")[2], href);
+  const head = (summary: string, extra = "") => `# ${item.title}\n\n> ${summary}\n\nHTML: ${HOST}${href}${extra}\n\n`;
 
-  if (startDocs[href]) return head(item.title, startDocs[href][1]) + read(startDocs[href][0]).replace(/^# .*\n+/, "");
-
-  if (href === "/") {
+  if (mdDocs[href]) return head(mdDocs[href][1]) + read(mdDocs[href][0]).replace(/^# .*\n+/, "");
+  if (href === "/docs/") {
     return (
-      head("DX Design System", summaryOf("/")) +
+      head(summaryOf(href)) +
       `DXFORM's design system, v${VERSION}. Tokens first, components second: one system, any brand, light or dark.\n\n` +
-      `- Install: \`npx shadcn@latest add ${REGISTRY}/init.json ${REGISTRY}/button.json\` (see ${mdUrl("/start/cli/")})\n` +
+      `- Install: \`npx shadcn@latest add ${REGISTRY}/init.json ${REGISTRY}/button.json\` (see ${mdUrl("/docs/installation/")})\n` +
       `- Theme: \`<html data-brand="default|violet|amber" data-theme="light|dark|light-hc|dark-hc" data-density="comfortable|compact">\`\n` +
       `- ${specs.length} components, ${coded.size} coded in React. Figma (view-only): ${figmaUrl()}\n\n` +
-      nav.map((g) => `## ${g.title}\n\n${g.items.map((i) => `- [${i.title}](${mdUrl(i.href)})`).join("\n")}`).join("\n\n") +
+      nav.map((g) => `## ${g.title}\n\n${g.items.filter((i) => !i.href.startsWith("/starter")).map((i) => `- [${i.title}](${mdUrl(i.href)})`).join("\n")}`).join("\n\n") +
       "\n"
     );
   }
-  if (href === "/start/changelog/") {
-    return head(item.title, summaryOf(href)) + releases.map((r) => `## ${r.v} · ${r.title} (${r.kind})\n\n${r.notes}`).join("\n\n") + "\n";
+  if (href === "/docs/changelog/") return head(summaryOf(href)) + releases.map((r) => `## ${r.v} · ${r.title} (${r.kind})\n\n${r.notes}`).join("\n\n") + "\n";
+  if (href === "/docs/downloads/") return head(summaryOf(href)) + downloads.map((d) => `- [${d.file}](${HOST}${downloadUrl(d.file)}) — ${d.title}: ${d.description}`).join("\n") + `\n- [llms-full.txt](${HOST}/llms-full.txt) — every page in one Markdown file\n`;
+  if (href === "/components/") return head(summaryOf(href)) + flatNav.filter((i) => i.href.startsWith("/components/") && i.href !== "/components/").map((i) => `- [${i.title}](${mdUrl(i.href)}): ${summaryOf(i.href)}`).join("\n") + "\n";
+  if (href === "/tokens/") {
+    return head(summaryOf(href)) + `Tiers: Primitive (color/blue/600) → Brand (brand/primary/600) → Semantic (color/bg/brand) → Component (button/primary/bg). Components read Semantic and Component tokens only.\n\nCSS: \`var(--ds-color-bg-surface)\` · Tailwind: \`bg-surface\`, \`text-fg-secondary\`, \`border-line-default\`, \`rounded-control\` · React Native: \`theme.colors.bg.surface\`.\n\nAll tokens as DTCG JSON: ${HOST}/downloads/dx-tokens.json\n`;
   }
-  if (href === "/start/downloads/") {
-    return head(item.title, summaryOf(href)) + downloads.map((d) => `- [${d.file}](${HOST}${downloadUrl(d.file)}) — ${d.title}: ${d.description}`).join("\n") + `\n- [llms-full.txt](${HOST}/llms-full.txt) — every page in one Markdown file\n`;
-  }
-  if (href === "/start/gallery/") {
-    return head(item.title, summaryOf(href)) + specs.filter((s) => coded.has(s.slug)).map((s) => `- **${s.n}** — ${specSummary(s)}${install(s.slug).replace(/\n/g, " ")}`).join("\n") + "\n";
+  if (href === "/icons/") {
+    const names = Object.keys(JSON.parse(read("src/site/lucide-names.json")));
+    return head(summaryOf(href)) + `Use \`<Icon name="check" />\` with a DX name, or any Lucide icon: \`<Icon name={Rocket} />\`.\n\nDX names: ${names.join(", ")}\n`;
   }
 
   const page = docPages().find((p) => p.item.href === href);
   const fp = page?.figma ?? (item.figmaName ? figmaPage(item.figmaName) : undefined);
-  let md = head(item.title, fp?.summary ?? "", fp ? ` · Figma: ${figmaUrl(fp.id)}` : "");
+  let md = head(fp?.summary ?? summaryOf(href), fp ? ` · Figma: ${figmaUrl(fp.id)}` : "");
   if (fp?.sections?.length) md += `## On the Figma page\n\n${fp.sections.map((s) => `- ${s}`).join("\n")}\n\n`;
-  if (page?.specs.length) {
-    md += `## Components\n\n`;
-    for (const s of page.specs) md += specMarkdown(s.slug).trimEnd() + "\n" + install(s.slug) + "\n";
-  }
+  if (page?.specs.length) md += `## Components\n\n${page.specs.map((s) => `- [${s.n}](${mdUrl(`/components/${s.slug}/`)}): ${specSummary(s)}`).join("\n")}\n`;
   return md;
 }
 
-export const mdPages = () => flatNav.map((n) => n.href);
+export const mdPages = () => flatNav.map((n) => n.href).filter((h) => !h.startsWith("/starter"));
 
 export function llmsTxt() {
   const groups = nav
-    .map((g) => `## ${g.title}\n\n${g.items.map((i) => `- [${i.title}](${mdUrl(i.href)})${summaryOf(i.href) ? `: ${summaryOf(i.href)}` : ""}`).join("\n")}`)
+    .map((g) => `## ${g.title}\n\n${g.items.filter((i) => !i.href.startsWith("/starter")).map((i) => `- [${i.title}](${mdUrl(i.href)})${summaryOf(i.href) ? `: ${summaryOf(i.href)}` : ""}`).join("\n")}`)
     .join("\n\n");
   return `# DX Design System
 
@@ -100,7 +119,7 @@ export function llmsTxt() {
 
 Key facts:
 
-- Install tokens and components as owned source: \`npx shadcn@latest add ${REGISTRY}/init.json ${REGISTRY}/<component>.json\` (registry index: ${REGISTRY}/registry.json).
+- Install tokens and components as owned source: \`npx shadcn@latest add ${REGISTRY}/init.json ${REGISTRY}/<component>.json\` (registry index: ${REGISTRY}/registry.json). Component names match the page URLs (/components/<name>/).
 - Theme with attributes on <html>: data-brand (default, violet, amber), data-theme (light, dark, light-hc, dark-hc), data-density (comfortable, compact).
 - Use DX semantic tokens, never raw colors: CSS \`var(--ds-color-bg-surface)\`, Tailwind \`bg-surface\`, \`text-fg-secondary\`, \`border-line-default\`, \`rounded-control\`, \`text-heading-h1\`. shadcn aliases (\`bg-primary\`, \`text-muted-foreground\`) map to DX tokens.
 - Icons: \`<Icon name="check" />\` (DX names on Lucide) or any Lucide icon \`<Icon name={Rocket} />\`.
@@ -118,5 +137,5 @@ ${groups}
 }
 
 export function llmsFullTxt() {
-  return [`# DX Design System — full documentation (v${VERSION})\n\nEvery page of ${HOST} as Markdown, in sidebar order.\n`, ...mdPages().map((h) => pageMarkdown(h).replace(/^# /, "# ").trimEnd())].join("\n\n---\n\n") + "\n";
+  return [`# DX Design System — full documentation (v${VERSION})\n\nEvery page of ${HOST} as Markdown, in sidebar order.\n`, ...mdPages().map((h) => pageMarkdown(h).trimEnd())].join("\n\n---\n\n") + "\n";
 }

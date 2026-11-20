@@ -9,11 +9,54 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 ## Where we left off
 
-- Phase: **1 · Distribution — code complete on `revamp/phase-1`, not merged yet** (push was blocked from the AI session; see the 2026-11-18 Phase 1 entry). Gate G1 passed locally.
-- Open: push `revamp/phase-1` and open the PR; after merging, run **Actions → Update visual baselines** (icons are now Lucide, new sidebar items).
-- Left in Phase 1: DX custom icons that Lucide lacks (Agriculture & Field Ops, AI, Filled) need an icon export from Figma; try `createTheme` in a real Expo app.
-- Decide: custom domain (the registry URL is in `scripts/build-registry.mjs`, `src/site/llms.ts`, `src/site/downloads.ts`, `docs/INSTALL.md`, `docs/AGENTS.md`).
-- Next up: Phase 2 · Site redesign (new shell, component page template with Preview/Code and install commands, token explorer, icon browser, IA + redirects).
+- Phase: **2 · Site redesign — code complete on `revamp/phase-2`, not merged yet.** Gate G2 passes locally (see the 2026-11-20 entry).
+- Phase 1 is merged (PR #4) and live; visual baselines were refreshed on CI after the merge.
+- Open: push `revamp/phase-2` and open the PR; after merging, run **Actions → Update visual baselines** (the visual tests now capture component previews, so the old baselines were removed).
+- Waiting on network permission: `www.figma.com` (to download the exported Anatomy / Do & don't images; until then those sections link to Figma), `ui.shadcn.com` and `*.vercel.app` (real CLI test, preview checks from the AI session).
+- Still open: DX custom icons Lucide lacks; custom domain; brand guide and logo; moving the 3 working pages to a "DX Workshop" Figma file.
+- Next up: Phase 3 · Blocks (~31) and the client theme builder.
+
+---
+
+## 2026-11-20 · Phase 2 · Site redesign
+
+**Decisions (Gab):** component pages live at `/components/<name>/` (flat A–Z); live Figma embeds are replaced by exported images (read-only from Figma); this session delivers the branch (repo access was requested; the git proxy still refused it at the end of the session).
+
+**Code (branch `revamp/phase-2`, 7 commits on top of `main` 3374625)**
+
+| Change | Files |
+| --- | --- |
+| Task-based IA: Get started · Foundations · Tokens · Components (A–Z) · Patterns · Templates · Themes · Contribute. Start pages moved to `/docs/`, `/contribute/`, `/themes/`; new Build with AI and Cleanup pages | `src/site/content.ts`, `src/site/ia.json`, `src/app/(docs)/{docs,contribute,themes}/`, `docs/AI.md` |
+| 45 page + 46 Markdown v3 URLs redirect permanently on Vercel | `src/site/redirects.json` (generated), `next.config.mjs` |
+| New shell: section links, ⌘K, Customize popover (brand, density, high contrast, dark), dark toggle, collapsible sidebar (sheet below 1024px), On this page rail, no theme flash on load | `src/site/docs-shell.tsx`, `src/site/customize.tsx`, `src/site/theme-boot.ts`, `src/app/layout.tsx` |
+| New home page; old overview is now Introduction (`/docs/`) | `src/app/(docs)/page.tsx`, `src/app/(docs)/docs/page.tsx` |
+| 63 component pages on one template: Preview/Code (Desktop / 834 / 390, per-preview dark mode, copy) → Installation (CLI / Manual) → Usage → Examples → When to use → Anatomy → Do & don't → API → Tokens → Accessibility → Mobile → Figma spec → Related → Changelog | `src/site/component-page.tsx`, `src/site/preview.tsx`, `src/app/(docs)/components/` |
+| 87 examples (real code, Shiki highlighting) for all 63 components | `src/examples/<slug>/*.tsx`, `src/examples/index.ts` (generated) |
+| Props from the TypeScript types, tokens each component uses, example index, redirects — all generated from code | `scripts/build-docs-data.mjs`, `src/site/component-data.json` |
+| Accessibility notes per component, checked against each component's code | `src/site/a11y.ts` |
+| Token explorer: 567 variables, tier filter, values per brand × mode, copy as CSS / Tailwind / React Native / value | `src/app/(docs)/tokens/`, `src/site/token-data.ts`, `src/site/token-explorer.tsx`, `src/site/token-paths.ts` |
+| Icon browser: Figma categories, search by DX or Lucide name, copy 4 ways, SVG pack | `src/app/(docs)/icons/`, `src/site/icon-browser.tsx` |
+| Figma embeds → FigmaFrame (image in `public/figma/<id>.png` when exported, else a link card); frame index from a read-only Figma script | `src/site/blocks.tsx`, `figma/doc-frames.json` |
+| Parity check follows the new IA (every Figma page has a place; every coded component has an example) | `scripts/check-parity.mjs` |
+| Tests: v3 URLs exist or redirect; 63 pages on the template; Code tab and preview controls; RN paths in the explorer; keyboard tests on the new pages; visual tests on component previews | `tests/redirects.spec.ts`, `tests/component-pages.spec.ts`, `tests/v3-routes.json`, `tests/*.spec.ts` |
+
+**Verified:** `npm run build:all` (no diff), `npm run check` (parity 63/63, 11/11), `npm run build:pages`, functional tests **204 passed**, axe WCAG 2.2 on every page in light and dark **225 passed** (429 total), no sideways scroll at 390px. Screens checked at 1440 and 390, light and dark, Violet brand.
+
+**Gate G2:** all 63 component pages on the template ✓ · axe, parity and 390px pass ✓ · every v3 URL redirects or still exists ✓ (redirects themselves run on Vercel; check on the preview).
+
+**Not done / notes**
+
+- Anatomy and Do & don't show "Open in Figma" cards until `www.figma.com` is allowed for the AI session; then images are exported and committed with no code change.
+- Visual regression baselines must be re-recorded on CI after merge.
+- Blocks link in the header waits for Phase 3.
+
+**For Gab**
+
+- [ ] Push `revamp/phase-2` and open the PR (or give the session repo access).
+- [ ] After merge: **Actions → Update visual baselines**.
+- [ ] Allow `www.figma.com`, `ui.shadcn.com`, `*.vercel.app` for the AI session (Capabilities → allowed domains).
+
+**Cleanup:** removed screenshots and scratch scripts; no credentials used; `out/`, `.next/`, `test-results/` are ignored build output. Left for Gab: delete `revamp/cleanup-process` if still there; revoke the `workflow` scope on the `gh` login if not needed.
 
 ---
 

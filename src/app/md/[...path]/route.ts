@@ -1,6 +1,6 @@
 import { mdPages, mdPath, pageMarkdown } from "@/site/llms";
 
-// Markdown twin of every docs page: /actions/button/ → /md/actions/button.md (for AI assistants and offline reading).
+// Markdown twin of every docs page: /components/button/ → /md/components/button.md (for AI assistants and offline reading).
 export const dynamic = "force-static";
 export const dynamicParams = false;
 export const generateStaticParams = () => mdPages().map((href) => ({ path: `${mdPath(href)}.md`.split("/") }));
