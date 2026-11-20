@@ -1,0 +1,4976 @@
+{
+ "button": {
+  "export": "Button",
+  "file": "src/components/ui/button.tsx",
+  "importPath": "@/components/ui/button",
+  "props": [
+   {
+    "name": "variant",
+    "type": "\"primary\" | \"secondary\" | \"ghost\"",
+    "required": false,
+    "default": "\"primary\""
+   },
+   {
+    "name": "tone",
+    "type": "\"default\" | \"danger\"",
+    "required": false,
+    "default": "\"default\""
+   },
+   {
+    "name": "size",
+    "type": "\"lg\" | \"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   },
+   {
+    "name": "leadingIcon",
+    "type": "IconName",
+    "required": false
+   },
+   {
+    "name": "trailingIcon",
+    "type": "IconName",
+    "required": false
+   },
+   {
+    "name": "loading",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-brand-hover",
+    "via": "bg-brand-hover"
+   },
+   {
+    "token": "--ds-color-bg-brand-pressed",
+    "via": "bg-brand-pressed"
+   },
+   {
+    "token": "--ds-color-bg-danger",
+    "via": "bg-danger"
+   },
+   {
+    "token": "--ds-color-bg-danger-hover",
+    "via": "bg-danger-hover"
+   },
+   {
+    "token": "--ds-color-bg-danger-pressed",
+    "via": "bg-danger-pressed"
+   },
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-danger-subtle-pressed",
+    "via": "bg-danger-subtle-pressed"
+   },
+   {
+    "token": "--ds-color-bg-disabled",
+    "via": "bg-disabled"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-neutral-pressed",
+    "via": "bg-neutral-pressed"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-on-color",
+    "via": "text-fg-on-color"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-padding-control-lg",
+    "via": "var(--ds-padding-control-lg)"
+   },
+   {
+    "token": "--ds-padding-control-md",
+    "via": "var(--ds-padding-control-md)"
+   },
+   {
+    "token": "--ds-padding-control-sm",
+    "via": "var(--ds-padding-control-sm)"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-shape-radius-control",
+    "via": "rounded-control"
+   },
+   {
+    "token": "--ds-size-control-lg",
+    "via": "h-control-lg"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "h-control-sm"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "icon-button": {
+  "export": "IconButton",
+  "file": "src/components/ui/button.tsx",
+  "importPath": "@/components/ui/button",
+  "props": [
+   {
+    "name": "icon",
+    "type": "IconName",
+    "required": true
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "variant",
+    "type": "\"primary\" | \"secondary\" | \"ghost\"",
+    "required": false,
+    "default": "\"ghost\""
+   },
+   {
+    "name": "tone",
+    "type": "\"default\" | \"danger\"",
+    "required": false,
+    "default": "\"default\""
+   },
+   {
+    "name": "size",
+    "type": "\"lg\" | \"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   },
+   {
+    "name": "loading",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-brand-hover",
+    "via": "bg-brand-hover"
+   },
+   {
+    "token": "--ds-color-bg-brand-pressed",
+    "via": "bg-brand-pressed"
+   },
+   {
+    "token": "--ds-color-bg-danger",
+    "via": "bg-danger"
+   },
+   {
+    "token": "--ds-color-bg-danger-hover",
+    "via": "bg-danger-hover"
+   },
+   {
+    "token": "--ds-color-bg-danger-pressed",
+    "via": "bg-danger-pressed"
+   },
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-danger-subtle-pressed",
+    "via": "bg-danger-subtle-pressed"
+   },
+   {
+    "token": "--ds-color-bg-disabled",
+    "via": "bg-disabled"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-neutral-pressed",
+    "via": "bg-neutral-pressed"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-on-color",
+    "via": "text-fg-on-color"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-padding-control-lg",
+    "via": "var(--ds-padding-control-lg)"
+   },
+   {
+    "token": "--ds-padding-control-md",
+    "via": "var(--ds-padding-control-md)"
+   },
+   {
+    "token": "--ds-padding-control-sm",
+    "via": "var(--ds-padding-control-sm)"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-shape-radius-control",
+    "via": "rounded-control"
+   },
+   {
+    "token": "--ds-size-control-lg",
+    "via": "var(--ds-size-control-lg)"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "var(--ds-size-control-md)"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "var(--ds-size-control-sm)"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "link": {
+  "export": "Link",
+  "file": "src/components/ui/nav-extra.tsx",
+  "importPath": "@/components/ui/nav-extra",
+  "props": [
+   {
+    "name": "size",
+    "type": "\"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   },
+   {
+    "name": "external",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-brand-hover",
+    "via": "text-fg-brand-hover"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "text-field": {
+  "export": "TextField",
+  "file": "src/components/ui/form.tsx",
+  "importPath": "@/components/ui/form",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "helperText",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "error",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "hideLabel",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "leadingIcon",
+    "type": "IconName",
+    "required": false
+   },
+   {
+    "name": "trailing",
+    "type": "ReactNode",
+    "required": false,
+    "description": "Content after the input inside the field, e.g. a show-password IconButton."
+   },
+   {
+    "name": "size",
+    "type": "\"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-disabled",
+    "via": "bg-disabled"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-focus",
+    "via": "border-line-focus"
+   },
+   {
+    "token": "--ds-color-border-hover",
+    "via": "border-line-hover"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-placeholder",
+    "via": "text-fg-placeholder"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-padding-field",
+    "via": "var(--ds-padding-field)"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-shape-radius-control",
+    "via": "rounded-control"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "h-control-sm"
+   },
+   {
+    "token": "text-style:body-medium",
+    "via": "text-body-medium"
+   }
+  ]
+ },
+ "select": {
+  "export": "Select",
+  "file": "src/components/ui/form.tsx",
+  "importPath": "@/components/ui/form",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "options",
+    "type": "{ value: string; label: string; }[]",
+    "required": true
+   },
+   {
+    "name": "hideLabel",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "helperText",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "error",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "placeholder",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-disabled",
+    "via": "bg-disabled"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-focus",
+    "via": "border-line-focus"
+   },
+   {
+    "token": "--ds-color-border-hover",
+    "via": "border-line-hover"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-icon-primary",
+    "via": "text-icon-primary"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-padding-field",
+    "via": "var(--ds-padding-field)"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-shape-radius-control",
+    "via": "rounded-control"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "text-style:body-medium",
+    "via": "text-body-medium"
+   }
+  ]
+ },
+ "select-option": {
+  "export": "SelectOption",
+  "file": "src/components/ui/inputs-advanced.tsx",
+  "importPath": "@/components/ui/inputs-advanced",
+  "props": [
+   {
+    "name": "option",
+    "type": "ListOption",
+    "required": true
+   },
+   {
+    "name": "id",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "selected",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "active",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "query",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "onPick",
+    "type": "() => void",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": []
+ },
+ "select-menu": {
+  "export": "SelectMenu",
+  "file": "src/components/ui/inputs-advanced.tsx",
+  "importPath": "@/components/ui/inputs-advanced",
+  "props": [
+   {
+    "name": "id",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "footer",
+    "type": "ReactNode",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": []
+ },
+ "combobox": {
+  "export": "Combobox",
+  "file": "src/components/ui/inputs-advanced.tsx",
+  "importPath": "@/components/ui/inputs-advanced",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "options",
+    "type": "ListOption[]",
+    "required": true
+   },
+   {
+    "name": "value",
+    "type": "null | string",
+    "required": false
+   },
+   {
+    "name": "onChange",
+    "type": "(value: string | null) => void",
+    "required": false
+   },
+   {
+    "name": "onInputChange",
+    "type": "(query: string) => void",
+    "required": false,
+    "description": "Called on every keystroke — use it for async search. Without it, options are filtered locally."
+   },
+   {
+    "name": "loading",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "onCreate",
+    "type": "(query: string) => void",
+    "required": false
+   },
+   {
+    "name": "recent",
+    "type": "ListOption[]",
+    "required": false,
+    "description": "Shown when the query is empty (e.g. recently picked)."
+   },
+   {
+    "name": "placeholder",
+    "type": "string",
+    "required": false,
+    "default": "\"Search…\""
+   },
+   {
+    "name": "helperText",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "error",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "leadingIcon",
+    "type": "IconName",
+    "required": false,
+    "default": "\"search\""
+   },
+   {
+    "name": "size",
+    "type": "\"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   },
+   {
+    "name": "disabled",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "showKeyboardHint",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-icon-primary",
+    "via": "text-icon-primary"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-placeholder",
+    "via": "text-fg-placeholder"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "h-control-sm"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   }
+  ]
+ },
+ "combobox-option": {
+  "export": "ComboboxOption",
+  "file": "src/components/ui/inputs-advanced.tsx",
+  "importPath": "@/components/ui/inputs-advanced",
+  "props": [
+   {
+    "name": "option",
+    "type": "ListOption",
+    "required": true
+   },
+   {
+    "name": "id",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "selected",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "active",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "query",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "onPick",
+    "type": "() => void",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": []
+ },
+ "combobox-menu": {
+  "export": "ComboboxMenu",
+  "file": "src/components/ui/inputs-advanced.tsx",
+  "importPath": "@/components/ui/inputs-advanced",
+  "props": [
+   {
+    "name": "id",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "footer",
+    "type": "ReactNode",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": []
+ },
+ "date-field": {
+  "export": "DateField",
+  "file": "src/components/ui/date.tsx",
+  "importPath": "@/components/ui/date",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "value",
+    "type": "null | Date",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(d: Date | null) => void",
+    "required": true
+   },
+   {
+    "name": "min",
+    "type": "Date",
+    "required": false
+   },
+   {
+    "name": "max",
+    "type": "Date",
+    "required": false
+   },
+   {
+    "name": "isDisabled",
+    "type": "(d: Date) => boolean",
+    "required": false
+   },
+   {
+    "name": "helperText",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "error",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "size",
+    "type": "\"md\" | \"sm\"",
+    "required": false
+   },
+   {
+    "name": "disabled",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "locale",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": []
+ },
+ "calendar-day": {
+  "export": "CalendarDay",
+  "file": "src/components/ui/date.tsx",
+  "importPath": "@/components/ui/date",
+  "props": [
+   {
+    "name": "date",
+    "type": "Date",
+    "required": true
+   },
+   {
+    "name": "state",
+    "type": "DayState",
+    "required": true
+   },
+   {
+    "name": "focused",
+    "type": "boolean",
+    "required": true
+   },
+   {
+    "name": "onPick",
+    "type": "() => void",
+    "required": true
+   },
+   {
+    "name": "onHover",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "buttonRef",
+    "type": "(el: HTMLButtonElement | null) => void",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-brand-subtle",
+    "via": "bg-brand-subtle"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-border-selected",
+    "via": "ring-line-selected"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   }
+  ]
+ },
+ "calendar": {
+  "export": "Calendar",
+  "file": "src/components/ui/date.tsx",
+  "importPath": "@/components/ui/date",
+  "props": [
+   {
+    "name": "mode",
+    "type": "\"single\" | \"range\"",
+    "required": false,
+    "default": "\"single\""
+   },
+   {
+    "name": "value",
+    "type": "null | Date",
+    "required": false
+   },
+   {
+    "name": "range",
+    "type": "DateRange",
+    "required": false
+   },
+   {
+    "name": "onChange",
+    "type": "(d: Date) => void",
+    "required": false
+   },
+   {
+    "name": "onRangeChange",
+    "type": "(r: DateRange) => void",
+    "required": false
+   },
+   {
+    "name": "min",
+    "type": "Date",
+    "required": false
+   },
+   {
+    "name": "max",
+    "type": "Date",
+    "required": false
+   },
+   {
+    "name": "isDisabled",
+    "type": "(d: Date) => boolean",
+    "required": false
+   },
+   {
+    "name": "locale",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "weekStartsOn",
+    "type": "0 | 1",
+    "required": false,
+    "default": "0"
+   },
+   {
+    "name": "showFooter",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "onApply",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "onCancel",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "onEscape",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "autoFocus",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-shadow-elevation-2",
+    "via": "shadow-elevation-2"
+   },
+   {
+    "token": "--ds-shape-radius-container",
+    "via": "rounded-container"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   }
+  ]
+ },
+ "textarea": {
+  "export": "Textarea",
+  "file": "src/components/ui/form.tsx",
+  "importPath": "@/components/ui/form",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "helperText",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "error",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-disabled",
+    "via": "bg-disabled"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-focus",
+    "via": "border-line-focus"
+   },
+   {
+    "token": "--ds-color-border-hover",
+    "via": "border-line-hover"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-placeholder",
+    "via": "text-fg-placeholder"
+   },
+   {
+    "token": "--ds-padding-field",
+    "via": "var(--ds-padding-field)"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-shape-radius-control",
+    "via": "rounded-control"
+   },
+   {
+    "token": "--ds-size-textarea-min",
+    "via": "var(--ds-size-textarea-min)"
+   },
+   {
+    "token": "text-style:body-medium",
+    "via": "text-body-medium"
+   }
+  ]
+ },
+ "search-field": {
+  "export": "SearchField",
+  "file": "src/components/ui/form.tsx",
+  "importPath": "@/components/ui/form",
+  "props": [
+   {
+    "name": "value",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(value: string) => void",
+    "required": true
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": false,
+    "default": "\"Search\""
+   },
+   {
+    "name": "onClear",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "size",
+    "type": "\"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-disabled",
+    "via": "bg-disabled"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-focus",
+    "via": "border-line-focus"
+   },
+   {
+    "token": "--ds-color-border-hover",
+    "via": "border-line-hover"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-placeholder",
+    "via": "text-fg-placeholder"
+   },
+   {
+    "token": "--ds-padding-field",
+    "via": "var(--ds-padding-field)"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-shape-radius-control",
+    "via": "rounded-control"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "h-control-sm"
+   },
+   {
+    "token": "text-style:body-medium",
+    "via": "text-body-medium"
+   }
+  ]
+ },
+ "checkbox": {
+  "export": "Checkbox",
+  "file": "src/components/ui/form.tsx",
+  "importPath": "@/components/ui/form",
+  "props": [
+   {
+    "name": "label",
+    "type": "ReactNode",
+    "required": true
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "var(--ds-color-bg-brand)"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   }
+  ]
+ },
+ "radio": {
+  "export": "Radio",
+  "file": "src/components/ui/form.tsx",
+  "importPath": "@/components/ui/form",
+  "props": [
+   {
+    "name": "label",
+    "type": "ReactNode",
+    "required": true
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "var(--ds-color-bg-brand)"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   }
+  ]
+ },
+ "toggle": {
+  "export": "Toggle",
+  "file": "src/components/ui/form.tsx",
+  "importPath": "@/components/ui/form",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "checked",
+    "type": "boolean",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(on: boolean) => void",
+    "required": true
+   },
+   {
+    "name": "disabled",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-control-off",
+    "via": "bg-control-off"
+   },
+   {
+    "token": "--ds-color-icon-on-control-off",
+    "via": "var(--ds-color-icon-on-control-off)"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-opacity-disabled",
+    "via": "var(--ds-opacity-disabled)"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-shadow-elevation-1",
+    "via": "shadow-elevation-1"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-size-toggle-height",
+    "via": "var(--ds-size-toggle-height)"
+   },
+   {
+    "token": "--ds-size-toggle-width",
+    "via": "var(--ds-size-toggle-width)"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   }
+  ]
+ },
+ "slider": {
+  "export": "Slider",
+  "file": "src/components/ui/inputs-advanced.tsx",
+  "importPath": "@/components/ui/inputs-advanced",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "value",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(v: number) => void",
+    "required": true
+   },
+   {
+    "name": "min",
+    "type": "number",
+    "required": false,
+    "default": "0"
+   },
+   {
+    "name": "max",
+    "type": "number",
+    "required": false,
+    "default": "100"
+   },
+   {
+    "name": "step",
+    "type": "number",
+    "required": false,
+    "default": "1"
+   },
+   {
+    "name": "disabled",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "format",
+    "type": "(v: number) => string",
+    "required": false,
+    "default": "String"
+   },
+   {
+    "name": "showMinMax",
+    "type": "boolean",
+    "required": false,
+    "default": "true"
+   },
+   {
+    "name": "showInputs",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "helperText",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-control-off",
+    "via": "bg-control-off"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-opacity-disabled",
+    "via": "var(--ds-opacity-disabled)"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "h-control-sm"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "slider-thumb": {
+  "export": "SliderThumb",
+  "file": "src/components/ui/inputs-advanced.tsx",
+  "importPath": "@/components/ui/inputs-advanced",
+  "props": [
+   {
+    "name": "value",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "min",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "max",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "step",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "valueText",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(v: number) => void",
+    "required": true
+   },
+   {
+    "name": "disabled",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "style",
+    "type": "CSSProperties",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-selected",
+    "via": "border-line-selected"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-shadow-elevation-1",
+    "via": "shadow-elevation-1"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "h-control-sm"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "chip": {
+  "export": "Chip",
+  "file": "src/components/ui/form.tsx",
+  "importPath": "@/components/ui/form",
+  "props": [
+   {
+    "name": "children",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "selected",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "onToggle",
+    "type": "(selected: boolean) => void",
+    "required": false
+   },
+   {
+    "name": "onRemove",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "disabled",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-disabled",
+    "via": "bg-disabled"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-selected",
+    "via": "bg-selected"
+   },
+   {
+    "token": "--ds-color-bg-selected-hover",
+    "via": "bg-selected-hover"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-selected",
+    "via": "border-line-selected"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "file-upload": {
+  "export": "FileUpload",
+  "file": "src/components/ui/inputs-advanced.tsx",
+  "importPath": "@/components/ui/inputs-advanced",
+  "props": [
+   {
+    "name": "onFiles",
+    "type": "(accepted: File[], rejected: UploadItem[]) => void",
+    "required": true,
+    "description": "Called with the files that pass the accept / size rules; rejected ones come back with an error."
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": false,
+    "default": "\"Upload files\""
+   },
+   {
+    "name": "accept",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "maxSize",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "multiple",
+    "type": "boolean",
+    "required": false,
+    "default": "true"
+   },
+   {
+    "name": "helperText",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "disabled",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "items",
+    "type": "UploadItem[]",
+    "required": false,
+    "description": "Files to list under the zone, with optional progress (0–100) or error."
+   },
+   {
+    "name": "onRemove",
+    "type": "(file: File) => void",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-disabled",
+    "via": "bg-disabled"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-selected",
+    "via": "bg-selected"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-border-disabled",
+    "via": "border-line-disabled"
+   },
+   {
+    "token": "--ds-color-border-hover",
+    "via": "border-line-hover"
+   },
+   {
+    "token": "--ds-color-border-selected",
+    "via": "border-line-selected"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-icon-brand",
+    "via": "text-icon-brand"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-icon-disabled",
+    "via": "text-icon-disabled"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-color-text-success",
+    "via": "text-fg-success"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-shape-radius-container",
+    "via": "rounded-container"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "alert": {
+  "export": "Alert",
+  "file": "src/components/ui/feedback.tsx",
+  "importPath": "@/components/ui/feedback",
+  "props": [
+   {
+    "name": "tone",
+    "type": "\"danger\" | \"info\" | \"success\" | \"warning\"",
+    "required": false,
+    "default": "\"info\""
+   },
+   {
+    "name": "title",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "action",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "onDismiss",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "live",
+    "type": "boolean",
+    "required": false,
+    "description": "Set when the alert is inserted dynamically so screen readers announce it."
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-info-subtle",
+    "via": "bg-info-subtle"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-success-subtle",
+    "via": "bg-success-subtle"
+   },
+   {
+    "token": "--ds-color-bg-warning-subtle",
+    "via": "bg-warning-subtle"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-info",
+    "via": "border-line-info"
+   },
+   {
+    "token": "--ds-color-border-success",
+    "via": "border-line-success"
+   },
+   {
+    "token": "--ds-color-border-warning",
+    "via": "border-line-warning"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-icon-info",
+    "via": "text-icon-info"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-icon-success",
+    "via": "text-icon-success"
+   },
+   {
+    "token": "--ds-color-icon-warning",
+    "via": "text-icon-warning"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-padding-row",
+    "via": "var(--ds-padding-row)"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "toast": {
+  "export": "Toast",
+  "file": "src/components/ui/overlays.tsx",
+  "importPath": "@/components/ui/overlays",
+  "props": [
+   {
+    "name": "data",
+    "type": "ToastData",
+    "required": true
+   },
+   {
+    "name": "onDismiss",
+    "type": "() => void",
+    "required": true
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-inverse",
+    "via": "bg-inverse"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-icon-info",
+    "via": "text-icon-info"
+   },
+   {
+    "token": "--ds-color-icon-success",
+    "via": "text-icon-success"
+   },
+   {
+    "token": "--ds-color-icon-warning",
+    "via": "text-icon-warning"
+   },
+   {
+    "token": "--ds-color-text-inverse",
+    "via": "text-fg-inverse"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-elevation-3",
+    "via": "shadow-elevation-3"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "progress-bar": {
+  "export": "Progress",
+  "file": "src/components/ui/feedback.tsx",
+  "importPath": "@/components/ui/feedback",
+  "props": [
+   {
+    "name": "value",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "tone",
+    "type": "\"danger\" | \"success\" | \"warning\" | \"brand\"",
+    "required": false,
+    "default": "\"brand\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-danger",
+    "via": "bg-danger"
+   },
+   {
+    "token": "--ds-color-bg-neutral-pressed",
+    "via": "bg-neutral-pressed"
+   },
+   {
+    "token": "--ds-color-bg-success",
+    "via": "bg-success"
+   },
+   {
+    "token": "--ds-color-bg-warning",
+    "via": "bg-warning"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "skeleton": {
+  "export": "Skeleton",
+  "file": "src/components/ui/feedback.tsx",
+  "importPath": "@/components/ui/feedback",
+  "props": [
+   {
+    "name": "shape",
+    "type": "\"text\" | \"circle\" | \"block\"",
+    "required": false,
+    "default": "\"text\""
+   },
+   {
+    "name": "className",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   }
+  ]
+ },
+ "spinner": {
+  "export": "Spinner",
+  "file": "src/components/ui/feedback.tsx",
+  "importPath": "@/components/ui/feedback",
+  "props": [
+   {
+    "name": "size",
+    "type": "\"lg\" | \"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": false,
+    "default": "\"Loading\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "var(--ds-color-bg-brand)"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "var(--ds-color-border-default)"
+   }
+  ]
+ },
+ "empty-state": {
+  "export": "EmptyState",
+  "file": "src/components/ui/feedback.tsx",
+  "importPath": "@/components/ui/feedback",
+  "props": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "icon",
+    "type": "IconName",
+    "required": false,
+    "default": "\"folder\""
+   },
+   {
+    "name": "description",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "actions",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "headingLevel",
+    "type": "\"h2\" | \"h3\"",
+    "required": false,
+    "default": "\"h2\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-icon-primary",
+    "via": "text-icon-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-gap-stack",
+    "via": "var(--ds-gap-stack)"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-size-control-lg",
+    "via": "var(--ds-size-control-lg)"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:heading-h4",
+    "via": "text-heading-h4"
+   }
+  ]
+ },
+ "tooltip": {
+  "export": "Tooltip",
+  "file": "src/components/ui/overlays.tsx",
+  "importPath": "@/components/ui/overlays",
+  "props": [
+   {
+    "name": "content",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "children",
+    "type": "ReactElement<Record<string, unknown>, string | JSXElementConstructor<any>>",
+    "required": true
+   },
+   {
+    "name": "placement",
+    "type": "\"top\" | \"bottom\" | \"left\" | \"right\"",
+    "required": false,
+    "default": "\"top\""
+   },
+   {
+    "name": "delay",
+    "type": "number",
+    "required": false,
+    "default": "400"
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-inverse",
+    "via": "bg-inverse"
+   },
+   {
+    "token": "--ds-color-text-inverse",
+    "via": "text-fg-inverse"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-shadow-elevation-2",
+    "via": "shadow-elevation-2"
+   },
+   {
+    "token": "--ds-z-tooltip",
+    "via": "var(--ds-z-tooltip)"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   }
+  ]
+ },
+ "badge": {
+  "export": "Badge",
+  "file": "src/components/ui/feedback.tsx",
+  "importPath": "@/components/ui/feedback",
+  "props": [
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "tone",
+    "type": "\"danger\" | \"info\" | \"success\" | \"warning\" | \"brand\" | \"neutral\"",
+    "required": false,
+    "default": "\"neutral\""
+   },
+   {
+    "name": "className",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand-subtle",
+    "via": "bg-brand-subtle"
+   },
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-info-subtle",
+    "via": "bg-info-subtle"
+   },
+   {
+    "token": "--ds-color-bg-success-subtle",
+    "via": "bg-success-subtle"
+   },
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-bg-warning-subtle",
+    "via": "bg-warning-subtle"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-info",
+    "via": "border-line-info"
+   },
+   {
+    "token": "--ds-color-border-success",
+    "via": "border-line-success"
+   },
+   {
+    "token": "--ds-color-border-warning",
+    "via": "border-line-warning"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-icon-info",
+    "via": "text-icon-info"
+   },
+   {
+    "token": "--ds-color-icon-success",
+    "via": "text-icon-success"
+   },
+   {
+    "token": "--ds-color-icon-warning",
+    "via": "text-icon-warning"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-color-text-info",
+    "via": "text-fg-info"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-color-text-success",
+    "via": "text-fg-success"
+   },
+   {
+    "token": "--ds-color-text-warning",
+    "via": "text-fg-warning"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "dialog": {
+  "export": "Dialog",
+  "file": "src/components/ui/overlays.tsx",
+  "importPath": "@/components/ui/overlays",
+  "props": [
+   {
+    "name": "open",
+    "type": "boolean",
+    "required": true
+   },
+   {
+    "name": "onClose",
+    "type": "() => void",
+    "required": true
+   },
+   {
+    "name": "title",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "description",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "footer",
+    "type": "ReactNode",
+    "required": false,
+    "description": "Custom footer. Or use primaryLabel / onPrimary / secondaryLabel for the standard one."
+   },
+   {
+    "name": "size",
+    "type": "\"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   },
+   {
+    "name": "tone",
+    "type": "\"default\" | \"danger\"",
+    "required": false,
+    "default": "\"default\""
+   },
+   {
+    "name": "showClose",
+    "type": "boolean",
+    "required": false,
+    "default": "true"
+   },
+   {
+    "name": "primaryLabel",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "onPrimary",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "secondaryLabel",
+    "type": "null | string",
+    "required": false,
+    "default": "\"Cancel\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-overlay",
+    "via": "bg-overlay"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-shadow-elevation-3",
+    "via": "shadow-elevation-3"
+   },
+   {
+    "token": "--ds-shape-radius-container",
+    "via": "rounded-container"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:heading-h4",
+    "via": "text-heading-h4"
+   }
+  ]
+ },
+ "popover": {
+  "export": "Popover",
+  "file": "src/components/ui/overlays.tsx",
+  "importPath": "@/components/ui/overlays",
+  "props": [
+   {
+    "name": "trigger",
+    "type": "(p: { ref: Ref<HTMLButtonElement>; onClick: () => void; \"aria-haspopup\": \"dialog\"; \"aria-expanded\": boolean; \"aria-controls\": string; }) …",
+    "required": true,
+    "description": "Render prop gets the props to spread on your button."
+   },
+   {
+    "name": "title",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "description",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "placement",
+    "type": "\"top\" | \"bottom\" | \"left\" | \"right\"",
+    "required": false,
+    "default": "\"bottom\""
+   },
+   {
+    "name": "width",
+    "type": "number",
+    "required": false,
+    "default": "320"
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-shadow-elevation-3",
+    "via": "shadow-elevation-3"
+   },
+   {
+    "token": "--ds-shape-radius-container",
+    "via": "rounded-container"
+   },
+   {
+    "token": "--ds-z-dropdown",
+    "via": "var(--ds-z-dropdown)"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   }
+  ]
+ },
+ "drawer": {
+  "export": "Drawer",
+  "file": "src/components/ui/overlays.tsx",
+  "importPath": "@/components/ui/overlays",
+  "props": [
+   {
+    "name": "open",
+    "type": "boolean",
+    "required": true
+   },
+   {
+    "name": "onClose",
+    "type": "() => void",
+    "required": true
+   },
+   {
+    "name": "title",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "footer",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "width",
+    "type": "number",
+    "required": false,
+    "default": "400"
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-overlay",
+    "via": "bg-overlay"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-shadow-elevation-3",
+    "via": "shadow-elevation-3"
+   },
+   {
+    "token": "text-style:heading-h4",
+    "via": "text-heading-h4"
+   }
+  ]
+ },
+ "menu-item": {
+  "export": "MenuItem",
+  "file": "src/components/ui/overlays.tsx",
+  "importPath": "@/components/ui/overlays",
+  "props": [
+   {
+    "name": "item",
+    "type": "MenuItemData",
+    "required": true
+   },
+   {
+    "name": "active",
+    "type": "boolean",
+    "required": true
+   },
+   {
+    "name": "onSelect",
+    "type": "() => void",
+    "required": true
+   },
+   {
+    "name": "onHover",
+    "type": "() => void",
+    "required": true
+   },
+   {
+    "name": "refCb",
+    "type": "(el: HTMLButtonElement | null) => void",
+    "required": true
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-icon-disabled",
+    "via": "text-icon-disabled"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-color-text-disabled",
+    "via": "text-fg-disabled"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   }
+  ]
+ },
+ "menu": {
+  "export": "Menu",
+  "file": "src/components/ui/overlays.tsx",
+  "importPath": "@/components/ui/overlays",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true,
+    "description": "Names the trigger, e.g. \"More actions for Esther Howard\"."
+   },
+   {
+    "name": "items",
+    "type": "MenuItemData[]",
+    "required": true
+   },
+   {
+    "name": "trigger",
+    "type": "(p: { ref: Ref<HTMLButtonElement>; onClick: () => void; onKeyDown: (e: KeyboardEvent<Element>) => void; \"aria-haspopup\": \"menu\"; \"aria-ex…",
+    "required": false
+   },
+   {
+    "name": "placement",
+    "type": "\"bottom-start\" | \"bottom-end\"",
+    "required": false,
+    "default": "\"bottom-end\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-icon-info",
+    "via": "text-icon-info"
+   },
+   {
+    "token": "--ds-color-icon-success",
+    "via": "text-icon-success"
+   },
+   {
+    "token": "--ds-color-icon-warning",
+    "via": "text-icon-warning"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-shadow-elevation-2",
+    "via": "shadow-elevation-2"
+   },
+   {
+    "token": "--ds-z-dropdown",
+    "via": "var(--ds-z-dropdown)"
+   }
+  ]
+ },
+ "nav-item": {
+  "export": "AppShell",
+  "file": "src/components/app-shell.tsx",
+  "importPath": "@/components/app-shell",
+  "props": [
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "productName",
+    "type": "string",
+    "required": false,
+    "default": "\"DXFORM\""
+   },
+   {
+    "name": "nav",
+    "type": "NavLink[]",
+    "required": false,
+    "default": "starterNav"
+   },
+   {
+    "name": "userName",
+    "type": "string",
+    "required": false,
+    "default": "\"Gab D\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-overlay",
+    "via": "bg-overlay"
+   },
+   {
+    "token": "--ds-color-bg-selected",
+    "via": "bg-selected"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-layout-content-max",
+    "via": "var(--ds-layout-content-max)"
+   },
+   {
+    "token": "--ds-layout-header-height",
+    "via": "var(--ds-layout-header-height)"
+   },
+   {
+    "token": "--ds-layout-margin",
+    "via": "var(--ds-layout-margin)"
+   },
+   {
+    "token": "--ds-layout-section-gap",
+    "via": "var(--ds-layout-section-gap)"
+   },
+   {
+    "token": "--ds-layout-sidebar-width",
+    "via": "var(--ds-layout-sidebar-width)"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-z-modal",
+    "via": "var(--ds-z-modal)"
+   },
+   {
+    "token": "--ds-z-overlay",
+    "via": "var(--ds-z-overlay)"
+   },
+   {
+    "token": "--ds-z-sticky",
+    "via": "var(--ds-z-sticky)"
+   },
+   {
+    "token": "--ds-z-tooltip",
+    "via": "var(--ds-z-tooltip)"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "sidebar": {
+  "export": "AppShell",
+  "file": "src/components/app-shell.tsx",
+  "importPath": "@/components/app-shell",
+  "props": [
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "productName",
+    "type": "string",
+    "required": false,
+    "default": "\"DXFORM\""
+   },
+   {
+    "name": "nav",
+    "type": "NavLink[]",
+    "required": false,
+    "default": "starterNav"
+   },
+   {
+    "name": "userName",
+    "type": "string",
+    "required": false,
+    "default": "\"Gab D\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-overlay",
+    "via": "bg-overlay"
+   },
+   {
+    "token": "--ds-color-bg-selected",
+    "via": "bg-selected"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-layout-content-max",
+    "via": "var(--ds-layout-content-max)"
+   },
+   {
+    "token": "--ds-layout-header-height",
+    "via": "var(--ds-layout-header-height)"
+   },
+   {
+    "token": "--ds-layout-margin",
+    "via": "var(--ds-layout-margin)"
+   },
+   {
+    "token": "--ds-layout-section-gap",
+    "via": "var(--ds-layout-section-gap)"
+   },
+   {
+    "token": "--ds-layout-sidebar-width",
+    "via": "var(--ds-layout-sidebar-width)"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-z-modal",
+    "via": "var(--ds-z-modal)"
+   },
+   {
+    "token": "--ds-z-overlay",
+    "via": "var(--ds-z-overlay)"
+   },
+   {
+    "token": "--ds-z-sticky",
+    "via": "var(--ds-z-sticky)"
+   },
+   {
+    "token": "--ds-z-tooltip",
+    "via": "var(--ds-z-tooltip)"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "skip-link": {
+  "export": "AppShell",
+  "file": "src/components/app-shell.tsx",
+  "importPath": "@/components/app-shell",
+  "props": [
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "productName",
+    "type": "string",
+    "required": false,
+    "default": "\"DXFORM\""
+   },
+   {
+    "name": "nav",
+    "type": "NavLink[]",
+    "required": false,
+    "default": "starterNav"
+   },
+   {
+    "name": "userName",
+    "type": "string",
+    "required": false,
+    "default": "\"Gab D\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-overlay",
+    "via": "bg-overlay"
+   },
+   {
+    "token": "--ds-color-bg-selected",
+    "via": "bg-selected"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-layout-content-max",
+    "via": "var(--ds-layout-content-max)"
+   },
+   {
+    "token": "--ds-layout-header-height",
+    "via": "var(--ds-layout-header-height)"
+   },
+   {
+    "token": "--ds-layout-margin",
+    "via": "var(--ds-layout-margin)"
+   },
+   {
+    "token": "--ds-layout-section-gap",
+    "via": "var(--ds-layout-section-gap)"
+   },
+   {
+    "token": "--ds-layout-sidebar-width",
+    "via": "var(--ds-layout-sidebar-width)"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-z-modal",
+    "via": "var(--ds-z-modal)"
+   },
+   {
+    "token": "--ds-z-overlay",
+    "via": "var(--ds-z-overlay)"
+   },
+   {
+    "token": "--ds-z-sticky",
+    "via": "var(--ds-z-sticky)"
+   },
+   {
+    "token": "--ds-z-tooltip",
+    "via": "var(--ds-z-tooltip)"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "app-header": {
+  "export": "AppShell",
+  "file": "src/components/app-shell.tsx",
+  "importPath": "@/components/app-shell",
+  "props": [
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "productName",
+    "type": "string",
+    "required": false,
+    "default": "\"DXFORM\""
+   },
+   {
+    "name": "nav",
+    "type": "NavLink[]",
+    "required": false,
+    "default": "starterNav"
+   },
+   {
+    "name": "userName",
+    "type": "string",
+    "required": false,
+    "default": "\"Gab D\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-overlay",
+    "via": "bg-overlay"
+   },
+   {
+    "token": "--ds-color-bg-selected",
+    "via": "bg-selected"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-layout-content-max",
+    "via": "var(--ds-layout-content-max)"
+   },
+   {
+    "token": "--ds-layout-header-height",
+    "via": "var(--ds-layout-header-height)"
+   },
+   {
+    "token": "--ds-layout-margin",
+    "via": "var(--ds-layout-margin)"
+   },
+   {
+    "token": "--ds-layout-section-gap",
+    "via": "var(--ds-layout-section-gap)"
+   },
+   {
+    "token": "--ds-layout-sidebar-width",
+    "via": "var(--ds-layout-sidebar-width)"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-z-modal",
+    "via": "var(--ds-z-modal)"
+   },
+   {
+    "token": "--ds-z-overlay",
+    "via": "var(--ds-z-overlay)"
+   },
+   {
+    "token": "--ds-z-sticky",
+    "via": "var(--ds-z-sticky)"
+   },
+   {
+    "token": "--ds-z-tooltip",
+    "via": "var(--ds-z-tooltip)"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "breadcrumbs": {
+  "export": "Breadcrumbs",
+  "file": "src/components/ui/nav-extra.tsx",
+  "importPath": "@/components/ui/nav-extra",
+  "props": [
+   {
+    "name": "items",
+    "type": "{ label: string; href?: string | undefined; }[]",
+    "required": true
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": false,
+    "default": "\"Breadcrumb\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "page-header": {
+  "export": "PageHeader",
+  "file": "src/components/app-shell.tsx",
+  "importPath": "@/components/app-shell",
+  "props": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "description",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "actions",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "headingLevel",
+    "type": "1 | 2",
+    "required": false,
+    "default": "1"
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "text-style:body-medium",
+    "via": "text-body-medium"
+   },
+   {
+    "token": "text-style:heading-h2",
+    "via": "text-heading-h2"
+   }
+  ]
+ },
+ "tab": {
+  "export": "Tabs",
+  "file": "src/components/ui/navigation.tsx",
+  "importPath": "@/components/ui/navigation",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "value",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(id: string) => void",
+    "required": true
+   },
+   {
+    "name": "tabs",
+    "type": "{ id: string; label: string; count?: number | undefined; panel: ReactNode; }[]",
+    "required": true
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "border-brand"
+   },
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "var(--ds-color-border-default)"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "tabs": {
+  "export": "Tabs",
+  "file": "src/components/ui/navigation.tsx",
+  "importPath": "@/components/ui/navigation",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "value",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(id: string) => void",
+    "required": true
+   },
+   {
+    "name": "tabs",
+    "type": "{ id: string; label: string; count?: number | undefined; panel: ReactNode; }[]",
+    "required": true
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "border-brand"
+   },
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "var(--ds-color-border-default)"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "segmented-control": {
+  "export": "SegmentedControl",
+  "file": "src/components/ui/navigation.tsx",
+  "importPath": "@/components/ui/navigation",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "value",
+    "type": "T",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(v: T) => void",
+    "required": true
+   },
+   {
+    "name": "options",
+    "type": "{ value: T; label: string; icon?: \"check\" | \"close\" | \"plus\" | \"minus\" | \"chevron-down\" | \"chevron-up\" | \"chevron-left\" | \"chevron-right\"…",
+    "required": true
+   },
+   {
+    "name": "size",
+    "type": "\"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-surface-raised",
+    "via": "bg-surface-raised"
+   },
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-elevation-1",
+    "via": "shadow-elevation-1"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "h-control-sm"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "segmented-control-item": {
+  "export": "SegmentedControl",
+  "file": "src/components/ui/navigation.tsx",
+  "importPath": "@/components/ui/navigation",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "value",
+    "type": "T",
+    "required": true
+   },
+   {
+    "name": "onChange",
+    "type": "(v: T) => void",
+    "required": true
+   },
+   {
+    "name": "options",
+    "type": "{ value: T; label: string; icon?: \"check\" | \"close\" | \"plus\" | \"minus\" | \"chevron-down\" | \"chevron-up\" | \"chevron-left\" | \"chevron-right\"…",
+    "required": true
+   },
+   {
+    "name": "size",
+    "type": "\"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-surface-raised",
+    "via": "bg-surface-raised"
+   },
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-elevation-1",
+    "via": "shadow-elevation-1"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "--ds-size-control-md",
+    "via": "h-control-md"
+   },
+   {
+    "token": "--ds-size-control-sm",
+    "via": "h-control-sm"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "stepper": {
+  "export": "Stepper",
+  "file": "src/components/ui/navigation.tsx",
+  "importPath": "@/components/ui/navigation",
+  "props": [
+   {
+    "name": "steps",
+    "type": "{ label: string; description?: string | undefined; status: StepStatus; }[]",
+    "required": true
+   },
+   {
+    "name": "onStepClick",
+    "type": "(i: number) => void",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "var(--ds-color-border-default)"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "step": {
+  "export": "Stepper",
+  "file": "src/components/ui/navigation.tsx",
+  "importPath": "@/components/ui/navigation",
+  "props": [
+   {
+    "name": "steps",
+    "type": "{ label: string; description?: string | undefined; status: StepStatus; }[]",
+    "required": true
+   },
+   {
+    "name": "onStepClick",
+    "type": "(i: number) => void",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand",
+    "via": "bg-brand"
+   },
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "var(--ds-color-border-default)"
+   },
+   {
+    "token": "--ds-color-border-strong",
+    "via": "border-line-strong"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-color-text-on-brand",
+    "via": "text-fg-on-brand"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "accordion-item": {
+  "export": "AccordionItem",
+  "file": "src/components/ui/nav-extra.tsx",
+  "importPath": "@/components/ui/nav-extra",
+  "props": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "id",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   }
+  ]
+ },
+ "avatar": {
+  "export": "Avatar",
+  "file": "src/components/ui/display.tsx",
+  "importPath": "@/components/ui/display",
+  "props": [
+   {
+    "name": "name",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "size",
+    "type": "\"lg\" | \"md\" | \"sm\"",
+    "required": false,
+    "default": "\"md\""
+   },
+   {
+    "name": "decorative",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-brand-subtle",
+    "via": "bg-brand-subtle"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-size-avatar-lg",
+    "via": "var(--ds-size-avatar-lg)"
+   },
+   {
+    "token": "--ds-size-avatar-md",
+    "via": "var(--ds-size-avatar-md)"
+   },
+   {
+    "token": "--ds-size-avatar-sm",
+    "via": "var(--ds-size-avatar-sm)"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "card": {
+  "export": "Card",
+  "file": "src/components/ui/display.tsx",
+  "importPath": "@/components/ui/display",
+  "props": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "actions",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "elevation",
+    "type": "\"flat\" | \"raised\"",
+    "required": false,
+    "default": "\"flat\""
+   },
+   {
+    "name": "className",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "headingLevel",
+    "type": "2 | 3 | 4",
+    "required": false,
+    "default": "3"
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-padding-card",
+    "via": "var(--ds-padding-card)"
+   },
+   {
+    "token": "--ds-shadow-elevation-2",
+    "via": "shadow-elevation-2"
+   },
+   {
+    "token": "--ds-shape-radius-container",
+    "via": "rounded-container"
+   },
+   {
+    "token": "text-style:heading-h4",
+    "via": "text-heading-h4"
+   }
+  ]
+ },
+ "divider": {
+  "export": "Divider",
+  "file": "src/components/ui/data.tsx",
+  "importPath": "@/components/ui/data",
+  "props": [
+   {
+    "name": "orientation",
+    "type": "\"horizontal\" | \"vertical\"",
+    "required": false,
+    "default": "\"horizontal\""
+   },
+   {
+    "name": "semantic",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "className",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-border-default",
+    "via": "var(--ds-color-border-default)"
+   }
+  ]
+ },
+ "list-item": {
+  "export": "ListItem",
+  "file": "src/components/ui/data.tsx",
+  "importPath": "@/components/ui/data",
+  "props": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "description",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "leading",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "meta",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "action",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "trailing",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "selected",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "href",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-selected",
+    "via": "bg-selected"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-padding-row",
+    "via": "var(--ds-padding-row)"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ },
+ "table-header-cell": {
+  "export": "TableHeaderCell",
+  "file": "src/components/ui/data.tsx",
+  "importPath": "@/components/ui/data",
+  "props": [
+   {
+    "name": "sortable",
+    "type": "boolean",
+    "required": false
+   },
+   {
+    "name": "sort",
+    "type": "null | \"ascending\" | \"descending\"",
+    "required": false
+   },
+   {
+    "name": "onSort",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "align",
+    "type": "\"start\" | \"end\"",
+    "required": false,
+    "default": "\"start\""
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-icon-primary",
+    "via": "text-icon-primary"
+   },
+   {
+    "token": "--ds-color-icon-secondary",
+    "via": "text-icon-secondary"
+   },
+   {
+    "token": "--ds-color-text-primary",
+    "via": "text-fg-primary"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "table-cell": {
+  "export": "TableCell",
+  "file": "src/components/ui/data.tsx",
+  "importPath": "@/components/ui/data",
+  "props": [
+   {
+    "name": "align",
+    "type": "\"start\" | \"end\"",
+    "required": false,
+    "default": "\"start\""
+   },
+   {
+    "name": "numeric",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [
+   "Native HTML attributes of the underlying element"
+  ],
+  "tokens": [
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-size-control-lg",
+    "via": "var(--ds-size-control-lg)"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   }
+  ]
+ },
+ "pagination": {
+  "export": "Pagination",
+  "file": "src/components/ui/nav-extra.tsx",
+  "importPath": "@/components/ui/nav-extra",
+  "props": [
+   {
+    "name": "page",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "pageCount",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "onPageChange",
+    "type": "(p: number) => void",
+    "required": true
+   },
+   {
+    "name": "summary",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "label",
+    "type": "string",
+    "required": false,
+    "default": "\"Pagination\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "form-section": {
+  "export": "FormSection",
+  "file": "src/components/ui/patterns.tsx",
+  "importPath": "@/components/ui/patterns",
+  "props": [
+   {
+    "name": "title",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": true
+   },
+   {
+    "name": "description",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "layout",
+    "type": "\"side-by-side\" | \"stacked\"",
+    "required": false,
+    "default": "\"side-by-side\""
+   },
+   {
+    "name": "headingLevel",
+    "type": "2 | 3",
+    "required": false,
+    "default": "2"
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:heading-h4",
+    "via": "text-heading-h4"
+   }
+  ]
+ },
+ "error-summary": {
+  "export": "ErrorSummary",
+  "file": "src/components/ui/patterns.tsx",
+  "importPath": "@/components/ui/patterns",
+  "props": [
+   {
+    "name": "errors",
+    "type": "{ fieldId: string; message: string; }[]",
+    "required": true
+   },
+   {
+    "name": "title",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "focusOnMount",
+    "type": "boolean",
+    "required": false,
+    "default": "true"
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-danger-subtle",
+    "via": "bg-danger-subtle"
+   },
+   {
+    "token": "--ds-color-border-danger",
+    "via": "border-line-danger"
+   },
+   {
+    "token": "--ds-color-icon-danger",
+    "via": "text-icon-danger"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:label-large",
+    "via": "text-label-large"
+   }
+  ]
+ },
+ "form-actions": {
+  "export": "FormActions",
+  "file": "src/components/ui/patterns.tsx",
+  "importPath": "@/components/ui/patterns",
+  "props": [
+   {
+    "name": "variant",
+    "type": "\"inline\" | \"sticky\"",
+    "required": false,
+    "default": "\"inline\""
+   },
+   {
+    "name": "status",
+    "type": "string",
+    "required": false
+   },
+   {
+    "name": "onCancel",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "submitLabel",
+    "type": "string",
+    "required": false,
+    "default": "\"Save changes\""
+   },
+   {
+    "name": "cancelLabel",
+    "type": "string",
+    "required": false,
+    "default": "\"Cancel\""
+   },
+   {
+    "name": "loading",
+    "type": "boolean",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-bg-warning",
+    "via": "bg-warning"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-padding-card",
+    "via": "var(--ds-padding-card)"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "--ds-shadow-elevation-1",
+    "via": "shadow-elevation-1"
+   },
+   {
+    "token": "--ds-z-sticky",
+    "via": "var(--ds-z-sticky)"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   }
+  ]
+ },
+ "ai-response": {
+  "export": "AIResponse",
+  "file": "src/components/ui/patterns.tsx",
+  "importPath": "@/components/ui/patterns",
+  "props": [
+   {
+    "name": "status",
+    "type": "\"complete\" | \"error\" | \"streaming\" | \"stopped\"",
+    "required": true
+   },
+   {
+    "name": "children",
+    "type": "ReactNode",
+    "required": false
+   },
+   {
+    "name": "sources",
+    "type": "{ title: string; href: string; }[]",
+    "required": false,
+    "default": "[]"
+   },
+   {
+    "name": "confidence",
+    "type": "\"high\" | \"medium\" | \"low\"",
+    "required": false
+   },
+   {
+    "name": "time",
+    "type": "string",
+    "required": false,
+    "default": "\"Just now\""
+   },
+   {
+    "name": "onStop",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "onRegenerate",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "onCopy",
+    "type": "() => void",
+    "required": false
+   },
+   {
+    "name": "onFeedback",
+    "type": "(helpful: boolean) => void",
+    "required": false
+   },
+   {
+    "name": "error",
+    "type": "string",
+    "required": false,
+    "default": "\"Something went wrong and the answer didn’t finish.\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-accent",
+    "via": "var(--ds-color-text-accent)"
+   },
+   {
+    "token": "--ds-color-text-danger",
+    "via": "text-fg-danger"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shape-radius-container",
+    "via": "rounded-container"
+   },
+   {
+    "token": "text-style:body-medium",
+    "via": "text-body-medium"
+   },
+   {
+    "token": "text-style:body-small",
+    "via": "text-body-small"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   }
+  ]
+ },
+ "ai-label": {
+  "export": "AILabel",
+  "file": "src/components/ui/display.tsx",
+  "importPath": "@/components/ui/display",
+  "props": [
+   {
+    "name": "type",
+    "type": "\"generated\" | \"edited\"",
+    "required": false,
+    "default": "\"generated\""
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-accent-subtle",
+    "via": "bg-accent-subtle"
+   },
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-text-accent",
+    "via": "text-fg-accent"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-full",
+    "via": "rounded-full"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "citation": {
+  "export": "Citation",
+  "file": "src/components/ui/display.tsx",
+  "importPath": "@/components/ui/display",
+  "props": [
+   {
+    "name": "n",
+    "type": "number",
+    "required": true
+   },
+   {
+    "name": "title",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "href",
+    "type": "string",
+    "required": true
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-neutral-hover",
+    "via": "bg-neutral-hover"
+   },
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-bg-surface-subtle",
+    "via": "bg-surface-subtle"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-brand",
+    "via": "text-fg-brand"
+   },
+   {
+    "token": "--ds-radius-md",
+    "via": "rounded-md"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "--ds-shadow-focus-ring",
+    "via": "focus-ring"
+   },
+   {
+    "token": "text-style:label-small",
+    "via": "text-label-small"
+   }
+  ]
+ },
+ "ai-confidence": {
+  "export": "AIConfidence",
+  "file": "src/components/ui/patterns.tsx",
+  "importPath": "@/components/ui/patterns",
+  "props": [
+   {
+    "name": "level",
+    "type": "\"high\" | \"medium\" | \"low\"",
+    "required": true
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-control-off",
+    "via": "bg-control-off"
+   },
+   {
+    "token": "--ds-color-bg-danger",
+    "via": "bg-danger"
+   },
+   {
+    "token": "--ds-color-bg-success",
+    "via": "bg-success"
+   },
+   {
+    "token": "--ds-color-bg-warning",
+    "via": "bg-warning"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-radius-sm",
+    "via": "rounded-sm"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   }
+  ]
+ },
+ "stat-card": {
+  "export": "StatCard",
+  "file": "src/components/ui/display.tsx",
+  "importPath": "@/components/ui/display",
+  "props": [
+   {
+    "name": "label",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "value",
+    "type": "string",
+    "required": true
+   },
+   {
+    "name": "trend",
+    "type": "{ direction: \"neutral\" | \"positive\" | \"negative\"; value: string; }",
+    "required": false
+   },
+   {
+    "name": "context",
+    "type": "string",
+    "required": false
+   }
+  ],
+  "extends": [],
+  "tokens": [
+   {
+    "token": "--ds-color-bg-surface",
+    "via": "bg-surface"
+   },
+   {
+    "token": "--ds-color-border-default",
+    "via": "border-line-default"
+   },
+   {
+    "token": "--ds-color-text-secondary",
+    "via": "text-fg-secondary"
+   },
+   {
+    "token": "--ds-padding-card",
+    "via": "var(--ds-padding-card)"
+   },
+   {
+    "token": "--ds-shape-radius-container",
+    "via": "rounded-container"
+   },
+   {
+    "token": "text-style:caption-default",
+    "via": "text-caption-default"
+   },
+   {
+    "token": "text-style:heading-h2",
+    "via": "text-heading-h2"
+   },
+   {
+    "token": "text-style:label-medium",
+    "via": "text-label-medium"
+   }
+  ]
+ }
+}

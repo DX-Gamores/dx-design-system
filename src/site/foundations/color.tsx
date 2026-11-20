@@ -141,7 +141,7 @@ export function Palette({ ramps, brands }: { ramps: { ramp: string; steps: { ste
   const tag = (r: string) => brands.filter((b) => b.primary === r).map((b) => b.mode.replace("Sample · ", ""));
   const neutral = (r: string) => brands.filter((b) => b.neutral === r).map((b) => b.mode.replace("Sample · ", ""));
   return (
-    <div className="flex flex-col gap-1 overflow-x-auto">
+    <div role="region" aria-label="Color palette" tabIndex={0} className="flex flex-col gap-1 overflow-x-auto rounded-md focus-visible:focus-ring">
       <div className="grid min-w-[760px] grid-cols-[96px_repeat(11,1fr)] gap-1 text-caption-default text-fg-secondary">
         <span />
         {ramps[0].steps.map((s) => <span key={s.step} className="text-center">{s.step}</span>)}
