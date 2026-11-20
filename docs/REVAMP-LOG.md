@@ -9,12 +9,32 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 ## Where we left off
 
-- Phase: **2 · Site redesign — code complete on `revamp/phase-2`, not merged yet.** Gate G2 passes locally (see the 2026-11-20 entry).
-- Phase 1 is merged (PR #4) and live; visual baselines were refreshed on CI after the merge.
-- Open: push `revamp/phase-2` and open the PR; after merging, run **Actions → Update visual baselines** (the visual tests now capture component previews, so the old baselines were removed).
-- Waiting on network permission: `www.figma.com` (to download the exported Anatomy / Do & don't images; until then those sections link to Figma), `ui.shadcn.com` and `*.vercel.app` (real CLI test, preview checks from the AI session).
+- Phase: **2 · Site redesign — merged (PR #5) and live.** Visual baselines were recorded on CI for the new component previews.
+- Figma images: the 90 Anatomy, States and Do & don't frames are exported into `public/figma/` (branch `revamp/figma-images`), so those sections show images instead of "Open in Figma" cards.
+- Waiting on network permission: `ui.shadcn.com` and `*.vercel.app` (real CLI test, preview checks from the AI session). `www.figma.com` is still blocked for the AI session, so image refreshes run from Gab's Mac with a script.
 - Still open: DX custom icons Lucide lacks; custom domain; brand guide and logo; moving the 3 working pages to a "DX Workshop" Figma file.
 - Next up: Phase 3 · Blocks (~31) and the client theme builder.
+
+---
+
+## 2026-11-20 · Figma images for component and pattern pages
+
+**Code (branch `revamp/figma-images`, on top of `main` 5330c1b)**
+
+| Change | Files |
+| --- | --- |
+| 90 frames exported read-only from Figma (Anatomy, States, Do & don't for every page in `figma/doc-frames.json`), 1280px wide PNG. `FigmaFrame` already shows an image when the file exists, so no component code changed | `public/figma/<node-id>.png` |
+| Test: the Button page shows its Anatomy, States and Do & don't images and each one loads | `tests/component-pages.spec.ts` |
+| Where we left off brought up to date (Phase 2 merged) | `docs/REVAMP-LOG.md` |
+
+**How the images were made:** the AI session asked Figma for each frame (read-only, nothing in Figma changed); `www.figma.com` is blocked for the session, so a script on Gab's Mac downloaded the files and opened the PR. To refresh after Figma edits, ask the AI session for a new image script.
+
+**Not done / notes**
+
+- Accessibility frames are not exported (the site writes those notes from the code instead).
+- Images are not checked by the visual tests; a changed frame only shows up in review.
+
+**Cleanup:** the image links from Figma expire on their own; the script and its link list live in `~/dx-figma/` on Gab's Mac, which can be deleted after merge. Left for Gab: delete `~/dx-phase-1`, `~/dx-phase-2`, `~/dx-figma` and branch `revamp/figma-images` after merge; revoke the `workflow` scope on the `gh` login if not needed.
 
 ---
 

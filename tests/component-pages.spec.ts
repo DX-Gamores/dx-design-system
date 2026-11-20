@@ -36,3 +36,13 @@ test("preview width and dark mode change only the preview", async ({ page }) => 
   await expect(stage).toHaveAttribute("data-theme", "dark");
   await expect(page.locator("html")).not.toHaveAttribute("data-theme", "dark");
 });
+
+test("Figma frames show as images that load", async ({ page }) => {
+  await page.goto("components/button/");
+  for (const name of ["Button: anatomy", "Button: states", "Button: do and don’t"]) {
+    const img = page.getByRole("img", { name, exact: true });
+    await img.scrollIntoViewIfNeeded();
+    await expect(img).toBeVisible();
+    await expect.poll(() => img.evaluate((el: HTMLImageElement) => el.complete && el.naturalWidth)).toBeGreaterThan(0);
+  }
+});
