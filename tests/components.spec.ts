@@ -5,7 +5,7 @@ import { focusedText, watchErrors } from "./helpers";
 
 test("Combobox: filter, arrow keys, Enter picks, Create, Esc closes", async ({ page }) => {
   const errs = watchErrors(page);
-  await page.goto("inputs/combobox/");
+  await page.goto("components/combobox/");
   const cb = page.getByRole("combobox", { name: "Assignee" });
   await cb.click(); await cb.fill("an");
   await expect(cb).toHaveAttribute("aria-expanded", "true");
@@ -15,15 +15,17 @@ test("Combobox: filter, arrow keys, Enter picks, Create, Esc closes", async ({ p
   await cb.press("Enter");
   await expect(cb).toHaveAttribute("aria-expanded", "false");
   await expect(cb).toHaveValue("Jane Cooper");
-  await cb.fill("Zed Newperson");
-  await expect(page.getByText("Create “Zed Newperson”")).toBeVisible();
   await cb.press("Escape");
-  await expect(cb).toHaveAttribute("aria-expanded", "false");
+  const team = page.getByRole("combobox", { name: "Team" });
+  await team.click(); await team.fill("Zed Newteam");
+  await expect(page.getByText("Create “Zed Newteam”")).toBeVisible();
+  await team.press("Escape");
+  await expect(team).toHaveAttribute("aria-expanded", "false");
   errs.expectNone();
 });
 
 test("Menu: Enter opens on first item, ↓ skips disabled, Esc returns focus", async ({ page }) => {
-  await page.goto("overlays/menu/");
+  await page.goto("components/menu/");
   await page.getByRole("button", { name: "More actions for Esther Howard" }).focus();
   await page.keyboard.press("Enter");
   expect(await focusedText(page)).toMatch(/^Edit role/);
@@ -36,7 +38,7 @@ test("Menu: Enter opens on first item, ↓ skips disabled, Esc returns focus", a
 });
 
 test("Dialog: focus moves in, Esc closes and returns focus; Danger focuses Cancel", async ({ page }) => {
-  await page.goto("overlays/dialog/");
+  await page.goto("components/dialog/");
   await page.getByRole("button", { name: "Invite a member" }).click();
   await expect(page.locator("dialog[open] input")).toBeFocused();
   await page.keyboard.press("Escape");
@@ -46,12 +48,12 @@ test("Dialog: focus moves in, Esc closes and returns focus; Danger focuses Cance
 });
 
 test("Date Picker: typed dates parse, calendar keys pick, bad input explains", async ({ page }) => {
-  await page.goto("inputs/date-picker/");
+  await page.goto("components/date-field/");
   const df = page.getByLabel("Due date");
   const y = new Date().getFullYear() + 1;
   await df.fill(`3/14/${y}`); await df.press("Enter");
   await expect(df).toHaveValue(`Mar 14, ${y}`);
-  await page.getByRole("button", { name: /^Choose date/ }).click();
+  await page.getByRole("button", { name: /^Choose date/ }).first().click();
   expect(await focusedText(page)).toContain("March 14");
   await page.keyboard.press("ArrowRight"); await page.keyboard.press("Enter");
   await expect(df).toHaveValue(`Mar 15, ${y}`);
@@ -60,7 +62,7 @@ test("Date Picker: typed dates parse, calendar keys pick, bad input explains", a
 });
 
 test("Slider: keys step, Home/End, range thumbs can't cross", async ({ page }) => {
-  await page.goto("inputs/slider/");
+  await page.goto("components/slider/");
   const vol = page.getByRole("slider", { name: "Volume" });
   await vol.focus();
   const v0 = Number(await vol.getAttribute("aria-valuenow"));
@@ -74,7 +76,7 @@ test("Slider: keys step, Home/End, range thumbs can't cross", async ({ page }) =
 });
 
 test("Toast: polite region, danger is an alert, never steals focus", async ({ page }) => {
-  await page.goto("feedback/toast/");
+  await page.goto("components/toast/");
   await page.getByRole("button", { name: "Save", exact: true }).click();
   await expect(page.getByRole("status").getByText("Changes saved")).toBeVisible();
   await expect(page.getByRole("button", { name: "Save", exact: true })).toBeFocused();
@@ -83,7 +85,7 @@ test("Toast: polite region, danger is an alert, never steals focus", async ({ pa
 });
 
 test("Tooltip: shows on focus, linked by aria-describedby, Esc hides", async ({ page }) => {
-  await page.goto("feedback/tooltip/");
+  await page.goto("components/tooltip/");
   const btn = page.getByRole("button", { name: "Delete Jane Cooper" });
   await btn.focus();
   await expect(page.getByRole("tooltip", { name: "Delete member" })).toBeVisible();
@@ -93,7 +95,7 @@ test("Tooltip: shows on focus, linked by aria-describedby, Esc hides", async ({ 
 });
 
 test("Accordion, Error Summary, Radio, label linking", async ({ page }) => {
-  await page.goto("navigation/accordion/");
+  await page.goto("components/accordion-item/");
   const h = page.getByRole("button", { name: "Can I change plans later?" });
   await h.click();
   await expect(h).toHaveAttribute("aria-expanded", "true");
@@ -104,7 +106,7 @@ test("Accordion, Error Summary, Radio, label linking", async ({ page }) => {
   await page.getByRole("link", { name: "Enter your full name" }).click();
   await expect(page.getByLabel("Full name")).toBeFocused();
 
-  await page.goto("inputs/radio/");
+  await page.goto("components/radio/");
   await page.getByLabel("Monthly · ₱499 per member").focus();
   await page.keyboard.press("ArrowDown");
   await expect(page.getByLabel(/Yearly/)).toBeChecked();

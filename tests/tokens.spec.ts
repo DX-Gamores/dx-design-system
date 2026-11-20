@@ -18,7 +18,7 @@ const nativeValue = (obj: unknown, name: string) =>
     .reduce<unknown>((o, k) => (o as Record<string, unknown>)[k], obj);
 
 test("native colors match the CSS tokens in every brand and mode", async ({ page }) => {
-  await page.goto("start/getting-started/");
+  await page.goto("docs/");
   for (const brand of brands) {
     for (const mode of modes) {
       const css = await page.evaluate(
@@ -53,7 +53,7 @@ test("createTheme picks brand, mode and density", () => {
 });
 
 test("shadcn aliases follow the DX brand and mode", async ({ page }) => {
-  await page.goto("start/getting-started/");
+  await page.goto("docs/");
   for (const brand of brands) {
     for (const mode of modes) {
       const v = await page.evaluate(
@@ -79,4 +79,19 @@ test("shadcn aliases follow the DX brand and mode", async ({ page }) => {
       expect(v.radius).toMatch(/px$/);
     }
   }
+});
+
+test("token explorer's React Native paths exist in createTheme()", async () => {
+  const { rnPath } = await import("../src/site/token-paths");
+  const theme = createTheme() as unknown as Record<string, unknown>;
+  const cssVar = (n: string) => `--ds-${n.replace(/\//g, "-").replace(/\s+/g, "-").toLowerCase()}`.replace(/^--ds-font-style-/, "--ds-font-weight-");
+  const missing: string[] = [];
+  for (const c of raw) for (const [n] of c.v) {
+    const p = rnPath(cssVar(n));
+    if (!p) continue;
+    const parts = [...p.replace(/^theme/, "").matchAll(/\.([A-Za-z_$][\w$]*)|\["([^"]+)"\]|\[(\d+)\]/g)].map((m) => m[1] ?? m[2] ?? m[3]);
+    const v = parts.reduce<unknown>((o, k) => (o == null ? o : (o as Record<string, unknown>)[k]), theme);
+    if (v === undefined) missing.push(`${n} → ${p}`);
+  }
+  expect(missing).toEqual([]);
 });

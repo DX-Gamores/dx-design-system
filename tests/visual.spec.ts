@@ -5,18 +5,16 @@ import { expect, test } from "@playwright/test";
 const FIXED = new Date("2026-11-12T10:00:00");
 test.beforeEach(async ({ page }) => { await page.clock.setFixedTime(FIXED); });
 
-const examplePages = [
-  "actions/button", "actions/link", "inputs/text-field", "inputs/select", "inputs/combobox", "inputs/date-picker", "inputs/textarea", "inputs/search-field",
-  "inputs/checkbox", "inputs/radio", "inputs/toggle", "inputs/slider", "inputs/chip", "inputs/file-upload", "feedback/alert", "feedback/toast", "feedback/progress",
-  "feedback/empty-state", "feedback/tooltip", "feedback/badge", "overlays/dialog", "overlays/popover-and-drawer", "overlays/menu", "navigation/navigation",
-  "navigation/tabs", "navigation/segmented-control", "navigation/stepper", "navigation/accordion", "data-display/avatar", "data-display/card", "data-display/divider",
-  "data-display/lists-and-tables", "patterns/form-patterns", "patterns/ai-patterns", "product-kit/stat-card",
+const components = [
+  "button", "link", "text-field", "select", "combobox", "date-field", "textarea", "search-field", "checkbox", "radio", "toggle", "slider", "chip",
+  "file-upload", "alert", "toast", "progress-bar", "empty-state", "tooltip", "badge", "dialog", "popover", "menu", "breadcrumbs", "tabs",
+  "segmented-control", "stepper", "accordion-item", "avatar", "card", "divider", "list-item", "table-cell", "form-section", "ai-response", "stat-card",
 ];
-for (const p of examplePages) {
-  test(`example · ${p}`, async ({ page }) => {
-    await page.goto(`${p}/`);
-    const section = page.locator("section").filter({ has: page.getByRole("heading", { name: "Live example", level: 2 }) });
-    await expect(section).toHaveScreenshot(`${p.replace("/", "--")}.png`);
+for (const c of components) {
+  test(`example · ${c}`, async ({ page }) => {
+    await page.goto(`components/${c}/`);
+    const preview = page.locator("main [role=tabpanel]").first();
+    await expect(preview).toHaveScreenshot(`component--${c}.png`);
   });
 }
 
