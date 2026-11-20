@@ -1,9 +1,14 @@
 name: Update visual baselines
 
 # Re-captures every visual snapshot on CI's own machine, verifies them with a second run,
-# and commits them to main, so CI compares like with like.
-# Run it from Actions → "Update visual baselines" → Run workflow,
-# or push a branch named ci/update-visual-baselines (it's deleted afterwards).
+# and commits them to the branch it runs on, so CI compares like with like.
+# Run it from Actions → "Update visual baselines" → Run workflow, and pick the branch:
+#   main                → after a merge that changes how pages look
+#   a pull-request branch → before merging, so that PR's visual check goes green
+#   gh workflow run update-visual-baselines.yml --ref <branch>
+# Or push a branch named ci/update-visual-baselines (updates main; the branch is deleted afterwards).
+# On a pull-request branch it then re-runs CI there, because a commit pushed by this workflow
+# doesn't start CI by itself (GitHub's rule for GITHUB_TOKEN pushes).
 on:
   workflow_dispatch:
   push:
@@ -11,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: visual-baselines
@@ -20,10 +26,12 @@ jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    env:
+      BRANCH: ${{ github.event_name == 'push' && 'main' || github.ref_name }}
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          ref: ${{ env.BRANCH }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -38,7 +46,8 @@ jobs:
       - name: Verify they are stable (second run, no updates)
         run: npx playwright test tests/visual.spec.ts --reporter=list | tee visual-verify.txt
 
-      - name: Commit the new baselines to main
+      - name: Commit the new baselines to the branch
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -48,8 +57,15 @@ jobs:
             echo "Baselines unchanged (${RESULT})."
           else
             git commit -m "Update visual baselines (CI) · verified: ${RESULT}"
-            git push origin HEAD:main
+            git push origin "HEAD:${BRANCH}"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Re-run CI on the pull-request branch
+        if: steps.commit.outputs.changed == 'true' && env.BRANCH != 'main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run ci.yml --repo "${{ github.repository }}" --ref "${BRANCH}"
 
       - name: Remove the trigger branch
         if: always() && github.event_name == 'push'

@@ -33,7 +33,7 @@ This repo replaces the "Can't" column. Token names, code snippets and component 
    - **Parity** — `npm run check`: every Figma page is on the site, every published component has a spec, every spec is coded and has a live example, and the version matches Figma. A miss fails the build and names the fix.
    - **Tests** — keyboard behaviour, an axe WCAG 2.2 scan of every page in light and dark, links, and no sideways scrolling at 390px.
    - **Deploy** — Vercel builds and publishes the docs site from `main` on its own (pull requests get a preview link).
-   - **Visual regression** (non-blocking) — every live example and template at 1440 / 834 / 390 compared with the committed baselines. After an intended visual change, run **Actions → Update visual baselines**.
+   - **Visual regression** (non-blocking) — each component's first preview and every template at 1440 / 834 / 390 compared with the committed baselines. After an intended visual change, run **Actions → Update visual baselines** on the pull-request branch (`gh workflow run update-visual-baselines.yml --ref <branch>`): it re-records the screenshots on CI, commits them to the branch and re-runs CI there, so the PR goes green before merging.
 6. Note the change in the Figma changelog and `src/site/changelog.ts`. Bump the version in `package.json` and `figma/meta.json` together, following the versioning rules on the Governance page:
    - **Patch:** fixes.
    - **Minor:** new components or tokens.
