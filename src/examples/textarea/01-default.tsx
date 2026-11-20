@@ -1,6 +1,6 @@
 /**
  * @title Textarea
- * @description Multi-line text. With maxLength it shows a live character count.
+ * @description Multi-line text. Say the limit in the helper text; maxLength enforces it.
  */
 "use client";
 import { Textarea } from "@/components/ui/form";

@@ -292,7 +292,7 @@ export const examples: Record<string, Example[]> = {
     { file: "text-field/04-small.tsx", title: "Small", description: "For dense forms and toolbars.", Component: text_field_04_small },
   ],
   "textarea": [
-    { file: "textarea/01-default.tsx", title: "Textarea", description: "Multi-line text. With maxLength it shows a live character count.", Component: textarea_01_default },
+    { file: "textarea/01-default.tsx", title: "Textarea", description: "Multi-line text. Say the limit in the helper text; maxLength enforces it.", Component: textarea_01_default },
     { file: "textarea/02-error.tsx", title: "Error", description: "The message says how to fix it.", Component: textarea_02_error },
   ],
   "toast": [

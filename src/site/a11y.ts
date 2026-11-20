@@ -32,17 +32,17 @@ const slider: A11y = {
 const menu: A11y = {
   pattern: "Menu button",
   keyboard: [["Enter / Space / ↓", "Opens the menu and focuses the first item"], ["↑ / ↓", "Moves between items"], ["Home / End", "First / last item"], ["A letter", "Jumps to the next item starting with it"], ["Esc", "Closes and returns focus to the trigger"]],
-  aria: ["The trigger has aria-haspopup=menu and aria-expanded; the list is role=menu with role=menuitem children.", "Disabled items have aria-disabled and stay focusable so they can be discovered."],
+  aria: ["The trigger has aria-haspopup=menu and aria-expanded; the list is role=menu with role=menuitem children.", "Disabled items stay visible with aria-disabled; the arrow keys skip them."],
 };
 const shell: A11y = {
   pattern: "Landmarks",
-  keyboard: [["Tab (first)", "Shows the Skip link; Enter jumps to the main content"], ["Tab", "Header actions, then the sidebar links, then the page"], ["Esc", "Closes the mobile sidebar sheet"]],
-  aria: ["Header is role=banner, sidebar is a <nav> with aria-label, content is <main id=main>.", "The current nav item has aria-current=page.", "On small screens the sidebar becomes a modal sheet; focus moves into it and back to the menu button."],
+  keyboard: [["Tab (first)", "Shows the Skip link; Enter jumps to the main content"], ["Tab", "Header actions, then the sidebar links, then the page"]],
+  aria: ["Header is role=banner, sidebar is a <nav> with aria-label, content is <main id=main>.", "The current nav item has aria-current=page; counts include hidden text such as “3 unread”.", "On phones the sidebar opens from the menu button (aria-expanded, aria-controls) and closes with its Close button or the backdrop."],
 };
 const tabs: A11y = {
   pattern: "Tabs (automatic activation)",
-  keyboard: [["← / →", "Moves to and shows the previous / next tab"], ["Home / End", "First / last tab"], ["Tab", "Moves from the tab list into the panel"]],
-  aria: ["role=tablist containing role=tab elements with aria-selected and aria-controls.", "Each panel is role=tabpanel, labelled by its tab, and focusable."],
+  keyboard: [["← / →", "Moves to and shows the previous / next tab"], ["Home / End", "First / last tab"], ["Tab", "Leaves the tab list, to the first control in the panel"]],
+  aria: ["role=tablist containing role=tab elements with aria-selected and aria-controls; only the selected tab is in the Tab order.", "Each panel is role=tabpanel, labelled by its tab."],
 };
 const segmented: A11y = {
   pattern: "Radio group",
@@ -64,7 +64,7 @@ const overlayDialog: A11y = {
 };
 const ai: A11y = {
   keyboard: [["Tab", "Moves through the actions (Stop, Copy, Regenerate, feedback) and source links"]],
-  aria: ["Streaming text is in an aria-live=polite region, announced in chunks, not per character.", "“AI-generated” is text, not only an icon, so it is announced.", "Stop is the first action while streaming and is reachable before the text ends."],
+  aria: ["Streaming text is in an aria-live=polite region, announced in chunks, not per character.", "“AI-generated” is text, not only an icon, so it is announced.", "While it streams, Stop is the first control and the region is aria-busy."],
 };
 
 export const a11y: Record<string, A11y> = {
@@ -72,7 +72,7 @@ export const a11y: Record<string, A11y> = {
   "icon-button": { ...button, aria: ["A native <button>; the required label prop becomes its aria-label.", "Pair with a Tooltip showing the same label for sighted users."], notes: ["32–48px square, above the 24px target minimum."] },
   link: { keyboard: [["Tab", "Moves focus to the link"], ["Enter", "Follows it"]], aria: ["A native <a href>.", "External links add an icon and “(opens in a new tab)” to the accessible name."], notes: ["Link text says where it goes; never “click here”.", "Underlined in body text so it doesn't rely on color (WCAG 1.4.1)."] },
   "text-field": field(),
-  textarea: field(["maxLength shows a live character count announced politely."]),
+  textarea: field(["maxLength stops typing at the limit, so say the limit in the helper text."]),
   "search-field": { ...field(["role=searchbox; the clear button is named “Clear search”."]), keyboard: [["Type", "Filters / searches"], ["Esc", "Clears the text"], ["Tab", "Moves to the clear button when there is text"]] },
   select: { keyboard: [["Tab", "Moves to the select"], ["↑ / ↓ / Space", "Opens the native list and changes the value"]], aria: ["A native <select> with a visible <label>, so it works with every screen reader and the mobile picker."] },
   "select-option": listbox("Jumps to the option starting with those letters"),
@@ -80,7 +80,7 @@ export const a11y: Record<string, A11y> = {
   combobox: listbox("Filters the list"),
   "combobox-option": listbox("Filters the list"),
   "combobox-menu": listbox("Filters the list"),
-  "date-field": { ...field(["Typed dates are parsed on blur and echoed back in full (“Tue, Nov 18, 2026”) in the helper text."]), keyboard: [["Type", "A date like 11/18 or Nov 18"], ["Tab", "Moves to the calendar button"], ["Enter / Space", "Opens the calendar"]] },
+  "date-field": { ...field(["Typed dates are parsed on Enter or blur and shown in a full format (Mar 14, 2027); a date it can’t read explains the expected format."]), keyboard: [["Type", "A date like 11/18 or Nov 18, then Enter"], ["Tab", "Moves to the “Choose date” button"], ["Enter / Space", "Opens the calendar"]] },
   calendar,
   "calendar-day": calendar,
   checkbox: { keyboard: [["Tab", "Moves to the checkbox"], ["Space", "Checks / unchecks"]], aria: ["A native <input type=checkbox> with its <label>; the whole label is clickable.", "Groups of checkboxes sit in a <fieldset> with a <legend>."] },
@@ -88,15 +88,15 @@ export const a11y: Record<string, A11y> = {
   toggle: { pattern: "Switch", keyboard: [["Tab", "Moves to the switch"], ["Space / Enter", "Turns it on or off"]], aria: ["role=switch with aria-checked.", "The label says what is switched; the state is announced as on/off, not by color."], notes: ["Use for settings that apply immediately. For choices saved with a form, use Checkbox."] },
   slider,
   "slider-thumb": slider,
-  chip: { keyboard: [["Tab", "Moves to the chip (and its remove button)"], ["Enter / Space", "Toggles a filter chip"], ["Backspace / Delete", "Removes a removable chip"]], aria: ["Filter chips are toggle buttons with aria-pressed.", "The remove button is named “Remove <label>”."] },
-  "file-upload": { keyboard: [["Tab", "Moves to “Choose files”"], ["Enter / Space", "Opens the file picker"]], aria: ["The drop zone is a real button with an <input type=file>, so drag and drop is never required.", "Accepted types and size are in the description; errors per file are announced in a live region.", "Progress uses role=progressbar per file."] },
-  alert: { keyboard: [["Tab", "Moves to actions and the dismiss button"]], aria: ["Status messages use role=status; danger alerts use role=alert so they are announced immediately.", "The tone is in the title text and icon label, not only the color.", "The dismiss button is named “Dismiss”."] },
-  toast: { keyboard: [["Tab", "Reaches the toast's action (it never takes focus itself)"], ["Esc", "Dismisses the focused toast"]], aria: ["Toasts render in a role=status live region (role=alert for danger).", "Hovering or focusing a toast pauses its timer (WCAG 2.2.1); actions also exist elsewhere in the UI."] },
-  "progress-bar": { keyboard: [], aria: ["role=progressbar with aria-valuenow, aria-valuemin, aria-valuemax and a label.", "Indeterminate progress omits aria-valuenow."] },
-  skeleton: { keyboard: [], aria: ["Skeletons are aria-hidden; the region that is loading has aria-busy=true and a visually hidden “Loading…” text."], notes: ["Reduced motion stops the shimmer."] },
+  chip: { keyboard: [["Tab", "Moves to the chip, or to a tag’s remove button"], ["Enter / Space", "Toggles a filter chip, or removes a tag"]], aria: ["Filter chips are toggle buttons with aria-pressed.", "A tag’s remove button is named “Remove <label>”."] },
+  "file-upload": { keyboard: [["Tab", "Moves to the drop zone, then each file’s remove button"], ["Enter / Space", "Opens the file picker"]], aria: ["The drop zone is a real button that opens the file picker, so drag and drop is never required.", "Accepted types and size are its description (aria-describedby).", "Each file’s error is role=alert; upload progress is a role=progressbar named “Uploading <file>”; remove buttons are named “Remove <file>”."] },
+  alert: { keyboard: [["Tab", "Moves to the action and the dismiss button"]], aria: ["An alert shown with the page is plain content. One inserted later sets live: danger becomes role=alert (announced at once), other tones role=status.", "The title says what happened in words; the icon and color only reinforce it.", "The dismiss button is named “Dismiss”."] },
+  toast: { keyboard: [["Tab", "Reaches the toast’s action and Dismiss button; the toast never takes focus itself"]], aria: ["Toasts render in a role=status live region (role=alert for danger).", "Hovering or focusing a toast pauses its timer (WCAG 2.2.1). Any action in a toast also exists elsewhere in the UI."] },
+  "progress-bar": { keyboard: [], aria: ["role=progressbar with aria-valuenow, aria-valuemin and aria-valuemax, named by its label.", "The percentage is shown as text next to the bar."] },
+  skeleton: { keyboard: [], aria: ["Skeletons are aria-hidden. Put aria-busy=true and a visually hidden “Loading…” on the region that is loading (see the example)."], notes: ["Reduced motion stops the pulse."] },
   spinner: { keyboard: [], aria: ["role=status with a visually hidden label (default “Loading”)."], notes: ["Reduced motion slows the rotation instead of stopping it, so progress is still visible."] },
   "empty-state": { keyboard: [["Tab", "Moves to the actions"]], aria: ["The title is a heading at the right level for the page.", "The illustration or icon is decorative (aria-hidden)."] },
-  tooltip: { pattern: "Tooltip", keyboard: [["Tab (focus)", "Shows the tooltip"], ["Esc", "Hides it without moving focus"]], aria: ["role=tooltip, linked from the trigger with aria-describedby.", "Shows on hover and focus, stays while the pointer is over it (WCAG 1.4.13)."], notes: ["Never put the only copy of important information or interactive content in a tooltip."] },
+  tooltip: { pattern: "Tooltip", keyboard: [["Tab (focus)", "Shows the tooltip at once"], ["Esc", "Hides it without moving focus (WCAG 1.4.13)"]], aria: ["role=tooltip, linked from the trigger with aria-describedby while it is shown.", "Shows on hover after a short delay, and immediately on keyboard focus."], notes: ["Never put the only copy of important information or interactive content in a tooltip."] },
   badge: { keyboard: [], aria: ["Plain text, so it is read in place.", "Counts include context for screen readers, e.g. “12 members”."], notes: ["Tone is reinforced by the text (Active, Failed), never color alone."] },
   dialog: overlayDialog,
   drawer: { ...overlayDialog, pattern: "Dialog (modal), side sheet" },
@@ -118,11 +118,11 @@ export const a11y: Record<string, A11y> = {
   "accordion-item": { pattern: "Accordion", keyboard: [["Tab", "Moves between headers"], ["Enter / Space", "Opens or closes the section"]], aria: ["Each header is a <button> inside a heading, with aria-expanded and aria-controls.", "The panel is a region labelled by its header."] },
   avatar: { keyboard: [], aria: ["Has the person's name as its accessible name (alt text or aria-label).", "Use decorative when the name is already shown next to it, so it isn't read twice."] },
   card: { keyboard: [["Tab", "Moves to the actions inside"]], aria: ["The title is a real heading (headingLevel) so cards show up in the headings list.", "If the whole card is a link, only the title is the link; actions stay separate."] },
-  divider: { keyboard: [], aria: ["role=separator (with aria-orientation=vertical when vertical). Decorative dividers inside lists are aria-hidden."] },
+  divider: { keyboard: [], aria: ["Decorative by default (aria-hidden). With semantic it becomes role=separator with aria-orientation, for a real break between groups."] },
   "list-item": { keyboard: [["Tab", "Moves to the actions in each row"]], aria: ["A <ul>/<li> list with a label; each item's title is its main text.", "Row actions are named per row, e.g. “More actions for Jane Cooper”."] },
   "table-header-cell": table,
   "table-cell": table,
-  pagination: { keyboard: [["Tab", "Moves between Previous, the page buttons and Next"], ["Enter", "Goes to that page"]], aria: ["A <nav aria-label=Pagination>.", "The current page has aria-current=page; Previous / Next are disabled at the ends.", "The summary (“Showing 1–10 of 48”) is in a live region."] },
+  pagination: { keyboard: [["Tab", "Moves to Previous page and Next page"], ["Enter / Space", "Goes to that page"]], aria: ["A <nav aria-label=Pagination>; the buttons are named “Previous page” and “Next page” and are disabled at the ends.", "“Page 2 of 5” carries aria-current=page.", "The summary (“Showing 1–10 of 48”) is a polite live region, so the change is announced."] },
   "form-section": { keyboard: [], aria: ["A <fieldset>/<section> with a heading, so screen-reader users can jump between sections."] },
   "error-summary": { keyboard: [["(on submit)", "Takes focus so the errors are read first"], ["Tab / Enter", "Each link moves focus to its field"]], aria: ["role=alert with a heading “There are N problems”.", "Each error links to the field id; the same message appears next to the field."] },
   "form-actions": { keyboard: [["Tab", "Moves to Cancel, then Save"]], aria: ["Save is never disabled; it submits and shows errors instead (WCAG 3.3.1).", "The unsaved-changes status is in a live region."] },
