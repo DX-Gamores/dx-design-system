@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./fonts";
 import "./globals.css";
+import { themeBootScript } from "@/site/theme-boot";
 
 export const metadata: Metadata = {
   title: { default: "DX Design System", template: "%s · DX Design System" },
@@ -10,6 +11,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" data-brand="default" data-theme="light" data-density="comfortable" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );
