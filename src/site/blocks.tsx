@@ -1,7 +1,9 @@
+import fs from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Badge, Icon } from "@/components/ui";
-import { coded, codeSymbol, figmaComponent, figmaEmbedUrl, figmaUrl, neighbours, specBody, specSummary, REPO, type Spec } from "./content";
+import { coded, codeSymbol, figmaComponent, figmaUrl, neighbours, specBody, specSummary, REPO, type Spec } from "./content";
 
 export function DocHeader({ eyebrow, title, summary, figmaId, children }: { eyebrow?: string; title: string; summary?: string; figmaId?: string; children?: ReactNode }) {
   return (
@@ -28,11 +30,13 @@ export function FigmaLink({ nodeId, label = "Open in Figma" }: { nodeId?: string
   );
 }
 
+export const headingId = (t: string) => t.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+
 export function Section({ id, title, description, children }: { id?: string; title: string; description?: ReactNode; children: ReactNode }) {
   return (
-    <section id={id} className="flex scroll-mt-24 flex-col gap-4">
+    <section aria-labelledby={id ?? headingId(title)} className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <h2 className="text-heading-h2">{title}</h2>
+        <h2 id={id ?? headingId(title)} data-toc={title} className="scroll-mt-24 text-heading-h2">{title}</h2>
         {description && <p className="max-w-[68ch] text-body-medium text-fg-secondary">{description}</p>}
       </div>
       {children}
@@ -128,22 +132,36 @@ export function Markdown({ html }: { html: string }) {
   return <div className="ds-prose" dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-/** A live, view-only Figma frame. Viewers need view access to the file (no paid seat); otherwise Figma asks them to sign in. */
-export function FigmaEmbed({ nodeId, title, w, h }: { nodeId: string; title: string; w: number; h: number }) {
+/** A Figma frame as a static image (exported to public/figma/<id>.png), so it shows for everyone — no Figma login.
+ *  Until a frame has been exported, a link opens it in Figma (view-only works). */
+export function FigmaFrame({ nodeId, title, w, h }: { nodeId: string; title: string; w: number; h: number }) {
+  const file = `/figma/${nodeId.replace(":", "-")}.png`;
+  const exported = fs.existsSync(path.join(process.cwd(), "public", file));
+  const base = process.env.PAGES_BASE_PATH ?? "";
+  if (exported) {
+    return (
+      <figure className="flex flex-col gap-2">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={base + file} alt={title} width={w} height={h} loading="lazy" className="h-auto w-full rounded-container border border-line-default bg-white" />
+        <figcaption className="text-caption-default text-fg-secondary">
+          From the Figma file · <a href={figmaUrl(nodeId)} className="text-fg-brand underline underline-offset-2 focus-visible:focus-ring">open the frame in Figma</a>
+        </figcaption>
+      </figure>
+    );
+  }
   return (
-    <div className="flex flex-col gap-2">
-      <div className="overflow-hidden rounded-container border border-line-default bg-surface-subtle" style={{ aspectRatio: `${w} / ${h + 48}` }}>
-        <iframe title={title} src={figmaEmbedUrl(nodeId)} loading="lazy" allowFullScreen className="size-full border-0" />
-      </div>
-      <p className="text-caption-default text-fg-secondary">
-        Live from Figma — always the current version. Doesn’t load? Sign in to Figma with your DXFORM account (view access is enough) or{" "}
-        <a href={figmaUrl(nodeId)} className="text-fg-brand underline underline-offset-2 focus-visible:focus-ring">open the frame in Figma</a>.
-      </p>
-    </div>
+    <a href={figmaUrl(nodeId)} className="flex items-center gap-3 rounded-container border border-dashed border-line-strong bg-surface-subtle p-4 hover:bg-neutral-hover focus-visible:focus-ring">
+      <Icon name="image" size={24} className="text-icon-secondary" />
+      <span className="flex flex-col">
+        <span className="text-label-medium">{title}</span>
+        <span className="text-caption-default text-fg-secondary">Open this frame in Figma (view-only, no seat needed) · {w}×{h}</span>
+      </span>
+      <Icon name="external-link" size={16} className="ms-auto text-icon-secondary" />
+    </a>
   );
 }
 
-/** Figma component set (live embed) next to where the code lives — the visual parity check. */
+/** Figma component set next to where the code lives — the visual parity check. */
 export function FigmaVsCode({ spec }: { spec: Spec }) {
   const f = figmaComponent(spec.n);
   const sym = codeSymbol(spec.slug);
@@ -157,7 +175,7 @@ export function FigmaVsCode({ spec }: { spec: Spec }) {
         <span className="ms-auto text-caption-default font-normal text-fg-secondary">{spec.vc} variant{spec.vc > 1 ? "s" : ""}{sym ? <> · code: <code className="text-code-small">{sym.split(":").pop()}</code></> : null}</span>
       </summary>
       <div className="flex flex-col gap-3 border-t border-line-default p-4">
-        <FigmaEmbed nodeId={f.id} title={`${spec.n} component set in Figma`} w={Math.max(f.w, 640)} h={f.h} />
+        <FigmaFrame nodeId={f.id} title={`${spec.n} component set in Figma`} w={f.w} h={f.h} />
         {sym && <p className="text-caption-default text-fg-secondary">Code: <a className="text-fg-brand underline underline-offset-2" href={`${REPO}/blob/main/${file}`}>{sym.split(":").pop()}</a> in <code className="text-code-small">{file}</code>. If the two disagree, Figma wins — open an issue labelled <code className="text-code-small">design-system</code>.</p>}
       </div>
     </details>

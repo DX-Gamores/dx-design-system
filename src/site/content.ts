@@ -10,6 +10,8 @@ import codedJson from "./coded.json";
 import iaJson from "./ia.json";
 import figmaComponents from "../../figma/components.figma.json";
 import figmaMeta from "../../figma/meta.json";
+import docFramesJson from "../../figma/doc-frames.json";
+import redirectsJson from "./redirects.json";
 
 const root = process.cwd();
 const read = (p: string) => fs.readFileSync(path.join(root, p), "utf8");
@@ -35,61 +37,109 @@ export const codeSymbol = (slug: string) => (codedJson.coded as Record<string, s
 export const figmaComponent = (name: string) => (figmaComponents.components as Record<string, { id: string; w: number; h: number }>)[name];
 export const meta = figmaMeta;
 
-// ── Information architecture: the same groups and order as the Figma file ──────────────
-export type NavItem = { title: string; href: string; figmaName?: string };
+// ── Information architecture (v4): task-based groups; one page per component ─────────────
+export type NavItem = { title: string; href: string; figmaName?: string; status?: "stable" | "planned" };
 export type NavGroup = { title: string; slug: string; items: NavItem[] };
+export type Category = { title: string; slug: string };
 
-const figmaGroups = iaJson.groups as [string, string, string[]][];
-const displayName = (n: string) => (n === "Foundations" ? "Color, type & space" : n.replace(/^Kit · /, ""));
-const pageSlug = (n: string) => (n === "Foundations" ? "overview" : slugify(n));
+type IA = { groups: [string, string, string[]][]; routes: Record<string, string>; primary: Record<string, string> };
+const ia = iaJson as unknown as IA;
+const figmaTitle = (n: string) => (n === "Foundations" ? "Color, type & space" : n.replace(/^Kit · /, ""));
+
+/** Component categories, in Figma order (Actions, Inputs, Feedback …). Patterns and the product kit hold components too. */
+export const categories: Category[] = ia.groups.filter(([, slug]) => slug !== "foundations").map(([title, slug]) => ({ title, slug }));
+const categoryOfPage = (page: string): Category => {
+  const g = ia.groups.find(([, , pages]) => pages.includes(page));
+  return g ? { title: g[0], slug: g[1] } : { title: "Other", slug: "other" };
+};
+
+export type ComponentPage = { slug: string; href: string; spec: Spec; category: Category; figmaPage: string; siblings: Spec[] };
+/** Every Figma component spec gets its own page at /components/<slug>/, A–Z. */
+export const componentPages: ComponentPage[] = specs
+  .map((spec) => ({
+    slug: spec.slug,
+    href: `/components/${spec.slug}/`,
+    spec,
+    category: categoryOfPage(spec.page),
+    figmaPage: spec.page,
+    siblings: specs.filter((x) => x.page === spec.page && x.slug !== spec.slug),
+  }))
+  .sort((x, y) => x.spec.n.localeCompare(y.spec.n));
+export const componentPage = (slug: string) => componentPages.find((c) => c.slug === slug);
+
+/** Where a Figma page lives on the site: its route, or the page of its main component. */
+export function figmaPageHref(page: string) {
+  if (ia.routes[page]) return ia.routes[page];
+  const slug = ia.primary[page] ?? specs.find((s) => s.page === page)?.slug;
+  return slug ? `/components/${slug}/` : undefined;
+}
+
+const figmaItem = (page: string): NavItem => ({ title: figmaTitle(page), href: ia.routes[page], figmaName: page });
 
 export const nav: NavGroup[] = [
   {
-    title: "Start here",
-    slug: "start",
+    title: "Get started",
+    slug: "docs",
     items: [
-      { title: "Overview", href: "/", figmaName: "Getting Started" },
-      { title: "Getting started", href: "/start/getting-started/" },
-      { title: "Install with the CLI", href: "/start/cli/" },
-      { title: "React Native", href: "/start/react-native/" },
-      { title: "Downloads", href: "/start/downloads/" },
-      { title: "Governance", href: "/start/governance/", figmaName: "Governance" },
-      { title: "Changelog & roadmap", href: "/start/changelog/" },
-      { title: "Working with one seat", href: "/start/workflow/" },
-      { title: "Adding a brand", href: "/start/new-brand/" },
-      { title: "Component gallery", href: "/start/gallery/" },
+      { title: "Introduction", href: "/docs/", figmaName: "Getting Started" },
+      { title: "Installation", href: "/docs/installation/" },
+      { title: "React Native", href: "/docs/react-native/" },
+      { title: "Figma to code", href: "/docs/figma-to-code/" },
+      { title: "Build with AI", href: "/docs/ai/" },
+      { title: "Downloads", href: "/docs/downloads/" },
+      { title: "Changelog", href: "/docs/changelog/" },
     ],
   },
-  ...figmaGroups.map(([title, slug, pages]) => ({
-    title,
-    slug,
-    items: pages.map((p) => ({ title: displayName(p), href: `/${slug}/${pageSlug(p)}/`, figmaName: p })),
-  })),
+  {
+    title: "Foundations",
+    slug: "foundations",
+    items: [...["Foundations", "Data Visualization", "Content Guidelines", "Localization & RTL"].map(figmaItem), { title: "Icons", href: "/icons/", figmaName: "Icons" }],
+  },
+  { title: "Tokens", slug: "tokens", items: [{ title: "Token explorer", href: "/tokens/" }] },
+  {
+    title: "Components",
+    slug: "components",
+    items: [
+      { title: "All components", href: "/components/" },
+      ...componentPages.map((c) => ({ title: c.spec.n, href: c.href, figmaName: c.figmaPage, status: coded.has(c.slug) ? ("stable" as const) : ("planned" as const) })),
+    ],
+  },
+  { title: "Patterns", slug: "patterns", items: ["Form Patterns", "AI Patterns"].map(figmaItem) },
+  { title: "Templates", slug: "product-kit", items: [...["Templates", "Starter & Empty States", "Examples"].map(figmaItem), { title: "Starter app", href: "/starter/" }] },
+  { title: "Themes", slug: "themes", items: [{ title: "Themes & brands", href: "/themes/", figmaName: "Themes & Brands" }, { title: "Adding a brand", href: "/themes/adding-a-brand/" }] },
+  {
+    title: "Contribute",
+    slug: "contribute",
+    items: [
+      { title: "Governance", href: "/contribute/governance/", figmaName: "Governance" },
+      { title: "Working with one seat", href: "/contribute/workflow/" },
+      { title: "Cleanup checklist", href: "/contribute/cleanup/" },
+    ],
+  },
 ];
 
-export const flatNav = nav.flatMap((g) => g.items.map((i) => ({ ...i, group: g.title })));
+export const flatNav = nav.flatMap((g) => g.items.filter((i) => !i.href.startsWith("/starter")).map((i) => ({ ...i, group: g.title })));
 export function neighbours(href: string) {
   const i = flatNav.findIndex((n) => n.href === href);
   return { prev: i > 0 ? flatNav[i - 1] : null, next: i >= 0 && i < flatNav.length - 1 ? flatNav[i + 1] : null };
 }
 
-export type DocPage = {
-  group: NavGroup;
-  item: NavItem;
-  figma: FigmaPage;
-  specs: Spec[];
-};
+export type DocPage = { group: NavGroup; item: NavItem; figma: FigmaPage; specs: Spec[] };
+/** Figma pages rendered by the generic /[group]/[page]/ route (foundations, patterns, templates). */
 export function docPages(): DocPage[] {
-  return nav.slice(1).flatMap((group) =>
-    group.items.map((item) => ({
-      group,
-      item,
-      figma: figmaPages[item.figmaName!],
-      specs: specs.filter((s) => s.page === item.figmaName),
-    })),
+  return nav.flatMap((group) =>
+    group.items
+      .filter((item) => item.figmaName && /^\/(foundations|patterns|product-kit)\/[^/]+\/$/.test(item.href))
+      .map((item) => ({ group, item, figma: figmaPages[item.figmaName!], specs: specs.filter((s) => s.page === item.figmaName) })),
   );
 }
 export const figmaPage = (name: string) => figmaPages[name];
+type Frame = { id: string; w: number; h: number };
+/** Numbered documentation frames on a Figma page (Anatomy, States, Do & don't, Accessibility). */
+export const docFrames = (page: string) => ((docFramesJson.pages as Record<string, Partial<Record<"anatomy" | "states" | "doDont" | "accessibility", Frame>>>)[page] ?? {});
+
+/** v3 URL → v4 URL, generated by scripts/build-docs-data.mjs (every v3 route still exists or redirects; see tests/redirects.spec.ts). */
+export const redirects = (): [string, string][] => redirectsJson as [string, string][];
 
 // ── Markdown ───────────────────────────────────────────────────────────────────────────
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -105,16 +155,19 @@ export function renderMarkdown(source: string, { shift = 0 }: { shift?: number }
     },
   });
   // Wrap tables so they scroll sideways on small screens while still filling the width.
-  return (local.parse(source, { async: false }) as string).replace(/<table>/g, '<div class="ds-table"><table>').replace(/<\/table>/g, "</table></div>");
+  return (local.parse(source, { async: false }) as string)
+    // GFM task lists: show the box as text (an unlabelled disabled checkbox fails WCAG 4.1.2)
+    .replace(/<input (?:checked="" )?disabled="" type="checkbox">/g, (m) => `<span aria-hidden="true">${m.includes("checked") ? "☑" : "☐"}</span>`)
+    .replace(/<table>/g, '<div class="ds-table"><table>').replace(/<\/table>/g, "</table></div>");
 }
 
 function mapLink(href: string) {
   const doc: Record<string, string> = {
-    "WORKFLOW.md": "/start/workflow/", "docs/WORKFLOW.md": "/start/workflow/",
-    "NEW-BRAND.md": "/start/new-brand/", "docs/NEW-BRAND.md": "/start/new-brand/",
-    "GETTING-STARTED.md": "/start/getting-started/", "docs/GETTING-STARTED.md": "/start/getting-started/",
-    "INSTALL.md": "/start/cli/", "docs/INSTALL.md": "/start/cli/",
-    "REACT-NATIVE.md": "/start/react-native/", "docs/REACT-NATIVE.md": "/start/react-native/",
+    "WORKFLOW.md": "/contribute/workflow/", "docs/WORKFLOW.md": "/contribute/workflow/",
+    "NEW-BRAND.md": "/themes/adding-a-brand/", "docs/NEW-BRAND.md": "/themes/adding-a-brand/",
+    "GETTING-STARTED.md": "/docs/figma-to-code/", "docs/GETTING-STARTED.md": "/docs/figma-to-code/",
+    "INSTALL.md": "/docs/installation/", "docs/INSTALL.md": "/docs/installation/",
+    "REACT-NATIVE.md": "/docs/react-native/", "docs/REACT-NATIVE.md": "/docs/react-native/",
   };
   const base = process.env.PAGES_BASE_PATH ?? ""; // Markdown links aren't next/link, so add the Pages base path here
   if (doc[href]) return base + doc[href];
@@ -149,7 +202,7 @@ export function stats() {
   const brand = vars.find((c) => c.n === "Brand");
   const color = vars.find((c) => c.n === "Color");
   return {
-    pages: docPages().length,
+    pages: Object.keys(figmaPages).length,
     specs: specs.length,
     coded: specs.filter((s) => coded.has(s.slug)).length,
     variables: vars.reduce((n, c) => n + c.v.length, 0),

@@ -1,5 +1,5 @@
 {
- "_": "Docs-site sidebar: the same groups and order as the Figma file. Checked against figma/pages.json by npm run check.",
+ "_": "Docs-site information architecture. groups = the Figma file's sections (component categories, in Figma order). routes = where each Figma page that isn't a component page lives on the site. primary = which component a Figma component page redirects to (default: its first spec). Checked by npm run check.",
  "groups": [
   [
    "Foundations",
@@ -101,8 +101,30 @@
    ]
   ]
  ],
- "startPages": [
-  "Getting Started",
-  "Governance"
- ]
+ "routes": {
+  "Getting Started": "/docs/",
+  "Governance": "/contribute/governance/",
+  "Foundations": "/foundations/overview/",
+  "Data Visualization": "/foundations/data-visualization/",
+  "Content Guidelines": "/foundations/content-guidelines/",
+  "Localization & RTL": "/foundations/localization-and-rtl/",
+  "Icons": "/icons/",
+  "Themes & Brands": "/themes/",
+  "Form Patterns": "/patterns/form-patterns/",
+  "AI Patterns": "/patterns/ai-patterns/",
+  "Templates": "/product-kit/templates/",
+  "Starter & Empty States": "/product-kit/starter-and-empty-states/",
+  "Examples": "/product-kit/examples/"
+ },
+ "primary": {
+  "Menu": "menu",
+  "Navigation": "app-header",
+  "Tabs": "tabs",
+  "Date Picker": "date-field",
+  "Popover & Drawer": "popover",
+  "Lists & Tables": "table-cell",
+  "Loading": "spinner",
+  "Form Patterns": "form-section",
+  "AI Patterns": "ai-response"
+ }
 }

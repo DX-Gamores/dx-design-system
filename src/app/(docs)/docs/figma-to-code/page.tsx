@@ -1,16 +1,16 @@
 import { MdPage } from "@/site/md-page";
 
-export const metadata = { title: "Getting started" };
+export const metadata = { title: "Figma to code" };
 
 const install = `## 0. Install
 
-**Fastest: the CLI.** In a Next.js project with \`components.json\`, one command adds tokens, fonts and a component as code you own. See [Install with the CLI](/start/cli/).
+**Fastest: the CLI.** In a Next.js project with \`components.json\`, one command adds tokens, fonts and a component as code you own. See [Install with the CLI](/docs/installation/).
 
 \`\`\`bash
 npx shadcn@latest add https://dx-design-system.vercel.app/r/v4/init.json https://dx-design-system.vercel.app/r/v4/button.json
 \`\`\`
 
-Mobile apps use one token file instead: see [React Native](/start/react-native/).
+Mobile apps use one token file instead: see [React Native](/docs/react-native/).
 
 ### Or install from GitHub
 
@@ -63,8 +63,8 @@ export default function Page() {
   return (
     <MdPage
       file="docs/GETTING-STARTED.md"
-      href="/start/getting-started/"
-      title="Getting started"
+      href="/docs/figma-to-code/"
+      title="Figma to code"
       summary="Install the tokens, map Figma names to code, and build a component the way the spec describes."
       before={install}
     />

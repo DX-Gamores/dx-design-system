@@ -113,7 +113,7 @@ Put \`data-brand\` and \`data-theme\` on the same element.`)}
             <li key={t}><Panel className="flex h-full flex-col gap-2"><span className="flex items-center gap-2 text-label-large"><span className="grid size-6 shrink-0 place-items-center rounded-full bg-brand-subtle text-label-small text-fg-brand">{i + 1}</span>{t}</span><span className="text-body-small text-fg-secondary">{d}</span></Panel></li>
           ))}
         </ol>
-        <Link href="/start/new-brand/" className="w-fit text-label-medium text-fg-brand underline underline-offset-2">Full guide: Adding a brand →</Link>
+        <Link href="/themes/adding-a-brand/" className="w-fit text-label-medium text-fg-brand underline underline-offset-2">Full guide: Adding a brand →</Link>
       </Section>
     </>
   );

@@ -17,7 +17,7 @@ const groups: { title: string; description: string; files: string[] }[] = [
 const ai: [string, string, string][] = [
   ["llms.txt", `${base}/llms.txt`, "Index of every page with a one-line summary, for AI assistants."],
   ["llms-full.txt", `${base}/llms-full.txt`, "The whole site as one Markdown file."],
-  ["Markdown pages", `${base}/md/actions/button.md`, "Every page has a Markdown twin at /md/<group>/<page>.md (example: Button)."],
+  ["Markdown pages", `${base}/md/components/button.md`, "Every page has a Markdown twin at /md/<path>.md (example: Button)."],
   ["AGENTS.dx.md", `${REGISTRY}/agents.json`, "Rules for Claude, Cursor, Copilot and Codex. Install: npx shadcn@latest add " + `${REGISTRY}/agents.json`],
   ["Registry index", `${base}/r/v4/registry.json`, "Every installable item (init, components, modules, app shell) as JSON."],
 ];
@@ -25,7 +25,7 @@ const ai: [string, string, string][] = [
 export default function Downloads() {
   return (
     <>
-      <DocHeader eyebrow="Start here" title="Downloads" summary={`Everything in v${VERSION} as files: tokens in every format, icons, the starter app, and docs for AI assistants. No Figma seat needed.`} />
+      <DocHeader eyebrow="Get started" title="Downloads" summary={`Everything in v${VERSION} as files: tokens in every format, icons, the starter app, and docs for AI assistants. No Figma seat needed.`} />
       {groups.map((g) => (
         <Section key={g.title} title={g.title} description={g.description}>
           <ul className="grid gap-3 md:grid-cols-2">
@@ -65,7 +65,7 @@ export default function Downloads() {
           <span className="text-fg-secondary"> · dx-docs-offline.zip, plus the files above</span>
         </p>
       </Section>
-      <PrevNext href="/start/downloads/" />
+      <PrevNext href="/docs/downloads/" />
     </>
   );
 }

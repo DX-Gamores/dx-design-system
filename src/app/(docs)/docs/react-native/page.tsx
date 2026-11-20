@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <MdPage
       file="docs/REACT-NATIVE.md"
-      href="/start/react-native/"
+      href="/docs/react-native/"
       title="React Native"
       summary="One dependency-free theme file with every DX token resolved for each brand, color mode and density."
     />

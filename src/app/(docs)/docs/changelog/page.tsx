@@ -11,7 +11,7 @@ const statusTone: Record<RoadItem["status"], "success" | "info" | "neutral" | "w
 export default function Changelog() {
   return (
     <>
-      <DocHeader eyebrow="Start here" title="Changelog & roadmap" summary="Every release on one line, and what comes next. Figma, tokens and code share one version number." />
+      <DocHeader eyebrow="Get started" title="Changelog & roadmap" summary="Every release on one line, and what comes next. Figma, tokens and code share one version number." />
       <Section title="Roadmap" description="Yellow items need a decision or access from the design-system owner. S / M / L = rough effort.">
         <div className="flex flex-col gap-6">
           {roadmap.map((lane) => (
@@ -48,7 +48,7 @@ export default function Changelog() {
           ))}
         </ol>
       </Section>
-      <PrevNext href="/start/changelog/" />
+      <PrevNext href="/docs/changelog/" />
     </>
   );
 }

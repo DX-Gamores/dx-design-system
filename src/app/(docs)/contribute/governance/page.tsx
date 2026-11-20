@@ -136,7 +136,7 @@ export default function Governance() {
       </Section>
 
       <FigmaOutline sections={fig.sections} nodeId={fig.id} />
-      <PrevNext href="/start/governance/" />
+      <PrevNext href="/contribute/governance/" />
     </>
   );
 }
