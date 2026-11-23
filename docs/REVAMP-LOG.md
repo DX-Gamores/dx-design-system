@@ -11,7 +11,7 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 - Phase: **3b · Theme builder — code complete on `revamp/phase-3b`** (see the 2026-11-23 · Phase 3b entry). With it, Phase 3 is done: Blocks (3a, PR #7) are merged and live.
 - **Gate G3:** the made-up pilot brand **Mangrove** passes all 27 contrast pairs in light, dark, light-hc and dark-hc (108/108) and installs as `@dx/theme-mangrove`. A real client brand can be added the same way (builder → "Add to the gallery").
-- CI's freshness check doesn't list `src/blocks/index.ts` yet (needs the `workflow` scope to edit `.github/workflows/ci.yml`); everything the theme work generates is under `dist/` and `public/r/`, which it does check.
+- CI's freshness check now covers `src/blocks/index.ts` (Gab edited `.github/workflows/ci.yml` on GitHub, commit `60da0c7`); everything the theme work generates is under `dist/` and `public/r/`, which it also checks.
 - Waiting on network permission: `ui.shadcn.com` and `*.vercel.app` (real CLI test from the AI session). `www.figma.com` is blocked for the AI session, so image refreshes run from Gab's Mac with a script.
 - Still open: DX custom icons Lucide lacks; custom domain; brand guide and logo; moving the 3 working pages to a "DX Workshop" Figma file; a "DX Blocks & Templates" Figma file; importing gallery brands into Figma (Phase 4).
 - Next up: Phase 4 · Figma and launch (code syntax on variables, variant cleanup, Blocks page in Figma, Project Starter, v4.0.0).
@@ -66,7 +66,7 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 **Not done / notes**
 
-- CI's "generated files are fresh" check doesn't list `src/blocks/index.ts` yet: changing workflow files needs the `workflow` scope on the `gh` login, which was removed. Add it to the `git diff --exit-code` list in `.github/workflows/ci.yml` next time that scope is on.
+- CI's "generated files are fresh" check didn't list `src/blocks/index.ts` at merge time (workflow edits need the `workflow` scope). Fixed afterwards in `60da0c7`.
 - Visual regression doesn't cover blocks yet (would add 31 baselines); add after the Figma "DX Blocks & Templates" file exists.
 - Sidebar component page still documents the AppShell as its main example; the composable Sidebar is the second example.
 - Real `npx shadcn add @dx/<block>` from the AI session still needs `ui.shadcn.com`; the install simulation above covers file layout and imports.
