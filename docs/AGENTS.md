@@ -26,6 +26,7 @@ Docs for AI: https://dx-design-system.vercel.app/llms.txt (index) and https://dx
 ## Theming
 
 - Brand, color mode and density are attributes on `<html>`: `data-brand` (`default`, `violet`, `amber`, or a client brand), `data-theme` (`light`, `dark`, `light-hc`, `dark-hc`), `data-density` (`comfortable`, `compact`). Don't use a `.dark` class.
+- Client brands come from the theme builder (https://dx-design-system.vercel.app/themes/builder/) and install as `npx shadcn@latest add https://dx-design-system.vercel.app/r/v4/theme-<brand>.json`. Never hard-code brand colours; change the brand, not the components.
 - Anything you build must work in all four color modes and both densities. Don't set fixed heights on controls; use `h-control-sm|md|lg`.
 
 ## Icons

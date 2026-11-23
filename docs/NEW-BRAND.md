@@ -1,6 +1,16 @@
 # Adding a brand (new product or client)
 
-Every component reads colours, fonts and corner radius from the **Brand** layer, so a new brand is one new mode, not a redesign.
+Every component reads colours, fonts and corner radius from the **Brand** layer, so a new brand is one new set of Brand values, not a redesign.
+
+## With the theme builder (no Figma seat needed)
+
+1. Open the [theme builder](https://dx-design-system.vercel.app/themes/builder/) and pick the primary colour, accent, neutrals, fonts, corners and density.
+2. Check the contrast badge: all 27 pairs must pass in light, dark and both high-contrast modes. The builder already fixes what it can (dark text on light brand colours, a darker step for the focus ring).
+3. Choose **Add to the gallery**. It opens a pre-filled `themes/<brand>.json` on GitHub; commit it on a branch and open a pull request. `npm run brands` rebuilds the gallery and fails if contrast doesn't pass.
+4. Once merged, projects install it with `npx shadcn@latest add @dx/theme-<brand>` and set `<html data-brand="<brand>">`.
+5. For Figma, the **Tokens · Figma** export is DTCG JSON with the Brand-collection names; the design lead imports it as a mode when the brand needs design work.
+
+For a one-off project, the **CSS** export alone is enough: import it after the DX tokens and set `data-brand`.
 
 ## In Figma (design, one seat)
 

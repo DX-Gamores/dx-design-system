@@ -60,7 +60,7 @@ function OnThisPage({ path }: { path: string }) {
 
 export function DocsShell({ nav, searchIndex, version, repo, figma, syncedAt, parity, children }: { nav: NavGroup[]; searchIndex: SearchEntry[]; version: string; repo: string; figma: string; syncedAt: string; parity: string; children: ReactNode }) {
   const path = usePathname();
-  const wide = norm(path).startsWith("/blocks/"); // block previews need the room
+  const wide = norm(path).startsWith("/blocks/") || norm(path) === "/themes/builder/"; // previews need the room
   useCodeCopy(path);
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");

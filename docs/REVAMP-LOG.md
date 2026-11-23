@@ -9,11 +9,39 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 ## Where we left off
 
-- Phase: **3a · Blocks — code complete on `revamp/phase-3a`** (see the 2026-11-23 entry). Phase 2 and the Figma images (91 frames, PR #6) are merged and live.
-- Phase 3 ships as two PRs (Gab's call): 3a Blocks, then 3b the theme builder with a made-up pilot brand (G3: passes contrast in 4 modes and installs as `@dx/theme-<brand>`). A real client brand can replace the pilot later.
+- Phase: **3b · Theme builder — code complete on `revamp/phase-3b`** (see the 2026-11-23 · Phase 3b entry). With it, Phase 3 is done: Blocks (3a, PR #7) are merged and live.
+- **Gate G3:** the made-up pilot brand **Mangrove** passes all 27 contrast pairs in light, dark, light-hc and dark-hc (108/108) and installs as `@dx/theme-mangrove`. A real client brand can be added the same way (builder → "Add to the gallery").
+- CI's freshness check now covers `src/blocks/index.ts` (Gab edited `.github/workflows/ci.yml` on GitHub, commit `60da0c7`); everything the theme work generates is under `dist/` and `public/r/`, which it also checks.
 - Waiting on network permission: `ui.shadcn.com` and `*.vercel.app` (real CLI test from the AI session). `www.figma.com` is blocked for the AI session, so image refreshes run from Gab's Mac with a script.
-- Still open: DX custom icons Lucide lacks; custom domain; brand guide and logo; moving the 3 working pages to a "DX Workshop" Figma file; a "DX Blocks & Templates" Figma file that mirrors the site's blocks (Phase 4).
-- Next up: Phase 3b · theme builder.
+- Still open: DX custom icons Lucide lacks; custom domain; brand guide and logo; moving the 3 working pages to a "DX Workshop" Figma file; a "DX Blocks & Templates" Figma file; importing gallery brands into Figma (Phase 4).
+- Next up: Phase 4 · Figma and launch (code syntax on variables, variant cleanup, Blocks page in Figma, Project Starter, v4.0.0).
+
+---
+
+## 2026-11-23 · Phase 3b · Theme builder and brand gallery
+
+**Decisions (Gab):** the G3 pilot brand is made up for now (Mangrove: green #2f7d4f, amber accent, stone neutrals, Plus Jakarta Sans, large corners).
+
+**Code (branch `revamp/phase-3b`, on top of `main` ca6ccbc)**
+
+| Change | Files |
+| --- | --- |
+| Theme engine (pure TypeScript, no imports): OKLCH ramps that hold the seed colour exactly, sRGB gamut mapping, role picking that fixes its own contrast (dark text on light brands, a darker focus ring, a 7:1 step for high contrast), the 27-pair audit in all four modes resolved from the Figma variables, and outputs (CSS, DTCG/Figma, React Native), share-link encoding | `src/lib/theme/engine.ts` |
+| Theme builder page: start from a brand, name, primary, accent (ramp or hex), neutrals (gray / slate / zinc / stone / neutral / tinted), heading and body font (10 Fontsource families), control and card corners, density; live contrast badge and notes, ramps with role markers, a preview in all four modes, contrast details per mode, exports (install, CSS, Tokens · Figma, React Native, settings), share link, "Add to the gallery" (pre-filled `themes/<brand>.json` on GitHub) | `src/site/theme-builder.tsx`, `src/site/theme-presets.ts`, `src/app/(docs)/themes/builder/page.tsx` |
+| Brand gallery: `themes/*.json` → `npm run brands` → `dist/brands/<slug>.css/.tokens.json/.native.ts`, `dist/brands.css`, `gallery.json`; **fails the build if a brand doesn't pass 108/108** | `themes/`, `scripts/build-brands.mjs`, `package.json` (`brands`, in `build:all`) |
+| Registry: `@dx/theme-<brand>` items (brand CSS → `styles/`, React Native → `lib/`, DTCG → `tokens/`, Fontsource dependency and CSS imports); brand CSS uses `:root[data-brand]` so it wins over the default brand wherever it's imported | `scripts/build-registry.mjs`, `public/r/v4/theme-mangrove.json` |
+| Site: Theme builder and Brand gallery pages and nav, wide layout for the builder, gallery brands in Customize and across the site, `?brand=` / `?theme=` / `?density=` on block previews, Markdown twins, AGENTS.md and "Adding a brand" lead with the builder | `src/app/(docs)/themes/gallery/page.tsx`, `src/site/customize.tsx`, `src/site/content.ts`, `src/site/docs-shell.tsx`, `src/site/view-params.tsx`, `src/app/view/layout.tsx`, `src/app/globals.css`, `src/app/fonts.ts`, `src/site/llms.ts`, `docs/NEW-BRAND.md`, `docs/AGENTS.md` |
+| Tests: engine (ramps hold the seed and darken step by step; 27 sample brand/neutral combinations pass 108/108; dark text on light brands; share links round-trip), G3 (every gallery brand 108/108; `theme-mangrove` registry item; axe on a dashboard block in Mangrove in all four modes), builder (light primary flips to dark text; share link restores settings; "Add to the gallery" link), gallery page | `tests/themes.spec.ts` |
+
+**Verified:** `npm run build:all` (no diff after commit), `npm run check`, `npm run build:pages`, functional tests (see PR), axe on the builder and gallery pages in light and dark. `@dx/init` + `@dx/theme-mangrove` installed from the registry JSON into an empty project: files land in `styles/`, `lib/`, `tokens/`, the React Native file type-checks.
+
+**Not done / notes**
+
+- Built-in presets in the builder are regenerated from a seed, so they are close to Default / Violet / Amber but not identical; the gallery page shows the real built-in ramps.
+- Figma import of a gallery brand is manual for now (DTCG export + a variables plugin, or Claude with `use_figma` once Gab says go).
+- Fonts outside the 10 offered need a licence from the client; add them to `FONTS` in the engine and as a Fontsource dependency.
+
+**Cleanup:** screenshots and the install simulation are in the AI session's scratch space, outside the repo; no credentials used. Left for Gab: delete branches `revamp/phase-3a` and `revamp/cleanup-process` on GitHub if still there.
 
 ---
 
@@ -38,7 +66,7 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 **Not done / notes**
 
-- CI's "generated files are fresh" check doesn't list `src/blocks/index.ts` yet: changing workflow files needs the `workflow` scope on the `gh` login, which was removed. Add it to the `git diff --exit-code` list in `.github/workflows/ci.yml` next time that scope is on.
+- CI's "generated files are fresh" check didn't list `src/blocks/index.ts` at merge time (workflow edits need the `workflow` scope). Fixed afterwards in `60da0c7`.
 - Visual regression doesn't cover blocks yet (would add 31 baselines); add after the Figma "DX Blocks & Templates" file exists.
 - Sidebar component page still documents the AppShell as its main example; the composable Sidebar is the second example.
 - Real `npx shadcn add @dx/<block>` from the AI session still needs `ui.shadcn.com`; the install simulation above covers file layout and imports.

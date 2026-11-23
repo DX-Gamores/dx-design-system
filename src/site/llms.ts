@@ -3,6 +3,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { blockCategories, blocks } from "@/blocks";
+import { FONTS } from "@/lib/theme/engine";
+import gallery from "../../dist/brands/gallery.json";
 import { coded, componentPage, docPages, figmaPage, figmaUrl, flatNav, nav, specs, specSummary, VERSION } from "./content";
 import { releases } from "./changelog";
 import componentData from "./component-data.json";
@@ -37,6 +39,8 @@ const other: Record<string, string> = {
   "/tokens/": "Every design token: tiers, names and values per brand and color mode.",
   "/icons/": "The DX icon set (Lucide): names and how to use any Lucide icon.",
   "/themes/": figmaPage("Themes & Brands")?.summary ?? "",
+  "/themes/builder/": "Make a client brand in the browser: primary colour, accent, neutrals, fonts and corners → colour ramps, a 27-pair × 4-mode contrast check, and exports (CSS, DTCG/Figma, React Native, registry).",
+  "/themes/gallery/": "Brands made with the theme builder, installable as @dx/theme-<brand>, plus the three built-in brands.",
   "/contribute/governance/": figmaPage("Governance")?.summary ?? "",
 };
 
@@ -105,6 +109,12 @@ export function pageMarkdown(href: string): string {
       const item = JSON.parse(read(`public/r/v4/${b.name}.json`)) as { files: { target: string }[] };
       return `## ${b.name} · ${b.title}\n\n${b.description}\n\n\`\`\`bash\nnpx shadcn@latest add @dx/${b.name}\n\`\`\`\n\nPreview: ${HOST}/view/${b.name}/ · Files: ${item.files.map((f) => f.target).join(", ")}`;
     }).join("\n\n") + "\n";
+  }
+  if (href === "/themes/builder/") {
+    return head(summaryOf(href)) + `Open ${HOST}/themes/builder/ in a browser. Settings: name, primary (hex), accent (a primitive ramp or hex), neutrals (gray, slate, zinc, stone, neutral, tinted), heading and body font (${FONTS.map((f) => f.family).join(", ")}), control and card corners, density. Share links keep the settings in the URL.\n\nRules: buttons use the seed's step with white text if that reaches 4.5:1, otherwise dark text (like Amber); high contrast needs 7:1; the focus ring needs 3:1 on white and the page background. Text pairs need 4.5:1 (7:1 in high contrast), UI parts 3:1 (4.5:1).\n`;
+  }
+  if (href === "/themes/gallery/") {
+    return head(summaryOf(href)) + gallery.map((g) => `- **${g.name}** (\`data-brand="${g.slug}"\`): \`npx shadcn@latest add ${REGISTRY}/theme-${g.slug}.json\` — ${g.input.headingFont}, primary ${g.input.primary}, ${g.passed}/${g.total} contrast checks`).join("\n") + "\n- Built in: default (Inter), violet (Manrope), amber (Poppins)\n";
   }
   if (href === "/tokens/") {
     return head(summaryOf(href)) + `Tiers: Primitive (color/blue/600) → Brand (brand/primary/600) → Semantic (color/bg/brand) → Component (button/primary/bg). Components read Semantic and Component tokens only.\n\nCSS: \`var(--ds-color-bg-surface)\` · Tailwind: \`bg-surface\`, \`text-fg-secondary\`, \`border-line-default\`, \`rounded-control\` · React Native: \`theme.colors.bg.surface\`.\n\nAll tokens as DTCG JSON: ${HOST}/downloads/dx-tokens.json\n`;

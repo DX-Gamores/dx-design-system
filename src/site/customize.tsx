@@ -4,11 +4,12 @@ import { Button, IconButton } from "@/components/ui/button";
 import { RadioGroup, Toggle } from "@/components/ui/form";
 import { SegmentedControl } from "@/components/ui/navigation";
 import { Popover } from "@/components/ui/overlays";
+import gallery from "../../dist/brands/gallery.json";
 
 /* Brand, contrast, density and dark mode for the whole site. Same storage as the starter app and templates
    (localStorage "ds-theme"), so a choice made here follows you into every preview and screen. */
 
-type Brand = "default" | "violet" | "amber";
+type Brand = string;
 type Density = "comfortable" | "compact";
 type Settings = { brand: Brand; dark: boolean; hc: boolean; density: Density };
 const DEFAULTS: Settings = { brand: "default", dark: false, hc: false, density: "comfortable" };
@@ -79,6 +80,7 @@ export function Customize() {
           { value: "default", label: "Default · Inter" },
           { value: "violet", label: "Violet · Manrope" },
           { value: "amber", label: "Amber · Poppins" },
+          ...gallery.map((g) => ({ value: g.slug, label: `${g.name} · ${g.input.headingFont}` })),
         ]}
       />
       <div className="[&_[role=radio]]:min-w-fit"><SegmentedControl label="Density" size="sm" value={s.density} onChange={(v) => set({ density: v })} options={[{ value: "comfortable", label: "Comfortable" }, { value: "compact", label: "Compact" }]} /></div>
