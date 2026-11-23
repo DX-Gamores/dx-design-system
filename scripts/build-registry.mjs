@@ -14,6 +14,7 @@
 //   <component>     one per Figma component (63); pulls in the module that implements it
 //   app-shell       AppShell, PageHeader, ThemeSwitcher (Next.js)
 //   <block>         one per block in src/blocks (sidebar-07, dashboard-01 …): a page plus the parts it uses
+//   theme-<brand>   one per gallery brand (themes/*.json → dist/brands/): brand CSS, fonts, React Native and DTCG files
 import fs from "node:fs";
 import path from "node:path";
 
@@ -182,6 +183,31 @@ for (const name of blockNames) {
   });
 }
 
+// ---------- brand themes from the gallery (run `npm run brands` first)
+const galleryPath = path.join(root, "dist/brands/gallery.json");
+const gallery = fs.existsSync(galleryPath) ? JSON.parse(fs.readFileSync(galleryPath, "utf8")) : [];
+for (const g of gallery) {
+  items.push({
+    name: `theme-${g.slug}`,
+    type: "registry:item",
+    title: `Brand · ${g.name}`,
+    description: `The “${g.name}” brand for DX (${g.input.headingFont}${g.input.bodyFont !== g.input.headingFont ? ` / ${g.input.bodyFont}` : ""}, primary ${g.input.primary}). Passes ${g.passed}/${g.total} contrast checks across light, dark and both high-contrast modes. Set <html data-brand="${g.slug}">.`,
+    dependencies: g.fonts.map((f) => `@fontsource/${f}`),
+    registryDependencies: [url("init")],
+    files: [
+      fileEntry(`dist/brands/${g.slug}.css`, "registry:file", `styles/dx-brand-${g.slug}.css`),
+      fileEntry(`dist/brands/${g.slug}.native.ts`, "registry:lib", `lib/dx-brand-${g.slug}.ts`),
+      fileEntry(`dist/brands/${g.slug}.tokens.json`, "registry:file", `tokens/dx-brand-${g.slug}.tokens.json`),
+    ],
+    css: {
+      ...Object.fromEntries(g.fonts.flatMap((f) => [400, 500, 600, 700].map((w) => [`@import "@fontsource/${f}/${w}.css"`, {}]))),
+      [`@import "../styles/dx-brand-${g.slug}.css"`]: {},
+    },
+    docs: `Brand “${g.name}” installed. Set <html data-brand="${g.slug}" data-density="${g.input.density}">. Edit it: ${HOST}/themes/builder/?brand=${g.slug}`,
+    meta: { brand: g.slug, density: g.input.density },
+  });
+}
+
 // ---------- write manifest (source paths) and built items (with file contents)
 const manifest = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
@@ -208,4 +234,5 @@ fs.writeFileSync(
 );
 const comps = items.filter((i) => i.type === "registry:ui" && !i.name.startsWith("ui-")).length;
 const nBlocks = items.filter((i) => i.type === "registry:block").length;
-console.log(`✓ Registry: init + ${moduleFiles.length} modules + app-shell + ${comps} components + ${nBlocks} blocks → registry.json, public/r/v${major}/ (${BASE})`);
+const nThemes = items.filter((i) => i.name.startsWith("theme-")).length;
+console.log(`✓ Registry: init + ${moduleFiles.length} modules + app-shell + ${comps} components + ${nBlocks} blocks + ${nThemes} brand themes → registry.json, public/r/v${major}/ (${BASE})`);

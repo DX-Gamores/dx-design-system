@@ -2864,6 +2864,39 @@
           "target": "components/page-placeholder.tsx"
         }
       ]
+    },
+    {
+      "name": "theme-mangrove",
+      "type": "registry:item",
+      "title": "Brand · Mangrove",
+      "description": "The “Mangrove” brand for DX (Plus Jakarta Sans, primary #2f7d4f). Passes 108/108 contrast checks across light, dark and both high-contrast modes. Set <html data-brand=\"mangrove\">.",
+      "dependencies": [
+        "@fontsource/plus-jakarta-sans"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json"
+      ],
+      "meta": {
+        "brand": "mangrove",
+        "density": "comfortable"
+      },
+      "files": [
+        {
+          "path": "dist/brands/mangrove.css",
+          "type": "registry:file",
+          "target": "styles/dx-brand-mangrove.css"
+        },
+        {
+          "path": "dist/brands/mangrove.native.ts",
+          "type": "registry:lib",
+          "target": "lib/dx-brand-mangrove.ts"
+        },
+        {
+          "path": "dist/brands/mangrove.tokens.json",
+          "type": "registry:file",
+          "target": "tokens/dx-brand-mangrove.tokens.json"
+        }
+      ]
     }
   ]
 }

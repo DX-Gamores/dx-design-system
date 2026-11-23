@@ -1,0 +1,238 @@
+{
+  "$description": "DX brand “Mangrove” (data-brand=\"mangrove\") — Figma collection: Brand, mode: Mangrove",
+  "brand": {
+    "primary": {
+      "50": {
+        "$type": "color",
+        "$value": "#f2f6f3"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#e2ebe4"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#ccddd1"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#abcab4"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#7eae8d"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#57976e"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#2f7d4f"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#227144"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#1f5c38"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#244c33"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#192f21"
+      }
+    },
+    "accent": {
+      "50": {
+        "$type": "color",
+        "$value": "#fffbeb"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#fef3c7"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#fde68a"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#fcd34d"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#fbbf24"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#f59e0b"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#d97706"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#b45309"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#92400e"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#78350f"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#451a03"
+      }
+    },
+    "neutral": {
+      "50": {
+        "$type": "color",
+        "$value": "#fafaf9"
+      },
+      "100": {
+        "$type": "color",
+        "$value": "#f5f5f4"
+      },
+      "200": {
+        "$type": "color",
+        "$value": "#e7e5e4"
+      },
+      "300": {
+        "$type": "color",
+        "$value": "#d6d3d1"
+      },
+      "400": {
+        "$type": "color",
+        "$value": "#a8a29e"
+      },
+      "500": {
+        "$type": "color",
+        "$value": "#78716c"
+      },
+      "600": {
+        "$type": "color",
+        "$value": "#57534e"
+      },
+      "700": {
+        "$type": "color",
+        "$value": "#44403c"
+      },
+      "800": {
+        "$type": "color",
+        "$value": "#292524"
+      },
+      "900": {
+        "$type": "color",
+        "$value": "#1c1917"
+      },
+      "950": {
+        "$type": "color",
+        "$value": "#0c0a09"
+      }
+    },
+    "role": {
+      "solid": {
+        "$type": "color",
+        "$value": "#2f7d4f"
+      },
+      "solid-hover": {
+        "$type": "color",
+        "$value": "#227144"
+      },
+      "solid-pressed": {
+        "$type": "color",
+        "$value": "#1f5c38"
+      },
+      "on-solid": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "solid-hc": {
+        "$type": "color",
+        "$value": "#1f5c38"
+      },
+      "solid-hc-hover": {
+        "$type": "color",
+        "$value": "#244c33"
+      },
+      "on-solid-hc": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "focus": {
+        "$type": "color",
+        "$value": "#2f7d4f"
+      }
+    }
+  },
+  "font-family": {
+    "heading": {
+      "$type": "fontFamily",
+      "$value": "Plus Jakarta Sans"
+    },
+    "body": {
+      "$type": "fontFamily",
+      "$value": "Plus Jakarta Sans"
+    },
+    "mono": {
+      "$type": "fontFamily",
+      "$value": "Roboto Mono"
+    }
+  },
+  "font-style": {
+    "heading-semibold": {
+      "$type": "fontWeight",
+      "$value": 600
+    },
+    "heading-bold": {
+      "$type": "fontWeight",
+      "$value": 700
+    },
+    "body-regular": {
+      "$type": "fontWeight",
+      "$value": 400
+    },
+    "body-medium": {
+      "$type": "fontWeight",
+      "$value": 500
+    },
+    "mono-regular": {
+      "$type": "fontWeight",
+      "$value": 400
+    }
+  },
+  "shape": {
+    "radius-control": {
+      "$type": "dimension",
+      "$value": "12px"
+    },
+    "radius-container": {
+      "$type": "dimension",
+      "$value": "16px"
+    }
+  },
+  "$extensions": {
+    "ph.dxform.theme-builder": {
+      "input": {
+        "name": "Mangrove",
+        "primary": "#2f7d4f",
+        "accent": "amber",
+        "neutral": "stone",
+        "headingFont": "Plus Jakarta Sans",
+        "bodyFont": "Plus Jakarta Sans",
+        "radiusControl": "lg",
+        "radiusContainer": "xl",
+        "density": "comfortable"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$comment": "Pilot brand for the DX theme builder (Phase 3, gate G3). Made up — not a real client. Edit on the site: /themes/builder/?brand=mangrove",
+  "name": "Mangrove",
+  "primary": "#2f7d4f",
+  "accent": "amber",
+  "neutral": "stone",
+  "headingFont": "Plus Jakarta Sans",
+  "bodyFont": "Plus Jakarta Sans",
+  "radiusControl": "lg",
+  "radiusContainer": "xl",
+  "density": "comfortable"
+}

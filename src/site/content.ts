@@ -112,7 +112,7 @@ export const nav: NavGroup[] = [
   },
   { title: "Patterns", slug: "patterns", items: ["Form Patterns", "AI Patterns"].map(figmaItem) },
   { title: "Templates", slug: "product-kit", items: [...["Templates", "Starter & Empty States", "Examples"].map(figmaItem), { title: "Starter app", href: "/starter/" }] },
-  { title: "Themes", slug: "themes", items: [{ title: "Themes & brands", href: "/themes/", figmaName: "Themes & Brands" }, { title: "Adding a brand", href: "/themes/adding-a-brand/" }] },
+  { title: "Themes", slug: "themes", items: [{ title: "Themes & brands", href: "/themes/", figmaName: "Themes & Brands" }, { title: "Theme builder", href: "/themes/builder/" }, { title: "Brand gallery", href: "/themes/gallery/" }, { title: "Adding a brand", href: "/themes/adding-a-brand/" }] },
   {
     title: "Contribute",
     slug: "contribute",

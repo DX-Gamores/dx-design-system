@@ -1,0 +1,71 @@
+[
+ {
+  "slug": "mangrove",
+  "name": "Mangrove",
+  "input": {
+   "name": "Mangrove",
+   "primary": "#2f7d4f",
+   "accent": "amber",
+   "neutral": "stone",
+   "headingFont": "Plus Jakarta Sans",
+   "bodyFont": "Plus Jakarta Sans",
+   "radiusControl": "lg",
+   "radiusContainer": "xl",
+   "density": "comfortable"
+  },
+  "ramps": {
+   "primary": [
+    "#f2f6f3",
+    "#e2ebe4",
+    "#ccddd1",
+    "#abcab4",
+    "#7eae8d",
+    "#57976e",
+    "#2f7d4f",
+    "#227144",
+    "#1f5c38",
+    "#244c33",
+    "#192f21"
+   ],
+   "accent": [
+    "#fffbeb",
+    "#fef3c7",
+    "#fde68a",
+    "#fcd34d",
+    "#fbbf24",
+    "#f59e0b",
+    "#d97706",
+    "#b45309",
+    "#92400e",
+    "#78350f",
+    "#451a03"
+   ],
+   "neutral": [
+    "#fafaf9",
+    "#f5f5f4",
+    "#e7e5e4",
+    "#d6d3d1",
+    "#a8a29e",
+    "#78716c",
+    "#57534e",
+    "#44403c",
+    "#292524",
+    "#1c1917",
+    "#0c0a09"
+   ]
+  },
+  "roles": {
+   "solid": 600,
+   "onSolid": "white",
+   "solidHc": 800,
+   "focus": 600
+  },
+  "notes": [],
+  "passed": 108,
+  "total": 108,
+  "fonts": [
+   "plus-jakarta-sans"
+  ],
+  "comment": "Pilot brand for the DX theme builder (Phase 3, gate G3). Made up — not a real client. Edit on the site: /themes/builder/?brand=mangrove"
+ }
+]
