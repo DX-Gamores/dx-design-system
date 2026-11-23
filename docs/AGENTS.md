@@ -8,6 +8,7 @@ Docs for AI: https://dx-design-system.vercel.app/llms.txt (index) and https://dx
 
 - Use DX components from `@/components/ui/*` before writing your own. Check the list in the registry index: https://dx-design-system.vercel.app/r/v4/registry.json
 - Missing a DX component? Install it, don't hand-roll it: `npx shadcn@latest add https://dx-design-system.vercel.app/r/v4/<name>.json` (names match the docs URLs, e.g. `text-field`, `dialog`, `table-cell`).
+- Building a whole screen (app sidebar, dashboard, sign-in, settings, data table, empty state)? Start from a block: `npx shadcn@latest add https://dx-design-system.vercel.app/r/v4/<block>.json` (e.g. `sidebar-07`, `dashboard-01`, `auth-01`; list at https://dx-design-system.vercel.app/blocks/). App navigation uses the `Sidebar*` parts from `@/components/ui/sidebar`.
 - Don't edit files in `components/ui/` for one project. Put project-only components in `components/project/` and compose DX components there.
 - Buttons: one Primary per view; Secondary for supporting actions; Ghost for toolbars; `tone="danger"` for destructive actions, confirmed in a Dialog.
 - Every form control needs a visible label (`label` prop). Toolbar search may hide it with `hideLabel` but keeps an accessible name.

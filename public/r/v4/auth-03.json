@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "auth-03",
+  "type": "registry:block",
+  "title": "Sign up with password rules",
+  "description": "Name, work email and a password with live rules (length, number, letter) announced politely, terms consent, and single sign-on.",
+  "categories": [
+    "auth"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/init.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-data.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-form.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/auth-03/page.tsx",
+      "type": "registry:page",
+      "target": "app/signup/page.tsx",
+      "content": "/**\n * @title Sign up with password rules\n * @description Name, work email and a password with live rules (length, number, letter) announced politely, terms consent, and single sign-on.\n * @route /signup\n */\nimport { GalleryVerticalEnd } from \"lucide-react\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { SignupForm } from \"@/components/signup-form\";\n\nexport default function Page() {\n  return (\n    <main id=\"main\" className=\"flex min-h-svh flex-col items-center justify-center gap-6 bg-canvas p-4 sm:p-10\">\n      <a href=\"#\" className=\"flex items-center gap-2 rounded-sm text-label-large focus-visible:focus-ring\">\n        <span className=\"grid size-7 place-items-center rounded-control bg-brand text-fg-on-brand\"><Icon name={GalleryVerticalEnd} size={16} /></span>\n        Acme Inc\n      </a>\n      <div className=\"w-full max-w-[440px] rounded-container border border-line-default bg-surface p-6 shadow-elevation-1 sm:p-8\">\n        <SignupForm />\n      </div>\n    </main>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/auth-03/components/signup-form.tsx",
+      "type": "registry:component",
+      "target": "components/signup-form.tsx",
+      "content": "\"use client\";\nimport { useState } from \"react\";\nimport { KeyRound } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Divider } from \"@/components/ui/data\";\nimport { Checkbox, TextField } from \"@/components/ui/form\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { Link } from \"@/components/ui/nav-extra\";\nimport { ErrorSummary } from \"@/components/ui/patterns\";\nimport { PasswordField } from \"@/components/password-field\";\n\nconst rules = [\n  { id: \"len\", label: \"At least 8 characters\", test: (v: string) => v.length >= 8 },\n  { id: \"num\", label: \"A number\", test: (v: string) => /\\d/.test(v) },\n  { id: \"let\", label: \"A letter\", test: (v: string) => /[a-z]/i.test(v) },\n];\n\nexport function SignupForm() {\n  const [pw, setPw] = useState(\"\");\n  const [errors, setErrors] = useState<{ fieldId: string; message: string }[]>([]);\n  const err = (id: string) => errors.find((e) => e.fieldId === id)?.message;\n  const met = rules.filter((r) => r.test(pw)).length;\n  return (\n    <div className=\"flex flex-col gap-6\">\n      <div className=\"flex flex-col gap-1\">\n        <h1 className=\"text-heading-h2\">Create your account</h1>\n        <p className=\"text-body-medium text-fg-secondary\">Start a 14-day free trial. No credit card needed.</p>\n      </div>\n      <form\n        noValidate\n        className=\"flex flex-col gap-4\"\n        onSubmit={(e) => {\n          e.preventDefault();\n          const f = new FormData(e.currentTarget);\n          setErrors([\n            ...(String(f.get(\"name\") ?? \"\").trim() ? [] : [{ fieldId: \"su-name\", message: \"Enter your full name\" }]),\n            ...(/^\\S+@\\S+\\.\\S+$/.test(String(f.get(\"email\") ?? \"\")) ? [] : [{ fieldId: \"su-email\", message: \"Enter an email address, like name@company.com\" }]),\n            ...(met === rules.length ? [] : [{ fieldId: \"su-password\", message: \"Choose a password that meets all the rules\" }]),\n            ...(f.get(\"terms\") ? [] : [{ fieldId: \"su-terms\", message: \"Agree to the Terms and Privacy Policy to continue\" }]),\n          ]);\n        }}\n      >\n        <ErrorSummary errors={errors} />\n        <TextField id=\"su-name\" name=\"name\" label=\"Full name\" autoComplete=\"name\" error={err(\"su-name\")} />\n        <TextField id=\"su-email\" name=\"email\" label=\"Work email\" type=\"email\" autoComplete=\"email\" placeholder=\"name@company.com\" error={err(\"su-email\")} />\n        <div className=\"flex flex-col gap-2\">\n          <PasswordField id=\"su-password\" name=\"password\" label=\"Password\" autoComplete=\"new-password\" error={err(\"su-password\")} value={pw} onChange={setPw} />\n          <ul aria-label=\"Password rules\" className=\"flex flex-col gap-1\">\n            {rules.map((r) => {\n              const ok = r.test(pw);\n              return (\n                <li key={r.id} className={`flex items-center gap-2 text-caption-default ${ok ? \"text-fg-success\" : \"text-fg-secondary\"}`}>\n                  <Icon name={ok ? \"check-circle\" : \"minus\"} size={16} />\n                  {r.label}<span className=\"sr-only\">{ok ? \" — done\" : \" — not yet\"}</span>\n                </li>\n              );\n            })}\n          </ul>\n          <p aria-live=\"polite\" className=\"sr-only\">{pw ? `${met} of ${rules.length} password rules met` : \"\"}</p>\n        </div>\n        <div className=\"flex flex-col gap-1\">\n          <Checkbox id=\"su-terms\" name=\"terms\" label={<>I agree to the <Link href=\"#\" size=\"sm\">Terms</Link> and <Link href=\"#\" size=\"sm\">Privacy Policy</Link></>} aria-invalid={!!err(\"su-terms\") || undefined} />\n          {err(\"su-terms\") && <p className=\"flex items-center gap-1 ps-7 text-caption-default text-fg-danger\"><Icon name=\"alert-circle\" size={16} />{err(\"su-terms\")}</p>}\n        </div>\n        <Button type=\"submit\" size=\"lg\" className=\"w-full\">Create account</Button>\n      </form>\n      <div className=\"flex items-center gap-3 text-caption-default text-fg-secondary\"><div className=\"flex-1\"><Divider /></div>or<div className=\"flex-1\"><Divider /></div></div>\n      <Button variant=\"secondary\"><KeyRound aria-hidden className=\"size-4\" />Sign up with single sign-on</Button>\n      <p className=\"text-center text-body-small text-fg-secondary\">Already have an account? <Link href=\"#\" size=\"sm\">Sign in</Link></p>\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/password-field.tsx",
+      "type": "registry:component",
+      "target": "components/password-field.tsx",
+      "content": "\"use client\";\nimport { useState } from \"react\";\nimport { TextField } from \"@/components/ui/form\";\nimport { Icon } from \"@/components/ui/icon\";\n\n/** Password input with a show/hide button. */\nexport function PasswordField({ id, name, label, helperText, error, autoComplete, value, onChange }: {\n  id: string; name?: string; label: string; helperText?: string; error?: string; autoComplete: string; value?: string; onChange?: (v: string) => void;\n}) {\n  const [show, setShow] = useState(false);\n  return (\n    <TextField id={id} name={name} label={label} type={show ? \"text\" : \"password\"} autoComplete={autoComplete} helperText={helperText} error={error} className=\"pe-1\"\n      value={value} onChange={onChange && ((e) => onChange(e.target.value))}\n      trailing={\n        <button type=\"button\" onClick={() => setShow((s) => !s)} aria-label={show ? \"Hide password\" : \"Show password\"} aria-pressed={show}\n          className=\"grid size-8 shrink-0 place-items-center rounded-sm text-icon-secondary hover:bg-neutral-hover focus-visible:focus-ring\">\n          <Icon name={show ? \"eye-off\" : \"eye\"} />\n        </button>\n      } />\n  );\n}\n"
+    }
+  ],
+  "meta": {
+    "route": "/signup"
+  }
+}

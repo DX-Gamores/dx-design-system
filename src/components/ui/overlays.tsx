@@ -89,7 +89,7 @@ export function Popover({ trigger, title, description, children, placement = "bo
 export function Dialog({ open, onClose, title, description, children, footer, size = "md", tone = "default", showClose = true, primaryLabel, onPrimary, secondaryLabel = "Cancel" }: {
   open: boolean; onClose: () => void; title: string; description?: string; children?: ReactNode;
   /** Custom footer. Or use primaryLabel / onPrimary / secondaryLabel for the standard one. */ footer?: ReactNode;
-  size?: "sm" | "md"; tone?: "default" | "danger"; showClose?: boolean; primaryLabel?: string; onPrimary?: () => void; secondaryLabel?: string | null;
+  size?: "sm" | "md" | "lg"; tone?: "default" | "danger"; showClose?: boolean; primaryLabel?: string; onPrimary?: () => void; secondaryLabel?: string | null;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   const tid = useId(), did = useId();
@@ -107,7 +107,7 @@ export function Dialog({ open, onClose, title, description, children, footer, si
   return (
     <dialog ref={ref} aria-labelledby={tid} aria-describedby={description ? did : undefined} onCancel={(e) => { e.preventDefault(); onClose(); }}
       onClick={(e) => { if (e.target === ref.current) onClose(); }}
-      className={cn("m-auto w-[calc(100%-32px)] rounded-container border border-line-default bg-surface p-0 text-fg-primary shadow-elevation-3 backdrop:bg-overlay", size === "sm" ? "max-w-[400px]" : "max-w-[560px]")}>
+      className={cn("m-auto w-[calc(100%-32px)] rounded-container border border-line-default bg-surface p-0 text-fg-primary shadow-elevation-3 backdrop:bg-overlay", size === "sm" ? "max-w-[400px]" : size === "lg" ? "max-w-[880px]" : "max-w-[560px]")}>
       <div className="flex flex-col gap-4 p-6">
         <div className="flex items-start gap-3">
           {tone === "danger" && <span className="grid size-10 shrink-0 place-items-center rounded-full bg-danger-subtle"><Icon name="alert-triangle" className="text-icon-danger" /></span>}
@@ -180,10 +180,19 @@ export function MenuItem({ item, active, onSelect, onHover, refCb }: { item: Men
   );
 }
 
-export function Menu({ label, items, trigger, placement = "bottom-end" }: {
+const menuPlace = {
+  "bottom-start": "top-full mt-1 start-0",
+  "bottom-end": "top-full mt-1 end-0",
+  "top-start": "bottom-full mb-1 start-0",
+  "top-end": "bottom-full mb-1 end-0",
+  "right-end": "bottom-0 start-full ms-2",
+} as const;
+
+export function Menu({ label, items, trigger, placement = "bottom-end", className }: {
   /** Names the trigger, e.g. "More actions for Esther Howard". */ label: string; items: MenuItemData[];
   trigger?: (p: { ref: React.Ref<HTMLButtonElement>; onClick: () => void; onKeyDown: (e: KeyboardEvent) => void; "aria-haspopup": "menu"; "aria-expanded": boolean; "aria-controls": string }) => ReactNode;
-  placement?: "bottom-start" | "bottom-end";
+  placement?: "bottom-start" | "bottom-end" | "top-start" | "top-end" | "right-end";
+  /** Classes for the wrapper, e.g. "flex w-full" when the trigger fills a row. */ className?: string;
 }) {
   const id = useId();
   const [open, setOpen] = useState(false);
@@ -215,12 +224,12 @@ export function Menu({ label, items, trigger, placement = "bottom-end" }: {
   };
   const run = (it: MenuItemData) => { setOpen(false); btn.current?.focus(); it.onSelect?.(); };
   return (
-    <span ref={root} className="relative inline-flex">
+    <span ref={root} className={cn("relative inline-flex", className)}>
       {trigger ? trigger({ ref: btn, onClick: () => (open ? setOpen(false) : openAt(enabled[0] ?? 0)), onKeyDown: onTriggerKey, "aria-haspopup": "menu", "aria-expanded": open, "aria-controls": id })
         : <IconButton ref={btn} icon="more" label={label} variant="ghost" aria-haspopup="menu" aria-expanded={open} aria-controls={id} onClick={() => (open ? setOpen(false) : openAt(enabled[0] ?? 0))} onKeyDown={onTriggerKey} />}
       {open && (
         <div id={id} role="menu" aria-label={label} onKeyDown={onMenuKey}
-          className={cn("absolute top-full z-[var(--ds-z-dropdown)] mt-1 flex min-w-48 flex-col rounded-md border border-line-default bg-surface p-1 shadow-elevation-2", placement === "bottom-end" ? "end-0" : "start-0")}>
+          className={cn("absolute z-[var(--ds-z-dropdown)] flex min-w-48 flex-col rounded-md border border-line-default bg-surface p-1 shadow-elevation-2", menuPlace[placement])}>
           {items.map((it, i) => (
             <div key={it.label} className="contents">
               {it.separatorBefore && i > 0 && <div role="separator" className="my-1 h-px bg-line-default" />}

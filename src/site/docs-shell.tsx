@@ -14,6 +14,7 @@ import { DocsSearch, useCodeCopy, type SearchEntry } from "./search";
 const sections = [
   { label: "Docs", href: "/docs/" },
   { label: "Components", href: "/components/" },
+  { label: "Blocks", href: "/blocks/" },
   { label: "Tokens", href: "/tokens/" },
   { label: "Themes", href: "/themes/" },
   { label: "Icons", href: "/icons/" },
@@ -59,6 +60,7 @@ function OnThisPage({ path }: { path: string }) {
 
 export function DocsShell({ nav, searchIndex, version, repo, figma, syncedAt, parity, children }: { nav: NavGroup[]; searchIndex: SearchEntry[]; version: string; repo: string; figma: string; syncedAt: string; parity: string; children: ReactNode }) {
   const path = usePathname();
+  const wide = norm(path).startsWith("/blocks/"); // block previews need the room
   useCodeCopy(path);
   const [open, setOpen] = useState(false);
   const [q, setQ] = useState("");
@@ -103,7 +105,7 @@ export function DocsShell({ nav, searchIndex, version, repo, figma, syncedAt, pa
           <a href={figma} aria-label="Figma library" className={cn(ghostLink, "max-md:hidden")}>Figma <Icon name="external-link" size={16} /></a>
         </div>
       </header>
-      <div className="mx-auto flex max-w-[1440px]">
+      <div className={cn("mx-auto flex", !wide && "max-w-[1440px]")}>
         {open && <div className="fixed inset-0 z-[var(--ds-z-overlay)] bg-overlay lg:hidden" onClick={() => setOpen(false)} aria-hidden />}
         <nav
           id="docs-nav"
@@ -171,7 +173,7 @@ export function DocsShell({ nav, searchIndex, version, repo, figma, syncedAt, pa
           </div>
         </nav>
         <main id="main" tabIndex={-1} className="min-w-0 flex-1 px-[var(--ds-layout-margin)] py-[var(--ds-layout-section-gap)] outline-none">
-          <div className="mx-auto flex max-w-[860px] flex-col gap-10">
+          <div className={cn("mx-auto flex flex-col gap-10", wide ? "max-w-[1280px]" : "max-w-[860px]")}>
             {children}
             <footer className="flex flex-wrap items-center gap-x-3 gap-y-1 border-t border-line-default pt-4 text-caption-default text-fg-secondary">
               <span>v{version}</span><span aria-hidden>·</span>
@@ -181,7 +183,7 @@ export function DocsShell({ nav, searchIndex, version, repo, figma, syncedAt, pa
             </footer>
           </div>
         </main>
-        <aside className="sticky top-[var(--ds-layout-header-height)] hidden h-[calc(100dvh-var(--ds-layout-header-height))] w-[224px] shrink-0 overflow-y-auto py-[var(--ds-layout-section-gap)] pe-6 xl:block">
+        <aside className={cn("sticky top-[var(--ds-layout-header-height)] hidden h-[calc(100dvh-var(--ds-layout-header-height))] w-[224px] shrink-0 overflow-y-auto py-[var(--ds-layout-section-gap)] pe-6", !wide && "xl:block")}>
           <OnThisPage path={path} />
         </aside>
       </div>

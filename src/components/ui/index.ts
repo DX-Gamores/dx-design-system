@@ -15,3 +15,9 @@ export { Link, Breadcrumbs, Pagination, Accordion, AccordionItem } from "./nav-e
 export { Card, Avatar, StatCard, AILabel, Citation } from "./display";
 export { Divider, List, ListItem, Table, TableHeaderCell, TableCell, type Column, type SortDir } from "./data";
 export { FormSection, FormActions, ErrorSummary, AIResponse, AIConfidence } from "./patterns";
+export {
+  SidebarProvider, Sidebar, SidebarTrigger, SidebarRail, SidebarInset, SidebarInput, SidebarHeader, SidebarFooter, SidebarSeparator,
+  SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarGroupAction, SidebarGroupContent, SidebarMenu, SidebarMenuItem,
+  SidebarMenuButton, SidebarMenuAction, SidebarMenuBadge, SidebarMenuSkeleton, SidebarMenuSub, SidebarMenuSubItem, SidebarMenuSubButton,
+  useSidebar, useDisclosure,
+} from "./sidebar";

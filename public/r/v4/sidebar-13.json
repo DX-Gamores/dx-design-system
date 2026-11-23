@@ -1,0 +1,38 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-13",
+  "type": "registry:block",
+  "title": "A sidebar in a dialog",
+  "description": "A settings dialog with its own section navigation. On phones the sections become a list above the content.",
+  "categories": [
+    "sidebar"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/init.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/sidebar-13/page.tsx",
+      "type": "registry:page",
+      "target": "app/settings/page.tsx",
+      "content": "/**\n * @title A sidebar in a dialog\n * @description A settings dialog with its own section navigation. On phones the sections become a list above the content.\n * @route /settings\n */\nimport { SettingsDialog } from \"@/components/settings-dialog\";\n\nexport default function Page() {\n  return (\n    <main id=\"main\" className=\"grid min-h-svh place-items-center bg-canvas p-6\">\n      <div className=\"flex flex-col items-center gap-4 text-center\">\n        <h1 className=\"text-heading-h2\">Settings in a dialog</h1>\n        <p className=\"max-w-sm text-body-small text-fg-secondary\">Open the dialog to see a sidebar used for section navigation.</p>\n        <SettingsDialog />\n      </div>\n    </main>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/sidebar-13/components/settings-dialog.tsx",
+      "type": "registry:component",
+      "target": "components/settings-dialog.tsx",
+      "content": "\"use client\";\nimport { useState } from \"react\";\nimport { Bell, Check, Globe, Home, Keyboard, Link, Lock, Menu as MenuIcon, MessageCircle, Paintbrush, Settings, Video, type LucideIcon } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { Breadcrumbs } from \"@/components/ui/nav-extra\";\nimport { Dialog } from \"@/components/ui/overlays\";\nimport { SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarProvider } from \"@/components/ui/sidebar\";\n\nconst sections: { name: string; icon: LucideIcon }[] = [\n  { name: \"Notifications\", icon: Bell }, { name: \"Navigation\", icon: MenuIcon }, { name: \"Home\", icon: Home }, { name: \"Appearance\", icon: Paintbrush },\n  { name: \"Messages & media\", icon: MessageCircle }, { name: \"Language & region\", icon: Globe }, { name: \"Accessibility\", icon: Keyboard },\n  { name: \"Mark as read\", icon: Check }, { name: \"Audio & video\", icon: Video }, { name: \"Connected accounts\", icon: Link },\n  { name: \"Privacy & visibility\", icon: Lock }, { name: \"Advanced\", icon: Settings },\n];\n\nexport function SettingsDialog() {\n  const [open, setOpen] = useState(false);\n  const [active, setActive] = useState(\"Messages & media\");\n  return (\n    <>\n      <Button onClick={() => setOpen(true)}>Open settings</Button>\n      <Dialog open={open} onClose={() => setOpen(false)} title=\"Settings\" size=\"lg\">\n        <SidebarProvider className=\"min-h-0 bg-transparent max-md:flex-col\">\n          <nav aria-label=\"Settings sections\" className=\"shrink-0 md:w-56 md:border-e md:border-line-default md:pe-3\">\n            <SidebarMenu className=\"max-md:flex-row max-md:overflow-x-auto max-md:pb-2\">\n              {sections.map((s) => (\n                <SidebarMenuItem key={s.name} className=\"max-md:shrink-0\">\n                  <SidebarMenuButton isActive={s.name === active} aria-current={s.name === active ? \"true\" : undefined} onClick={() => setActive(s.name)} size=\"sm\">\n                    <Icon name={s.icon} size={16} /><span>{s.name}</span>\n                  </SidebarMenuButton>\n                </SidebarMenuItem>\n              ))}\n            </SidebarMenu>\n          </nav>\n          <section aria-label={active} className=\"flex min-w-0 flex-1 flex-col gap-4 md:ps-6\">\n            <Breadcrumbs items={[{ label: \"Settings\", href: \"#\" }, { label: active }]} />\n            <div aria-hidden className=\"flex h-[360px] flex-col gap-3 overflow-y-auto\">\n              {Array.from({ length: 6 }, (_, i) => <div key={i} className=\"aspect-video max-h-24 w-full rounded-container bg-surface-subtle\" />)}\n            </div>\n          </section>\n        </SidebarProvider>\n      </Dialog>\n    </>\n  );\n}\n"
+    }
+  ],
+  "meta": {
+    "route": "/settings"
+  }
+}

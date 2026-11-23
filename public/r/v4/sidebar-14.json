@@ -1,0 +1,39 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-14",
+  "type": "registry:block",
+  "title": "A sidebar on the right",
+  "description": "An \"On this page\" sidebar on the end side of the screen, with the toggle at the end of the header.",
+  "categories": [
+    "sidebar"
+  ],
+  "dependencies": [],
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/init.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/sidebar-14/page.tsx",
+      "type": "registry:page",
+      "target": "app/docs/page.tsx",
+      "content": "/**\n * @title A sidebar on the right\n * @description An \"On this page\" sidebar on the end side of the screen, with the toggle at the end of the header.\n * @route /docs\n */\nimport { SidebarInset, SidebarProvider, SidebarTrigger } from \"@/components/ui/sidebar\";\nimport { Breadcrumbs } from \"@/components/ui/nav-extra\";\nimport { AppSidebar } from \"@/components/app-sidebar\";\nimport { PagePlaceholder } from \"@/components/page-placeholder\";\n\nexport default function Page() {\n  return (\n    <SidebarProvider>\n      <SidebarInset>\n        <header className=\"sticky top-0 z-[var(--ds-z-sticky)] flex h-14 shrink-0 items-center gap-2 border-b border-line-default bg-surface px-4\">\n          <Breadcrumbs items={[{ label: \"Building your application\", href: \"#\" }, { label: \"Data fetching\" }]} />\n          <SidebarTrigger label=\"Toggle table of contents\" className=\"ms-auto -me-1 rotate-180\" />\n        </header>\n        <PagePlaceholder title=\"Data fetching\" />\n      </SidebarInset>\n      <AppSidebar />\n    </SidebarProvider>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/sidebar-14/components/app-sidebar.tsx",
+      "type": "registry:component",
+      "target": "components/app-sidebar.tsx",
+      "content": "\"use client\";\nimport {\n  Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarMenuSub,\n  SidebarMenuSubButton, SidebarMenuSubItem,\n} from \"@/components/ui/sidebar\";\n\nconst toc = [\n  { title: \"Fetching data on the server\", items: [\"With the fetch API\", \"With an ORM or database\"] },\n  { title: \"Fetching data on the client\", items: [\"With a data library\", \"With route handlers\"] },\n  { title: \"Caching\", items: [\"Revalidating\", \"Opting out\"] },\n  { title: \"Patterns\", items: [\"Parallel and sequential\", \"Preloading data\"] },\n];\n\nexport function AppSidebar() {\n  return (\n    <Sidebar side=\"right\" label=\"On this page\">\n      <SidebarContent>\n        <SidebarGroup>\n          <nav aria-labelledby=\"toc-title\">\n            <SidebarGroupLabel as=\"h2\" id=\"toc-title\">On this page</SidebarGroupLabel>\n            <SidebarMenu>\n              {toc.map((t, i) => (\n                <SidebarMenuItem key={t.title}>\n                  <SidebarMenuButton href={`#s${i}`} size=\"sm\" isActive={i === 0}><span>{t.title}</span></SidebarMenuButton>\n                  <SidebarMenuSub>\n                    {t.items.map((s) => (\n                      <SidebarMenuSubItem key={s}><SidebarMenuSubButton href={`#s${i}`}><span>{s}</span></SidebarMenuSubButton></SidebarMenuSubItem>\n                    ))}\n                  </SidebarMenuSub>\n                </SidebarMenuItem>\n              ))}\n            </SidebarMenu>\n          </nav>\n        </SidebarGroup>\n      </SidebarContent>\n    </Sidebar>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/page-placeholder.tsx",
+      "type": "registry:component",
+      "target": "components/page-placeholder.tsx",
+      "content": "/** Stand-in content for a page. Replace it with your own. */\nexport function PagePlaceholder({ title }: { title: string }) {\n  return (\n    <div className=\"flex flex-1 flex-col gap-4 p-4 md:p-6\">\n      <h1 className=\"text-heading-h2\">{title}</h1>\n      <div aria-hidden className=\"grid gap-4 md:grid-cols-3\">\n        <div className=\"aspect-video rounded-container bg-surface-subtle\" />\n        <div className=\"aspect-video rounded-container bg-surface-subtle\" />\n        <div className=\"aspect-video rounded-container bg-surface-subtle\" />\n      </div>\n      <div aria-hidden className=\"min-h-96 flex-1 rounded-container bg-surface-subtle\" />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "meta": {
+    "route": "/docs"
+  }
+}
