@@ -3,6 +3,7 @@
 //   docs/components.json      component descriptions + properties (exported from Figma)
 //   docs/components/*.md      specs (npm run specs)
 // Nothing here is written by hand per page, so a re-export keeps the site in step with Figma.
+import { blockCategories } from "@/blocks";
 import fs from "node:fs";
 import path from "node:path";
 import { Marked } from "marked";
@@ -103,6 +104,11 @@ export const nav: NavGroup[] = [
       { title: "All components", href: "/components/" },
       ...componentPages.map((c) => ({ title: c.spec.n, href: c.href, figmaName: c.figmaPage, status: coded.has(c.slug) ? ("stable" as const) : ("planned" as const) })),
     ],
+  },
+  {
+    title: "Blocks",
+    slug: "blocks",
+    items: [{ title: "All blocks", href: "/blocks/" }, ...blockCategories.map((c) => ({ title: c.title, href: `/blocks/${c.id}/` }))],
   },
   { title: "Patterns", slug: "patterns", items: ["Form Patterns", "AI Patterns"].map(figmaItem) },
   { title: "Templates", slug: "product-kit", items: [...["Templates", "Starter & Empty States", "Examples"].map(figmaItem), { title: "Starter app", href: "/starter/" }] },

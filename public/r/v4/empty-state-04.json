@@ -1,0 +1,45 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state-04",
+  "type": "registry:block",
+  "title": "No access, with a request form",
+  "description": "Explains why the page is hidden and who can help, then lets the person ask for access with a note. Confirms the request without leaving the page.",
+  "categories": [
+    "empty-state"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/init.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/empty-state-04/page.tsx",
+      "type": "registry:page",
+      "target": "app/reports/page.tsx",
+      "content": "/**\n * @title No access, with a request form\n * @description Explains why the page is hidden and who can help, then lets the person ask for access with a note. Confirms the request without leaving the page.\n * @route /reports\n */\nimport { TopBar } from \"@/components/top-bar\";\nimport { RequestAccess } from \"@/components/request-access\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex min-h-svh flex-col bg-canvas\">\n      <TopBar current=\"Overview\" />\n      <main id=\"main\" className=\"mx-auto flex w-full max-w-xl flex-1 flex-col justify-center gap-6 px-4 py-12\">\n        <RequestAccess />\n      </main>\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/top-bar.tsx",
+      "type": "registry:component",
+      "target": "components/top-bar.tsx",
+      "content": "\"use client\";\nimport { Gauge } from \"lucide-react\";\nimport { Avatar } from \"@/components/ui/display\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { Menu } from \"@/components/ui/overlays\";\n\nconst links = [\"Overview\", \"Customers\", \"Products\", \"Settings\"];\n\n/** A header-only app layout: logo, top navigation and the account menu. */\nexport function TopBar({ current = \"Overview\" }: { current?: string }) {\n  return (\n    <header className=\"sticky top-0 z-[var(--ds-z-sticky)] border-b border-line-default bg-surface\">\n      <div className=\"mx-auto flex h-14 max-w-7xl items-center gap-6 px-4 md:px-6\">\n        <a href=\"#\" className=\"flex items-center gap-2 rounded-sm text-label-large focus-visible:focus-ring\">\n          <span className=\"grid size-7 place-items-center rounded-control bg-brand text-fg-on-brand\"><Icon name={Gauge} size={16} /></span>\n          Acme\n        </a>\n        <nav aria-label=\"Main\" className=\"max-md:hidden\">\n          <ul className=\"flex items-center gap-1\">\n            {links.map((l) => (\n              <li key={l}>\n                <a href=\"#\" aria-current={l === current ? \"page\" : undefined}\n                  className=\"flex h-8 items-center rounded-control px-3 text-label-medium text-fg-secondary hover:bg-neutral-hover hover:text-fg-primary focus-visible:focus-ring aria-[current=page]:text-fg-primary\">\n                  {l}\n                </a>\n              </li>\n            ))}\n          </ul>\n        </nav>\n        <div className=\"ms-auto\">\n          <Menu\n            label=\"Account menu for Jane Cooper\"\n            items={[{ label: \"Profile\", icon: \"user\" }, { label: \"Settings\", icon: \"settings\" }, { label: \"Sign out\", icon: \"sign-out\", separatorBefore: true }]}\n            trigger={({ ref, ...p }) => (\n              <button ref={ref} type=\"button\" {...p} aria-label=\"Account menu for Jane Cooper\" className=\"rounded-full focus-visible:focus-ring\">\n                <Avatar name=\"Jane Cooper\" decorative />\n              </button>\n            )}\n          />\n        </div>\n      </div>\n    </header>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/empty-state-04/components/request-access.tsx",
+      "type": "registry:component",
+      "target": "components/request-access.tsx",
+      "content": "\"use client\";\nimport { useRef, useState } from \"react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Avatar } from \"@/components/ui/display\";\nimport { Alert } from \"@/components/ui/feedback\";\nimport { Textarea } from \"@/components/ui/form\";\nimport { Icon } from \"@/components/ui/icon\";\n\nexport function RequestAccess() {\n  const [sent, setSent] = useState(false);\n  const status = useRef<HTMLDivElement>(null);\n  return (\n    <section aria-labelledby=\"na-title\" className=\"flex flex-col gap-6 rounded-container border border-line-default bg-surface p-6 sm:p-8\">\n      <div className=\"flex flex-col items-center gap-3 text-center\">\n        <span className=\"grid size-12 place-items-center rounded-full bg-surface-subtle text-icon-primary\"><Icon name=\"lock\" /></span>\n        <h1 id=\"na-title\" className=\"text-heading-h2\">You don't have access to Reports</h1>\n        <p className=\"text-body-medium text-fg-secondary\">Reports are limited to admins of the Acme Inc workspace. An admin can give you access.</p>\n      </div>\n      <div className=\"flex items-center gap-3 rounded-container bg-surface-subtle p-3\">\n        <Avatar name=\"Wade Warren\" />\n        <p className=\"flex flex-col text-body-small\"><span className=\"text-label-medium\">Wade Warren</span><span className=\"text-fg-secondary\">Workspace admin · usually replies within a day</span></p>\n      </div>\n      <div ref={status} tabIndex={-1} className=\"outline-none\">\n        {sent ? (\n          <Alert tone=\"success\" title=\"Request sent\" live>We'll email you when Wade answers. You can keep working in the meantime.</Alert>\n        ) : (\n          <form className=\"flex flex-col gap-4\" onSubmit={(e) => { e.preventDefault(); setSent(true); requestAnimationFrame(() => status.current?.focus()); }}>\n            <Textarea label=\"Note to the admin (optional)\" placeholder=\"Why do you need access?\" maxLength={240} />\n            <div className=\"flex flex-wrap gap-2\"><Button type=\"submit\" leadingIcon=\"send\">Request access</Button><Button type=\"button\" variant=\"secondary\">Go to dashboard</Button></div>\n          </form>\n        )}\n      </div>\n    </section>\n  );\n}\n"
+    }
+  ],
+  "meta": {
+    "route": "/reports"
+  }
+}

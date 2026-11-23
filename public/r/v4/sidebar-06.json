@@ -1,0 +1,62 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "sidebar-06",
+  "type": "registry:block",
+  "title": "A sidebar with submenus as dropdowns",
+  "description": "Sections open a menu of their pages beside the sidebar instead of expanding in place. An upgrade card sits at the bottom.",
+  "categories": [
+    "sidebar"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/init.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/sidebar-06/page.tsx",
+      "type": "registry:page",
+      "target": "app/docs/page.tsx",
+      "content": "/**\n * @title A sidebar with submenus as dropdowns\n * @description Sections open a menu of their pages beside the sidebar instead of expanding in place. An upgrade card sits at the bottom.\n * @route /docs\n */\nimport { SidebarInset, SidebarProvider } from \"@/components/ui/sidebar\";\nimport { AppSidebar } from \"@/components/app-sidebar\";\nimport { SiteHeader } from \"@/components/site-header\";\nimport { PagePlaceholder } from \"@/components/page-placeholder\";\n\nexport default function Page() {\n  return (\n    <SidebarProvider>\n      <AppSidebar />\n      <SidebarInset>\n        <SiteHeader crumbs={[{ label: \"Building your application\", href: \"#\" }, { label: \"Data fetching\" }]} />\n        <PagePlaceholder title=\"Data fetching\" />\n      </SidebarInset>\n    </SidebarProvider>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/sidebar-06/components/app-sidebar.tsx",
+      "type": "registry:component",
+      "target": "components/app-sidebar.tsx",
+      "content": "\"use client\";\nimport { ChevronRight } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { Menu } from \"@/components/ui/overlays\";\nimport { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarRail } from \"@/components/ui/sidebar\";\nimport { BrandHeader } from \"@/components/brand-header\";\nimport { docsNav } from \"@/components/docs-nav\";\n\nfunction UpgradeCard() {\n  return (\n    <div className=\"flex flex-col gap-2 rounded-container border border-line-default bg-surface-subtle p-3\">\n      <p className=\"text-label-medium\">Get the Pro plan</p>\n      <p className=\"text-caption-default text-fg-secondary\">Private projects, single sign-on and priority support.</p>\n      <Button size=\"sm\" className=\"w-full\">Upgrade</Button>\n    </div>\n  );\n}\n\nexport function AppSidebar() {\n  return (\n    <Sidebar label=\"Documentation\">\n      <SidebarHeader>\n        <BrandHeader />\n      </SidebarHeader>\n      <SidebarContent>\n        <SidebarGroup>\n          <nav aria-label=\"Documentation\">\n            <SidebarMenu>\n              {docsNav.map((section) => (\n                <SidebarMenuItem key={section.title}>\n                  <Menu\n                    label={`${section.title} pages`}\n                    className=\"flex w-full\"\n                    placement=\"bottom-start\"\n                    items={section.items.map((i) => ({ label: i.title, icon: \"isActive\" in i && i.isActive ? (\"check\" as const) : undefined }))}\n                    trigger={({ ref, ...p }) => (\n                      <SidebarMenuButton ref={ref as React.Ref<HTMLElement>} {...p}>\n                        <span className=\"flex-1\">{section.title}</span>\n                        <Icon name={ChevronRight} size={16} className=\"text-icon-secondary\" />\n                      </SidebarMenuButton>\n                    )}\n                  />\n                </SidebarMenuItem>\n              ))}\n            </SidebarMenu>\n          </nav>\n        </SidebarGroup>\n      </SidebarContent>\n      <SidebarFooter>\n        <UpgradeCard />\n      </SidebarFooter>\n      <SidebarRail />\n    </Sidebar>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/brand-header.tsx",
+      "type": "registry:component",
+      "target": "components/brand-header.tsx",
+      "content": "\"use client\";\nimport { GalleryVerticalEnd, type LucideIcon } from \"lucide-react\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from \"@/components/ui/sidebar\";\n\n/** Logo, product name and a second line (plan or version) at the top of the sidebar. Links home. */\nexport function BrandHeader({ name = \"Acme Docs\", detail = \"v4.0.0\", logo = GalleryVerticalEnd }: { name?: string; detail?: string; logo?: LucideIcon }) {\n  return (\n    <SidebarMenu>\n      <SidebarMenuItem>\n        <SidebarMenuButton href=\"#\" size=\"lg\" tooltip={name}>\n          <span className=\"grid size-8 shrink-0 place-items-center rounded-control bg-brand text-fg-on-brand\"><Icon name={logo} size={16} /></span>\n          <span className=\"flex min-w-0 flex-1 flex-col\">\n            <span className=\"truncate text-label-medium text-fg-primary\">{name}</span>\n            <span className=\"truncate text-caption-default\">{detail}</span>\n          </span>\n        </SidebarMenuButton>\n      </SidebarMenuItem>\n    </SidebarMenu>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/docs-nav.ts",
+      "type": "registry:component",
+      "target": "components/docs-nav.ts",
+      "content": "/** Sample navigation for the documentation-style sidebars. Replace with your own pages. */\nexport const docsNav = [\n  { title: \"Getting started\", url: \"#\", items: [{ title: \"Installation\", url: \"#\" }, { title: \"Project structure\", url: \"#\" }] },\n  {\n    title: \"Building your application\",\n    url: \"#\",\n    items: [\n      { title: \"Routing\", url: \"#\" }, { title: \"Data fetching\", url: \"#\", isActive: true }, { title: \"Rendering\", url: \"#\" },\n      { title: \"Caching\", url: \"#\" }, { title: \"Styling\", url: \"#\" }, { title: \"Optimizing\", url: \"#\" }, { title: \"Configuring\", url: \"#\" },\n      { title: \"Testing\", url: \"#\" }, { title: \"Authentication\", url: \"#\" }, { title: \"Deploying\", url: \"#\" }, { title: \"Upgrading\", url: \"#\" },\n    ],\n  },\n  { title: \"API reference\", url: \"#\", items: [{ title: \"Components\", url: \"#\" }, { title: \"File conventions\", url: \"#\" }, { title: \"Functions\", url: \"#\" }, { title: \"Configuration options\", url: \"#\" }, { title: \"CLI\", url: \"#\" }] },\n  { title: \"Architecture\", url: \"#\", items: [{ title: \"Accessibility\", url: \"#\" }, { title: \"Fast refresh\", url: \"#\" }, { title: \"Compiler\", url: \"#\" }, { title: \"Supported browsers\", url: \"#\" }] },\n  { title: \"Community\", url: \"#\", items: [{ title: \"Contribution guide\", url: \"#\" }] },\n];\nexport const docsVersions = [\"4.0.0\", \"3.2.0\", \"3.1.0\"];\n"
+    },
+    {
+      "path": "blocks/_parts/site-header.tsx",
+      "type": "registry:component",
+      "target": "components/site-header.tsx",
+      "content": "\"use client\";\nimport type { ReactNode } from \"react\";\nimport { Breadcrumbs } from \"@/components/ui/nav-extra\";\nimport { SidebarTrigger } from \"@/components/ui/sidebar\";\n\n/** The bar above the page: sidebar toggle, breadcrumbs and optional actions on the end side. */\nexport function SiteHeader({ crumbs, actions }: { crumbs: { label: string; href?: string }[]; actions?: ReactNode }) {\n  return (\n    <header className=\"sticky top-0 z-[var(--ds-z-sticky)] flex h-14 shrink-0 items-center gap-2 border-b border-line-default bg-surface px-4 md:rounded-t-[inherit]\">\n      <SidebarTrigger className=\"-ms-1\" />\n      <span aria-hidden className=\"mx-1 h-4 w-px bg-line-default\" />\n      <Breadcrumbs items={crumbs} />\n      {actions && <div className=\"ms-auto flex items-center gap-2\">{actions}</div>}\n    </header>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/page-placeholder.tsx",
+      "type": "registry:component",
+      "target": "components/page-placeholder.tsx",
+      "content": "/** Stand-in content for a page. Replace it with your own. */\nexport function PagePlaceholder({ title }: { title: string }) {\n  return (\n    <div className=\"flex flex-1 flex-col gap-4 p-4 md:p-6\">\n      <h1 className=\"text-heading-h2\">{title}</h1>\n      <div aria-hidden className=\"grid gap-4 md:grid-cols-3\">\n        <div className=\"aspect-video rounded-container bg-surface-subtle\" />\n        <div className=\"aspect-video rounded-container bg-surface-subtle\" />\n        <div className=\"aspect-video rounded-container bg-surface-subtle\" />\n      </div>\n      <div aria-hidden className=\"min-h-96 flex-1 rounded-container bg-surface-subtle\" />\n    </div>\n  );\n}\n"
+    }
+  ],
+  "meta": {
+    "route": "/docs"
+  }
+}

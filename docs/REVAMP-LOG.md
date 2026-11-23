@@ -9,11 +9,41 @@ The plan lives in the **DX Design System — Revamp & Improvement Plan** doc (Cl
 
 ## Where we left off
 
-- Phase: **2 · Site redesign — merged (PR #5) and live.** Visual baselines were recorded on CI for the new component previews.
-- Figma images: the 90 Anatomy, States and Do & don't frames are exported into `public/figma/` (branch `revamp/figma-images`), so those sections show images instead of "Open in Figma" cards.
-- Waiting on network permission: `ui.shadcn.com` and `*.vercel.app` (real CLI test, preview checks from the AI session). `www.figma.com` is still blocked for the AI session, so image refreshes run from Gab's Mac with a script.
-- Still open: DX custom icons Lucide lacks; custom domain; brand guide and logo; moving the 3 working pages to a "DX Workshop" Figma file.
-- Next up: Phase 3 · Blocks (~31) and the client theme builder.
+- Phase: **3a · Blocks — code complete on `revamp/phase-3a`** (see the 2026-11-23 entry). Phase 2 and the Figma images (91 frames, PR #6) are merged and live.
+- Phase 3 ships as two PRs (Gab's call): 3a Blocks, then 3b the theme builder with a made-up pilot brand (G3: passes contrast in 4 modes and installs as `@dx/theme-<brand>`). A real client brand can replace the pilot later.
+- Waiting on network permission: `ui.shadcn.com` and `*.vercel.app` (real CLI test from the AI session). `www.figma.com` is blocked for the AI session, so image refreshes run from Gab's Mac with a script.
+- Still open: DX custom icons Lucide lacks; custom domain; brand guide and logo; moving the 3 working pages to a "DX Workshop" Figma file; a "DX Blocks & Templates" Figma file that mirrors the site's blocks (Phase 4).
+- Next up: Phase 3b · theme builder.
+
+---
+
+## 2026-11-23 · Phase 3a · Blocks
+
+**Decisions (Gab):** Phase 3 in two PRs (Blocks first); keep the planned mix of 31 blocks; the G3 pilot brand is made up for now.
+
+**Code (branch `revamp/phase-3a`, on top of `main` b87a915)**
+
+| Change | Files |
+| --- | --- |
+| Composable Sidebar (shadcn part names, DX tokens): provider with Ctrl/⌘ + B, `sidebar` / `floating` / `inset` variants, `offcanvas` / `icon` (72px rail) / `none`, left or right, a modal drawer with Close on phones, tooltips in the rail, `useDisclosure` for collapsible rows. Desktop sidebar is an `<aside>` landmark | `src/components/ui/sidebar.tsx`, `src/components/ui/index.ts` |
+| Menu: `top-start`, `top-end`, `right-end` placements and a wrapper `className`; Dialog `size="lg"`; Table scroll box is `relative` so screen-reader-only text can't widen the page | `src/components/ui/overlays.tsx`, `src/components/ui/data.tsx` |
+| 31 blocks: 16 sidebars, 4 dashboards (incl. a field-operations one), 3 auth, 2 settings, 2 data tables, 4 empty states. Shared parts (nav, team switcher, account menu, SVG charts…) live once in `_parts` | `src/blocks/<name>/`, `src/blocks/_parts/` |
+| Blocks index generated from each page's `@title` / `@description` / `@route` | `scripts/build-docs-data.mjs` → `src/blocks/index.ts` |
+| `@dx/<block>` registry items (`registry:block`): page → `app/<route>/page.tsx`, parts → `components/`, imports rewritten to `@/components/…`, dependencies collected from imports | `scripts/build-registry.mjs`, `public/r/v4/<block>.json` |
+| Site: Blocks in the header and sidebar, `/blocks/` (install steps + categories), `/blocks/<category>/` with a block viewer (Preview at desktop / 834 / 390, dark toggle for the frame only, open in new tab; Code shows every installed file; copy install command), full-page previews at `/view/<block>/`, wider layout on Blocks pages, Blocks card on the home page, Markdown twins + llms.txt | `src/site/block-viewer.tsx`, `src/site/blocks-data.ts`, `src/app/(docs)/blocks/`, `src/app/view/`, `src/site/content.ts`, `src/site/docs-shell.tsx`, `src/site/llms.ts`, `src/app/(docs)/page.tsx` |
+| Sidebar component page: a second example with the composable parts; AGENTS.md tells assistants to start screens from a block | `src/examples/sidebar/02-composable.tsx`, `docs/AGENTS.md` |
+| Tests: block counts, every block self-contained in the registry, gallery and viewer, Ctrl+B / rail, disclosure, phone drawer (Esc returns focus), table search/select, auth errors. Every `/view/<block>/` also runs through axe (light + dark), links and 390px | `tests/blocks.spec.ts`, `tests/registry.spec.ts`, `package.json` |
+
+**Verified:** `npm run build:all` (no diff after commit), `npm run check` (parity 63/63, 11/11), `npm run build:pages`, functional tests (see PR), axe WCAG 2.2 light + dark on all 31 block pages, no sideways scroll at 390px. Each block was also installed on its own into an empty project from its registry JSON (all dependencies resolved) and type-checked: 31/31 clean. Screens checked at 1280 and 390, light and dark, expanded / icon rail / drawer.
+
+**Not done / notes**
+
+- CI's "generated files are fresh" check doesn't list `src/blocks/index.ts` yet: changing workflow files needs the `workflow` scope on the `gh` login, which was removed. Add it to the `git diff --exit-code` list in `.github/workflows/ci.yml` next time that scope is on.
+- Visual regression doesn't cover blocks yet (would add 31 baselines); add after the Figma "DX Blocks & Templates" file exists.
+- Sidebar component page still documents the AppShell as its main example; the composable Sidebar is the second example.
+- Real `npx shadcn add @dx/<block>` from the AI session still needs `ui.shadcn.com`; the install simulation above covers file layout and imports.
+
+**Cleanup:** screenshots and the install simulation live outside the repo in the AI session's scratch space; no credentials used. Left for Gab: delete branch `revamp/cleanup-process` (its one unmerged log line, the Figma "Docs site →" badge note, is already in this log under Phase 1), revoke the `workflow` scope on the `gh` login if not needed.
 
 ---
 

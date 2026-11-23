@@ -65,6 +65,7 @@ import select_02_states from "./select/02-states";
 import select_menu_01_default from "./select-menu/01-default";
 import select_option_01_default from "./select-option/01-default";
 import sidebar_01_default from "./sidebar/01-default";
+import sidebar_02_composable from "./sidebar/02-composable";
 import skeleton_01_default from "./skeleton/01-default";
 import skip_link_01_default from "./skip-link/01-default";
 import slider_01_default from "./slider/01-default";
@@ -247,6 +248,7 @@ export const examples: Record<string, Example[]> = {
   ],
   "sidebar": [
     { file: "sidebar/01-default.tsx", title: "Sidebar", description: "The app shell’s navigation: full on desktop, a 72px icon rail on tablets and a sheet on phones. Shown in a frame because it is a page-level landmark.", preview: "/templates/app-shell/", Component: sidebar_01_default },
+    { file: "sidebar/02-composable.tsx", title: "Composable sidebar", description: "Build your own sidebar from parts: SidebarProvider, Sidebar, SidebarHeader, SidebarContent, SidebarGroup, SidebarMenu, SidebarMenuButton and SidebarInset. Collapses to a 72px icon rail with Ctrl/⌘ + B. All 16 sidebar layouts are on the Blocks page.", preview: "/view/sidebar-07/", Component: sidebar_02_composable },
   ],
   "skeleton": [
     { file: "skeleton/01-default.tsx", title: "Skeleton", description: "Placeholders shaped like the content that is loading. Use for loads over ~300 ms.", Component: skeleton_01_default },

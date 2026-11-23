@@ -2,6 +2,7 @@
 // Built from the same sources as the HTML pages (docs/*.md, docs/components/*.md, src/examples, figma/pages.content.json).
 import fs from "node:fs";
 import path from "node:path";
+import { blockCategories, blocks } from "@/blocks";
 import { coded, componentPage, docPages, figmaPage, figmaUrl, flatNav, nav, specs, specSummary, VERSION } from "./content";
 import { releases } from "./changelog";
 import componentData from "./component-data.json";
@@ -42,6 +43,9 @@ const other: Record<string, string> = {
 const summaryOf = (href: string) => {
   if (mdDocs[href]) return mdDocs[href][1];
   if (other[href] !== undefined) return other[href];
+  if (href === "/blocks/") return `${blocks.length} ready-made screens and sections (sidebars, dashboards, auth, settings, data tables, empty states), installable with the shadcn CLI.`;
+  const bc = href.startsWith("/blocks/") ? blockCategories.find((c) => href === `/blocks/${c.id}/`) : undefined;
+  if (bc) return bc.description;
   const c = componentPage(href.split("/")[2] ?? "");
   if (c && href.startsWith("/components/")) return specSummary(c.spec);
   return docPages().find((p) => p.item.href === href)?.figma?.summary ?? "";
@@ -91,6 +95,17 @@ export function pageMarkdown(href: string): string {
   if (href === "/docs/changelog/") return head(summaryOf(href)) + releases.map((r) => `## ${r.v} · ${r.title} (${r.kind})\n\n${r.notes}`).join("\n\n") + "\n";
   if (href === "/docs/downloads/") return head(summaryOf(href)) + downloads.map((d) => `- [${d.file}](${HOST}${downloadUrl(d.file)}) — ${d.title}: ${d.description}`).join("\n") + `\n- [llms-full.txt](${HOST}/llms-full.txt) — every page in one Markdown file\n`;
   if (href === "/components/") return head(summaryOf(href)) + flatNav.filter((i) => i.href.startsWith("/components/") && i.href !== "/components/").map((i) => `- [${i.title}](${mdUrl(i.href)}): ${summaryOf(i.href)}`).join("\n") + "\n";
+  if (href === "/blocks/") {
+    return head(summaryOf(href)) + `Add the registry to components.json once: \`{ "registries": { "@dx": "${REGISTRY}/{name}.json" } }\`, then \`npx shadcn@latest add @dx/<block>\`. The page goes to app/<route>/page.tsx, its parts to components/.\n\n` +
+      blockCategories.map((c) => `- [${c.title}](${mdUrl(`/blocks/${c.id}/`)}): ${c.description}`).join("\n") + "\n";
+  }
+  if (href.startsWith("/blocks/")) {
+    const cat = blockCategories.find((c) => href === `/blocks/${c.id}/`)!;
+    return head(summaryOf(href)) + blocks.filter((b) => b.category === cat.id).map((b) => {
+      const item = JSON.parse(read(`public/r/v4/${b.name}.json`)) as { files: { target: string }[] };
+      return `## ${b.name} · ${b.title}\n\n${b.description}\n\n\`\`\`bash\nnpx shadcn@latest add @dx/${b.name}\n\`\`\`\n\nPreview: ${HOST}/view/${b.name}/ · Files: ${item.files.map((f) => f.target).join(", ")}`;
+    }).join("\n\n") + "\n";
+  }
   if (href === "/tokens/") {
     return head(summaryOf(href)) + `Tiers: Primitive (color/blue/600) → Brand (brand/primary/600) → Semantic (color/bg/brand) → Component (button/primary/bg). Components read Semantic and Component tokens only.\n\nCSS: \`var(--ds-color-bg-surface)\` · Tailwind: \`bg-surface\`, \`text-fg-secondary\`, \`border-line-default\`, \`rounded-control\` · React Native: \`theme.colors.bg.surface\`.\n\nAll tokens as DTCG JSON: ${HOST}/downloads/dx-tokens.json\n`;
   }

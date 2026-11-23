@@ -25,7 +25,7 @@
     "test": "playwright test",
     "test:update": "playwright test --update-snapshots",
     "lint": "tsc --noEmit",
-    "test:functional": "playwright test tests/components.spec.ts tests/templates.spec.ts tests/a11y.spec.ts tests/site.spec.ts tests/tokens.spec.ts tests/registry.spec.ts tests/redirects.spec.ts tests/component-pages.spec.ts",
+    "test:functional": "playwright test tests/components.spec.ts tests/templates.spec.ts tests/a11y.spec.ts tests/site.spec.ts tests/tokens.spec.ts tests/registry.spec.ts tests/redirects.spec.ts tests/component-pages.spec.ts tests/blocks.spec.ts",
     "test:visual": "playwright test tests/visual.spec.ts",
     "registry": "node scripts/build-registry.mjs",
     "docs-data": "node scripts/build-docs-data.mjs"

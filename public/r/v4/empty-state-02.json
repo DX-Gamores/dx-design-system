@@ -1,0 +1,44 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "empty-state-02",
+  "type": "registry:block",
+  "title": "No search results",
+  "description": "Keeps the search and filters in view, says what matched nothing, suggests fixes and offers to clear everything in one step.",
+  "categories": [
+    "empty-state"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/init.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/empty-state-02/page.tsx",
+      "type": "registry:page",
+      "target": "app/customers/page.tsx",
+      "content": "/**\n * @title No search results\n * @description Keeps the search and filters in view, says what matched nothing, suggests fixes and offers to clear everything in one step.\n * @route /customers\n */\nimport { TopBar } from \"@/components/top-bar\";\nimport { CustomerSearch } from \"@/components/customer-search\";\n\nexport default function Page() {\n  return (\n    <div className=\"flex min-h-svh flex-col bg-canvas\">\n      <TopBar current=\"Customers\" />\n      <main id=\"main\" className=\"mx-auto flex w-full max-w-5xl flex-1 flex-col gap-6 px-4 py-8 md:px-6\">\n        <h1 className=\"text-heading-h2\">Customers</h1>\n        <CustomerSearch />\n      </main>\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/top-bar.tsx",
+      "type": "registry:component",
+      "target": "components/top-bar.tsx",
+      "content": "\"use client\";\nimport { Gauge } from \"lucide-react\";\nimport { Avatar } from \"@/components/ui/display\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { Menu } from \"@/components/ui/overlays\";\n\nconst links = [\"Overview\", \"Customers\", \"Products\", \"Settings\"];\n\n/** A header-only app layout: logo, top navigation and the account menu. */\nexport function TopBar({ current = \"Overview\" }: { current?: string }) {\n  return (\n    <header className=\"sticky top-0 z-[var(--ds-z-sticky)] border-b border-line-default bg-surface\">\n      <div className=\"mx-auto flex h-14 max-w-7xl items-center gap-6 px-4 md:px-6\">\n        <a href=\"#\" className=\"flex items-center gap-2 rounded-sm text-label-large focus-visible:focus-ring\">\n          <span className=\"grid size-7 place-items-center rounded-control bg-brand text-fg-on-brand\"><Icon name={Gauge} size={16} /></span>\n          Acme\n        </a>\n        <nav aria-label=\"Main\" className=\"max-md:hidden\">\n          <ul className=\"flex items-center gap-1\">\n            {links.map((l) => (\n              <li key={l}>\n                <a href=\"#\" aria-current={l === current ? \"page\" : undefined}\n                  className=\"flex h-8 items-center rounded-control px-3 text-label-medium text-fg-secondary hover:bg-neutral-hover hover:text-fg-primary focus-visible:focus-ring aria-[current=page]:text-fg-primary\">\n                  {l}\n                </a>\n              </li>\n            ))}\n          </ul>\n        </nav>\n        <div className=\"ms-auto\">\n          <Menu\n            label=\"Account menu for Jane Cooper\"\n            items={[{ label: \"Profile\", icon: \"user\" }, { label: \"Settings\", icon: \"settings\" }, { label: \"Sign out\", icon: \"sign-out\", separatorBefore: true }]}\n            trigger={({ ref, ...p }) => (\n              <button ref={ref} type=\"button\" {...p} aria-label=\"Account menu for Jane Cooper\" className=\"rounded-full focus-visible:focus-ring\">\n                <Avatar name=\"Jane Cooper\" decorative />\n              </button>\n            )}\n          />\n        </div>\n      </div>\n    </header>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/empty-state-02/components/customer-search.tsx",
+      "type": "registry:component",
+      "target": "components/customer-search.tsx",
+      "content": "\"use client\";\nimport { useState } from \"react\";\nimport { SearchX } from \"lucide-react\";\nimport { Button } from \"@/components/ui/button\";\nimport { Chip, SearchField } from \"@/components/ui/form\";\nimport { Icon } from \"@/components/ui/icon\";\n\nexport function CustomerSearch() {\n  const [q, setQ] = useState(\"harbour labs\");\n  const [filters, setFilters] = useState([\"Active\", \"Enterprise\"]);\n  const cleared = !q && !filters.length;\n  return (\n    <>\n      <div className=\"flex flex-wrap items-center gap-2\">\n        <div className=\"w-full sm:w-72\"><SearchField label=\"Search customers\" value={q} onChange={setQ} onClear={() => setQ(\"\")} /></div>\n        {filters.map((f) => <Chip key={f} onRemove={() => setFilters((x) => x.filter((y) => y !== f))}>{f}</Chip>)}\n      </div>\n      <section aria-live=\"polite\" className=\"flex flex-col items-center gap-4 rounded-container border border-line-default bg-surface px-6 py-14 text-center\">\n        {cleared ? (\n          <p className=\"text-body-medium text-fg-secondary\">Showing all 248 customers.</p>\n        ) : (\n          <>\n            <span className=\"grid size-12 place-items-center rounded-full bg-surface-subtle text-icon-primary\"><Icon name={SearchX} /></span>\n            <h2 className=\"text-heading-h4\">No customers match {q ? <>“{q}”</> : \"these filters\"}</h2>\n            <div className=\"flex max-w-sm flex-col gap-1 text-body-small text-fg-secondary\">\n              <p>Try one of these:</p>\n              <ul className=\"list-inside list-disc text-start\">\n                <li>Check the spelling — did you mean <button type=\"button\" onClick={() => setQ(\"harbor labs\")} className=\"rounded-sm text-fg-brand underline underline-offset-2 focus-visible:focus-ring\">harbor labs</button>?</li>\n                <li>Remove a filter, or search all plans</li>\n                <li>Search by email or customer ID</li>\n              </ul>\n            </div>\n            <Button variant=\"secondary\" onClick={() => { setQ(\"\"); setFilters([]); }}>Clear search and filters</Button>\n          </>\n        )}\n      </section>\n    </>\n  );\n}\n"
+    }
+  ],
+  "meta": {
+    "route": "/customers"
+  }
+}

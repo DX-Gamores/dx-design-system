@@ -5,7 +5,7 @@ import { expect, test } from "@playwright/test";
 type File = { path: string; type: string; target?: string; content?: string };
 type Item = { name: string; type: string; title?: string; description?: string; registryDependencies?: string[]; files: File[] };
 
-test("registry index lists init, modules, app shell and all 63 components", async ({ request }) => {
+test("registry index lists init, modules, app shell, all 63 components and the blocks", async ({ request }) => {
   const res = await request.get("r/v4/registry.json");
   expect(res.status()).toBe(200);
   const index = (await res.json()) as { name: string; items: Item[] };
@@ -14,7 +14,8 @@ test("registry index lists init, modules, app shell and all 63 components", asyn
   expect(names).toContain("init");
   expect(names).toContain("app-shell");
   expect(names.filter((n) => n.startsWith("ui-")).length).toBeGreaterThanOrEqual(12);
-  expect(index.items.filter((i) => !i.name.startsWith("ui-") && !["init", "app-shell", "agents"].includes(i.name)).length).toBe(63);
+  expect(index.items.filter((i) => i.type === "registry:ui" && !i.name.startsWith("ui-")).length).toBe(63);
+  expect(index.items.filter((i) => i.type === "registry:block").length).toBeGreaterThanOrEqual(31);
   expect(names).toContain("agents");
 });
 

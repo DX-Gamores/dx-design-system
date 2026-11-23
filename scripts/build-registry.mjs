@@ -13,6 +13,7 @@
 //   ui-<module>     a source file from src/components/ui (components share files, e.g. form.tsx)
 //   <component>     one per Figma component (63); pulls in the module that implements it
 //   app-shell       AppShell, PageHeader, ThemeSwitcher (Next.js)
+//   <block>         one per block in src/blocks (sidebar-07, dashboard-01 …): a page plus the parts it uses
 import fs from "node:fs";
 import path from "node:path";
 
@@ -136,12 +137,57 @@ for (const s of specs) {
   });
 }
 
+// ---------- blocks: src/blocks/<name>/page.tsx + ./components/* + ../_parts/* → app/<route>/page.tsx + components/*
+const blDir = "src/blocks";
+const resolveTs = (p) => [".tsx", ".ts"].map((e) => p + e).find((f) => fs.existsSync(path.join(root, f)));
+const blockImport = /from\s+"((?:\.\.?\/)+(?:components\/|_parts\/)?[\w-]+)"/g;
+const blockRewrite = (src) => rewrite(src).replace(blockImport, (m, spec) => `from "@/components/${spec.split("/").pop()}"`);
+const blockNames = fs.existsSync(path.join(root, blDir))
+  ? fs.readdirSync(path.join(root, blDir)).filter((d) => !d.startsWith("_") && fs.statSync(path.join(root, blDir, d)).isDirectory()).sort((a, b) => a.localeCompare(b, "en", { numeric: true }))
+  : [];
+for (const name of blockNames) {
+  const pagePath = `${blDir}/${name}/page.tsx`;
+  const pageSrc = read(pagePath);
+  const route = pageSrc.match(/@route\s+(\S+)/)?.[1] ?? `/${name.replace(/-\d+$/, "")}`;
+  const title = pageSrc.match(/@title\s+(.+)/)[1].trim();
+  const description = pageSrc.match(/@description\s+([\s\S]+?)\s*(?:\*\/|\* @)/)[1].replace(/\s*\n\s*\*?\s*/g, " ").trim();
+  const files = new Map(); // repo path → target
+  const deps = new Set(), regDeps = new Set([url("init")]);
+  const visit = (file) => {
+    const src = read(file);
+    npmDeps(src).forEach((d) => deps.add(d));
+    for (const m of src.matchAll(/from\s+"@\/components\/ui\/([\w-]+)"/g)) regDeps.add(url(moduleName(fileOf(m[1]))));
+    for (const m of src.matchAll(blockImport)) {
+      const dep = resolveTs(path.posix.join(path.posix.dirname(file), m[1]));
+      if (!dep) throw new Error(`${file}: can't resolve ${m[1]}`);
+      if (files.has(dep)) continue;
+      const base = path.posix.basename(dep);
+      if ([...files.values()].includes(`components/${base}`)) throw new Error(`${name}: two files would install as components/${base}`);
+      files.set(dep, `components/${base}`);
+      visit(dep);
+    }
+  };
+  files.set(pagePath, `app${route === "/" ? "" : route}/page.tsx`);
+  visit(pagePath);
+  items.push({
+    name,
+    type: "registry:block",
+    title,
+    description,
+    categories: [name.replace(/-\d+$/, "")],
+    dependencies: [...deps].sort(),
+    registryDependencies: [...regDeps],
+    files: [...files].map(([p, target]) => ({ ...fileEntry(p, p === pagePath ? "registry:page" : "registry:component", target), block: true })),
+    meta: { route },
+  });
+}
+
 // ---------- write manifest (source paths) and built items (with file contents)
 const manifest = {
   $schema: "https://ui.shadcn.com/schema/registry.json",
   name: "dx",
   homepage: HOST,
-  items: items.map(({ docs, ...it }) => ({ ...it, ...(docs ? { docs } : {}) })),
+  items: items.map(({ docs, ...it }) => ({ ...it, files: it.files.map(({ block, ...f }) => f), ...(docs ? { docs } : {}) })),
 };
 fs.writeFileSync(path.join(root, "registry.json"), JSON.stringify(manifest, null, 2) + "\n");
 
@@ -152,7 +198,7 @@ for (const it of items) {
   const built = {
     $schema: "https://ui.shadcn.com/schema/registry-item.json",
     ...it,
-    files: it.files.map((f) => ({ ...f, path: f.path.replace(/^src\/|^dist\/|^docs\//, ""), content: rewrite(read(f.path)) })),
+    files: it.files.map(({ block, ...f }) => ({ ...f, path: f.path.replace(/^src\/|^dist\/|^docs\//, ""), content: (block ? blockRewrite : rewrite)(read(f.path)) })),
   };
   fs.writeFileSync(path.join(out, `${it.name}.json`), JSON.stringify(built, null, 2) + "\n");
 }
@@ -160,5 +206,6 @@ fs.writeFileSync(
   path.join(out, "registry.json"),
   JSON.stringify({ $schema: "https://ui.shadcn.com/schema/registry.json", name: "dx", homepage: HOST, items: items.map(({ files, css, docs, ...it }) => ({ ...it, files: files.map((f) => ({ path: f.path, type: f.type, ...(f.target ? { target: f.target } : {}) })) })) }, null, 2) + "\n",
 );
-const comps = items.filter((i) => !i.name.startsWith("ui-") && !["init", "app-shell", "agents"].includes(i.name)).length;
-console.log(`✓ Registry: init + ${moduleFiles.length} modules + app-shell + ${comps} components → registry.json, public/r/v${major}/ (${BASE})`);
+const comps = items.filter((i) => i.type === "registry:ui" && !i.name.startsWith("ui-")).length;
+const nBlocks = items.filter((i) => i.type === "registry:block").length;
+console.log(`✓ Registry: init + ${moduleFiles.length} modules + app-shell + ${comps} components + ${nBlocks} blocks → registry.json, public/r/v${major}/ (${BASE})`);

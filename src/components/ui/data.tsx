@@ -73,7 +73,7 @@ export function Table<Row>({ caption, captionHidden, columns, rows, rowKey, sort
     return [...rows].sort((a, b) => (val(a) > val(b) ? 1 : val(a) < val(b) ? -1 : 0) * (sort.direction === "ascending" ? 1 : -1));
   })();
   return (
-    <div className="overflow-x-auto rounded-container border border-line-default bg-surface">
+    <div className="relative overflow-x-auto rounded-container border border-line-default bg-surface">
       <table className="w-full border-separate border-spacing-0">
         <caption className={cn("px-4 py-3 text-start text-label-large", captionHidden && "sr-only")}>{caption}</caption>
         <thead>

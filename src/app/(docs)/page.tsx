@@ -1,3 +1,4 @@
+import { blocks } from "@/blocks";
 import Link from "next/link";
 import { Badge, Button, buttonClass, Icon, StatCard, type IconName } from "@/components/ui";
 import { componentPages, stats, VERSION } from "@/site/content";
@@ -12,6 +13,7 @@ export default async function Home() {
   const s = stats();
   const cards: { icon: IconName; title: string; text: string; href: string }[] = [
     { icon: "dashboard", title: "Components", text: `${componentPages.length} components with live examples, code, props and accessibility notes.`, href: "/components/" },
+    { icon: "grid-view", title: "Blocks", text: `${blocks.length} ready-made screens — sidebars, dashboards, sign-in, settings, tables, empty states. Preview, copy or install.`, href: "/blocks/" },
     { icon: "filter", title: "Tokens", text: `${s.variables} variables. Search them and copy as CSS, Tailwind or React Native.`, href: "/tokens/" },
     { icon: "star", title: "Icons", text: `${s.icons} DX icons on Lucide, plus any of Lucide's 1,600. Copy as SVG, JSX or React Native.`, href: "/icons/" },
     { icon: "eye", title: "Themes", text: `${s.brands} brands × ${s.modes} color modes × 2 densities, contrast-checked.`, href: "/themes/" },

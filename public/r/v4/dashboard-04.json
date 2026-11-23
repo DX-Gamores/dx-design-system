@@ -1,0 +1,83 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dashboard-04",
+  "type": "registry:block",
+  "title": "Project overview",
+  "description": "One project at a glance: owner and team, overall progress, milestones as a stepper, workload per person, and recent activity.",
+  "categories": [
+    "dashboard"
+  ],
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://dx-design-system.vercel.app/r/v4/init.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+    "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+  ],
+  "files": [
+    {
+      "path": "blocks/dashboard-04/page.tsx",
+      "type": "registry:page",
+      "target": "app/projects/[id]/page.tsx",
+      "content": "/**\n * @title Project overview\n * @description One project at a glance: owner and team, overall progress, milestones as a stepper, workload per person, and recent activity.\n * @route /projects/[id]\n * @height 960\n */\nimport { SidebarInset, SidebarProvider } from \"@/components/ui/sidebar\";\nimport { Button } from \"@/components/ui/button\";\nimport { Badge } from \"@/components/ui/feedback\";\nimport { DashboardSidebar } from \"@/components/dashboard-sidebar\";\nimport { SiteHeader } from \"@/components/site-header\";\nimport { ProjectSummary } from \"@/components/project-summary\";\nimport { Milestones } from \"@/components/milestones\";\nimport { Activity } from \"@/components/activity\";\n\nexport default function Page() {\n  return (\n    <SidebarProvider>\n      <DashboardSidebar current=\"Projects\" />\n      <SidebarInset>\n        <SiteHeader crumbs={[{ label: \"Projects\", href: \"#\" }, { label: \"Website redesign\" }]} actions={<><Button size=\"sm\" variant=\"secondary\" leadingIcon=\"share\">Share</Button><Button size=\"sm\" leadingIcon=\"plus\">New task</Button></>} />\n        <div className=\"flex flex-1 flex-col gap-6 p-4 md:p-6\">\n          <div className=\"flex flex-col gap-2\">\n            <div className=\"flex flex-wrap items-center gap-2\"><h1 className=\"text-heading-h2\">Website redesign</h1><Badge tone=\"success\">On track</Badge></div>\n            <p className=\"max-w-[72ch] text-body-medium text-fg-secondary\">New marketing site on the DX design system: content model, page templates and a launch in March.</p>\n          </div>\n          <ProjectSummary />\n          <div className=\"grid gap-4 lg:grid-cols-5\">\n            <Milestones />\n            <Activity />\n          </div>\n        </div>\n      </SidebarInset>\n    </SidebarProvider>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/dashboard-sidebar.tsx",
+      "type": "registry:component",
+      "target": "components/dashboard-sidebar.tsx",
+      "content": "\"use client\";\nimport { BarChart3, Camera, Database, FileText, FolderKanban, Gauge, HelpCircle, LayoutDashboard, ListChecks, Search, Settings, Users } from \"lucide-react\";\nimport { Icon } from \"@/components/ui/icon\";\nimport {\n  Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton,\n  SidebarMenuItem, SidebarRail,\n} from \"@/components/ui/sidebar\";\nimport { BrandHeader } from \"@/components/brand-header\";\nimport { NavSecondary } from \"@/components/nav-secondary\";\nimport { NavUser } from \"@/components/nav-user\";\n\nconst main = [\n  { title: \"Dashboard\", icon: LayoutDashboard }, { title: \"Lifecycle\", icon: ListChecks }, { title: \"Analytics\", icon: BarChart3 },\n  { title: \"Projects\", icon: FolderKanban }, { title: \"Team\", icon: Users },\n];\nconst documents = [{ title: \"Data library\", icon: Database }, { title: \"Reports\", icon: FileText }, { title: \"Capture\", icon: Camera }];\nconst secondary = [{ title: \"Settings\", url: \"#\", icon: Settings }, { title: \"Get help\", url: \"#\", icon: HelpCircle }, { title: \"Search\", url: \"#\", icon: Search }];\n\n/** The app sidebar the dashboard, settings and table blocks share. Pass the current page's title. */\nexport function DashboardSidebar({ current = \"Dashboard\", variant = \"inset\" }: { current?: string; variant?: \"sidebar\" | \"inset\" }) {\n  return (\n    <Sidebar collapsible=\"icon\" variant={variant} label=\"Main navigation\">\n      <SidebarHeader>\n        <BrandHeader name=\"Acme Inc\" detail=\"Workspace\" logo={Gauge} />\n      </SidebarHeader>\n      <SidebarContent>\n        <nav aria-label=\"Main\" className=\"contents\">\n          <SidebarGroup>\n            <SidebarMenu>\n              {main.map((m) => (\n                <SidebarMenuItem key={m.title}>\n                  <SidebarMenuButton href=\"#\" isActive={m.title === current} tooltip={m.title}><Icon name={m.icon} /><span>{m.title}</span></SidebarMenuButton>\n                </SidebarMenuItem>\n              ))}\n            </SidebarMenu>\n          </SidebarGroup>\n          <SidebarGroup>\n            <SidebarGroupLabel as=\"h2\">Documents</SidebarGroupLabel>\n            <SidebarMenu>\n              {documents.map((m) => (\n                <SidebarMenuItem key={m.title}>\n                  <SidebarMenuButton href=\"#\" isActive={m.title === current} tooltip={m.title}><Icon name={m.icon} /><span>{m.title}</span></SidebarMenuButton>\n                </SidebarMenuItem>\n              ))}\n            </SidebarMenu>\n          </SidebarGroup>\n          <NavSecondary items={secondary.map((s) => ({ ...s }))} className=\"mt-auto\" />\n        </nav>\n      </SidebarContent>\n      <SidebarFooter>\n        <NavUser user={{ name: \"Jane Cooper\", email: \"jane@acme.com\" }} />\n      </SidebarFooter>\n      <SidebarRail />\n    </Sidebar>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/brand-header.tsx",
+      "type": "registry:component",
+      "target": "components/brand-header.tsx",
+      "content": "\"use client\";\nimport { GalleryVerticalEnd, type LucideIcon } from \"lucide-react\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from \"@/components/ui/sidebar\";\n\n/** Logo, product name and a second line (plan or version) at the top of the sidebar. Links home. */\nexport function BrandHeader({ name = \"Acme Docs\", detail = \"v4.0.0\", logo = GalleryVerticalEnd }: { name?: string; detail?: string; logo?: LucideIcon }) {\n  return (\n    <SidebarMenu>\n      <SidebarMenuItem>\n        <SidebarMenuButton href=\"#\" size=\"lg\" tooltip={name}>\n          <span className=\"grid size-8 shrink-0 place-items-center rounded-control bg-brand text-fg-on-brand\"><Icon name={logo} size={16} /></span>\n          <span className=\"flex min-w-0 flex-1 flex-col\">\n            <span className=\"truncate text-label-medium text-fg-primary\">{name}</span>\n            <span className=\"truncate text-caption-default\">{detail}</span>\n          </span>\n        </SidebarMenuButton>\n      </SidebarMenuItem>\n    </SidebarMenu>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/nav-secondary.tsx",
+      "type": "registry:component",
+      "target": "components/nav-secondary.tsx",
+      "content": "\"use client\";\nimport type { LucideIcon } from \"lucide-react\";\nimport type { HTMLAttributes } from \"react\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { SidebarGroup, SidebarGroupContent, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from \"@/components/ui/sidebar\";\n\n/** Small links near the bottom of the sidebar (support, feedback). */\nexport function NavSecondary({ items, ...rest }: HTMLAttributes<HTMLDivElement> & { items: { title: string; url: string; icon: LucideIcon }[] }) {\n  return (\n    <SidebarGroup {...rest}>\n      <SidebarGroupContent>\n        <SidebarMenu>\n          {items.map((item) => (\n            <SidebarMenuItem key={item.title}>\n              <SidebarMenuButton href={item.url} size=\"sm\" tooltip={item.title}>\n                <Icon name={item.icon} size={16} />\n                <span>{item.title}</span>\n              </SidebarMenuButton>\n            </SidebarMenuItem>\n          ))}\n        </SidebarMenu>\n      </SidebarGroupContent>\n    </SidebarGroup>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/nav-user.tsx",
+      "type": "registry:component",
+      "target": "components/nav-user.tsx",
+      "content": "\"use client\";\nimport { ChevronsUpDown } from \"lucide-react\";\nimport { Avatar } from \"@/components/ui/display\";\nimport { Icon } from \"@/components/ui/icon\";\nimport { Menu } from \"@/components/ui/overlays\";\nimport { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from \"@/components/ui/sidebar\";\n\n/** The signed-in person at the bottom of the sidebar, with an account menu. */\nexport function NavUser({ user }: { user: { name: string; email: string } }) {\n  const { isMobile, state } = useSidebar();\n  return (\n    <SidebarMenu>\n      <SidebarMenuItem>\n        <Menu\n          label={`Account menu for ${user.name}`}\n          className=\"flex w-full\"\n          placement={!isMobile && state === \"collapsed\" ? \"right-end\" : \"top-start\"}\n          items={[\n            { label: \"Profile\", icon: \"user\" },\n            { label: \"Billing\", icon: \"credit-card\" },\n            { label: \"Notifications\", icon: \"bell\" },\n            { label: \"Sign out\", icon: \"sign-out\", separatorBefore: true },\n          ]}\n          trigger={({ ref, ...p }) => (\n            <SidebarMenuButton ref={ref as React.Ref<HTMLElement>} {...p} size=\"lg\" tooltip={user.name}>\n              <Avatar name={user.name} decorative />\n              <span className=\"flex min-w-0 flex-1 flex-col\">\n                <span className=\"truncate text-label-medium text-fg-primary\">{user.name}</span>\n                <span className=\"truncate text-caption-default\">{user.email}</span>\n              </span>\n              <Icon name={ChevronsUpDown} size={16} />\n            </SidebarMenuButton>\n          )}\n        />\n      </SidebarMenuItem>\n    </SidebarMenu>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/_parts/site-header.tsx",
+      "type": "registry:component",
+      "target": "components/site-header.tsx",
+      "content": "\"use client\";\nimport type { ReactNode } from \"react\";\nimport { Breadcrumbs } from \"@/components/ui/nav-extra\";\nimport { SidebarTrigger } from \"@/components/ui/sidebar\";\n\n/** The bar above the page: sidebar toggle, breadcrumbs and optional actions on the end side. */\nexport function SiteHeader({ crumbs, actions }: { crumbs: { label: string; href?: string }[]; actions?: ReactNode }) {\n  return (\n    <header className=\"sticky top-0 z-[var(--ds-z-sticky)] flex h-14 shrink-0 items-center gap-2 border-b border-line-default bg-surface px-4 md:rounded-t-[inherit]\">\n      <SidebarTrigger className=\"-ms-1\" />\n      <span aria-hidden className=\"mx-1 h-4 w-px bg-line-default\" />\n      <Breadcrumbs items={crumbs} />\n      {actions && <div className=\"ms-auto flex items-center gap-2\">{actions}</div>}\n    </header>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/dashboard-04/components/project-summary.tsx",
+      "type": "registry:component",
+      "target": "components/project-summary.tsx",
+      "content": "import { Avatar } from \"@/components/ui/display\";\nimport { Progress } from \"@/components/ui/feedback\";\n\nconst team = [\"Jane Cooper\", \"Wade Warren\", \"Esther Howard\", \"Cameron Williamson\", \"Brooklyn Simmons\"];\nconst load = [\n  { name: \"Jane Cooper\", tasks: 12, tone: \"warning\" as const, value: 92 },\n  { name: \"Wade Warren\", tasks: 7, tone: \"brand\" as const, value: 58 },\n  { name: \"Esther Howard\", tasks: 5, tone: \"brand\" as const, value: 40 },\n];\n\nexport function ProjectSummary() {\n  return (\n    <div className=\"grid gap-4 md:grid-cols-3\">\n      <section aria-labelledby=\"ps-progress\" className=\"flex flex-col gap-3 rounded-container border border-line-default bg-surface p-[var(--ds-padding-card)]\">\n        <h2 id=\"ps-progress\" className=\"text-heading-h4\">Progress</h2>\n        <p className=\"text-heading-h2 tabular-nums\">64%</p>\n        <Progress value={64} label=\"Tasks done (82 of 128)\" />\n        <p className=\"text-caption-default text-fg-secondary\">Due March 14 · 18 weeks left</p>\n      </section>\n      <section aria-labelledby=\"ps-team\" className=\"flex flex-col gap-3 rounded-container border border-line-default bg-surface p-[var(--ds-padding-card)]\">\n        <h2 id=\"ps-team\" className=\"text-heading-h4\">Team</h2>\n        <ul className=\"flex -space-x-2\">{team.map((n) => <li key={n} className=\"rounded-full ring-2 ring-[var(--ds-color-bg-surface)]\"><Avatar name={n} size=\"lg\" /></li>)}</ul>\n        <dl className=\"grid grid-cols-2 gap-2 text-body-small\">\n          <dt className=\"text-fg-secondary\">Owner</dt><dd>Jane Cooper</dd>\n          <dt className=\"text-fg-secondary\">Client</dt><dd>Acme Inc</dd>\n        </dl>\n      </section>\n      <section aria-labelledby=\"ps-load\" className=\"flex flex-col gap-3 rounded-container border border-line-default bg-surface p-[var(--ds-padding-card)]\">\n        <h2 id=\"ps-load\" className=\"text-heading-h4\">Workload</h2>\n        <ul className=\"flex flex-col gap-3\">{load.map((l) => <li key={l.name}><Progress value={l.value} tone={l.tone} label={`${l.name} · ${l.tasks} open tasks`} /></li>)}</ul>\n      </section>\n    </div>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/dashboard-04/components/milestones.tsx",
+      "type": "registry:component",
+      "target": "components/milestones.tsx",
+      "content": "import { Stepper } from \"@/components/ui/navigation\";\n\nexport function Milestones() {\n  return (\n    <section aria-labelledby=\"ms-title\" className=\"flex flex-col gap-4 rounded-container border border-line-default bg-surface p-[var(--ds-padding-card)] lg:col-span-3\">\n      <h2 id=\"ms-title\" className=\"text-heading-h4\">Milestones</h2>\n      <Stepper steps={[\n        { label: \"Discovery\", description: \"Done Nov 2\", status: \"complete\" },\n        { label: \"Content model\", description: \"Done Nov 20\", status: \"complete\" },\n        { label: \"Templates\", description: \"Due Jan 15\", status: \"current\" },\n        { label: \"Launch\", description: \"Mar 14\", status: \"upcoming\" },\n      ]} />\n    </section>\n  );\n}\n"
+    },
+    {
+      "path": "blocks/dashboard-04/components/activity.tsx",
+      "type": "registry:component",
+      "target": "components/activity.tsx",
+      "content": "import { Avatar } from \"@/components/ui/display\";\n\nconst items = [\n  { who: \"Wade Warren\", what: \"moved “Pricing page” to Review\", when: \"12 min ago\" },\n  { who: \"Esther Howard\", what: \"commented on “Hero copy”\", when: \"1 h ago\" },\n  { who: \"Jane Cooper\", what: \"completed “Navigation spec”\", when: \"3 h ago\" },\n  { who: \"Brooklyn Simmons\", what: \"uploaded 14 photos to Assets\", when: \"Yesterday\" },\n];\n\nexport function Activity() {\n  return (\n    <section aria-labelledby=\"act-title\" className=\"flex flex-col gap-4 rounded-container border border-line-default bg-surface p-[var(--ds-padding-card)] lg:col-span-2\">\n      <h2 id=\"act-title\" className=\"text-heading-h4\">Recent activity</h2>\n      <ol className=\"flex flex-col gap-4\">\n        {items.map((i) => (\n          <li key={i.what} className=\"flex gap-3\">\n            <Avatar name={i.who} decorative />\n            <p className=\"flex min-w-0 flex-1 flex-col text-body-small\"><span><span className=\"text-label-medium\">{i.who}</span> {i.what}</span><span className=\"text-caption-default text-fg-secondary\">{i.when}</span></p>\n          </li>\n        ))}\n      </ol>\n    </section>\n  );\n}\n"
+    }
+  ],
+  "meta": {
+    "route": "/projects/[id]"
+  }
+}

@@ -2533,7 +2533,7 @@
    },
    {
     "name": "size",
-    "type": "\"md\" | \"sm\"",
+    "type": "\"lg\" | \"md\" | \"sm\"",
     "required": false,
     "default": "\"md\""
    },
@@ -2860,9 +2860,15 @@
    },
    {
     "name": "placement",
-    "type": "\"bottom-start\" | \"bottom-end\"",
+    "type": "\"bottom-start\" | \"bottom-end\" | \"top-start\" | \"top-end\" | \"right-end\"",
     "required": false,
     "default": "\"bottom-end\""
+   },
+   {
+    "name": "className",
+    "type": "string",
+    "required": false,
+    "description": "Classes for the wrapper, e.g. \"flex w-full\" when the trigger fills a row."
    }
   ],
   "extends": [],

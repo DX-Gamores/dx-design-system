@@ -294,6 +294,26 @@
       ]
     },
     {
+      "name": "ui-sidebar",
+      "type": "registry:ui",
+      "title": "DX module · sidebar.tsx",
+      "description": "Source module sidebar.tsx from src/components/ui. Installed automatically by the components that live in it.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "agents",
       "type": "registry:file",
       "title": "AI assistant rules",
@@ -1205,6 +1225,1668 @@
       "meta": {
         "export": "StatCard",
         "figmaPage": "Kit · Stat Card"
+      }
+    },
+    {
+      "name": "auth-01",
+      "type": "registry:block",
+      "title": "A centered sign-in card",
+      "description": "Email and password with show/hide, an error summary that links to each field, remember me, single sign-on and a magic-link option.",
+      "categories": [
+        "auth"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/auth-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/login-form.tsx",
+          "type": "registry:component",
+          "target": "components/login-form.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/password-field.tsx",
+          "type": "registry:component",
+          "target": "components/password-field.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/login"
+      }
+    },
+    {
+      "name": "auth-02",
+      "type": "registry:block",
+      "title": "A split sign-in screen with a brand panel",
+      "description": "The form on one side, a brand panel with a customer quote on the other. The panel hides below 1024px.",
+      "categories": [
+        "auth"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/auth-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/login/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/login-form.tsx",
+          "type": "registry:component",
+          "target": "components/login-form.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/password-field.tsx",
+          "type": "registry:component",
+          "target": "components/password-field.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/login"
+      }
+    },
+    {
+      "name": "auth-03",
+      "type": "registry:block",
+      "title": "Sign up with password rules",
+      "description": "Name, work email and a password with live rules (length, number, letter) announced politely, terms consent, and single sign-on.",
+      "categories": [
+        "auth"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/auth-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/signup/page.tsx"
+        },
+        {
+          "path": "src/blocks/auth-03/components/signup-form.tsx",
+          "type": "registry:component",
+          "target": "components/signup-form.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/password-field.tsx",
+          "type": "registry:component",
+          "target": "components/password-field.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/signup"
+      }
+    },
+    {
+      "name": "dashboard-01",
+      "type": "registry:block",
+      "title": "Dashboard with key numbers, a chart and a table",
+      "description": "An inset sidebar app: four key numbers with trends, visitors over time with a range switch, and a sortable table of documents.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/dashboard-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/dashboard-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-01/components/visitors-chart.tsx",
+          "type": "registry:component",
+          "target": "components/visitors-chart.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/area-chart.tsx",
+          "type": "registry:component",
+          "target": "components/area-chart.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-01/components/documents-table.tsx",
+          "type": "registry:component",
+          "target": "components/documents-table.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/dashboard"
+      }
+    },
+    {
+      "name": "dashboard-02",
+      "type": "registry:block",
+      "title": "Analytics overview with tabs",
+      "description": "A header-only layout: top navigation, a date-range action, tabs for Overview / Analytics / Reports, key numbers, monthly revenue and recent sales.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/dashboard-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/top-bar.tsx",
+          "type": "registry:component",
+          "target": "components/top-bar.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-02/components/overview.tsx",
+          "type": "registry:component",
+          "target": "components/overview.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/bar-chart.tsx",
+          "type": "registry:component",
+          "target": "components/bar-chart.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/dashboard"
+      }
+    },
+    {
+      "name": "dashboard-03",
+      "type": "registry:block",
+      "title": "Field operations dashboard",
+      "description": "For agriculture and field teams: today's weather, alerts that need action, task progress by crew, and a table of fields with crop, stage and moisture.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/dashboard-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/operations/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/dashboard-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-03/components/weather.tsx",
+          "type": "registry:component",
+          "target": "components/weather.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-03/components/crew-progress.tsx",
+          "type": "registry:component",
+          "target": "components/crew-progress.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-03/components/fields-table.tsx",
+          "type": "registry:component",
+          "target": "components/fields-table.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/operations"
+      }
+    },
+    {
+      "name": "dashboard-04",
+      "type": "registry:block",
+      "title": "Project overview",
+      "description": "One project at a glance: owner and team, overall progress, milestones as a stepper, workload per person, and recent activity.",
+      "categories": [
+        "dashboard"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/dashboard-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/projects/[id]/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/dashboard-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-04/components/project-summary.tsx",
+          "type": "registry:component",
+          "target": "components/project-summary.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-04/components/milestones.tsx",
+          "type": "registry:component",
+          "target": "components/milestones.tsx"
+        },
+        {
+          "path": "src/blocks/dashboard-04/components/activity.tsx",
+          "type": "registry:component",
+          "target": "components/activity.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/projects/[id]"
+      }
+    },
+    {
+      "name": "data-table-01",
+      "type": "registry:block",
+      "title": "Tasks table with search, filters and bulk actions",
+      "description": "Search, status filter chips, sortable columns, row selection with a bulk-action bar that announces the count, and pagination.",
+      "categories": [
+        "data-table"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/data-table-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/tasks/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/dashboard-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/data-table-01/components/tasks-table.tsx",
+          "type": "registry:component",
+          "target": "components/tasks-table.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/tasks"
+      }
+    },
+    {
+      "name": "data-table-02",
+      "type": "registry:block",
+      "title": "Invoices table with column picker and row actions",
+      "description": "Choose which columns to show, a \"More\" menu on each row, status badges, a totals row and export. Scrolls sideways inside its frame on small screens.",
+      "categories": [
+        "data-table"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/data-table-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/invoices/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/dashboard-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/data-table-02/components/invoices-table.tsx",
+          "type": "registry:component",
+          "target": "components/invoices-table.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/invoices"
+      }
+    },
+    {
+      "name": "empty-state-01",
+      "type": "registry:block",
+      "title": "First use: no projects yet",
+      "description": "What's empty, why, and one way forward — plus three templates to start from and an import option.",
+      "categories": [
+        "empty-state"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/empty-state-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/projects/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/top-bar.tsx",
+          "type": "registry:component",
+          "target": "components/top-bar.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/projects"
+      }
+    },
+    {
+      "name": "empty-state-02",
+      "type": "registry:block",
+      "title": "No search results",
+      "description": "Keeps the search and filters in view, says what matched nothing, suggests fixes and offers to clear everything in one step.",
+      "categories": [
+        "empty-state"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/empty-state-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/customers/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/top-bar.tsx",
+          "type": "registry:component",
+          "target": "components/top-bar.tsx"
+        },
+        {
+          "path": "src/blocks/empty-state-02/components/customer-search.tsx",
+          "type": "registry:component",
+          "target": "components/customer-search.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/customers"
+      }
+    },
+    {
+      "name": "empty-state-03",
+      "type": "registry:block",
+      "title": "All caught up",
+      "description": "A good empty: the inbox is clear. Says so calmly, shows when it was last updated, and offers related places to go.",
+      "categories": [
+        "empty-state"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/empty-state-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/inbox/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/top-bar.tsx",
+          "type": "registry:component",
+          "target": "components/top-bar.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/inbox"
+      }
+    },
+    {
+      "name": "empty-state-04",
+      "type": "registry:block",
+      "title": "No access, with a request form",
+      "description": "Explains why the page is hidden and who can help, then lets the person ask for access with a note. Confirms the request without leaving the page.",
+      "categories": [
+        "empty-state"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/empty-state-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/reports/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/top-bar.tsx",
+          "type": "registry:component",
+          "target": "components/top-bar.tsx"
+        },
+        {
+          "path": "src/blocks/empty-state-04/components/request-access.tsx",
+          "type": "registry:component",
+          "target": "components/request-access.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/reports"
+      }
+    },
+    {
+      "name": "settings-01",
+      "type": "registry:block",
+      "title": "Account settings with section navigation",
+      "description": "Profile, preferences and notifications as form sections, with an in-page section list that stays in view and a sticky save bar once something changes.",
+      "categories": [
+        "settings"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/settings-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/settings/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/dashboard-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/settings-01/components/account-settings.tsx",
+          "type": "registry:component",
+          "target": "components/account-settings.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/settings"
+      }
+    },
+    {
+      "name": "settings-02",
+      "type": "registry:block",
+      "title": "Team and billing settings",
+      "description": "Tabs for General, Members and Billing: workspace details, a members table with roles and invites, the current plan with usage, and invoices.",
+      "categories": [
+        "settings"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-data.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-feedback.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-navigation.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-patterns.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/settings-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/settings/team/page.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/dashboard-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/dashboard-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/settings-02/components/team-settings.tsx",
+          "type": "registry:component",
+          "target": "components/team-settings.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/settings/team"
+      }
+    },
+    {
+      "name": "sidebar-01",
+      "type": "registry:block",
+      "title": "A simple sidebar with sections",
+      "description": "Documentation-style navigation: product and version switcher, search, and links grouped under section labels.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-01/page.tsx",
+          "type": "registry:page",
+          "target": "app/docs/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-01/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/docs-nav.ts",
+          "type": "registry:component",
+          "target": "components/docs-nav.ts"
+        },
+        {
+          "path": "src/blocks/_parts/search-form.tsx",
+          "type": "registry:component",
+          "target": "components/search-form.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/version-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/version-switcher.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/docs"
+      }
+    },
+    {
+      "name": "sidebar-02",
+      "type": "registry:block",
+      "title": "A sidebar with collapsible sections",
+      "description": "Section labels open and close their links, so long navigation stays short. The section with the current page starts open.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-02/page.tsx",
+          "type": "registry:page",
+          "target": "app/docs/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-02/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/docs-nav.ts",
+          "type": "registry:component",
+          "target": "components/docs-nav.ts"
+        },
+        {
+          "path": "src/blocks/_parts/search-form.tsx",
+          "type": "registry:component",
+          "target": "components/search-form.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/version-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/version-switcher.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/docs"
+      }
+    },
+    {
+      "name": "sidebar-03",
+      "type": "registry:block",
+      "title": "A sidebar with submenus",
+      "description": "Each section shows its pages underneath, indented on a guide line. Good for docs with two levels.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-03/page.tsx",
+          "type": "registry:page",
+          "target": "app/docs/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-03/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/docs-nav.ts",
+          "type": "registry:component",
+          "target": "components/docs-nav.ts"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/docs"
+      }
+    },
+    {
+      "name": "sidebar-04",
+      "type": "registry:block",
+      "title": "A floating sidebar with submenus",
+      "description": "The same two-level navigation in a floating card with a gap around it, for lighter app chrome.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-04/page.tsx",
+          "type": "registry:page",
+          "target": "app/docs/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-04/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/docs-nav.ts",
+          "type": "registry:component",
+          "target": "components/docs-nav.ts"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/docs"
+      }
+    },
+    {
+      "name": "sidebar-05",
+      "type": "registry:block",
+      "title": "A sidebar with collapsible submenus and search",
+      "description": "Search on top; each section opens with a plus and closes with a minus. Only the section you're in starts open.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-05/page.tsx",
+          "type": "registry:page",
+          "target": "app/docs/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-05/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/docs-nav.ts",
+          "type": "registry:component",
+          "target": "components/docs-nav.ts"
+        },
+        {
+          "path": "src/blocks/_parts/search-form.tsx",
+          "type": "registry:component",
+          "target": "components/search-form.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/docs"
+      }
+    },
+    {
+      "name": "sidebar-06",
+      "type": "registry:block",
+      "title": "A sidebar with submenus as dropdowns",
+      "description": "Sections open a menu of their pages beside the sidebar instead of expanding in place. An upgrade card sits at the bottom.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-06/page.tsx",
+          "type": "registry:page",
+          "target": "app/docs/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-06/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/docs-nav.ts",
+          "type": "registry:component",
+          "target": "components/docs-nav.ts"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/docs"
+      }
+    },
+    {
+      "name": "sidebar-07",
+      "type": "registry:block",
+      "title": "A sidebar that collapses to icons",
+      "description": "Workspace switcher, collapsible sections, projects and an account menu. Collapses to a 72px icon rail (Ctrl/⌘ + B); a drawer on phones.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-07/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/nav-main.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-projects.tsx",
+          "type": "registry:component",
+          "target": "components/nav-projects.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/team-switcher.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/dashboard"
+      }
+    },
+    {
+      "name": "sidebar-08",
+      "type": "registry:block",
+      "title": "An inset sidebar with secondary navigation",
+      "description": "The page sits in a raised card beside the sidebar. Main sections, projects, support links and the account menu.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-08/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-08/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/brand-header.tsx",
+          "type": "registry:component",
+          "target": "components/brand-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/nav-main.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-projects.tsx",
+          "type": "registry:component",
+          "target": "components/nav-projects.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/dashboard"
+      }
+    },
+    {
+      "name": "sidebar-09",
+      "type": "registry:block",
+      "title": "Nested sidebars: an icon rail and a list",
+      "description": "A mail-style layout: folders in a 72px rail, the messages of the selected folder in a panel next to it. Collapsing hides the panel and keeps the rail.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-form.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-09/page.tsx",
+          "type": "registry:page",
+          "target": "app/inbox/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-09/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/inbox"
+      }
+    },
+    {
+      "name": "sidebar-10",
+      "type": "registry:block",
+      "title": "A workspace sidebar with page actions in a popover",
+      "description": "Notes-app layout: workspace switcher, quick links with an unread count, favorites, nested workspace pages, and the page's own actions in a popover in the header.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-10/page.tsx",
+          "type": "registry:page",
+          "target": "app/notes/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-10/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/team-switcher.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-10/components/nav-actions.tsx",
+          "type": "registry:component",
+          "target": "components/nav-actions.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/notes"
+      }
+    },
+    {
+      "name": "sidebar-11",
+      "type": "registry:block",
+      "title": "A sidebar with a collapsible file tree",
+      "description": "Changed files on top, the project's folders below. Folders open and close; files are links.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-11/page.tsx",
+          "type": "registry:page",
+          "target": "app/editor/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-11/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/editor"
+      }
+    },
+    {
+      "name": "sidebar-12",
+      "type": "registry:block",
+      "title": "A sidebar with a calendar",
+      "description": "Account menu on top, a month calendar, and calendars you can show or hide. A wider sidebar (320px) so the calendar fits.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-date.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-12/page.tsx",
+          "type": "registry:page",
+          "target": "app/calendar/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-12/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/calendars.tsx",
+          "type": "registry:component",
+          "target": "components/calendars.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/calendar"
+      }
+    },
+    {
+      "name": "sidebar-13",
+      "type": "registry:block",
+      "title": "A sidebar in a dialog",
+      "description": "A settings dialog with its own section navigation. On phones the sections become a list above the content.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-13/page.tsx",
+          "type": "registry:page",
+          "target": "app/settings/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-13/components/settings-dialog.tsx",
+          "type": "registry:component",
+          "target": "components/settings-dialog.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/settings"
+      }
+    },
+    {
+      "name": "sidebar-14",
+      "type": "registry:block",
+      "title": "A sidebar on the right",
+      "description": "An \"On this page\" sidebar on the end side of the screen, with the toggle at the end of the header.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-14/page.tsx",
+          "type": "registry:page",
+          "target": "app/docs/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-14/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/docs"
+      }
+    },
+    {
+      "name": "sidebar-15",
+      "type": "registry:block",
+      "title": "A left and a right sidebar",
+      "description": "Workspace navigation on the left, a calendar panel on the right (from 1024px). The left one collapses; the right one stays.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-button.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-date.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-15/page.tsx",
+          "type": "registry:page",
+          "target": "app/notes/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-15/components/sidebar-left.tsx",
+          "type": "registry:component",
+          "target": "components/sidebar-left.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/nav-main.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/team-switcher.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-15/components/sidebar-right.tsx",
+          "type": "registry:component",
+          "target": "components/sidebar-right.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/calendars.tsx",
+          "type": "registry:component",
+          "target": "components/calendars.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/notes"
+      }
+    },
+    {
+      "name": "sidebar-16",
+      "type": "registry:block",
+      "title": "A sidebar under a sticky site header",
+      "description": "A full-width header with the toggle, breadcrumbs and search stays on top; the sidebar sits below it.",
+      "categories": [
+        "sidebar"
+      ],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://dx-design-system.vercel.app/r/v4/init.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-sidebar.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-icon.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-overlays.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-display.json",
+        "https://dx-design-system.vercel.app/r/v4/ui-nav-extra.json"
+      ],
+      "files": [
+        {
+          "path": "src/blocks/sidebar-16/page.tsx",
+          "type": "registry:page",
+          "target": "app/dashboard/page.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-16/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/nav-main.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-projects.tsx",
+          "type": "registry:component",
+          "target": "components/nav-projects.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "components/nav-secondary.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "src/blocks/sidebar-16/components/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/site-header.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/search-form.tsx",
+          "type": "registry:component",
+          "target": "components/search-form.tsx"
+        },
+        {
+          "path": "src/blocks/_parts/page-placeholder.tsx",
+          "type": "registry:component",
+          "target": "components/page-placeholder.tsx"
+        }
+      ],
+      "meta": {
+        "route": "/dashboard"
       }
     }
   ]
